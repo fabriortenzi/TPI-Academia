@@ -6,11 +6,16 @@ using System.Threading.Tasks;
 
 namespace TPI.Entidades
 {
-    internal class Profesor : Persona
+    public class Profesor : Persona
     {
         public int Legajo { get; private set; }
 
-        public Profesor(int dni, string nombre, string apellido, string contraseña, int legajo) : base(dni, nombre, apellido, contraseña)
+        public override string getTipo()
+        {
+            return "Profesor";
+        }
+
+        public Profesor(int dni, string nombre, string apellido, string contraseña, int legajo, string usuario) : base(dni, nombre, apellido, contraseña, usuario)
         {
             Legajo = legajo;
         }

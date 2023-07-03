@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace TPI.Entidades
 {
-    internal class Administrativo : Persona
+    public class Administrativo : Persona
     {
-        public Administrativo(int dni, string nombre, string apellido, string contraseña) : base(dni, nombre, apellido, contraseña) { }
+        public override string getTipo()
+        {
+            return "Administrativo";
+        }
+        public Administrativo(int dni, string nombre, string apellido, string contraseña, string usuario) : base(dni, nombre, apellido, contraseña, usuario) { }
     }
 }
