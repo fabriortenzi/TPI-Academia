@@ -5,4 +5,9 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TPI.Entidades\TPI.Entidades.csproj" />
+    <ProjectReference Include="..\TPI.Negocio\TPI.Negocio.csproj" />
+  </ItemGroup>
+
 </Project>
