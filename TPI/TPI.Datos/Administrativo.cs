@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace TPI.Datos
 {
-    public class Administrativo : Persona
+    public class Administrativo : Usuario
     {
-        public static List<TPI.Entidades.Persona> GetAllAdministrativos()
+        public static List<TPI.Entidades.Usuario> GetAllAdministrativos()
         {
-            var administrativos = listaPersonas.Where(x => x.getTipo() == "Administrativo").ToList();
+            var administrativos = listaUsuarios.Where(x => x.getTipo() == "Administrativo").ToList();
             return administrativos;
         }
     }

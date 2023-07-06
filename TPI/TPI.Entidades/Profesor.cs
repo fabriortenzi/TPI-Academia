@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TPI.Entidades
 {
-    public class Profesor : Persona
+    public class Profesor : Usuario
     {
         public int Legajo { get; private set; }
 

@@ -7,11 +7,11 @@ using TPI.Entidades;
 
 namespace TPI.Datos
 {
-    public class Profesor : Persona
+    public class Profesor : Usuario
     {
-        public static List<TPI.Entidades.Persona> GetAllProfesores()
+        public static List<TPI.Entidades.Usuario> GetAllProfesores()
         {
-            var profesores = listaPersonas.Where(x => x.getTipo() == "Profesor").ToList();
+            var profesores = listaUsuarios.Where(x => x.getTipo() == "Profesor").ToList();
             return profesores;
         }
     }

@@ -7,18 +7,18 @@ using System.Threading.Tasks;
 
 namespace TPI.Negocio
 {
-    public class Administrativo : Persona
+    public class Administrativo : Usuario
     {
         public static void CrearAdministrativo(int dni, string nombre, string apellido, string usuario, string contraseña)
         {
             Entidades.Administrativo administrativoCreado = new(dni, nombre, apellido, usuario, contraseña);
 
-            Datos.Persona.AgregarPersona(administrativoCreado);
+            Datos.Usuario.AgregarUsuario(administrativoCreado);
         }
 
-        public static List<Entidades.Persona> GetAllAdministrativos()
+        public static List<Entidades.Usuario> GetAllAdministrativos()
         {
-            List<Entidades.Persona> administrativos = Datos.Administrativo.GetAllAdministrativos();
+            List<Entidades.Usuario> administrativos = Datos.Administrativo.GetAllAdministrativos();
             return administrativos;
         }
     }

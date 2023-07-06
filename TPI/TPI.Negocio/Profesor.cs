@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace TPI.Negocio
 {
-    public class Profesor : Persona
+    public class Profesor : Usuario
     {
         public static void CrearProfesor(int dni, int legajo, string nombre, string apellido,string usuario, string contraseña)
         {
             Entidades.Profesor profesorCreado = new(dni, legajo, nombre, apellido, usuario, contraseña);
 
-            Datos.Persona.AgregarPersona(profesorCreado);
+            Datos.Usuario.AgregarUsuario(profesorCreado);
         }
 
-        public static List<Entidades.Persona> GetAllProfesores()
+        public static List<Entidades.Usuario> GetAllProfesores()
         {
-            List<Entidades.Persona> profesores = Datos.Profesor.GetAllProfesores();
+            List<Entidades.Usuario> profesores = Datos.Profesor.GetAllProfesores();
             return profesores;
         }
     }

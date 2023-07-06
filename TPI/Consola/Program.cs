@@ -12,10 +12,10 @@ namespace Consola
     {
         static void Main(string[] args)
         {
-            // Inicializar Lista de Personas en la Capa Datos
-            TPI.Datos.Persona.InicializarLista();
+            // Inicializar Lista de Usuarios en la Capa Datos
+            TPI.Datos.Usuario.InicializarLista();
 
-            /* string usuario;
+            string usuario;
             string contraseña;
             Console.Clear();
             Console.WriteLine("Bienvenido al Sistema!");
@@ -23,13 +23,13 @@ namespace Consola
             Console.Write("Usuario: ");
             usuario = Console.ReadLine();
             Console.Write("Contraseña: ");
-            contraseña = Console.ReadLine(); */
+            contraseña = Console.ReadLine();
 
-            TPI.Entidades.Persona personaIngresada = TPI.Negocio.Persona.GetPersonaPorUsuarioYContraseña("juangomez", "clave1");
+            TPI.Entidades.Usuario usuarioIngresada = TPI.Negocio.Usuario.GetUsuarioPorNombreUsuarioYContraseña(usuario, contraseña);
 
-            if (personaIngresada != null)
+            if (usuarioIngresada != null)
             {
-                switch (personaIngresada.getTipo())
+                switch (usuarioIngresada.getTipo())
                 {
                     case "Alumno":
                         // TODO
@@ -48,10 +48,6 @@ namespace Consola
             {
                 Console.WriteLine("Nombre de Usuario o Contrseña incorrectos");
             }
-        }
-
-        
-        
-         
+        }         
     }
 }

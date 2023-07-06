@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Consola
 {
-    public class Persona
+    public class Usuario
     {
-        public static void ShowMenuAltaPersona()
+        public static void ShowMenuAltaUsuario()
         {
             Console.Clear();
-            Console.WriteLine("Alta de Persona");
+            Console.WriteLine("Alta de Usuario");
             Console.WriteLine("\n1- Crear Alumno");
             Console.WriteLine("2- Crear Profesor");
             Console.WriteLine("3- Crear Administrativo");
@@ -41,10 +41,10 @@ namespace Consola
             }
         }
 
-        public static void ShowMenuListadoPersonas()
+        public static void ShowMenuListadoUsuarios()
         {
             Console.Clear();
-            Console.WriteLine("Listado de Personas\n");
+            Console.WriteLine("Listado de Usuarios\n");
             Console.WriteLine("1- Listado de Alumnos");
             Console.WriteLine("2- Listado de Profesores");
             Console.WriteLine("3- Listado de Administrativos");

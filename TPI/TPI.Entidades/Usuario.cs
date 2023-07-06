@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TPI.Entidades
 {
-    public abstract class Persona
+    public abstract class Usuario
     {
         private static int UltimoId = 1;
 
@@ -18,19 +18,19 @@ namespace TPI.Entidades
         
         public string Apellido { get; set; }
         
-        public string Usuario { get; private set; }
+        public string NombreUsuario { get; private set; }
         
         public string Contraseña { get; private set; }
 
         public abstract string getTipo();
 
-        public Persona(int dni, string nombre, string apellido, string usuario, string contraseña)
+        public Usuario(int dni, string nombre, string apellido, string usuario, string contraseña)
         {
             Id = UltimoId++;
             Dni = dni;
             Nombre = nombre;
             Apellido = apellido;
-            Usuario = usuario;
+            NombreUsuario = usuario;
             Contraseña = contraseña;
         }
     }

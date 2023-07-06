@@ -36,14 +36,14 @@ namespace Consola
         {
             Console.Clear();
             Console.WriteLine("Profesores Registrados en el Sistema\n\n");
-            Console.WriteLine("Id\tDNI\t\tLegajo\t\tNombre\t\tApellido\tUsuario");
-            Console.WriteLine("--------------------------------------------------------------------------------------");
+            Console.WriteLine("Id\tDNI\t\tLegajo\t\tNombre\t\tApellido\tNombre de Usuario");
+            Console.WriteLine("--------------------------------------------------------------------------------------------");
 
-            List<TPI.Entidades.Persona> profesores = TPI.Negocio.Profesor.GetAllProfesores();
+            List<TPI.Entidades.Usuario> profesores = TPI.Negocio.Profesor.GetAllProfesores();
 
             foreach (TPI.Entidades.Profesor profesor in profesores)
             {
-                Console.WriteLine(profesor.Id + "\t" + profesor.Dni + "\t\t" + profesor.Legajo + "\t\t" + profesor.Nombre + "\t\t" + profesor.Apellido + "\t\t" + profesor.Usuario);
+                Console.WriteLine(profesor.Id + "\t" + profesor.Dni + "\t\t" + profesor.Legajo + "\t\t" + profesor.Nombre + "\t\t" + profesor.Apellido + "\t\t" + profesor.NombreUsuario);
             }
 
             Console.Write("\nPresione cualquier tecla ");

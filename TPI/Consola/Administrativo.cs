@@ -15,8 +15,8 @@ namespace Consola
             {
                 Console.Clear();
                 Console.WriteLine("Menu Administrativo/a");
-                Console.WriteLine("\n1- Crear Persona (Alumno, Profesor o Administrativo)");
-                Console.WriteLine("2- Lista de Personas");
+                Console.WriteLine("\n1- Crear Usuario (Alumno, Profesor o Administrativo)");
+                Console.WriteLine("2- Lista de Usuarios");
                 Console.WriteLine("0- Salir del Sistema");
 
                 Console.Write("\nOpcion: ");
@@ -32,10 +32,10 @@ namespace Consola
                 switch (opcion.Key)
                 {
                     case ConsoleKey.D1:
-                        Persona.ShowMenuAltaPersona();
+                        Usuario.ShowMenuAltaUsuario();
                         break;
                     case ConsoleKey.D2:
-                        Persona.ShowMenuListadoPersonas();
+                        Usuario.ShowMenuListadoUsuarios();
                         break;
                 }
 
@@ -68,14 +68,14 @@ namespace Consola
         {
             Console.Clear();
             Console.WriteLine("Administrativos Registrados en el Sistema\n\n");
-            Console.WriteLine("Id\tDNI\t\tNombre\t\tApellido\tUsuario");
-            Console.WriteLine("--------------------------------------------------------------------------------------");
+            Console.WriteLine("Id\tDNI\t\tNombre\t\tApellido\tNombre de Usuario");
+            Console.WriteLine("---------------------------------------------------------------------------");
 
-            List<TPI.Entidades.Persona> administrativos = TPI.Negocio.Administrativo.GetAllAdministrativos();
+            List<TPI.Entidades.Usuario> administrativos = TPI.Negocio.Administrativo.GetAllAdministrativos();
 
             foreach (TPI.Entidades.Administrativo administrativo in administrativos)
             {
-                Console.WriteLine(administrativo.Id + "\t" + administrativo.Dni + "\t\t" + administrativo.Nombre + "\t\t" + administrativo.Apellido + "\t\t" + administrativo.Usuario);
+                Console.WriteLine(administrativo.Id + "\t" + administrativo.Dni + "\t\t" + administrativo.Nombre + "\t\t" + administrativo.Apellido + "\t\t" + administrativo.NombreUsuario);
             }
 
             Console.Write("\nPresione cualquier tecla ");

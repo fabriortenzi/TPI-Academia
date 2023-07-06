@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TPI.Entidades
 {
-    public class Administrativo : Persona
+    public class Administrativo : Usuario
     {
         public override string getTipo()
         {

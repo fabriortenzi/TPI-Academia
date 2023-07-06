@@ -8,18 +8,18 @@ using TPI.Datos;
 
 namespace TPI.Negocio
 {
-    public class Alumno : Persona 
+    public class Alumno : Usuario 
     {
         public static void CrearAlumno(int dni, int legajo, string nombre, string apellido, string usuario, string contraseña)
         {
             Entidades.Alumno alumnoCreado = new(dni, legajo, nombre, apellido, usuario, contraseña);
 
-            Datos.Persona.AgregarPersona(alumnoCreado);
+            Datos.Usuario.AgregarUsuario(alumnoCreado);
         }
 
-        public static List<TPI.Entidades.Persona> GetAllAlumnos()
+        public static List<TPI.Entidades.Usuario> GetAllAlumnos()
         {
-            List<TPI.Entidades.Persona> alumnos = TPI.Datos.Alumno.GetAllAlumnos();
+            List<TPI.Entidades.Usuario> alumnos = TPI.Datos.Alumno.GetAllAlumnos();
             return alumnos;
         }
     }
