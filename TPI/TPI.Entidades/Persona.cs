@@ -8,25 +8,30 @@ namespace TPI.Entidades
 {
     public abstract class Persona
     {
+        private static int UltimoId = 1;
+
+        public int Id { get; private set; }
+        
         public int Dni { get; private set; }        
 
-        public string Contraseña { get; private set; }
-
-        public string Usuario { get; private set; }
-
         public string Nombre { get; set; }
-
+        
         public string Apellido { get; set; }
+        
+        public string Usuario { get; private set; }
+        
+        public string Contraseña { get; private set; }
 
         public abstract string getTipo();
 
-        public Persona(int dni, string nombre, string apellido, string contraseña, string usuario)
+        public Persona(int dni, string nombre, string apellido, string usuario, string contraseña)
         {
+            Id = UltimoId++;
             Dni = dni;
-            Contraseña = contraseña;
             Nombre = nombre;
             Apellido = apellido;
             Usuario = usuario;
+            Contraseña = contraseña;
         }
     }
 }

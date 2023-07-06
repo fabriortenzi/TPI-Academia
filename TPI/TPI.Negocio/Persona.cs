@@ -9,11 +9,9 @@ namespace TPI.Negocio
 {
     public class Persona
     {
-        private Datos.Persona personaDatos = new();
-
-        public Entidades.Persona getPersonaPorUsuarioYContraseña(string usuario, string contraseña)
+        public static Entidades.Persona GetPersonaPorUsuarioYContraseña(string usuario, string contraseña)
         {
-            Entidades.Persona persona = personaDatos.getPersonaPorUsuarioYContraseñaDatos(usuario, contraseña);
+            Entidades.Persona persona = TPI.Datos.Persona.GetPersonaPorUsuarioYContraseña(usuario, contraseña);
             return persona;
         }
     }

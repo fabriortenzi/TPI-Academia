@@ -10,25 +10,25 @@ namespace TPI.Datos
 {
     public class Persona
     {
-        private readonly Alumno alumno1 = new Alumno(123, "Fabri", "Ortenzi", "clave", 47, "fabriortenzi");
-        private readonly Profesor profesor1 = new Profesor(12, "Maria", "Gutierrez", "clave", 47, "marigutierrez");
-        private readonly Administrativo administrativo1 = new Administrativo(13, "Juan", "Gomez", "clave1", "juangomez");
+        private static Entidades.Alumno alumno1 = new(123, 47, "Fabri", "Ortenzi", "fabriortenzi", "clave");
+        private static Entidades.Profesor profesor1 = new(12, 47, "Maria", "Gutierrez", "marigutierrez", "clave");
+        private static Entidades.Administrativo administrativo1 = new(13, "Juan", "Gomez", "juangomez", "clave1");
 
-        List<Entidades.Persona> listaPersonas = new List<Entidades.Persona>();
+        static protected List<Entidades.Persona> listaPersonas = new List<Entidades.Persona>();
         
-        private void agregarPersona(Entidades.Persona persona)
+        public static void AgregarPersona(Entidades.Persona persona)
         {
             listaPersonas.Add(persona);
         }
 
-        public Persona()
+        public static void InicializarLista()
         {
-            agregarPersona(alumno1);
-            agregarPersona(profesor1);
-            agregarPersona(administrativo1);
+            AgregarPersona(alumno1);
+            AgregarPersona(profesor1);
+            AgregarPersona(administrativo1);
         }        
 
-        public Entidades.Persona getPersonaPorUsuarioYContraseñaDatos(string usuario, string contraseña)
+        public static Entidades.Persona GetPersonaPorUsuarioYContraseña(string usuario, string contraseña)
         {
             var persona = listaPersonas.FirstOrDefault(x => x.Usuario == usuario && x.Contraseña == contraseña);
             return persona;

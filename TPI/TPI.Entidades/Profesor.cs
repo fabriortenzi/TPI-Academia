@@ -15,7 +15,7 @@ namespace TPI.Entidades
             return "Profesor";
         }
 
-        public Profesor(int dni, string nombre, string apellido, string contraseña, int legajo, string usuario) : base(dni, nombre, apellido, contraseña, usuario)
+        public Profesor(int dni, int legajo, string nombre, string apellido, string usuario, string contraseña) : base(dni, nombre, apellido, usuario, contraseña)
         {
             Legajo = legajo;
         }
