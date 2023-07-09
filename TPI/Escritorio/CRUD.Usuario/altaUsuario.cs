@@ -27,6 +27,8 @@ namespace Escritorio.CRUD.Alumno
             string contraseña = this.txtContraseña.Text;
 
             TPI.Negocio.Alumno.CrearAlumno(dni, legajo, nombre, apellido, nombreUsuario, contraseña);
+            MessageBox.Show("Usuario creado exitosamente!", "Alta Usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.Dispose();
         }
     }
 }

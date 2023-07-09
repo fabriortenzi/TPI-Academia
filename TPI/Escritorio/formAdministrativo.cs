@@ -24,14 +24,10 @@ namespace Escritorio
             crearAlumno.Show();
         }
 
-        private void salirDelSistemaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-        }
-
         private void formAdministrativo_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Dispose();
+            Application.Exit();
         }
     }
 }

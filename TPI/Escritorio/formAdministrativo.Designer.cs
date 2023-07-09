@@ -34,7 +34,6 @@
             consultarUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             modificarUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             eliminarUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            salirDelSistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             mnsPrincipal.SuspendLayout();
             SuspendLayout();
             // 
@@ -50,7 +49,7 @@
             // 
             // usuarioToolStripMenuItem
             // 
-            usuarioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { crearUsuarioToolStripMenuItem, consultarUsuarioToolStripMenuItem, modificarUsuarioToolStripMenuItem, eliminarUsuarioToolStripMenuItem, salirDelSistemaToolStripMenuItem });
+            usuarioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { crearUsuarioToolStripMenuItem, consultarUsuarioToolStripMenuItem, modificarUsuarioToolStripMenuItem, eliminarUsuarioToolStripMenuItem });
             usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
             usuarioToolStripMenuItem.Size = new System.Drawing.Size(88, 29);
             usuarioToolStripMenuItem.Text = "Usuario";
@@ -80,12 +79,6 @@
             eliminarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             eliminarUsuarioToolStripMenuItem.Text = "Eliminar Usuario";
             // 
-            // salirDelSistemaToolStripMenuItem
-            // 
-            salirDelSistemaToolStripMenuItem.Name = "salirDelSistemaToolStripMenuItem";
-            salirDelSistemaToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            salirDelSistemaToolStripMenuItem.Text = "Salir del Sistema";
-            // 
             // formAdministrativo
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
@@ -112,6 +105,5 @@
         private System.Windows.Forms.ToolStripMenuItem consultarUsuarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modificarUsuarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminarUsuarioToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem salirDelSistemaToolStripMenuItem;
     }
 }
