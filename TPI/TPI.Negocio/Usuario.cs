@@ -14,5 +14,11 @@ namespace TPI.Negocio
             Entidades.Usuario usuario = TPI.Datos.Usuario.GetUsuarioPorNombreUsuarioYContraseña(nombreUsuario, contraseña);
             return usuario;
         }
+
+        public static List<Entidades.Usuario> GetAllUsuarios()
+        {
+            List<Entidades.Usuario> usuarios = TPI.Datos.Usuario.GetAllUsuarios();
+            return usuarios;
+        }
     }
 }

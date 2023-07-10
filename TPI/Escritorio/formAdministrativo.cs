@@ -1,4 +1,5 @@
 ﻿using Escritorio.CRUD.Alumno;
+using Escritorio.CRUD.Usuario;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,6 +29,12 @@ namespace Escritorio
         {
             this.Dispose();
             Application.Exit();
+        }
+
+        private void consultarUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            retrieveUsuarios retrieveUsuarios = new();
+            retrieveUsuarios.Show();
         }
     }
 }

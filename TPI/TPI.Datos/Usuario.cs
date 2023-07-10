@@ -33,5 +33,7 @@ namespace TPI.Datos
             var usuario = listaUsuarios.FirstOrDefault(x => x.NombreUsuario == nombreUsuario && x.Contraseña == contraseña);
             return usuario;
         }
+
+        public static List<Entidades.Usuario> GetAllUsuarios() => listaUsuarios;
     }
 }

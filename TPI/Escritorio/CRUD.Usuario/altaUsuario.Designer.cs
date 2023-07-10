@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             label1 = new System.Windows.Forms.Label();
-            label2 = new System.Windows.Forms.Label();
-            label3 = new System.Windows.Forms.Label();
-            label4 = new System.Windows.Forms.Label();
-            label5 = new System.Windows.Forms.Label();
-            label6 = new System.Windows.Forms.Label();
-            label7 = new System.Windows.Forms.Label();
-            label8 = new System.Windows.Forms.Label();
+            lblNombre = new System.Windows.Forms.Label();
+            lblApellido = new System.Windows.Forms.Label();
+            lblLegajo = new System.Windows.Forms.Label();
+            lblDNI = new System.Windows.Forms.Label();
+            lblNomUsuario = new System.Windows.Forms.Label();
+            lblContraseña = new System.Windows.Forms.Label();
+            lblConfContr = new System.Windows.Forms.Label();
             btnCrear = new System.Windows.Forms.Button();
             btnCancelar = new System.Windows.Forms.Button();
             txtLegajo = new System.Windows.Forms.TextBox();
@@ -44,7 +44,11 @@
             txtApellido = new System.Windows.Forms.TextBox();
             txtNomUsuario = new System.Windows.Forms.TextBox();
             txtContraseña = new System.Windows.Forms.TextBox();
-            textBox7 = new System.Windows.Forms.TextBox();
+            txtConfContr = new System.Windows.Forms.TextBox();
+            rdioAlumno = new System.Windows.Forms.RadioButton();
+            rdioProfesor = new System.Windows.Forms.RadioButton();
+            rdioAdmin = new System.Windows.Forms.RadioButton();
+            label9 = new System.Windows.Forms.Label();
             SuspendLayout();
             // 
             // label1
@@ -56,68 +60,75 @@
             label1.TabIndex = 0;
             label1.Text = "Complete los siguientes datos";
             // 
-            // label2
+            // lblNombre
             // 
-            label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(172, 261);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(78, 25);
-            label2.TabIndex = 1;
-            label2.Text = "Nombre";
+            lblNombre.AutoSize = true;
+            lblNombre.Location = new System.Drawing.Point(172, 261);
+            lblNombre.Name = "lblNombre";
+            lblNombre.Size = new System.Drawing.Size(78, 25);
+            lblNombre.TabIndex = 1;
+            lblNombre.Text = "Nombre";
+            lblNombre.Visible = false;
             // 
-            // label3
+            // lblApellido
             // 
-            label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(172, 312);
-            label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(78, 25);
-            label3.TabIndex = 2;
-            label3.Text = "Apellido";
+            lblApellido.AutoSize = true;
+            lblApellido.Location = new System.Drawing.Point(172, 312);
+            lblApellido.Name = "lblApellido";
+            lblApellido.Size = new System.Drawing.Size(78, 25);
+            lblApellido.TabIndex = 2;
+            lblApellido.Text = "Apellido";
+            lblApellido.Visible = false;
             // 
-            // label4
+            // lblLegajo
             // 
-            label4.AutoSize = true;
-            label4.Location = new System.Drawing.Point(186, 162);
-            label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(64, 25);
-            label4.TabIndex = 3;
-            label4.Text = "Legajo";
+            lblLegajo.AutoSize = true;
+            lblLegajo.Location = new System.Drawing.Point(186, 162);
+            lblLegajo.Name = "lblLegajo";
+            lblLegajo.Size = new System.Drawing.Size(64, 25);
+            lblLegajo.TabIndex = 3;
+            lblLegajo.Text = "Legajo";
+            lblLegajo.Visible = false;
             // 
-            // label5
+            // lblDNI
             // 
-            label5.AutoSize = true;
-            label5.Location = new System.Drawing.Point(207, 212);
-            label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(43, 25);
-            label5.TabIndex = 4;
-            label5.Text = "DNI";
+            lblDNI.AutoSize = true;
+            lblDNI.Location = new System.Drawing.Point(207, 212);
+            lblDNI.Name = "lblDNI";
+            lblDNI.Size = new System.Drawing.Size(43, 25);
+            lblDNI.TabIndex = 4;
+            lblDNI.Text = "DNI";
+            lblDNI.Visible = false;
             // 
-            // label6
+            // lblNomUsuario
             // 
-            label6.AutoSize = true;
-            label6.Location = new System.Drawing.Point(82, 360);
-            label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(168, 25);
-            label6.TabIndex = 5;
-            label6.Text = "Nombre de Usuario";
+            lblNomUsuario.AutoSize = true;
+            lblNomUsuario.Location = new System.Drawing.Point(82, 360);
+            lblNomUsuario.Name = "lblNomUsuario";
+            lblNomUsuario.Size = new System.Drawing.Size(168, 25);
+            lblNomUsuario.TabIndex = 5;
+            lblNomUsuario.Text = "Nombre de Usuario";
+            lblNomUsuario.Visible = false;
             // 
-            // label7
+            // lblContraseña
             // 
-            label7.AutoSize = true;
-            label7.Location = new System.Drawing.Point(149, 411);
-            label7.Name = "label7";
-            label7.Size = new System.Drawing.Size(101, 25);
-            label7.TabIndex = 6;
-            label7.Text = "Contraseña";
+            lblContraseña.AutoSize = true;
+            lblContraseña.Location = new System.Drawing.Point(149, 411);
+            lblContraseña.Name = "lblContraseña";
+            lblContraseña.Size = new System.Drawing.Size(101, 25);
+            lblContraseña.TabIndex = 6;
+            lblContraseña.Text = "Contraseña";
+            lblContraseña.Visible = false;
             // 
-            // label8
+            // lblConfContr
             // 
-            label8.AutoSize = true;
-            label8.Location = new System.Drawing.Point(65, 459);
-            label8.Name = "label8";
-            label8.Size = new System.Drawing.Size(185, 25);
-            label8.TabIndex = 7;
-            label8.Text = "Confirmar Contraseña";
+            lblConfContr.AutoSize = true;
+            lblConfContr.Location = new System.Drawing.Point(65, 459);
+            lblConfContr.Name = "lblConfContr";
+            lblConfContr.Size = new System.Drawing.Size(185, 25);
+            lblConfContr.TabIndex = 7;
+            lblConfContr.Text = "Confirmar Contraseña";
+            lblConfContr.Visible = false;
             // 
             // btnCrear
             // 
@@ -141,6 +152,7 @@
             btnCancelar.TabIndex = 9;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = false;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // txtLegajo
             // 
@@ -148,6 +160,7 @@
             txtLegajo.Name = "txtLegajo";
             txtLegajo.Size = new System.Drawing.Size(129, 31);
             txtLegajo.TabIndex = 10;
+            txtLegajo.Visible = false;
             // 
             // txtDNI
             // 
@@ -155,6 +168,7 @@
             txtDNI.Name = "txtDNI";
             txtDNI.Size = new System.Drawing.Size(209, 31);
             txtDNI.TabIndex = 11;
+            txtDNI.Visible = false;
             // 
             // txtNombre
             // 
@@ -162,6 +176,7 @@
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new System.Drawing.Size(209, 31);
             txtNombre.TabIndex = 12;
+            txtNombre.Visible = false;
             // 
             // txtApellido
             // 
@@ -169,6 +184,7 @@
             txtApellido.Name = "txtApellido";
             txtApellido.Size = new System.Drawing.Size(209, 31);
             txtApellido.TabIndex = 13;
+            txtApellido.Visible = false;
             // 
             // txtNomUsuario
             // 
@@ -176,6 +192,7 @@
             txtNomUsuario.Name = "txtNomUsuario";
             txtNomUsuario.Size = new System.Drawing.Size(209, 31);
             txtNomUsuario.TabIndex = 14;
+            txtNomUsuario.Visible = false;
             // 
             // txtContraseña
             // 
@@ -183,13 +200,60 @@
             txtContraseña.Name = "txtContraseña";
             txtContraseña.Size = new System.Drawing.Size(209, 31);
             txtContraseña.TabIndex = 15;
+            txtContraseña.Visible = false;
             // 
-            // textBox7
+            // txtConfContr
             // 
-            textBox7.Location = new System.Drawing.Point(273, 456);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new System.Drawing.Size(209, 31);
-            textBox7.TabIndex = 16;
+            txtConfContr.Location = new System.Drawing.Point(273, 456);
+            txtConfContr.Name = "txtConfContr";
+            txtConfContr.Size = new System.Drawing.Size(209, 31);
+            txtConfContr.TabIndex = 16;
+            txtConfContr.Visible = false;
+            // 
+            // rdioAlumno
+            // 
+            rdioAlumno.AutoSize = true;
+            rdioAlumno.Location = new System.Drawing.Point(214, 104);
+            rdioAlumno.Name = "rdioAlumno";
+            rdioAlumno.Size = new System.Drawing.Size(100, 29);
+            rdioAlumno.TabIndex = 17;
+            rdioAlumno.TabStop = true;
+            rdioAlumno.Text = "Alumno";
+            rdioAlumno.UseVisualStyleBackColor = true;
+            rdioAlumno.CheckedChanged += rdioAlumno_CheckedChanged;
+            // 
+            // rdioProfesor
+            // 
+            rdioProfesor.AutoSize = true;
+            rdioProfesor.Location = new System.Drawing.Point(326, 104);
+            rdioProfesor.Name = "rdioProfesor";
+            rdioProfesor.Size = new System.Drawing.Size(104, 29);
+            rdioProfesor.TabIndex = 18;
+            rdioProfesor.TabStop = true;
+            rdioProfesor.Text = "Profesor";
+            rdioProfesor.UseVisualStyleBackColor = true;
+            rdioProfesor.CheckedChanged += rdioProfesor_CheckedChanged;
+            // 
+            // rdioAdmin
+            // 
+            rdioAdmin.AutoSize = true;
+            rdioAdmin.Location = new System.Drawing.Point(446, 104);
+            rdioAdmin.Name = "rdioAdmin";
+            rdioAdmin.Size = new System.Drawing.Size(153, 29);
+            rdioAdmin.TabIndex = 19;
+            rdioAdmin.TabStop = true;
+            rdioAdmin.Text = "Administrativo";
+            rdioAdmin.UseVisualStyleBackColor = true;
+            rdioAdmin.CheckedChanged += rdioAdmin_CheckedChanged;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new System.Drawing.Point(42, 106);
+            label9.Name = "label9";
+            label9.Size = new System.Drawing.Size(137, 25);
+            label9.TabIndex = 20;
+            label9.Text = "Tipo de Usuario";
             // 
             // altaUsuario
             // 
@@ -198,7 +262,11 @@
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             CancelButton = btnCancelar;
             ClientSize = new System.Drawing.Size(634, 622);
-            Controls.Add(textBox7);
+            Controls.Add(label9);
+            Controls.Add(rdioAdmin);
+            Controls.Add(rdioProfesor);
+            Controls.Add(rdioAlumno);
+            Controls.Add(txtConfContr);
             Controls.Add(txtContraseña);
             Controls.Add(txtNomUsuario);
             Controls.Add(txtApellido);
@@ -207,19 +275,19 @@
             Controls.Add(txtLegajo);
             Controls.Add(btnCancelar);
             Controls.Add(btnCrear);
-            Controls.Add(label8);
-            Controls.Add(label7);
-            Controls.Add(label6);
-            Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
+            Controls.Add(lblConfContr);
+            Controls.Add(lblContraseña);
+            Controls.Add(lblNomUsuario);
+            Controls.Add(lblDNI);
+            Controls.Add(lblLegajo);
+            Controls.Add(lblApellido);
+            Controls.Add(lblNombre);
             Controls.Add(label1);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "altaUsuario";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            Text = "Crear Alumno";
+            Text = "Crear Usuario";
             ResumeLayout(false);
             PerformLayout();
         }
@@ -227,13 +295,13 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.Label lblApellido;
+        private System.Windows.Forms.Label lblLegajo;
+        private System.Windows.Forms.Label lblDNI;
+        private System.Windows.Forms.Label lblNomUsuario;
+        private System.Windows.Forms.Label lblContraseña;
+        private System.Windows.Forms.Label lblConfContr;
         private System.Windows.Forms.Button btnCrear;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.TextBox txtLegajo;
@@ -242,6 +310,10 @@
         private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.TextBox txtNomUsuario;
         private System.Windows.Forms.TextBox txtContraseña;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtConfContr;
+        private System.Windows.Forms.RadioButton rdioAlumno;
+        private System.Windows.Forms.RadioButton rdioProfesor;
+        private System.Windows.Forms.RadioButton rdioAdmin;
+        private System.Windows.Forms.Label label9;
     }
 }

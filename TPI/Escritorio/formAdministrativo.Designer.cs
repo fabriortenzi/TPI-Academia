@@ -65,7 +65,8 @@
             // 
             consultarUsuarioToolStripMenuItem.Name = "consultarUsuarioToolStripMenuItem";
             consultarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            consultarUsuarioToolStripMenuItem.Text = "Consultar Usuario";
+            consultarUsuarioToolStripMenuItem.Text = "Consultar Usuarios";
+            consultarUsuarioToolStripMenuItem.Click += consultarUsuarioToolStripMenuItem_Click;
             // 
             // modificarUsuarioToolStripMenuItem
             // 
