@@ -25,11 +25,11 @@ namespace Consola
             Console.Write("Contraseña: ");
             contraseña = Console.ReadLine();
 
-            TPI.Entidades.Usuario usuarioIngresada = TPI.Negocio.Usuario.GetUsuarioPorNombreUsuarioYContraseña(usuario, contraseña);
+            TPI.Entidades.Usuario usuarioIngresad = TPI.Negocio.Usuario.GetUsuarioPorNombreUsuarioYContraseña(usuario, contraseña);
 
-            if (usuarioIngresada != null)
+            if (usuarioIngresad != null)
             {
-                switch (usuarioIngresada.getTipo())
+                switch (usuarioIngresad.getTipo())
                 {
                     case "Alumno":
                         // TODO

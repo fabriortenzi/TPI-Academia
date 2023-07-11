@@ -7,4 +7,14 @@
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TPI.Datos\TPI.Datos.csproj" />
+    <ProjectReference Include="..\TPI.Entidades\TPI.Entidades.csproj" />
+    <ProjectReference Include="..\TPI.Negocio\TPI.Negocio.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\DataSources\" />
+  </ItemGroup>
+
 </Project>
