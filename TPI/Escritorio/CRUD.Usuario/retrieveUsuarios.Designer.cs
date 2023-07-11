@@ -38,16 +38,19 @@
             dgvUsuarios.Location = new System.Drawing.Point(3, 31);
             dgvUsuarios.Name = "dgvUsuarios";
             dgvUsuarios.RowHeadersWidth = 62;
-            dgvUsuarios.Size = new System.Drawing.Size(795, 385);
+            dgvUsuarios.Size = new System.Drawing.Size(1012, 385);
             dgvUsuarios.TabIndex = 0;
             // 
             // retrieveUsuarios
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(800, 450);
+            ClientSize = new System.Drawing.Size(1021, 450);
             Controls.Add(dgvUsuarios);
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "retrieveUsuarios";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "retrieveUsuarios";
             Load += retrieveUsuarios_Load;
             ((System.ComponentModel.ISupportInitialize)dgvUsuarios).EndInit();

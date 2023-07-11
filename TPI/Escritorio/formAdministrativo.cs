@@ -36,5 +36,11 @@ namespace Escritorio
             retrieveUsuarios retrieveUsuarios = new();
             retrieveUsuarios.Show();
         }
+
+        private void modificarUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            updateUsuario updateUsuario = new();
+            updateUsuario.Show();
+        }
     }
 }

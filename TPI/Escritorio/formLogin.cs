@@ -22,10 +22,10 @@ namespace Escritorio
             // Inicializar Lista de Usuarios en la Capa Datos
             TPI.Datos.Usuario.InicializarLista();
 
-            /*string usuario = this.txtUsuario.Text;
-            string contraseña = this.txtPass.Text;*/
+            string usuario = this.txtUsuario.Text;
+            string contraseña = this.txtPass.Text;
 
-            TPI.Entidades.Usuario usuarioIngresado = TPI.Negocio.Usuario.GetUsuarioPorNombreUsuarioYContraseña("juangomez", "clave1");
+            TPI.Entidades.Usuario usuarioIngresado = TPI.Negocio.Usuario.GetUsuarioPorNombreUsuarioYContraseña(usuario, contraseña);
 
             if (usuarioIngresado != null)
             {

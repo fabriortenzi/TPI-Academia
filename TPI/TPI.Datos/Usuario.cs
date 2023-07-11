@@ -10,9 +10,9 @@ namespace TPI.Datos
 {
     public class Usuario
     {
-        private static Entidades.Alumno alumno1 = new(123, 47, "Fabri", "Ortenzi", "fabriortenzi", "clave");
+        private static Entidades.Alumno alumno1 = new(123, 47, "Fabri", "Ortenzi", "juangomez", "clave");
         private static Entidades.Profesor profesor1 = new(12, 47, "Maria", "Gutierrez", "marigutierrez", "clave");
-        private static Entidades.Administrativo administrativo1 = new(13, "Juan", "Gomez", "juangomez", "clave1");
+        private static Entidades.Administrativo administrativo1 = new(13, "Juan", "Gomez", "fabriortenzi", "clave");
 
         static protected List<Entidades.Usuario> listaUsuarios = new List<Entidades.Usuario>();
         
@@ -35,5 +35,8 @@ namespace TPI.Datos
         }
 
         public static List<Entidades.Usuario> GetAllUsuarios() => listaUsuarios;
+
+        public static Entidades.Usuario GetUsuarioPorNombreApellido(string nombre, string apellido) =>
+            listaUsuarios.FirstOrDefault(x => x.Nombre.ToLower() == nombre.ToLower() && x.Apellido.ToLower() == apellido.ToLower());
     }
 }

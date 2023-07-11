@@ -54,7 +54,7 @@ namespace Escritorio.CRUD.Alumno
                         MessageBox.Show("Profesor creado exitosamente!", "Alta Usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
-                    {                        
+                    {
                         TPI.Negocio.Administrativo.CrearAdministrativo(dni, nombre, apellido, nombreUsuario, contraseña);
                         MessageBox.Show("Administrativo creado exitosamente!", "Alta Usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }

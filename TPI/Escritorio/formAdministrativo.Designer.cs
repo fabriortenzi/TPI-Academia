@@ -73,6 +73,7 @@
             modificarUsuarioToolStripMenuItem.Name = "modificarUsuarioToolStripMenuItem";
             modificarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             modificarUsuarioToolStripMenuItem.Text = "Modificar Usuario";
+            modificarUsuarioToolStripMenuItem.Click += modificarUsuarioToolStripMenuItem_Click;
             // 
             // eliminarUsuarioToolStripMenuItem
             // 

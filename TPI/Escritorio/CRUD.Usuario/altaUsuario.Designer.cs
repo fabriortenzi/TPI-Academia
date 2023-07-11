@@ -198,6 +198,7 @@
             // 
             txtContraseña.Location = new System.Drawing.Point(273, 408);
             txtContraseña.Name = "txtContraseña";
+            txtContraseña.PasswordChar = '●';
             txtContraseña.Size = new System.Drawing.Size(209, 31);
             txtContraseña.TabIndex = 15;
             txtContraseña.Visible = false;
@@ -206,6 +207,7 @@
             // 
             txtConfContr.Location = new System.Drawing.Point(273, 456);
             txtConfContr.Name = "txtConfContr";
+            txtConfContr.PasswordChar = '●';
             txtConfContr.Size = new System.Drawing.Size(209, 31);
             txtConfContr.TabIndex = 16;
             txtConfContr.Visible = false;
