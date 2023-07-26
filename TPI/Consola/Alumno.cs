@@ -47,6 +47,8 @@ namespace Consola
 
             Console.Write("\nPresione cualquier tecla ");
             Console.ReadKey();
+            Console.WriteLine("hola");
         }
     }
+    
 }
