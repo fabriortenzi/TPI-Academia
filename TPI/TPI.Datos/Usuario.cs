@@ -10,11 +10,11 @@ namespace TPI.Datos
 {
     public class Usuario
     {
-        private static List<Entidades.Usuario> listaUsuarios = new List<Entidades.Usuario>();
+        private static List<Entidades.Usuario> usuarios = new List<Entidades.Usuario>();
         
         public static void AgregarUsuario(Entidades.Usuario usuario)
         {
-            listaUsuarios.Add(usuario);
+            usuarios.Add(usuario);
         }
 
         public static void InicializarListaUsarios()
@@ -23,24 +23,22 @@ namespace TPI.Datos
             Entidades.TipoDeUsuario tipoProfesor = Datos.TipoDeUsuario.GetTipoProfesor();
             Entidades.TipoDeUsuario tipoAdmin = Datos.TipoDeUsuario.GetTipoAdmin();
 
-            Entidades.Usuario alumno1 = new("clave", , tipoAlumno);
-            Entidades.Usuario profesor1 = new("clave", , tipoProfesor);
-            Entidades.Usuario administrativo1 = new("clave", , tipoAdmin);
+            var persona1 = Datos.Persona.GetPersonaPorDni(43127777);
+            var persona2 = Datos.Persona.GetPersonaPorDni(43127778);
+            var persona3 = Datos.Persona.GetPersonaPorDni(43127779);
+
+            Entidades.Usuario alumno1 = new("clave", persona1, tipoAlumno);
+            Entidades.Usuario profesor1 = new("clave", persona2, tipoProfesor);
+            Entidades.Usuario administrativo1 = new("clave", persona3, tipoAdmin);
 
             AgregarUsuario(alumno1);
             AgregarUsuario(profesor1);
             AgregarUsuario(administrativo1);
         }        
 
-        public static Entidades.Usuario GetUsuarioPorNombreUsuarioYContraseña(string nombreUsuario, string contraseña)
-        {
-            var usuario = listaUsuarios.FirstOrDefault(x => x.NombreUsuario == nombreUsuario && x.Contraseña == contraseña);
-            return usuario;
-        }
+        public static Entidades.Usuario GetUsuarioPorLegajoYContraseña(int legajo, string contraseña) => 
+            usuarios.FirstOrDefault(x => x.Legajo == legajo && x.Contraseña == contraseña);
 
-        public static List<Entidades.Usuario> GetAllUsuarios() => listaUsuarios;
-
-        public static Entidades.Usuario GetUsuarioPorNombreApellido(string nombre, string apellido) =>
-            listaUsuarios.FirstOrDefault(x => x.Nombre.ToLower() == nombre.ToLower() && x.Apellido.ToLower() == apellido.ToLower());
+        public static List<Entidades.Usuario> GetAllUsuarios() => usuarios;
     }
 }

@@ -39,11 +39,11 @@
             // label1
             // 
             label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            label1.Location = new System.Drawing.Point(143, 36);
+            label1.Location = new System.Drawing.Point(105, 31);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(288, 72);
+            label1.Size = new System.Drawing.Size(379, 90);
             label1.TabIndex = 0;
-            label1.Text = "Bienvenido al Sistema!\r\nDigite su Informacion de Ingreso";
+            label1.Text = "Bienvenido al Sistema de Gestión Académica!\r\n\r\nDigite su Información de Ingreso";
             label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtUsuario
@@ -56,11 +56,11 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(72, 170);
+            label2.Location = new System.Drawing.Point(93, 170);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(72, 25);
+            label2.Size = new System.Drawing.Size(64, 25);
             label2.TabIndex = 2;
-            label2.Text = "Usuario";
+            label2.Text = "Legajo";
             // 
             // txtPass
             // 
@@ -85,7 +85,7 @@
             btnIngresar.Name = "btnIngresar";
             btnIngresar.Size = new System.Drawing.Size(159, 34);
             btnIngresar.TabIndex = 5;
-            btnIngresar.Text = "Iniciar Sesion";
+            btnIngresar.Text = "Iniciar Sesión";
             btnIngresar.UseVisualStyleBackColor = true;
             btnIngresar.Click += btnIngresar_Click;
             // 
@@ -106,7 +106,7 @@
             MinimizeBox = false;
             Name = "formLogin";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            Text = "Sistema de Gestion Academica";
+            Text = "Iniciar Sesión";
             ResumeLayout(false);
             PerformLayout();
         }

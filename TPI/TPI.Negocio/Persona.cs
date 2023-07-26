@@ -14,5 +14,13 @@ namespace TPI.Negocio
             Entidades.Persona persona = new(dni, nombre, apellido, direccion, fechaNacimiento, telefono);
             return persona;
         }
+
+        public static Entidades.Persona GetPersonaPorDni(int dni) =>
+            Datos.Persona.GetPersonaPorDni(dni);
+
+        public static void AgregarPersona(Entidades.Persona persona)
+        {
+            Datos.Persona.AgregarPersona(persona);
+        }
     }
 }

@@ -19,33 +19,21 @@ namespace Escritorio
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            // Inicializar Lista de Usuarios en la Capa Datos
-            TPI.Datos.Usuario.InicializarLista();
+            // Inicializar Lista de Usuarios y Personas en la Capa Datos
+            TPI.Datos.Usuario.InicializarListaUsarios();
+            TPI.Datos.Persona.InicializarListaPersonas();
 
-            string usuario = this.txtUsuario.Text;
+            int legajo = Convert.ToInt32(this.txtUsuario.Text);
             string contraseña = this.txtPass.Text;
 
-            TPI.Entidades.Usuario usuarioIngresado = TPI.Negocio.Usuario.GetUsuarioPorNombreUsuarioYContraseña(usuario, contraseña);
+            TPI.Entidades.Usuario usuario = TPI.Negocio.Usuario.GetUsuarioPorLegajoYContraseña(legajo, contraseña);
 
-            if (usuarioIngresado != null)
+            if (usuario != null)
             {
-                switch (usuarioIngresado.getTipo())
-                {
-                    case "Alumno":
-                        // TODO
-                        MessageBox.Show("Bienvenido Alumno/a");
-                        break;
-                    case "Profesor":
-                        // TODO
-                        MessageBox.Show("Bienvenido Profesor/a");
-                        break;
-                    case "Administrativo":
-                        this.DialogResult = DialogResult.OK;
-                        formAdministrativo appAdministrativo = new();
-                        appAdministrativo.Show();
-                        this.Hide();
-                        break;
-                }
+                this.DialogResult = DialogResult.OK;
+                formMenuPrincipal menuPrincipal = new();
+                menuPrincipal.Show();
+                this.Hide();
             }
             else
             {
