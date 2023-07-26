@@ -6,32 +6,24 @@ using System.Threading.Tasks;
 
 namespace TPI.Entidades
 {
-    public abstract class Usuario
+    public class Usuario
     {
-        private static int UltimoId = 1;
+        private static int UltimoLegajo = 1;
 
-        public int Id { get; private set; }
-        
-        public int Dni { get; private set; }        
-
-        public string Nombre { get; set; }
-        
-        public string Apellido { get; set; }
-        
-        public string NombreUsuario { get; private set; }
+        public int Legajo { get; private set; }  
         
         public string Contraseña { get; private set; }
 
-        public abstract string getTipo();
+        public Persona Persona { get; private set; }
 
-        public Usuario(int dni, string nombre, string apellido, string usuario, string contraseña)
+        public TipoDeUsuario TipoDeUsuario { get; private set; }
+
+        public Usuario(string contraseña, Persona persona, TipoDeUsuario tipoDeUsuario)
         {
-            Id = UltimoId++;
-            Dni = dni;
-            Nombre = nombre;
-            Apellido = apellido;
-            NombreUsuario = usuario;
+            Legajo = UltimoLegajo++;
             Contraseña = contraseña;
+            Persona = persona;
+            TipoDeUsuario = tipoDeUsuario;
         }
     }
 }
