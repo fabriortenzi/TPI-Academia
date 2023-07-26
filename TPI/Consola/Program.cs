@@ -12,42 +12,42 @@ namespace Consola
     {
         static void Main(string[] args)
         {
-            // Inicializar Lista de Usuarios en la Capa Datos
-            TPI.Datos.Usuario.InicializarLista();
+            //// Inicializar Lista de Usuarios en la Capa Datos
+            //TPI.Datos.Usuario.InicializarLista();
 
-            string usuario;
-            string contraseña;
-            Console.Clear();
-            Console.WriteLine("Bienvenido al Sistema!");
-            Console.WriteLine("Digite su Informacion de Ingreso\n");
-            Console.Write("Usuario: ");
-            usuario = Console.ReadLine();
-            Console.Write("Contraseña: ");
-            contraseña = Console.ReadLine();
+            //string usuario;
+            //string contraseña;
+            //Console.Clear();
+            //Console.WriteLine("Bienvenido al Sistema!");
+            //Console.WriteLine("Digite su Informacion de Ingreso\n");
+            //Console.Write("Usuario: ");
+            //usuario = Console.ReadLine();
+            //Console.Write("Contraseña: ");
+            //contraseña = Console.ReadLine();
 
-            TPI.Entidades.Usuario usuarioIngresad = TPI.Negocio.Usuario.GetUsuarioPorNombreUsuarioYContraseña(usuario, contraseña);
+            //TPI.Entidades.Usuario usuarioIngresad = TPI.Negocio.Usuario.GetUsuarioPorNombreUsuarioYContraseña(usuario, contraseña);
 
-            if (usuarioIngresad != null)
-            {
-                switch (usuarioIngresad.getTipo())
-                {
-                    case "Alumno":
-                        // TODO
-                        Console.WriteLine("Bienvenido Alumno/a");
-                        break;
-                    case "Profesor":
-                        // TODO
-                        Console.WriteLine("Bienvenido Profesor/a");
-                        break;
-                    case "Administrativo":
-                        Administrativo.ShowMenuAdministrativo();
-                        break;
-                }
-            }
-            else
-            {
-                Console.WriteLine("Nombre de Usuario o Contrseña incorrectos");
-            }
-        }         
+            //if (usuarioIngresad != null)
+            //{
+            //    switch (usuarioIngresad.getTipo())
+            //    {
+            //        case "Alumno":
+            //            // TODO
+            //            Console.WriteLine("Bienvenido Alumno/a");
+            //            break;
+            //        case "Profesor":
+            //            // TODO
+            //            Console.WriteLine("Bienvenido Profesor/a");
+            //            break;
+            //        case "Administrativo":
+            //            Administrativo.ShowMenuAdministrativo();
+            //            break;
+            //    }
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Nombre de Usuario o Contrseña incorrectos");
+            //}
+        }
     }
 }

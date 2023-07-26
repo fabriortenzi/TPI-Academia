@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Escritorio.CRUD.Usuario
+namespace Escritorio
 {
-    public partial class modificarUsuario : Form
+    public partial class formMenuPrincipal : Form
     {
-        public modificarUsuario()
+        public formMenuPrincipal()
         {
             InitializeComponent();
+        }
+
+        private void formMenuPrincipal_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

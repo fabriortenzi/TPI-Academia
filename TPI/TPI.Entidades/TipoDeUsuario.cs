@@ -6,21 +6,18 @@ using System.Threading.Tasks;
 
 namespace TPI.Entidades
 {
-    public class Modulo
+    public class TipoDeUsuario
     {
         private static int UltimoId = 1;
 
         public int Id { get; private set; }
 
-        public string Descripcion { get; set; }
+        public string Descripcion { get; private set; }
 
-        public string Ejecuta { get; set; }
-
-        public Modulo(string descripcion, string ejecuta)
+        public TipoDeUsuario(string descripcion)
         {
             Id = UltimoId++;
             Descripcion = descripcion;
-            Ejecuta = ejecuta;
         }
     }
 }
