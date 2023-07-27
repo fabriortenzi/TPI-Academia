@@ -31,5 +31,10 @@ namespace TPI.Datos
             AgregarEspecialidades(especialidad3);
 
         }
+
+        public static List<Entidades.Especialidad> GetEspecialidades()
+        {
+            return especialidades;
+        }
     }
 }

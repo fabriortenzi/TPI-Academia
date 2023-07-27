@@ -19,6 +19,15 @@ namespace Escritorio
 
         private void formMenuInscripcion_Load(object sender, EventArgs e)
         {
+            TPI.Datos.Especialidades.InicializarListaEspecialidades();
+            foreach (var especialidad in TPI.Datos.Especialidades.GetEspecialidades())
+            {
+                listBoxEspecialidades.Items.Add(especialidad.descEspec);
+            }
+        }
+
+        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }
