@@ -44,5 +44,18 @@ namespace Escritorio
                 MessageBox.Show("Solo los usuarios de tipo  alumnos pueden inscribirse");
             }
         }
+
+        private void nuevaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formNuevaPersona formNuevaPersona = new();
+            formNuevaPersona.Show();
+        }
+
+        private void editarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formEditarPersona formEditarPersona = new();
+            formEditarPersona.Show();
+        }
     }
 }
+

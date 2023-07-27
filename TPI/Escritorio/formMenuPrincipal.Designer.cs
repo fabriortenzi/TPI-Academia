@@ -93,6 +93,59 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
+            menuStrip1 = new System.Windows.Forms.MenuStrip();
+            personaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            nuevaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            menuStrip1.SuspendLayout();
+            SuspendLayout();
+            // 
+            // menuStrip1
+            // 
+            menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { personaToolStripMenuItem });
+            menuStrip1.Location = new System.Drawing.Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new System.Drawing.Size(800, 33);
+            menuStrip1.TabIndex = 1;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // personaToolStripMenuItem
+            // 
+            personaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { nuevaToolStripMenuItem, editarToolStripMenuItem });
+            personaToolStripMenuItem.Name = "personaToolStripMenuItem";
+            personaToolStripMenuItem.Size = new System.Drawing.Size(90, 29);
+            personaToolStripMenuItem.Text = "Persona";
+            // 
+            // nuevaToolStripMenuItem
+            // 
+            nuevaToolStripMenuItem.Name = "nuevaToolStripMenuItem";
+            nuevaToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            nuevaToolStripMenuItem.Text = "Nueva";
+            nuevaToolStripMenuItem.Click += nuevaToolStripMenuItem_Click;
+            // 
+            // editarToolStripMenuItem
+            // 
+            editarToolStripMenuItem.Name = "editarToolStripMenuItem";
+            editarToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            editarToolStripMenuItem.Text = "Editar";
+            editarToolStripMenuItem.Click += editarToolStripMenuItem_Click;
+            // 
+            // formMenuPrincipal
+            // 
+            AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(800, 450);
+            Controls.Add(menuStrip1);
+            IsMdiContainer = true;
+            MainMenuStrip = menuStrip1;
+            Name = "formMenuPrincipal";
+            Text = "Menu Principal";
+            FormClosed += formMenuPrincipal_FormClosed;
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
