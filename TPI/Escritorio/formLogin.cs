@@ -31,7 +31,8 @@ namespace Escritorio
             if (usuario != null)
             {
                 this.DialogResult = DialogResult.OK;
-                formMenuPrincipal menuPrincipal = new();
+                TPI.Entidades.TipoDeUsuario tipoUsuario = usuario.TipoDeUsuario;
+                formMenuPrincipal menuPrincipal = new formMenuPrincipal(tipoUsuario);
                 menuPrincipal.Show();
                 this.Hide();
             }
