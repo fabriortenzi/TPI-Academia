@@ -23,7 +23,6 @@ namespace Escritorio
         private void formMenuPrincipal_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
-<<<<<<< Updated upstream
         }
 
         private void inscripcionToolStripMenuItem_Click(object sender, EventArgs e)
@@ -45,8 +44,6 @@ namespace Escritorio
                 MessageBox.Show("Solo los usuarios de tipo  alumnos pueden inscribirse");
             }
         }
-=======
-        }
 
         private void nuevaToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -59,6 +56,6 @@ namespace Escritorio
             formEditarPersona formEditarPersona = new();
             formEditarPersona.Show();
         }
->>>>>>> Stashed changes
     }
 }
+

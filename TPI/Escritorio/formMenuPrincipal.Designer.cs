@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-<<<<<<< Updated upstream
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.personaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -94,7 +93,6 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
-=======
             menuStrip1 = new System.Windows.Forms.MenuStrip();
             personaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             nuevaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -148,7 +146,6 @@
             menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
->>>>>>> Stashed changes
         }
 
         #endregion
