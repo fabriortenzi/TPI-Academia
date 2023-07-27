@@ -22,5 +22,10 @@ namespace TPI.Negocio
         {
             Datos.Persona.AgregarPersona(persona);
         }
+
+        public static void EliminarPersona(Entidades.Persona persona)
+        {
+            Datos.Persona.EliminarPersona(persona);
+        }
     }
 }

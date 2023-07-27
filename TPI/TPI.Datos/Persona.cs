@@ -15,6 +15,12 @@ namespace TPI.Datos
         {
             personas.Add(persona);
         }
+
+        public static void EliminarPersona(Entidades.Persona persona)
+        {
+            personas.Remove(persona);
+        }
+
         public static void InicializarListaPersonas()
         {
             Entidades.Persona persona1 = new(43127777, "Fabrizio", "Ortenzi", "Zeballos 1700", new DateTime(2001, 1, 10), "341500800");
