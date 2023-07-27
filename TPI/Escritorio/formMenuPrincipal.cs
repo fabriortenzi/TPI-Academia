@@ -27,11 +27,12 @@ namespace Escritorio
 
         private void inscripcionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            TPI.Datos.Usuario.InicializarListaUsarios();
+            TPI.Datos.Persona.InicializarListaPersonas();
             TPI.Datos.TipoDeUsuario.InicializarTiposDeUsuario();
 
-
-            if (tipoUsuario == TPI.Datos.TipoDeUsuario.GetTipoAlumno())
+            // if (tipoUsuario.Descripcion == "alumno") me lleva a error pq considera que tipoUsuario es Null
+            if (tipoUsuario == TPI.Datos.TipoDeUsuario.GetTipoAlumno()) // asi me lleva siempre al else
             {
                 formMenuInscripcion menuInscripcion = new();
                 menuInscripcion.Show();
