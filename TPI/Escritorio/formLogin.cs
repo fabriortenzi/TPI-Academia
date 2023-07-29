@@ -19,9 +19,10 @@ namespace Escritorio
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            // Inicializar Lista de Usuarios y Personas en la Capa Datos
+            // Inicializar Lista de Usuarios, Personas y  Tipos en la Capa Datos
             TPI.Datos.Usuario.InicializarListaUsarios();
             TPI.Datos.Persona.InicializarListaPersonas();
+            TPI.Datos.TipoDeUsuario.InicializarTiposDeUsuario();
 
             int legajo = Convert.ToInt32(this.txtUsuario.Text);
             string contraseña = this.txtPass.Text;
