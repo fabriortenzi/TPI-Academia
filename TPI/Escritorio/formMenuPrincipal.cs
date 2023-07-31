@@ -49,6 +49,12 @@ namespace Escritorio
             formNuevoUsuario formNuevoUsuario = new();
             formNuevoUsuario.Show();
         }
+
+        private void inscripcionACursadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formInscripcionCursado formInscripcionCursado = new();
+            formInscripcionCursado.Show();
+        }
     }
 }
 
