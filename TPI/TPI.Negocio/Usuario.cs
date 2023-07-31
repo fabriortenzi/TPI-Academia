@@ -11,9 +11,12 @@ namespace TPI.Negocio
 {
     public class Usuario
     {
-        public static void CrearUsuario(string contraseña, Entidades.Persona persona, Entidades.TipoDeUsuario tipoDeUsuario)
+        public static Entidades.Usuario CrearUsuario(string contraseña, Entidades.Persona persona, Entidades.TipoDeUsuario tipoDeUsuario)
+            => new(contraseña, persona, tipoDeUsuario);
+
+        public static void AgregarUsuario(Entidades.Usuario usuario)
         {
-            Entidades.Usuario usuario = new(contraseña, persona, tipoDeUsuario);
+            Datos.Usuario.AgregarUsuario(usuario);
         }
         
         public static Entidades.Usuario GetUsuarioPorLegajoYContraseña(int legajo, string contraseña) => 
