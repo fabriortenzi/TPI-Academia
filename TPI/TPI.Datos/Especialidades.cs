@@ -10,10 +10,11 @@ namespace TPI.Datos
 {
     public class Especialidades
     {
-        private static List <Entidades.Especialidad> especialidades = new List<Entidades.Especialidad>();
+        private static List<Entidades.Especialidad> especialidades = new List<Entidades.Especialidad>();
 
-        public static void AgregarEspecialidades(Entidades.Especialidad especialidad)
+        public static void AgregarEspecialidades(Entidades.Especialidad especialidad, List<TPI.Entidades.Planes> planes)
         {
+            especialidad.Planes = planes;
             especialidades.Add(especialidad);
         }
 
@@ -25,10 +26,25 @@ namespace TPI.Datos
 
             Entidades.Especialidad especialidad3 = new(3, "Ingenieria Civil");
 
+            List<Entidades.Planes> planesExistentes = TPI.Datos.Planes.GetPlanes();
 
-            AgregarEspecialidades(especialidad1);
-            AgregarEspecialidades(especialidad2);
-            AgregarEspecialidades(especialidad3);
+            foreach (var plan in planesExistentes)
+            {
+                switch (plan.anio)
+                {
+                    case 2008:
+                        especialidad1.Planes.Add(plan);
+                        break;
+                    case 2023:
+                        especialidad2.Planes.Add(plan);
+                        break;
+
+                }
+            }
+
+            AgregarEspecialidades(especialidad1, especialidad1.Planes);
+            AgregarEspecialidades(especialidad2, especialidad2.Planes);
+            AgregarEspecialidades(especialidad3, especialidad3.Planes);
 
         }
 
