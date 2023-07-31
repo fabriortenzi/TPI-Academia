@@ -30,19 +30,6 @@ namespace Escritorio
             TPI.Datos.Usuario.InicializarListaUsarios();
             TPI.Datos.Persona.InicializarListaPersonas();
             TPI.Datos.TipoDeUsuario.InicializarTiposDeUsuario();
-
-            // if (tipoUsuario.Descripcion == "alumno") me lleva a error pq considera que tipoUsuario es Null
-            if (tipoUsuario == TPI.Datos.TipoDeUsuario.GetTipoAlumno()) // asi me lleva siempre al else
-            {
-                formMenuInscripcion menuInscripcion = new();
-                menuInscripcion.Show();
-                this.Hide();
-            }
-
-            else
-            {
-                MessageBox.Show("Solo los usuarios de tipo  alumnos pueden inscribirse");
-            }
         }
 
         private void nuevaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -55,6 +42,12 @@ namespace Escritorio
         {
             formEditarPersona formEditarPersona = new();
             formEditarPersona.Show();
+        }
+
+        private void nuevoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formNuevoUsuario formNuevoUsuario = new();
+            formNuevoUsuario.Show();
         }
     }
 }
