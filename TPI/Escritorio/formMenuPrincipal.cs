@@ -61,6 +61,12 @@ namespace Escritorio
             formAgregoPlan formAgregoPlan = new();
             formAgregoPlan.Show();
         }
+
+        private void nuevaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            formCrearMateria formCrearMateria = new();
+            formCrearMateria.Show();
+        }
     }
 }
 
