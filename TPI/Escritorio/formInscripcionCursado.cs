@@ -20,7 +20,7 @@ namespace Escritorio
         private void formInscripcionCursado_Load(object sender, EventArgs e)
         {
             TPI.Datos.Especialidades.InicializarListaEspecialidades();
-            TPI.Datos.Planes.InicializarListaPlanes();
+            TPI.Datos.Plan.InicializarListaPlanes();
 
             foreach (var especialidad in TPI.Datos.Especialidades.GetEspecialidades())
             {

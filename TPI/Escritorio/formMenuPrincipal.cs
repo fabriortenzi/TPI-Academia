@@ -55,6 +55,12 @@ namespace Escritorio
             formInscripcionCursado formInscripcionCursado = new();
             formInscripcionCursado.Show();
         }
+
+        private void nuevoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            formAgregoPlan formAgregoPlan = new();
+            formAgregoPlan.Show();
+        }
     }
 }
 
