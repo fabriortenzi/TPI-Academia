@@ -12,7 +12,7 @@ namespace TPI.Entidades
 
         public string descEspec { get; private set; }
 
-        public List<Planes> Planes { get; set; }
+        public List<Plan> Planes { get; set; }
 
 
         public Especialidad(int id_espec, string desc_espec)
@@ -20,7 +20,7 @@ namespace TPI.Entidades
 
             idEspec = id_espec;
             descEspec = desc_espec;
-            Planes = new List<Planes>();
+            Planes = new List<Plan>();
 
         }
 

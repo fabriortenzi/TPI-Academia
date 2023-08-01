@@ -12,7 +12,7 @@ namespace TPI.Datos
     {
         private static List<Entidades.Especialidad> especialidades = new List<Entidades.Especialidad>();
 
-        public static void AgregarEspecialidades(Entidades.Especialidad especialidad, List<TPI.Entidades.Planes> planes)
+        public static void AgregarEspecialidades(Entidades.Especialidad especialidad, List<TPI.Entidades.Plan> planes)
         {
             especialidad.Planes = planes;
             especialidades.Add(especialidad);
@@ -26,7 +26,7 @@ namespace TPI.Datos
 
             Entidades.Especialidad especialidad3 = new(3, "Ingenieria Civil");
 
-            List<Entidades.Planes> planesExistentes = TPI.Datos.Planes.GetPlanes();
+            List<Entidades.Plan> planesExistentes = TPI.Datos.Plan.GetPlanes();
 
             foreach (var plan in planesExistentes)
             {

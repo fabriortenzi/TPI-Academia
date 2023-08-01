@@ -6,21 +6,21 @@ using System.Threading.Tasks;
 
 namespace TPI.Datos
 {
-    public class Planes
+    public class Plan
     {
 
-        private static List<Entidades.Planes> planes = new List<Entidades.Planes>();
+        private static List<Entidades.Plan> planes = new List<Entidades.Plan>();
 
-        public static void AgregarPlanes(Entidades.Planes plan)
+        public static void AgregarPlanes(Entidades.Plan plan)
         {
             planes.Add(plan);
         }
 
         public static void InicializarListaPlanes()
         {
-            Entidades.Planes plan1 = new(2008, "Plan 2008");
+            Entidades.Plan plan1 = new(2008, "Plan 2008");
 
-            Entidades.Planes plan2 = new(2023, "Plan 2023");
+            Entidades.Plan plan2 = new(2023, "Plan 2023");
 
 
             AgregarPlanes(plan1);
@@ -28,12 +28,12 @@ namespace TPI.Datos
 
 
         }
-        public static List<Entidades.Planes> GetPlanes()
+        public static List<Entidades.Plan> GetPlanes()
         {
             return planes;
         }
 
-        public static TPI.Entidades.Planes ObtenerPlanMasActual(List<Entidades.Planes> planes)
+        public static TPI.Entidades.Plan ObtenerPlanMasActual(List<Entidades.Plan> planes)
         {
 
             if (planes.Count == 0)
