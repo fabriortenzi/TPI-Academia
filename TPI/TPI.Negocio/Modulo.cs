@@ -18,5 +18,17 @@ namespace TPI.Negocio
 
         public static Entidades.Modulo GetModuloPersona()
             => Datos.Modulo.GetModuloPersona();
+
+        public static Entidades.Modulo GetModuloUsuario()
+            => Datos.Modulo.GetModuloUsuario();
+
+        public static Entidades.Modulo GetModuloInscripcionCursado()
+            => Datos.Modulo.GetModuloInscripcionCursado();
+
+        public static Entidades.Modulo GetModuloCurso()
+            => Datos.Modulo.GetModuloCurso();
+
+        public static Entidades.Modulo GetModuloPlan()
+            => Datos.Modulo.GetModuloPlan();
     }
 }

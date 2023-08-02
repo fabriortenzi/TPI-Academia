@@ -34,9 +34,10 @@
             editarMenuItemPersona = new System.Windows.Forms.ToolStripMenuItem();
             consultarMenuItemPersona = new System.Windows.Forms.ToolStripMenuItem();
             usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            nuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            editarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            consultarDatosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            nuevoMenuItemUsuario = new System.Windows.Forms.ToolStripMenuItem();
+            editarMenuItemUsuario = new System.Windows.Forms.ToolStripMenuItem();
+            consultarDatosMenuItemUsuario = new System.Windows.Forms.ToolStripMenuItem();
+            cambiarContraseñaMenuItemUsuario = new System.Windows.Forms.ToolStripMenuItem();
             inscripcionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             inscripcionACursadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             eliminarInscripcionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -89,6 +90,7 @@
             editarMenuItemPersona.Name = "editarMenuItemPersona";
             editarMenuItemPersona.Size = new System.Drawing.Size(270, 34);
             editarMenuItemPersona.Text = "Editar";
+            editarMenuItemPersona.Click += editarToolStripMenuItem_Click;
             // 
             // consultarMenuItemPersona
             // 
@@ -98,28 +100,35 @@
             // 
             // usuarioToolStripMenuItem
             // 
-            usuarioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { nuevoToolStripMenuItem, editarToolStripMenuItem1, consultarDatosToolStripMenuItem1 });
+            usuarioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { nuevoMenuItemUsuario, editarMenuItemUsuario, consultarDatosMenuItemUsuario, cambiarContraseñaMenuItemUsuario });
             usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
             usuarioToolStripMenuItem.Size = new System.Drawing.Size(88, 29);
             usuarioToolStripMenuItem.Text = "Usuario";
             // 
-            // nuevoToolStripMenuItem
+            // nuevoMenuItemUsuario
             // 
-            nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
-            nuevoToolStripMenuItem.Size = new System.Drawing.Size(241, 34);
-            nuevoToolStripMenuItem.Text = "Nuevo";
+            nuevoMenuItemUsuario.Name = "nuevoMenuItemUsuario";
+            nuevoMenuItemUsuario.Size = new System.Drawing.Size(274, 34);
+            nuevoMenuItemUsuario.Text = "Nuevo";
+            nuevoMenuItemUsuario.Click += nuevoToolStripMenuItem_Click;
             // 
-            // editarToolStripMenuItem1
+            // editarMenuItemUsuario
             // 
-            editarToolStripMenuItem1.Name = "editarToolStripMenuItem1";
-            editarToolStripMenuItem1.Size = new System.Drawing.Size(241, 34);
-            editarToolStripMenuItem1.Text = "Editar";
+            editarMenuItemUsuario.Name = "editarMenuItemUsuario";
+            editarMenuItemUsuario.Size = new System.Drawing.Size(274, 34);
+            editarMenuItemUsuario.Text = "Editar";
             // 
-            // consultarDatosToolStripMenuItem1
+            // consultarDatosMenuItemUsuario
             // 
-            consultarDatosToolStripMenuItem1.Name = "consultarDatosToolStripMenuItem1";
-            consultarDatosToolStripMenuItem1.Size = new System.Drawing.Size(241, 34);
-            consultarDatosToolStripMenuItem1.Text = "Consultar Datos";
+            consultarDatosMenuItemUsuario.Name = "consultarDatosMenuItemUsuario";
+            consultarDatosMenuItemUsuario.Size = new System.Drawing.Size(274, 34);
+            consultarDatosMenuItemUsuario.Text = "Consultar Datos";
+            // 
+            // cambiarContraseñaMenuItemUsuario
+            // 
+            cambiarContraseñaMenuItemUsuario.Name = "cambiarContraseñaMenuItemUsuario";
+            cambiarContraseñaMenuItemUsuario.Size = new System.Drawing.Size(274, 34);
+            cambiarContraseñaMenuItemUsuario.Text = "Cambiar Contraseña";
             // 
             // inscripcionToolStripMenuItem
             // 
@@ -257,7 +266,7 @@
             Name = "formMenuPrincipal";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "Menu Principal";
-            FormClosed += formMenuPrincipal_FormClosed_1;
+            FormClosed += formMenuPrincipal_FormClosed;
             Load += formMenuPrincipal_Load;
             mstBarraTareas.ResumeLayout(false);
             mstBarraTareas.PerformLayout();
@@ -273,8 +282,8 @@
         private System.Windows.Forms.ToolStripMenuItem editarMenuItemPersona;
         private System.Windows.Forms.ToolStripMenuItem inscripcionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usuarioToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem nuevoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem nuevoMenuItemUsuario;
+        private System.Windows.Forms.ToolStripMenuItem editarMenuItemUsuario;
         private System.Windows.Forms.ToolStripMenuItem planDeEstudioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevoToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem cursoToolStripMenuItem;
@@ -294,6 +303,7 @@
         private System.Windows.Forms.ToolStripMenuItem agregarCursoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminarDeUnCursoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultarMenuItemPersona;
-        private System.Windows.Forms.ToolStripMenuItem consultarDatosToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem consultarDatosMenuItemUsuario;
+        private System.Windows.Forms.ToolStripMenuItem cambiarContraseñaMenuItemUsuario;
     }
 }

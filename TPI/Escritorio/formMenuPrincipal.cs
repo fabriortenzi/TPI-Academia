@@ -76,12 +76,24 @@ namespace Escritorio
             TPI.Datos.Modulo.InicializarListaModulos();
             TPI.Datos.ModuloUsuario.InicializarListaModulosUsuarios();
 
+
+            // Opcion del Menu: Persona
             TPI.Entidades.Modulo moduloPersona = TPI.Negocio.Modulo.GetModuloPersona();
             TPI.Entidades.ModuloUsuario moduloUsuarioPersona = TPI.Negocio.ModuloUsuario.GetModuloUsuario(moduloPersona, Usuario.TipoDeUsuario);
 
             nuevaMenuItemPersona.Visible = moduloUsuarioPersona.Alta;
             editarMenuItemPersona.Visible = moduloUsuarioPersona.Modificacion && moduloUsuarioPersona.Baja;
             consultarMenuItemPersona.Visible = moduloUsuarioPersona.Consulta;
+
+
+            // Opcion del Menu: Usuario
+            TPI.Entidades.Modulo moduloUsuario = TPI.Negocio.Modulo.GetModuloUsuario();
+            TPI.Entidades.ModuloUsuario moduloUsuarioUsuario = TPI.Negocio.ModuloUsuario.GetModuloUsuario(moduloUsuario, Usuario.TipoDeUsuario);
+
+            nuevoMenuItemUsuario.Visible = moduloUsuarioUsuario.Alta;
+            editarMenuItemUsuario.Visible = moduloUsuarioUsuario.Modificacion && moduloUsuarioUsuario.Baja;
+            consultarDatosMenuItemUsuario.Visible = moduloUsuarioUsuario.Consulta;
+            cambiarContraseñaMenuItemUsuario.Visible = moduloUsuarioUsuario.Consulta;
         }
 
         private void formMenuPrincipal_FormClosed_1(object sender, FormClosedEventArgs e)
