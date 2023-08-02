@@ -13,21 +13,23 @@ namespace Escritorio
 {
     public partial class formMenuPrincipal : Form
     {
-        private TPI.Entidades.TipoDeUsuario tipoUsuario;
-        public formMenuPrincipal(TPI.Entidades.TipoDeUsuario tipoUsuario)
+        private TPI.Entidades.Usuario Usuario;
+
+        public formMenuPrincipal(TPI.Entidades.Usuario usuario)
         {
             InitializeComponent();
-            this.tipoUsuario = tipoUsuario;
+            Usuario = usuario;
         }
 
         private void formMenuPrincipal_FormClosed(object sender, FormClosedEventArgs e)
         {
+            this.Dispose();
             Application.Exit();
         }
 
         private void inscripcionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TPI.Datos.Usuario.InicializarListaUsarios();
+            TPI.Datos.Usuario.InicializarListaUsuarios();
             TPI.Datos.Persona.InicializarListaPersonas();
             TPI.Datos.TipoDeUsuario.InicializarTiposDeUsuario();
         }
@@ -66,6 +68,31 @@ namespace Escritorio
         {
             formCrearMateria formCrearMateria = new();
             formCrearMateria.Show();
+        }
+
+        private void formMenuPrincipal_Load(object sender, EventArgs e)
+        {
+            // Inicializar Listas en la Capa Datos
+            TPI.Datos.Modulo.InicializarListaModulos();
+            TPI.Datos.ModuloUsuario.InicializarListaModulosUsuarios();
+
+            TPI.Entidades.Modulo moduloPersona = TPI.Negocio.Modulo.GetModuloPersona();
+            TPI.Entidades.ModuloUsuario moduloUsuarioPersona = TPI.Negocio.ModuloUsuario.GetModuloUsuario(moduloPersona, Usuario.TipoDeUsuario);
+
+            nuevaMenuItemPersona.Visible = moduloUsuarioPersona.Alta;
+            editarMenuItemPersona.Visible = moduloUsuarioPersona.Modificacion && moduloUsuarioPersona.Baja;
+            consultarMenuItemPersona.Visible = moduloUsuarioPersona.Consulta;
+        }
+
+        private void formMenuPrincipal_FormClosed_1(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void nuevaMenuItemPersona_Click(object sender, EventArgs e)
+        {
+            formNuevoUsuario formNuevoUsuario = new();
+            formNuevoUsuario.Show();
         }
     }
 }

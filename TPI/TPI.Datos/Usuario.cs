@@ -17,7 +17,7 @@ namespace TPI.Datos
             usuarios.Add(usuario);
         }
 
-        public static void InicializarListaUsarios()
+        public static void InicializarListaUsuarios()
         {
             Entidades.TipoDeUsuario tipoAlumno = Datos.TipoDeUsuario.GetTipoAlumno();
             Entidades.TipoDeUsuario tipoProfesor = Datos.TipoDeUsuario.GetTipoProfesor();
@@ -27,9 +27,9 @@ namespace TPI.Datos
             var persona2 = Datos.Persona.GetPersonaPorDni(43127778);
             var persona3 = Datos.Persona.GetPersonaPorDni(43127779);
 
-            Entidades.Usuario alumno1 = new("clave", persona1, tipoAlumno);
-            Entidades.Usuario profesor1 = new("clave", persona2, tipoProfesor);
-            Entidades.Usuario administrativo1 = new("clave", persona3, tipoAdmin);
+            Entidades.Usuario alumno1 = new("c", persona1, tipoAlumno);
+            Entidades.Usuario profesor1 = new("c", persona2, tipoProfesor);
+            Entidades.Usuario administrativo1 = new("c", persona3, tipoAdmin);
 
             AgregarUsuario(alumno1);
             AgregarUsuario(profesor1);

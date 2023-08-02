@@ -20,9 +20,9 @@ namespace Escritorio
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             // Inicializar Lista de Usuarios, Personas y  Tipos en la Capa Datos
-            TPI.Datos.Usuario.InicializarListaUsarios();
-            TPI.Datos.Persona.InicializarListaPersonas();
             TPI.Datos.TipoDeUsuario.InicializarTiposDeUsuario();
+            TPI.Datos.Persona.InicializarListaPersonas();
+            TPI.Datos.Usuario.InicializarListaUsuarios();
 
             int legajo = Convert.ToInt32(this.txtUsuario.Text);
             string contraseña = this.txtPass.Text;
@@ -32,8 +32,7 @@ namespace Escritorio
             if (usuario != null)
             {
                 this.DialogResult = DialogResult.OK;
-                TPI.Entidades.TipoDeUsuario tipoUsuario = usuario.TipoDeUsuario;
-                formMenuPrincipal menuPrincipal = new formMenuPrincipal(tipoUsuario);
+                formMenuPrincipal menuPrincipal = new formMenuPrincipal(usuario);
                 menuPrincipal.Show();
                 this.Hide();
             }
