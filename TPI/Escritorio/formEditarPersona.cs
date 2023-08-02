@@ -31,12 +31,17 @@ namespace Escritorio
                     string apellidoNombre = persona.Apellido + " " + persona.Nombre;
 
                     lblTitNomApe.Visible = true;
-                    lblApeNomPersona.Text = apellidoNombre;
                     lblTitNomApe.Visible = true;
+                    lblApeNomPersona.Visible = true;
+                    lblApeNomPersona.Text = apellidoNombre;
                     btnEliminar.Enabled = true;
                     btnEditarDatos.Enabled = true;
 
                     personaIngresada = persona;
+                }
+                else
+                {
+                    MessageBox.Show("No hay una persona con ese DNI registrada");
                 }
             }
             catch

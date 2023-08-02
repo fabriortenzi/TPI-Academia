@@ -128,6 +128,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "formEditarPersona";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "Editar Persona";
             ResumeLayout(false);
             PerformLayout();
