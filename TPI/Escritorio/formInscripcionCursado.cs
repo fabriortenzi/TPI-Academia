@@ -41,7 +41,7 @@ namespace Escritorio
 
                 MessageBox.Show($"Has seleccionado la especialidad: {especialidadSeleccionada}");
 
-                // asigno la especialidad al usuario logueado
+                // asigno la especialidad al usuario del cual se ingreso el dni en el TXTALUMNO.
 
                 // TPI.Datos.Usuario.AsignaEspecialidad(especialidadSeleccionada); 
             }
@@ -49,6 +49,41 @@ namespace Escritorio
             {
                 MessageBox.Show("Por favor, selecciona una especialidad.");
             }
+        }
+
+        private void txtAlumno_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int dni = Convert.ToInt32(this.txtAlumno.Text);
+                TPI.Entidades.Persona persona = TPI.Negocio.Persona.GetPersonaPorDni(dni);
+
+                if(persona != null)
+                {
+                    lblAlumno.Text = persona.Apellido + persona.Nombre;
+                }
+                else
+                {
+                    MessageBox.Show("No existe una persona registrada con ese DNI");
+                }
+                
+            }
+            catch { MessageBox.Show("No existe una persona registrada con ese DNI"); }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblAlumno_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
