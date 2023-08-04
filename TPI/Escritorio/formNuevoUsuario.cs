@@ -25,80 +25,77 @@ namespace Escritorio
         }
 
         private void btnCrear_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string descripcionTipo = this.cbxTiposDeUsuario.GetItemText(this.cbxTiposDeUsuario.SelectedItem);
-                string contraseña = txtContraseña.Text;
-                string confContraseña = txtConfContraseña.Text;
+        {            
+            string descripcionTipo = this.cbxTiposDeUsuario.GetItemText(this.cbxTiposDeUsuario.SelectedItem);
+            string contraseña = txtContraseña.Text;
+            string confContraseña = txtConfContraseña.Text;
 
-                var tipoDeUsuario = TPI.Negocio.TipoDeUsuario.GetTipoUsuarioPorDecsripcion(descripcionTipo);
+            var tipoDeUsuario = TPI.Negocio.TipoDeUsuario.GetTipoUsuarioPorDecsripcion(descripcionTipo);
 
-                if (descripcionTipo == "" || contraseña == "" || confContraseña == "")
-                {
-                    MessageBox.Show("Algunos campos son incorrectos o quedaron en blanco");
-                }
-                else if (contraseña == confContraseña)
-                {
-                    var usuario = TPI.Negocio.Usuario.CrearUsuario(contraseña, persona, tipoDeUsuario);
-                    TPI.Negocio.Usuario.AgregarUsuario(usuario);
-                    MessageBox.Show("Usuario creado con exito!");
-                    this.Dispose();
-                }
-                else
-                {
-                    MessageBox.Show("Las contraseñas no coinciden");
-                }
-            }
-            catch
+            if (descripcionTipo == "" || contraseña == "" || confContraseña == "")
             {
-                MessageBox.Show("Algunos campos son incorrectos o quedaron en blanco");
+                MessageBox.Show("Algunos campos quedaron en blanco");
             }
+            else if (contraseña == confContraseña)
+            {
+                var usuario = TPI.Negocio.Usuario.CrearUsuario(contraseña, persona, tipoDeUsuario);
+                TPI.Negocio.Usuario.AgregarUsuario(usuario);
+                MessageBox.Show("Usuario creado con exito!");
+                this.Dispose();
+            }
+            else
+            {
+                MessageBox.Show("Las contraseñas no coinciden");
+            }            
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            int dni = 0;
+            
             try
             {
-                int dni = Convert.ToInt32(txtDni.Text);
-                var personaIngresada = TPI.Negocio.Persona.GetPersonaPorDni(dni);
-
-                if (personaIngresada != null)
-                {
-                    lblTitApeNom.Enabled = true;
-                    lblApellidoNombre.Text = personaIngresada.Apellido + ", " + personaIngresada.Nombre;
-                    lblApellidoNombre.Visible = true;
-                    lblApellidoNombre.Enabled = true;
-                    lblTipUsu.Enabled = true;
-                    cbxTiposDeUsuario.Enabled = true;
-                    lblCont.Enabled = true;
-                    txtContraseña.Enabled = true;
-                    lblConfCont.Enabled = true;
-                    txtConfContraseña.Enabled = true;
-                    btnCrear.Enabled = true;
-
-                    persona = personaIngresada;
-                }
-                else
-                {
-                    lblTitApeNom.Enabled = false;
-                    lblApellidoNombre.Text = "";
-                    lblApellidoNombre.Visible = false;
-                    lblApellidoNombre.Enabled = false;
-                    lblTipUsu.Enabled = false;
-                    cbxTiposDeUsuario.Enabled = false;
-                    lblCont.Enabled = false;
-                    txtContraseña.Enabled = false;
-                    lblConfCont.Enabled = false;
-                    txtConfContraseña.Enabled = false;
-                    btnCrear.Enabled = false;
-
-                    MessageBox.Show("No se encontro la persona, intente nuevamente");
-                }
+                dni = Convert.ToInt32(txtDni.Text);
             }
             catch
             {
-                MessageBox.Show("Ingrese un DNI");
+                MessageBox.Show("El DNI no puede contener letras");
+                return;
+            }
+
+            var personaIngresada = TPI.Negocio.Persona.GetPersonaPorDni(dni);
+
+            if (personaIngresada != null)
+            {
+                lblTitApeNom.Enabled = true;
+                lblApellidoNombre.Text = personaIngresada.Apellido + ", " + personaIngresada.Nombre;
+                lblApellidoNombre.Visible = true;
+                lblApellidoNombre.Enabled = true;
+                lblTipUsu.Enabled = true;
+                cbxTiposDeUsuario.Enabled = true;
+                lblCont.Enabled = true;
+                txtContraseña.Enabled = true;
+                lblConfCont.Enabled = true;
+                txtConfContraseña.Enabled = true;
+                btnCrear.Enabled = true;
+
+                persona = personaIngresada;
+            }
+            else
+            {
+                lblTitApeNom.Enabled = false;
+                lblApellidoNombre.Text = "";
+                lblApellidoNombre.Visible = false;
+                lblApellidoNombre.Enabled = false;
+                lblTipUsu.Enabled = false;
+                cbxTiposDeUsuario.Enabled = false;
+                lblCont.Enabled = false;
+                txtContraseña.Enabled = false;
+                lblConfCont.Enabled = false;
+                txtConfContraseña.Enabled = false;
+                btnCrear.Enabled = false;
+
+                MessageBox.Show("No se encontro la persona, intente nuevamente");
             }
         }
     }

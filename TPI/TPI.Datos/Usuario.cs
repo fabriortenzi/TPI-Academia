@@ -40,5 +40,11 @@ namespace TPI.Datos
             usuarios.FirstOrDefault(x => x.Legajo == legajo && x.Contraseña == contraseña);
 
         public static List<Entidades.Usuario> GetAllUsuarios() => usuarios;
+
+        public static void CambiarContraseña(Entidades.Usuario usuario, string nuevaCont)
+        {
+            var usuarioCambiar = usuarios.FirstOrDefault(x => x == usuario);
+            usuarioCambiar.Contraseña = nuevaCont;
+        }
     }
 }
