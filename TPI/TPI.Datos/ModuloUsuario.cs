@@ -19,17 +19,17 @@ namespace TPI.Datos
             // Modulos para la opcion Persona
             Entidades.Modulo moduloPersona = Modulo.GetModuloPersona();
 
-            Entidades.ModuloUsuario moduloPersonaAlumno = new(moduloPersona, alumno, false, false, false, true);
-            Entidades.ModuloUsuario moduloPersonaProfesor = new(moduloPersona, profesor, false, false, false, true);
-            Entidades.ModuloUsuario moduloPersonaAdmin = new(moduloPersona, admin, true, true, true, true);
+            Entidades.ModuloUsuario moduloPersonaAlumno = new(moduloPersona, alumno, false, false, true, true);
+            Entidades.ModuloUsuario moduloPersonaProfesor = new(moduloPersona, profesor, false, false, true, true);
+            Entidades.ModuloUsuario moduloPersonaAdmin = new(moduloPersona, admin, true, false, true, true);
 
 
             // Modulos para la opcion Usuario
             Entidades.Modulo moduloUsuario = Modulo.GetModuloUsuario();
 
-            Entidades.ModuloUsuario moduloUsuarioAlumno = new(moduloUsuario, alumno, false, false, false, true);
-            Entidades.ModuloUsuario moduloUsuarioProfesor = new(moduloUsuario, profesor, false, false, false, true);
-            Entidades.ModuloUsuario moduloUsuarioAdmin = new(moduloUsuario, admin, true, true, true, true);
+            Entidades.ModuloUsuario moduloUsuarioAlumno = new(moduloUsuario, alumno, false, false, true, true);
+            Entidades.ModuloUsuario moduloUsuarioProfesor = new(moduloUsuario, profesor, false, false, true, true);
+            Entidades.ModuloUsuario moduloUsuarioAdmin = new(moduloUsuario, admin, true, false, true, true);
 
             
             ModulosUsuarios.Add(moduloPersonaAlumno);

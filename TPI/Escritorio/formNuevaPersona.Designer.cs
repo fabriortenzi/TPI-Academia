@@ -198,7 +198,7 @@
             btnCrear.UseVisualStyleBackColor = true;
             btnCrear.Click += btnCrear_Click;
             // 
-            // nuevaPersona
+            // formNuevaPersona
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -221,7 +221,8 @@
             Controls.Add(txtNombre);
             Controls.Add(txtDni);
             Controls.Add(label1);
-            Name = "nuevaPersona";
+            Name = "formNuevaPersona";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "Nueva Persona";
             ResumeLayout(false);
             PerformLayout();

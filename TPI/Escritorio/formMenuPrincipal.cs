@@ -42,7 +42,7 @@ namespace Escritorio
 
         private void editarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            formEditarPersona formEditarPersona = new();
+            formEditarPersona formEditarPersona = new(Usuario.Persona);
             formEditarPersona.Show();
         }
 
@@ -82,8 +82,7 @@ namespace Escritorio
             TPI.Entidades.ModuloUsuario moduloUsuarioPersona = TPI.Negocio.ModuloUsuario.GetModuloUsuario(moduloPersona, Usuario.TipoDeUsuario);
 
             nuevaMenuItemPersona.Visible = moduloUsuarioPersona.Alta;
-            editarMenuItemPersona.Visible = moduloUsuarioPersona.Modificacion && moduloUsuarioPersona.Baja;
-            consultarMenuItemPersona.Visible = moduloUsuarioPersona.Consulta;
+            editarMenuItemPersona.Visible = moduloUsuarioPersona.Modificacion;
 
 
             // Opcion del Menu: Usuario
