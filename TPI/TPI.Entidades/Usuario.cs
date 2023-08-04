@@ -12,7 +12,7 @@ namespace TPI.Entidades
 
         public int Legajo { get; private set; }  
         
-        public string Contraseña { get; private set; }
+        public string Contraseña { get; set; }
 
         public Persona Persona { get; private set; }
 

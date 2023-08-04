@@ -25,6 +25,11 @@ namespace TPI.Negocio
         public static List<Entidades.Usuario> GetAllUsuarios() => 
             TPI.Datos.Usuario.GetAllUsuarios();
 
+        public static void CambiarContraseña(Entidades.Usuario usuario, string nuevaCont)
+        {
+            TPI.Datos.Usuario.CambiarContraseña(usuario, nuevaCont);
+        }
+
         //public static List<TPI.Entidades.Usuario> GetAllAlumnos()
         //{
         //    List<TPI.Entidades.Usuario> alumnos = TPI.Datos.Alumno.GetAllAlumnos();

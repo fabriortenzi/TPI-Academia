@@ -90,9 +90,8 @@ namespace Escritorio
             TPI.Entidades.ModuloUsuario moduloUsuarioUsuario = TPI.Negocio.ModuloUsuario.GetModuloUsuario(moduloUsuario, Usuario.TipoDeUsuario);
 
             nuevoMenuItemUsuario.Visible = moduloUsuarioUsuario.Alta;
-            editarMenuItemUsuario.Visible = moduloUsuarioUsuario.Modificacion && moduloUsuarioUsuario.Baja;
             consultarDatosMenuItemUsuario.Visible = moduloUsuarioUsuario.Consulta;
-            cambiarContraseñaMenuItemUsuario.Visible = moduloUsuarioUsuario.Consulta;
+            cambiarContraseñaMenuItemUsuario.Visible = moduloUsuarioUsuario.Modificacion;
         }
 
         private void formMenuPrincipal_FormClosed_1(object sender, FormClosedEventArgs e)
@@ -104,6 +103,18 @@ namespace Escritorio
         {
             formNuevoUsuario formNuevoUsuario = new();
             formNuevoUsuario.Show();
+        }
+
+        private void consultarDatosMenuItemUsuario_Click(object sender, EventArgs e)
+        {
+            formConsultarDatosUsuario formConsultarDatosUsuario = new(Usuario);
+            formConsultarDatosUsuario.Show();
+        }
+
+        private void cambiarContraseñaMenuItemUsuario_Click(object sender, EventArgs e)
+        {
+            formCambiarContraseña formCambiarContraseña = new(Usuario);
+            formCambiarContraseña.Show();
         }
     }
 }

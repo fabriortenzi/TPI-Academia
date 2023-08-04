@@ -28,8 +28,8 @@ namespace TPI.Datos
             Entidades.Modulo moduloUsuario = Modulo.GetModuloUsuario();
 
             Entidades.ModuloUsuario moduloUsuarioAlumno = new(moduloUsuario, alumno, false, false, true, true);
-            Entidades.ModuloUsuario moduloUsuarioProfesor = new(moduloUsuario, profesor, false, false, true, true);
-            Entidades.ModuloUsuario moduloUsuarioAdmin = new(moduloUsuario, admin, true, false, true, true);
+            Entidades.ModuloUsuario moduloUsuarioProfesor = new(moduloUsuario, profesor, false, false, true, false);
+            Entidades.ModuloUsuario moduloUsuarioAdmin = new(moduloUsuario, admin, true, false, true, false);
 
             
             ModulosUsuarios.Add(moduloPersonaAlumno);

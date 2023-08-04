@@ -19,29 +19,40 @@ namespace Escritorio
 
         private void btnCrear_Click(object sender, EventArgs e)
         {
+            int dni = 0, dia = 0, mes = 0, año = 0;
 
             try
             {
-                int dni = Convert.ToInt32(this.txtDni.Text);
-                string nombre = this.txtNombre.Text;
-                string apellido = this.txtApellido.Text;
-                string direccion = this.txtDireccion.Text;
-                int dia = Convert.ToInt32(this.txtDia.Text);
-                int mes = Convert.ToInt32(this.txtMes.Text);
-                int año = Convert.ToInt32(this.txtAño.Text);
-                string telefono = this.txtTelefono.Text;
+                dni = Convert.ToInt32(this.txtDni.Text);
+                dia = Convert.ToInt32(this.txtDia.Text);
+                mes = Convert.ToInt32(this.txtMes.Text);
+                año = Convert.ToInt32(this.txtAño.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Algunos campos son incorrectos o quedaron en blanco");
+                return;
+            }
 
+            string nombre = this.txtNombre.Text;
+            string apellido = this.txtApellido.Text;
+            string direccion = this.txtDireccion.Text;
+            string telefono = this.txtTelefono.Text;
+
+            // Valida que ningun campo haya quedado en blanco
+            if (dni != 0 && dia != 0 && mes != 0 && año != 0 && nombre != "" && apellido != "" & direccion != "" & telefono != "")
+            {
                 var persona = TPI.Negocio.Persona.CrearPersona(dni, nombre, apellido, direccion, new DateTime(año, mes, dia), telefono);
 
                 TPI.Negocio.Persona.AgregarPersona(persona);
 
                 MessageBox.Show("Persona creada con exito!");
 
-                this.Dispose();
+                Dispose();
             }
-            catch
+            else
             {
-                MessageBox.Show("Algunos campos son incorrectos o quedaron en blanco");
+                MessageBox.Show("Algunos campos quedaron en blanco");
             }
         }
     }
