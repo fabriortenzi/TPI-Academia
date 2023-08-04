@@ -23,6 +23,11 @@ namespace TPI.Negocio
             Datos.Persona.AgregarPersona(persona);
         }
 
+        public static void EditarDatosPersona(Entidades.Persona persona, string direccion, string telefono)
+        {
+            Datos.Persona.EditarDatosPersona(persona, direccion, telefono);
+        }
+
         public static void EliminarPersona(Entidades.Persona persona)
         {
             Datos.Persona.EliminarPersona(persona);

@@ -16,6 +16,23 @@ namespace TPI.Datos
             personas.Add(persona);
         }
 
+        public static void EditarDatosPersona(Entidades.Persona persona, string direccion, string telefono)
+        {
+            var personaEditar = personas.FirstOrDefault(x => x == persona);
+            
+            // Edito solo si se modifico el campo
+            
+            if (personaEditar.Direccion != direccion)
+            {
+                personaEditar.Direccion = direccion;
+            }
+
+            if (personaEditar.Telefono != telefono)
+            {
+                personaEditar.Telefono = telefono;
+            }
+        }
+
         public static void EliminarPersona(Entidades.Persona persona)
         {
             personas.Remove(persona);

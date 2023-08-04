@@ -12,49 +12,52 @@ namespace Escritorio
 {
     public partial class formEditarPersona : Form
     {
-        public formEditarPersona()
+        private TPI.Entidades.Persona Persona;
+        private string direccionOriginal;
+        private string telefonoOriginal;
+        private string direccionCambiada;
+        private string telefonoCambiado;
+
+        public formEditarPersona(TPI.Entidades.Persona persona)
         {
             InitializeComponent();
+            Persona = persona;
         }
 
-        private TPI.Entidades.Persona? personaIngresada;
-
-        private void btnBuscar_Click(object sender, EventArgs e)
+        private void formEditarPersona_Load(object sender, EventArgs e)
         {
-            try
+            lblNomApe.Text = $"{Persona.Apellido}, {Persona.Nombre}";
+            direccionOriginal = Persona.Direccion;
+            telefonoOriginal = Persona.Telefono;
+            txtDireccion.Text = direccionOriginal;
+            txtTelefono.Text = telefonoOriginal;
+        }
+
+        private void txtDireccion_TextChanged(object sender, EventArgs e)
+        {
+            direccionCambiada = txtDireccion.Text;
+
+            if (direccionOriginal != direccionCambiada)
             {
-                int dni = Convert.ToInt32(this.txtDni.Text);
-                TPI.Entidades.Persona persona = TPI.Negocio.Persona.GetPersonaPorDni(dni);
-
-                if (persona != null)
-                {
-                    string apellidoNombre = persona.Apellido + " " + persona.Nombre;
-
-                    lblTitNomApe.Visible = true;
-                    lblTitNomApe.Visible = true;
-                    lblApeNomPersona.Visible = true;
-                    lblApeNomPersona.Text = apellidoNombre;
-                    btnEliminar.Enabled = true;
-                    btnEditarDatos.Enabled = true;
-
-                    personaIngresada = persona;
-                }
-                else
-                {
-                    MessageBox.Show("No hay una persona con ese DNI registrada");
-                }
-            }
-            catch
-            {
-                MessageBox.Show("No hay una persona con ese DNI registrada");
+                btnEditar.Enabled = true;
             }
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+        private void txtTelefono_TextChanged(object sender, EventArgs e)
         {
-            TPI.Negocio.Persona.EliminarPersona(personaIngresada);
-            MessageBox.Show("Persona Eliminada con exito");
-            this.Dispose();
+            telefonoCambiado = txtTelefono.Text;
+
+            if (telefonoOriginal != telefonoCambiado)
+            {
+                btnEditar.Enabled = true;
+            }
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            TPI.Negocio.Persona.EditarDatosPersona(Persona, direccionCambiada, telefonoCambiado);
+            MessageBox.Show("Datos modificados exitosamente!");
+            Dispose();
         }
     }
 }
