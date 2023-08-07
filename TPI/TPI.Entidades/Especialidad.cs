@@ -20,7 +20,7 @@ namespace TPI.Entidades
 
             idEspec = id_espec;
             descEspec = desc_espec;
-            Planes = new List<Plan>();
+            
 
         }
 

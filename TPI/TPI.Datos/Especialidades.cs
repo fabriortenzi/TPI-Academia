@@ -1,4 +1,4 @@
-﻿using Microsoft.VisualBasic;
+using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,9 +12,9 @@ namespace TPI.Datos
     {
         private static List<Entidades.Especialidad> especialidades = new List<Entidades.Especialidad>();
 
-        public static void AgregarEspecialidades(Entidades.Especialidad especialidad, List<TPI.Entidades.Plan> planes)
+        public static void AgregarEspecialidades(Entidades.Especialidad especialidad)
         {
-            especialidad.Planes = planes;
+
             especialidades.Add(especialidad);
         }
 
@@ -26,25 +26,9 @@ namespace TPI.Datos
 
             Entidades.Especialidad especialidad3 = new(3, "Ingenieria Civil");
 
-            List<Entidades.Plan> planesExistentes = TPI.Datos.Plan.GetPlanes();
-
-            foreach (var plan in planesExistentes)
-            {
-                switch (plan.anio)
-                {
-                    case 2008:
-                        especialidad1.Planes.Add(plan);
-                        break;
-                    case 2023:
-                        especialidad2.Planes.Add(plan);
-                        break;
-
-                }
-            }
-
-            AgregarEspecialidades(especialidad1, especialidad1.Planes);
-            AgregarEspecialidades(especialidad2, especialidad2.Planes);
-            AgregarEspecialidades(especialidad3, especialidad3.Planes);
+            AgregarEspecialidades(especialidad1);
+            AgregarEspecialidades(especialidad2);
+            AgregarEspecialidades(especialidad3);
 
         }
 
@@ -53,7 +37,8 @@ namespace TPI.Datos
             return especialidades;
         }
 
-        public static Entidades.Especialidad GetEspecialidadPorDescripcion(string descripcion)
-            => especialidades.FirstOrDefault(x => x.descEspec == descripcion);
+        public static Entidades.Especialidad  GetEspecialidad(string desc_Espec) => especialidades.FirstOrDefault( x => x.descEspec == desc_Espec);
+
+
     }
 }

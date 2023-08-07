@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,15 +18,19 @@ namespace TPI.Datos
 
         public static void InicializarListaPlanes()
         {
-            var isi = Datos.Especialidades.GetEspecialidadPorDescripcion("Ingenieria en Sistemas");
-            var ic = Datos.Especialidades.GetEspecialidadPorDescripcion("Ingenieria Civil");
 
-            Entidades.Plan plan2008isi = new(2008, "Plan 2008", isi);
-            Entidades.Plan plan2023isi = new(2023, "Plan 2023", isi);
+            Entidades.Especialidad esp1 = Especialidades.GetEspecialidad("Ingenieria en Sistemas");
 
-            Entidades.Plan plan2008ic = new(2008, "Plan 2008", ic);
-            Entidades.Plan plan2023ic = new(2023, "Plan 2023", ic);
+            Entidades.Especialidad esp2 = Especialidades.GetEspecialidad("Ingenieria Quimica");
 
+
+            Entidades.Plan plan1 = new(2008, "Plan 2008", esp1 );
+
+            Entidades.Plan plan2 = new(2023, "Plan 2023", esp2 );
+
+
+            AgregarPlanes(plan1);
+            AgregarPlanes(plan2);
 
             AgregarPlanes(plan2008isi);
             AgregarPlanes(plan2023isi);
@@ -39,22 +43,8 @@ namespace TPI.Datos
             return planes;
         }
 
-        public static TPI.Entidades.Plan ObtenerPlanMasActual(List<Entidades.Plan> planes)
-        {
+       
 
-            if (planes.Count == 0)
-            {
-                return null;
-            }
-
-
-            planes.Sort((p1, p2) => p2.anio.CompareTo(p1.anio));
-
-
-            return planes[0];
-        }
-
-        public static List<Entidades.Plan> GetPlanesPorEspecialidad(Entidades.Especialidad especialidad)
-            => planes.Where(x => x.Especialidad == especialidad).ToList();
+        
     }
 }

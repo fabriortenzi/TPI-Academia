@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,11 +14,13 @@ namespace TPI.Entidades
 
         public string descPlan { get; private set; }
 
-        public Plan (int anioP, string desc_plan, Especialidad especialidad)
+        public TPI.Entidades.Especialidad especialidad { get; private set; }
+
+        public Plan (int anioP, string desc_plan, Especialidad Especialidad)
         {
             anio = anioP;
             descPlan = desc_plan;
-            Especialidad = especialidad;
+            especialidad = Especialidad;
         }
 
     }
