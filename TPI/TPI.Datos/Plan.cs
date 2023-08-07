@@ -18,14 +18,20 @@ namespace TPI.Datos
 
         public static void InicializarListaPlanes()
         {
-            Entidades.Plan plan1 = new(2008, "Plan 2008");
+            var isi = Datos.Especialidades.GetEspecialidadPorDescripcion("Ingenieria en Sistemas");
+            var ic = Datos.Especialidades.GetEspecialidadPorDescripcion("Ingenieria Civil");
 
-            Entidades.Plan plan2 = new(2023, "Plan 2023");
+            Entidades.Plan plan2008isi = new(2008, "Plan 2008", isi);
+            Entidades.Plan plan2023isi = new(2023, "Plan 2023", isi);
+
+            Entidades.Plan plan2008ic = new(2008, "Plan 2008", ic);
+            Entidades.Plan plan2023ic = new(2023, "Plan 2023", ic);
 
 
-            AgregarPlanes(plan1);
-            AgregarPlanes(plan2);
-
+            AgregarPlanes(plan2008isi);
+            AgregarPlanes(plan2023isi);
+            AgregarPlanes(plan2008ic);
+            AgregarPlanes(plan2023ic);
 
         }
         public static List<Entidades.Plan> GetPlanes()
@@ -47,5 +53,8 @@ namespace TPI.Datos
 
             return planes[0];
         }
+
+        public static List<Entidades.Plan> GetPlanesPorEspecialidad(Entidades.Especialidad especialidad)
+            => planes.Where(x => x.Especialidad == especialidad).ToList();
     }
 }

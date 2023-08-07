@@ -19,6 +19,9 @@ namespace Escritorio
         {
             InitializeComponent();
             Usuario = usuario;
+
+            TPI.Datos.Especialidades.InicializarListaEspecialidades();
+            TPI.Datos.Plan.InicializarListaPlanes();
         }
 
         private void formMenuPrincipal_FormClosed(object sender, FormClosedEventArgs e)
@@ -53,10 +56,7 @@ namespace Escritorio
         }
 
         private void inscripcionACursadoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            formInscripcionCursado formInscripcionCursado = new();
-            formInscripcionCursado.Show();
-        }
+        { }
 
         private void nuevoToolStripMenuItem1_Click(object sender, EventArgs e)
         {
@@ -115,6 +115,12 @@ namespace Escritorio
         {
             formCambiarContraseña formCambiarContraseña = new(Usuario);
             formCambiarContraseña.Show();
+        }
+
+        private void nuevoCurso_Click(object sender, EventArgs e)
+        {
+            formCrearCurso formCrearCurso = new();
+            formCrearCurso.Show();
         }
     }
 }
