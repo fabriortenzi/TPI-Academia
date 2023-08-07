@@ -37,12 +37,11 @@ namespace Escritorio
             try
             {
                 int año = Convert.ToInt32(this.textBoxAño.Text);
-                string descplan = this.textBoxDesc.Text;
-                
+                string descplan = this.textBoxDesc.Text;                
 
-                var Plan = TPI.Negocio.Plan.CrearPlan(año , descplan);
+                //var Plan = TPI.Negocio.Plan.CrearPlan(año , descplan);
 
-                TPI.Negocio.Plan.AgregoPlan(Plan);
+                //TPI.Negocio.Plan.AgregoPlan(Plan);
 
                 MessageBox.Show("Plan creado con exito!");
 

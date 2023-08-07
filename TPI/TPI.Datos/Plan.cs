@@ -30,6 +30,9 @@ namespace TPI.Datos
         public static List<Entidades.Plan> GetPlanes()
         {
             return planes;
-        }        
+        }
+
+        public static List<Entidades.Plan> GetPlanesPorEspecialidad(Entidades.Especialidad Especialidad)
+            => planes.Where(x => x.especialidad == Especialidad).ToList();
     }
 }
