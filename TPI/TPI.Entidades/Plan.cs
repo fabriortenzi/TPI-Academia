@@ -8,8 +8,6 @@ namespace TPI.Entidades
 {
     public class Plan
     {        
-        public Especialidad Especialidad { get; private set; }
-        
         public int anio { get; private set; }
 
         public string descPlan { get; private set; }
@@ -22,7 +20,5 @@ namespace TPI.Entidades
             descPlan = desc_plan;
             especialidad = Especialidad;
         }
-
     }
-
 }

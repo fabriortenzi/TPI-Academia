@@ -31,7 +31,7 @@ namespace Escritorio
 
         private void cbxEspecialidades_TextUpdate(object sender, EventArgs e)
         {
-            var planesPorEspecialidad = TPI.Negocio.Plan.GetPlanesPorEspecialidad();
+            var planesPorEspecialidad = TPI.Negocio.Plan.GetPlanesPorEspecialidad(Especialidad);
             
             cbxPlanes.Items.Add("");
         }

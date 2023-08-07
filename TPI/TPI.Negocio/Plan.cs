@@ -8,9 +8,9 @@ namespace TPI.Negocio
 {
     public class Plan
     {
-        public static Entidades.Plan CrearPlan(int año , string descplan)
+        public static Entidades.Plan CrearPlan(int año , string descplan, Entidades.Especialidad especialidad)
         {
-            Entidades.Plan plan = new(año, descplan);
+            Entidades.Plan plan = new(año, descplan, especialidad);
             return plan;
         }
 
