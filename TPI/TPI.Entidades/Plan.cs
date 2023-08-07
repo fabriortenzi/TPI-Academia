@@ -12,10 +12,13 @@ namespace TPI.Entidades
 
         public string descPlan { get; private set; }
 
-        public Plan (int anioP, string desc_plan)
+        public TPI.Entidades.Especialidad especialidad { get; private set; }
+
+        public Plan (int anioP, string desc_plan, Especialidad Especialidad)
         {
             anio = anioP;
             descPlan = desc_plan;
+            especialidad = Especialidad;
         }
 
     }
