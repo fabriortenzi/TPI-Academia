@@ -52,5 +52,8 @@ namespace TPI.Datos
         {
             return especialidades;
         }
+
+        public static Entidades.Especialidad GetEspecialidadPorDescripcion(string descripcion)
+            => especialidades.FirstOrDefault(x => x.descEspec == descripcion);
     }
 }

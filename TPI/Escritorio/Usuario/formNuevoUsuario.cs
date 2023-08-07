@@ -40,6 +40,14 @@ namespace Escritorio
             {
                 var usuario = TPI.Negocio.Usuario.CrearUsuario(contraseña, persona, tipoDeUsuario);
                 TPI.Negocio.Usuario.AgregarUsuario(usuario);
+
+                // Si el usuario nuevo es un Alumno se abre el form para asignar plan de estudio
+                if (descripcionTipo == "Alumno")
+                {
+                    formInscripcionPlan formInscripcionPlan = new(usuario);
+                    formInscripcionPlan.Show();
+                }
+
                 MessageBox.Show("Usuario creado con exito!");
                 this.Dispose();
             }

@@ -42,7 +42,7 @@
             planDeEstudioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             nuevoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             cursoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            nuevoToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            nuevoCurso = new System.Windows.Forms.ToolStripMenuItem();
             editarToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             evaluacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             cargarNotaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -134,7 +134,6 @@
             inscripcionACursadoToolStripMenuItem.Name = "inscripcionACursadoToolStripMenuItem";
             inscripcionACursadoToolStripMenuItem.Size = new System.Drawing.Size(284, 34);
             inscripcionACursadoToolStripMenuItem.Text = "Inscripcion a Cursado";
-            inscripcionACursadoToolStripMenuItem.Click += inscripcionACursadoToolStripMenuItem_Click;
             // 
             // eliminarInscripcionToolStripMenuItem
             // 
@@ -160,21 +159,22 @@
             // cursoToolStripMenuItem
             // 
             cursoToolStripMenuItem.AutoSize = false;
-            cursoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { nuevoToolStripMenuItem2, editarToolStripMenuItem3 });
+            cursoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { nuevoCurso, editarToolStripMenuItem3 });
             cursoToolStripMenuItem.Name = "cursoToolStripMenuItem";
             cursoToolStripMenuItem.Size = new System.Drawing.Size(427, 50);
             cursoToolStripMenuItem.Text = "Curso";
             // 
-            // nuevoToolStripMenuItem2
+            // nuevoCurso
             // 
-            nuevoToolStripMenuItem2.Name = "nuevoToolStripMenuItem2";
-            nuevoToolStripMenuItem2.Size = new System.Drawing.Size(166, 34);
-            nuevoToolStripMenuItem2.Text = "Nuevo";
+            nuevoCurso.Name = "nuevoCurso";
+            nuevoCurso.Size = new System.Drawing.Size(270, 34);
+            nuevoCurso.Text = "Nuevo";
+            nuevoCurso.Click += nuevoCurso_Click;
             // 
             // editarToolStripMenuItem3
             // 
             editarToolStripMenuItem3.Name = "editarToolStripMenuItem3";
-            editarToolStripMenuItem3.Size = new System.Drawing.Size(166, 34);
+            editarToolStripMenuItem3.Size = new System.Drawing.Size(270, 34);
             editarToolStripMenuItem3.Text = "Editar";
             // 
             // evaluacionToolStripMenuItem
@@ -284,7 +284,7 @@
         private System.Windows.Forms.ToolStripMenuItem planDeEstudioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevoToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem cursoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem nuevoToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem nuevoCurso;
         private System.Windows.Forms.ToolStripMenuItem evaluacionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cargarNotaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultarNotaToolStripMenuItem;
