@@ -14,7 +14,6 @@ namespace TPI.Datos
 
         public static void AgregarEspecialidades(Entidades.Especialidad especialidad)
         {
-
             especialidades.Add(especialidad);
         }
 
@@ -38,7 +37,5 @@ namespace TPI.Datos
         }
 
         public static Entidades.Especialidad  GetEspecialidad(string desc_Espec) => especialidades.FirstOrDefault( x => x.descEspec == desc_Espec);
-
-
     }
 }

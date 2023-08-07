@@ -12,17 +12,10 @@ namespace TPI.Entidades
 
         public string descEspec { get; private set; }
 
-        public List<Plan> Planes { get; set; }
-
-
         public Especialidad(int id_espec, string desc_espec)
         {
-
             idEspec = id_espec;
             descEspec = desc_espec;
-            
-
         }
-
     }
 }
