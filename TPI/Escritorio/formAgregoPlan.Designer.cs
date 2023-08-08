@@ -34,11 +34,13 @@ namespace Escritorio
             this.lblAño = new System.Windows.Forms.Label();
             this.lblDesc = new System.Windows.Forms.Label();
             this.btnAceptar = new System.Windows.Forms.Button();
+            this.comboBoxEsp = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBoxAño
             // 
-            this.textBoxAño.Location = new System.Drawing.Point(306, 134);
+            this.textBoxAño.Location = new System.Drawing.Point(306, 70);
             this.textBoxAño.Name = "textBoxAño";
             this.textBoxAño.Size = new System.Drawing.Size(125, 27);
             this.textBoxAño.TabIndex = 0;
@@ -46,7 +48,7 @@ namespace Escritorio
             // 
             // textBoxDesc
             // 
-            this.textBoxDesc.Location = new System.Drawing.Point(306, 194);
+            this.textBoxDesc.Location = new System.Drawing.Point(306, 130);
             this.textBoxDesc.Name = "textBoxDesc";
             this.textBoxDesc.Size = new System.Drawing.Size(125, 27);
             this.textBoxDesc.TabIndex = 1;
@@ -54,7 +56,7 @@ namespace Escritorio
             // lblAño
             // 
             this.lblAño.AutoSize = true;
-            this.lblAño.Location = new System.Drawing.Point(170, 134);
+            this.lblAño.Location = new System.Drawing.Point(170, 77);
             this.lblAño.Name = "lblAño";
             this.lblAño.Size = new System.Drawing.Size(36, 20);
             this.lblAño.TabIndex = 2;
@@ -63,7 +65,7 @@ namespace Escritorio
             // lblDesc
             // 
             this.lblDesc.AutoSize = true;
-            this.lblDesc.Location = new System.Drawing.Point(170, 194);
+            this.lblDesc.Location = new System.Drawing.Point(170, 137);
             this.lblDesc.Name = "lblDesc";
             this.lblDesc.Size = new System.Drawing.Size(87, 20);
             this.lblDesc.TabIndex = 3;
@@ -80,11 +82,32 @@ namespace Escritorio
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.button1_Click);
             // 
+            // comboBoxEsp
+            // 
+            this.comboBoxEsp.FormattingEnabled = true;
+            this.comboBoxEsp.Location = new System.Drawing.Point(306, 190);
+            this.comboBoxEsp.Name = "comboBoxEsp";
+            this.comboBoxEsp.Size = new System.Drawing.Size(240, 28);
+            this.comboBoxEsp.TabIndex = 5;
+            this.comboBoxEsp.SelectedIndexChanged += new System.EventHandler(this.comboBoxEsp_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(170, 192);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(93, 20);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Especialidad";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
             // formAgregoPlan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.comboBoxEsp);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.lblDesc);
             this.Controls.Add(this.lblAño);
@@ -105,5 +128,7 @@ namespace Escritorio
         private System.Windows.Forms.Label lblAño;
         private System.Windows.Forms.Label lblDesc;
         private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.ComboBox comboBoxEsp;
+        private System.Windows.Forms.Label label1;
     }
 }

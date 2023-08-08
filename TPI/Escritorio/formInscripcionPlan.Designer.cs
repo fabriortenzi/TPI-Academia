@@ -29,78 +29,74 @@ namespace Escritorio
         /// </summary>
         private void InitializeComponent()
         {
-            btnAceptar = new System.Windows.Forms.Button();
-            comboBoxEspecialidades = new System.Windows.Forms.ComboBox();
-            label1 = new System.Windows.Forms.Label();
-            label2 = new System.Windows.Forms.Label();
-            comboBox1 = new System.Windows.Forms.ComboBox();
-            SuspendLayout();
+            this.btnAceptar = new System.Windows.Forms.Button();
+            this.comboBoxEspecialidades = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.SuspendLayout();
             // 
             // btnAceptar
             // 
-            btnAceptar.Location = new System.Drawing.Point(215, 229);
-            btnAceptar.Margin = new System.Windows.Forms.Padding(4);
-            btnAceptar.Name = "btnAceptar";
-            btnAceptar.Size = new System.Drawing.Size(160, 47);
-            btnAceptar.TabIndex = 0;
-            btnAceptar.Text = "Aceptar";
-            btnAceptar.UseVisualStyleBackColor = true;
-            btnAceptar.Click += btnAceptar_Click;
+            this.btnAceptar.Location = new System.Drawing.Point(172, 183);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(128, 38);
+            this.btnAceptar.TabIndex = 0;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.UseVisualStyleBackColor = true;
             // 
             // comboBoxEspecialidades
             // 
-            comboBoxEspecialidades.FormattingEnabled = true;
-            comboBoxEspecialidades.Location = new System.Drawing.Point(279, 56);
-            comboBoxEspecialidades.Margin = new System.Windows.Forms.Padding(4);
-            comboBoxEspecialidades.Name = "comboBoxEspecialidades";
-            comboBoxEspecialidades.Size = new System.Drawing.Size(296, 33);
-            comboBoxEspecialidades.TabIndex = 1;
-            comboBoxEspecialidades.SelectedIndexChanged += comboBoxEspecialidades_SelectedIndexChanged;
+            this.comboBoxEspecialidades.FormattingEnabled = true;
+            this.comboBoxEspecialidades.Location = new System.Drawing.Point(223, 45);
+            this.comboBoxEspecialidades.Name = "comboBoxEspecialidades";
+            this.comboBoxEspecialidades.Size = new System.Drawing.Size(238, 28);
+            this.comboBoxEspecialidades.TabIndex = 1;
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(42, 59);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(230, 25);
-            label1.TabIndex = 2;
-            label1.Text = "Seleccione una Especialidad";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(19, 48);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(196, 20);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Seleccione una Especialidad";
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(104, 140);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(157, 25);
-            label2.TabIndex = 3;
-            label2.Text = "Seleccione un Plan";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(19, 110);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(132, 20);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Seleccione un Plan";
             // 
             // comboBox1
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new System.Drawing.Point(279, 137);
-            comboBox1.Margin = new System.Windows.Forms.Padding(4);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new System.Drawing.Size(296, 33);
-            comboBox1.TabIndex = 4;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(223, 110);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(238, 28);
+            this.comboBox1.TabIndex = 4;
             // 
             // formInscripcionPlan
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
-            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(621, 300);
-            Controls.Add(comboBox1);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(comboBoxEspecialidades);
-            Controls.Add(btnAceptar);
-            Margin = new System.Windows.Forms.Padding(4);
-            Name = "formInscripcionPlan";
-            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            Text = "Asignar Plan de Estudio";
-            Load += formInscripcionCursado_Load;
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(497, 240);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.comboBoxEspecialidades);
+            this.Controls.Add(this.btnAceptar);
+            this.Name = "formInscripcionPlan";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Asignar Plan de Estudio";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

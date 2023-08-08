@@ -29,7 +29,10 @@ namespace Escritorio
 
         private void formAgregoPlan_Load(object sender, EventArgs e)
         {
-
+            foreach (var especialidad in TPI.Datos.Especialidades.GetEspecialidades())
+            {
+                comboBoxEsp.Items.Add(especialidad.descEspec);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -37,11 +40,15 @@ namespace Escritorio
             try
             {
                 int año = Convert.ToInt32(this.textBoxAño.Text);
-                string descplan = this.textBoxDesc.Text;                
+                string descplan = this.textBoxDesc.Text;
+                string esp = this.comboBoxEsp.SelectedItem.ToString();
 
-                //var Plan = TPI.Negocio.Plan.CrearPlan(año , descplan);
 
-                //TPI.Negocio.Plan.AgregoPlan(Plan);
+                TPI.Entidades.Especialidad especialidad = TPI.Negocio.Especialidad.Getespecialidadpordesc(esp);
+
+                var Plan = TPI.Negocio.Plan.CrearPlan(año , descplan , especialidad);
+
+                TPI.Negocio.Plan.AgregoPlan(Plan);
 
                 MessageBox.Show("Plan creado con exito!");
 
@@ -51,6 +58,16 @@ namespace Escritorio
             {
                 MessageBox.Show("Algunos campos son incorrectos o quedaron en blanco");
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBoxEsp_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

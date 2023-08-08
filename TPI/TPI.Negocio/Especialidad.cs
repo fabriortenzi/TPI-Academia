@@ -10,5 +10,12 @@ namespace TPI.Negocio
     {
         public static List<Entidades.Especialidad> GetAllEspecialidades()
             => Datos.Especialidades.GetEspecialidades();
+
+
+        public static TPI.Entidades.Especialidad Getespecialidadpordesc(string especialidad)
+        {
+            return Datos.Especialidades.GetEspecialidad(especialidad);
+        }
     }
 }
+    
