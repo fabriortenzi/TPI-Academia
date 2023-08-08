@@ -21,5 +21,9 @@ namespace TPI.Negocio
 
         public static List<Entidades.Plan> GetPlanesPorEspecialidad(Entidades.Especialidad especialidad)
             => Datos.Plan.GetPlanesPorEspecialidad(especialidad);
+        public static List<Entidades.Plan> GetAllPlanes()
+            => Datos.Plan.GetPlanes();
+
+        
     }
 }

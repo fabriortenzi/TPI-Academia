@@ -16,6 +16,8 @@ namespace TPI.Negocio
         {
             return Datos.Especialidades.GetEspecialidad(especialidad);
         }
+
+       
     }
 }
     

@@ -23,5 +23,10 @@ namespace TPI.Datos
             AgregarMateria(materia1);
             AgregarMateria(materia2);
         }
+
+        public static List<Entidades.Materia> GetMaterias()
+        {
+            return materias;
+        }
     }
 }

@@ -20,9 +20,7 @@ namespace TPI.Negocio
             TPI.Datos.Materia.AgregarMateria(materia);
         }
 
-        public static void GetMateriasPorEspecialidadPlan()
-        {
+        public static List<Entidades.Materia> Getallmaterias() => Datos.Materia.GetMaterias();
 
-        }
     }
 }
