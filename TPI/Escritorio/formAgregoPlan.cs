@@ -46,7 +46,7 @@ namespace Escritorio
 
                 TPI.Entidades.Especialidad especialidad = TPI.Negocio.Especialidad.Getespecialidadpordesc(esp);
 
-                var Plan = TPI.Negocio.Plan.CrearPlan(año , descplan , especialidad);
+                var Plan = TPI.Negocio.Plan.CrearPlan(año, descplan, especialidad);
 
                 TPI.Negocio.Plan.AgregoPlan(Plan);
 

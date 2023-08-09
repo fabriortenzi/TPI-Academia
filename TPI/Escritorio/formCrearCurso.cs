@@ -12,8 +12,11 @@ namespace Escritorio
 {
     public partial class formCrearCurso : Form
     {
-        TPI.Entidades.Especialidad Especialidad;
-        
+        private TPI.Entidades.Especialidad Especialidad;
+        private int Año;
+        private TPI.Entidades.Materia Materia;
+        private TPI.Entidades.Plan Plan;
+
         public formCrearCurso()
         {
             InitializeComponent();
@@ -21,49 +24,87 @@ namespace Escritorio
 
         private void formCrearCurso_Load(object sender, EventArgs e)
         {
-            
-
-            TPI.Datos.Materia.inicializarMaterias();
-
             var especialidades = TPI.Negocio.Especialidad.GetAllEspecialidades();
-
-            var planes = TPI.Negocio.Plan.GetAllPlanes();
-
-            var materias = TPI.Negocio.Materia.Getallmaterias();
-
 
             foreach (var esp in especialidades)
             {
                 cbxEspecialidades.Items.Add(esp.descEspec);
             }
-
-            foreach (var plan in planes)
-            {
-                cbxPlanes.Items.Add(plan.descPlan);
-            }
-
-            foreach (var materia in materias)
-            {
-                cbxMaterias.Items.Add(materia.descMateria);
-            }
         }
 
         private void cbxEspecialidades_TextUpdate(object sender, EventArgs e)
         {
-            cbxPlanes.Items.Clear(); // Limpiar los items existentes en cbxPlanes
+        }
+
+        private void cbxEspecialidades_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbxPlanes.SelectedIndex = -1;
+            cbxPlanes.Items.Clear();
+            cbxPlanes.Enabled = true;
+
+            cbxMaterias.SelectedIndex = -1;
+            cbxMaterias.Items.Clear();
 
             var especialidadSeleccionada = cbxEspecialidades.SelectedItem.ToString();
-            
-            if (especialidadSeleccionada != null)
+            var especialidad = TPI.Negocio.Especialidad.Getespecialidadpordesc(especialidadSeleccionada);
+            Especialidad = especialidad;
+            var planesPorEspecialidad = TPI.Negocio.Plan.GetPlanesPorEspecialidad(especialidad);
+
+            foreach (var plan in planesPorEspecialidad)
             {
+                cbxPlanes.Items.Add(plan.anio);
+            }
+        }
 
-                var especialidad = TPI.Negocio.Especialidad.Getespecialidadpordesc(especialidadSeleccionada);
+        private void cbxPlanes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbxMaterias.SelectedIndex = -1;
+            cbxMaterias.Items.Clear();
+            cbxMaterias.Enabled = true;
 
-                var planesPorEspecialidad = TPI.Negocio.Plan.GetPlanesPorEspecialidad(especialidad);
-                foreach (var plan in planesPorEspecialidad)
+            if (cbxPlanes.SelectedItem != null)
+            {
+                var añoPlanSeleccionado = Convert.ToInt32(cbxPlanes.SelectedItem.ToString());
+                Año = añoPlanSeleccionado;
+                var planSeleccionado = TPI.Negocio.Plan.GetPlanPorEspecialidadAño(Especialidad, Año);
+                Plan = planSeleccionado;
+                var materiasPlan = TPI.Negocio.Materia.GetMateriasPorPlan(planSeleccionado);
+
+                foreach (var materia in materiasPlan)
                 {
-                    cbxPlanes.Items.Add(plan.descPlan);
+                    cbxMaterias.Items.Add(materia.descMateria);
                 }
+            }
+        }
+
+        private void cbxMaterias_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var descripcionMateriaSelecc = cbxMaterias.SelectedItem.ToString();
+            var materiaSeleccionada = TPI.Negocio.Materia.GetMateriaPorDescripcionYPlan(descripcionMateriaSelecc, Plan);
+            Materia = materiaSeleccionada;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int año = 0, cupo = 0;
+
+            try
+            {
+                año = Convert.ToInt32(txtAño.Text);
+                cupo = Convert.ToInt32(txtCupo.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Año y cupo no pueden contener letras ni estar vacios");
+                return;
+            }
+
+            if (año != 0 && cupo != 0)
+            {
+                var curso = TPI.Negocio.Curso.CrearCurso(año, cupo, Materia);
+                TPI.Negocio.Curso.AgregarCurso(curso);
+                MessageBox.Show("Curso creado exitosamente!");
+                Dispose();
             }
         }
     }

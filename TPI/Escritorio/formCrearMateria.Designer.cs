@@ -29,94 +29,102 @@ namespace Escritorio
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnAceptar = new System.Windows.Forms.Button();
-            this.txtHorasSem = new System.Windows.Forms.TextBox();
-            this.txtHorasTot = new System.Windows.Forms.TextBox();
-            this.txtNombreMat = new System.Windows.Forms.TextBox();
-            this.lblDesc = new System.Windows.Forms.Label();
-            this.lblHorasem = new System.Windows.Forms.Label();
-            this.lblHorasTot = new System.Windows.Forms.Label();
-            this.SuspendLayout();
+            btnAceptar = new System.Windows.Forms.Button();
+            txtHorasSem = new System.Windows.Forms.TextBox();
+            txtHorasTot = new System.Windows.Forms.TextBox();
+            txtNombreMat = new System.Windows.Forms.TextBox();
+            lblDesc = new System.Windows.Forms.Label();
+            lblHorasem = new System.Windows.Forms.Label();
+            lblHorasTot = new System.Windows.Forms.Label();
+            SuspendLayout();
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(379, 314);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(94, 29);
-            this.btnAceptar.TabIndex = 0;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
-            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+            btnAceptar.Location = new System.Drawing.Point(474, 392);
+            btnAceptar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            btnAceptar.Name = "btnAceptar";
+            btnAceptar.Size = new System.Drawing.Size(118, 36);
+            btnAceptar.TabIndex = 0;
+            btnAceptar.Text = "Aceptar";
+            btnAceptar.UseVisualStyleBackColor = true;
+            btnAceptar.Click += btnAceptar_Click;
             // 
             // txtHorasSem
             // 
-            this.txtHorasSem.Location = new System.Drawing.Point(301, 192);
-            this.txtHorasSem.Name = "txtHorasSem";
-            this.txtHorasSem.Size = new System.Drawing.Size(257, 27);
-            this.txtHorasSem.TabIndex = 1;
-            this.txtHorasSem.TextChanged += new System.EventHandler(this.txtHorasSem_TextChanged);
+            txtHorasSem.Location = new System.Drawing.Point(376, 240);
+            txtHorasSem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            txtHorasSem.Name = "txtHorasSem";
+            txtHorasSem.Size = new System.Drawing.Size(320, 31);
+            txtHorasSem.TabIndex = 1;
+            txtHorasSem.TextChanged += txtHorasSem_TextChanged;
             // 
             // txtHorasTot
             // 
-            this.txtHorasTot.Location = new System.Drawing.Point(301, 242);
-            this.txtHorasTot.Name = "txtHorasTot";
-            this.txtHorasTot.Size = new System.Drawing.Size(257, 27);
-            this.txtHorasTot.TabIndex = 2;
-            this.txtHorasTot.TextChanged += new System.EventHandler(this.txtHorasTot_TextChanged);
+            txtHorasTot.Location = new System.Drawing.Point(376, 302);
+            txtHorasTot.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            txtHorasTot.Name = "txtHorasTot";
+            txtHorasTot.Size = new System.Drawing.Size(320, 31);
+            txtHorasTot.TabIndex = 2;
+            txtHorasTot.TextChanged += txtHorasTot_TextChanged;
             // 
             // txtNombreMat
             // 
-            this.txtNombreMat.Location = new System.Drawing.Point(301, 138);
-            this.txtNombreMat.Name = "txtNombreMat";
-            this.txtNombreMat.Size = new System.Drawing.Size(257, 27);
-            this.txtNombreMat.TabIndex = 3;
-            this.txtNombreMat.TextChanged += new System.EventHandler(this.txtNombreMat_TextChanged);
+            txtNombreMat.Location = new System.Drawing.Point(376, 172);
+            txtNombreMat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            txtNombreMat.Name = "txtNombreMat";
+            txtNombreMat.Size = new System.Drawing.Size(320, 31);
+            txtNombreMat.TabIndex = 3;
+            txtNombreMat.TextChanged += txtNombreMat_TextChanged;
             // 
             // lblDesc
             // 
-            this.lblDesc.AutoSize = true;
-            this.lblDesc.Location = new System.Drawing.Point(93, 145);
-            this.lblDesc.Name = "lblDesc";
-            this.lblDesc.Size = new System.Drawing.Size(156, 20);
-            this.lblDesc.TabIndex = 4;
-            this.lblDesc.Text = "Nombre de la materia";
+            lblDesc.AutoSize = true;
+            lblDesc.Location = new System.Drawing.Point(116, 181);
+            lblDesc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblDesc.Name = "lblDesc";
+            lblDesc.Size = new System.Drawing.Size(185, 25);
+            lblDesc.TabIndex = 4;
+            lblDesc.Text = "Nombre de la materia";
             // 
             // lblHorasem
             // 
-            this.lblHorasem.AutoSize = true;
-            this.lblHorasem.Location = new System.Drawing.Point(92, 195);
-            this.lblHorasem.Name = "lblHorasem";
-            this.lblHorasem.Size = new System.Drawing.Size(203, 20);
-            this.lblHorasem.TabIndex = 5;
-            this.lblHorasem.Text = "Cantidad de horas semanales";
+            lblHorasem.AutoSize = true;
+            lblHorasem.Location = new System.Drawing.Point(115, 244);
+            lblHorasem.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblHorasem.Name = "lblHorasem";
+            lblHorasem.Size = new System.Drawing.Size(244, 25);
+            lblHorasem.TabIndex = 5;
+            lblHorasem.Text = "Cantidad de horas semanales";
             // 
             // lblHorasTot
             // 
-            this.lblHorasTot.AutoSize = true;
-            this.lblHorasTot.Location = new System.Drawing.Point(93, 245);
-            this.lblHorasTot.Name = "lblHorasTot";
-            this.lblHorasTot.Size = new System.Drawing.Size(179, 20);
-            this.lblHorasTot.TabIndex = 6;
-            this.lblHorasTot.Text = "Cantidad de horas totales";
+            lblHorasTot.AutoSize = true;
+            lblHorasTot.Location = new System.Drawing.Point(116, 306);
+            lblHorasTot.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblHorasTot.Name = "lblHorasTot";
+            lblHorasTot.Size = new System.Drawing.Size(215, 25);
+            lblHorasTot.TabIndex = 6;
+            lblHorasTot.Text = "Cantidad de horas totales";
             // 
             // formCrearMateria
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.lblHorasTot);
-            this.Controls.Add(this.lblHorasem);
-            this.Controls.Add(this.lblDesc);
-            this.Controls.Add(this.txtNombreMat);
-            this.Controls.Add(this.txtHorasTot);
-            this.Controls.Add(this.txtHorasSem);
-            this.Controls.Add(this.btnAceptar);
-            this.Name = "formCrearMateria";
-            this.Text = "Crear Materia";
-            this.Load += new System.EventHandler(this.formCrearMateria_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(1000, 562);
+            Controls.Add(lblHorasTot);
+            Controls.Add(lblHorasem);
+            Controls.Add(lblDesc);
+            Controls.Add(txtNombreMat);
+            Controls.Add(txtHorasTot);
+            Controls.Add(txtHorasSem);
+            Controls.Add(btnAceptar);
+            Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            Name = "formCrearMateria";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            Text = "Crear Materia";
+            Load += formCrearMateria_Load;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

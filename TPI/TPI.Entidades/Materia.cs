@@ -18,15 +18,15 @@ namespace TPI.Entidades
 
         public int horaTot { get; private set; }
 
-        public Materia (string desc,int hora_sem,int hora_tot)
+        public Plan Plan { get; private set; }
+
+        public Materia (string desc, int hora_sem, int hora_tot, Plan plan)
         {
             idMateria = UlitmoId++ ;
-
             descMateria = desc;
-
             horaSem = hora_sem;
-
             horaTot = hora_tot;
+            Plan = plan;
         }
     }
 }

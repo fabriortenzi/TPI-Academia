@@ -37,8 +37,8 @@
             label4 = new System.Windows.Forms.Label();
             label5 = new System.Windows.Forms.Label();
             label6 = new System.Windows.Forms.Label();
-            textBox1 = new System.Windows.Forms.TextBox();
-            textBox2 = new System.Windows.Forms.TextBox();
+            txtAño = new System.Windows.Forms.TextBox();
+            txtCupo = new System.Windows.Forms.TextBox();
             button1 = new System.Windows.Forms.Button();
             SuspendLayout();
             // 
@@ -62,12 +62,13 @@
             // 
             // cbxEspecialidades
             // 
+            cbxEspecialidades.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cbxEspecialidades.FormattingEnabled = true;
             cbxEspecialidades.Location = new System.Drawing.Point(375, 93);
             cbxEspecialidades.Name = "cbxEspecialidades";
             cbxEspecialidades.Size = new System.Drawing.Size(306, 33);
             cbxEspecialidades.TabIndex = 2;
-            cbxEspecialidades.TextUpdate += cbxEspecialidades_TextUpdate;
+            cbxEspecialidades.SelectedIndexChanged += cbxEspecialidades_SelectedIndexChanged;
             // 
             // label3
             // 
@@ -80,19 +81,25 @@
             // 
             // cbxPlanes
             // 
+            cbxPlanes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cbxPlanes.Enabled = false;
             cbxPlanes.FormattingEnabled = true;
             cbxPlanes.Location = new System.Drawing.Point(375, 162);
             cbxPlanes.Name = "cbxPlanes";
             cbxPlanes.Size = new System.Drawing.Size(306, 33);
             cbxPlanes.TabIndex = 4;
+            cbxPlanes.SelectedIndexChanged += cbxPlanes_SelectedIndexChanged;
             // 
             // cbxMaterias
             // 
+            cbxMaterias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cbxMaterias.Enabled = false;
             cbxMaterias.FormattingEnabled = true;
             cbxMaterias.Location = new System.Drawing.Point(375, 224);
             cbxMaterias.Name = "cbxMaterias";
             cbxMaterias.Size = new System.Drawing.Size(306, 33);
             cbxMaterias.TabIndex = 5;
+            cbxMaterias.SelectedIndexChanged += cbxMaterias_SelectedIndexChanged;
             // 
             // label4
             // 
@@ -121,20 +128,20 @@
             label6.TabIndex = 8;
             label6.Text = "Ingrese el cupo del curso";
             // 
-            // textBox1
+            // txtAño
             // 
-            textBox1.Location = new System.Drawing.Point(375, 284);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "AAAA";
-            textBox1.Size = new System.Drawing.Size(143, 31);
-            textBox1.TabIndex = 9;
+            txtAño.Location = new System.Drawing.Point(375, 284);
+            txtAño.Name = "txtAño";
+            txtAño.PlaceholderText = "AAAA";
+            txtAño.Size = new System.Drawing.Size(143, 31);
+            txtAño.TabIndex = 9;
             // 
-            // textBox2
+            // txtCupo
             // 
-            textBox2.Location = new System.Drawing.Point(375, 338);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new System.Drawing.Size(143, 31);
-            textBox2.TabIndex = 10;
+            txtCupo.Location = new System.Drawing.Point(375, 338);
+            txtCupo.Name = "txtCupo";
+            txtCupo.Size = new System.Drawing.Size(143, 31);
+            txtCupo.TabIndex = 10;
             // 
             // button1
             // 
@@ -144,6 +151,7 @@
             button1.TabIndex = 11;
             button1.Text = "Crear";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // formCrearCurso
             // 
@@ -151,8 +159,8 @@
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(859, 517);
             Controls.Add(button1);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(txtCupo);
+            Controls.Add(txtAño);
             Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(label4);
@@ -181,8 +189,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtAño;
+        private System.Windows.Forms.TextBox txtCupo;
         private System.Windows.Forms.Button button1;
     }
 }

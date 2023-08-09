@@ -8,10 +8,9 @@ namespace TPI.Negocio
 {
     public class Materia
     {
-        public static Entidades.Materia CrearMateria(string descMat,int hor_sem,int hor_tot)
+        public static Entidades.Materia CrearMateria(string descMat, int hor_sem, int hor_tot, Entidades.Plan plan)
         {
-            Entidades.Materia materia = new(descMat, hor_sem, hor_tot);
-
+            Entidades.Materia materia = new(descMat, hor_sem, hor_tot, plan);
             return materia;
         }
 
@@ -22,5 +21,10 @@ namespace TPI.Negocio
 
         public static List<Entidades.Materia> Getallmaterias() => Datos.Materia.GetMaterias();
 
+        public static List<Entidades.Materia> GetMateriasPorPlan(Entidades.Plan plan)
+            => Datos.Materia.GetMateriasPorPlan(plan);
+
+        public static Entidades.Materia GetMateriaPorDescripcionYPlan(string descripcionMateriaSelecc, Entidades.Plan plan)
+            => Datos.Materia.GetMateriaPorDescripcionYPlan(descripcionMateriaSelecc, plan);
     }
 }

@@ -12,7 +12,6 @@ namespace TPI.Entidades
 
         public Comisiones (int id_com)
         {
-
             idCom = id_com; 
         }
     }
