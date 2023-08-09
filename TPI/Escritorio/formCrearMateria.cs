@@ -30,9 +30,9 @@ namespace Escritorio
                 int horasem = Convert.ToInt32(this.txtHorasSem.Text);
                 int horasTot = Convert.ToInt32(this.txtHorasTot.Text);
 
-                var Materia = TPI.Negocio.Materia.CrearMateria(descMateria, horasem, horasTot);
+                //var Materia = TPI.Negocio.Materia.CrearMateria(descMateria, horasem, horasTot);
 
-                TPI.Negocio.Materia.AgregaMateria(Materia);
+                //TPI.Negocio.Materia.AgregaMateria(Materia);
                 MessageBox.Show("Materia creada con exito!");
 
                 this.Dispose();

@@ -29,96 +29,104 @@ namespace Escritorio
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBoxAño = new System.Windows.Forms.TextBox();
-            this.textBoxDesc = new System.Windows.Forms.TextBox();
-            this.lblAño = new System.Windows.Forms.Label();
-            this.lblDesc = new System.Windows.Forms.Label();
-            this.btnAceptar = new System.Windows.Forms.Button();
-            this.comboBoxEsp = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.SuspendLayout();
+            textBoxAño = new System.Windows.Forms.TextBox();
+            textBoxDesc = new System.Windows.Forms.TextBox();
+            lblAño = new System.Windows.Forms.Label();
+            lblDesc = new System.Windows.Forms.Label();
+            btnAceptar = new System.Windows.Forms.Button();
+            comboBoxEsp = new System.Windows.Forms.ComboBox();
+            label1 = new System.Windows.Forms.Label();
+            SuspendLayout();
             // 
             // textBoxAño
             // 
-            this.textBoxAño.Location = new System.Drawing.Point(306, 70);
-            this.textBoxAño.Name = "textBoxAño";
-            this.textBoxAño.Size = new System.Drawing.Size(125, 27);
-            this.textBoxAño.TabIndex = 0;
-            this.textBoxAño.TextChanged += new System.EventHandler(this.textBoxAño_TextChanged);
+            textBoxAño.Location = new System.Drawing.Point(382, 88);
+            textBoxAño.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            textBoxAño.Name = "textBoxAño";
+            textBoxAño.Size = new System.Drawing.Size(155, 31);
+            textBoxAño.TabIndex = 0;
+            textBoxAño.TextChanged += textBoxAño_TextChanged;
             // 
             // textBoxDesc
             // 
-            this.textBoxDesc.Location = new System.Drawing.Point(306, 130);
-            this.textBoxDesc.Name = "textBoxDesc";
-            this.textBoxDesc.Size = new System.Drawing.Size(125, 27);
-            this.textBoxDesc.TabIndex = 1;
+            textBoxDesc.Location = new System.Drawing.Point(382, 162);
+            textBoxDesc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            textBoxDesc.Name = "textBoxDesc";
+            textBoxDesc.Size = new System.Drawing.Size(155, 31);
+            textBoxDesc.TabIndex = 1;
             // 
             // lblAño
             // 
-            this.lblAño.AutoSize = true;
-            this.lblAño.Location = new System.Drawing.Point(170, 77);
-            this.lblAño.Name = "lblAño";
-            this.lblAño.Size = new System.Drawing.Size(36, 20);
-            this.lblAño.TabIndex = 2;
-            this.lblAño.Text = "Año";
+            lblAño.AutoSize = true;
+            lblAño.Location = new System.Drawing.Point(212, 96);
+            lblAño.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblAño.Name = "lblAño";
+            lblAño.Size = new System.Drawing.Size(45, 25);
+            lblAño.TabIndex = 2;
+            lblAño.Text = "Año";
             // 
             // lblDesc
             // 
-            this.lblDesc.AutoSize = true;
-            this.lblDesc.Location = new System.Drawing.Point(170, 137);
-            this.lblDesc.Name = "lblDesc";
-            this.lblDesc.Size = new System.Drawing.Size(87, 20);
-            this.lblDesc.TabIndex = 3;
-            this.lblDesc.Text = "Descripcion";
-            this.lblDesc.Click += new System.EventHandler(this.label2_Click);
+            lblDesc.AutoSize = true;
+            lblDesc.Location = new System.Drawing.Point(212, 171);
+            lblDesc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblDesc.Name = "lblDesc";
+            lblDesc.Size = new System.Drawing.Size(104, 25);
+            lblDesc.TabIndex = 3;
+            lblDesc.Text = "Descripcion";
+            lblDesc.Click += label2_Click;
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(320, 280);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(94, 29);
-            this.btnAceptar.TabIndex = 4;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
-            this.btnAceptar.Click += new System.EventHandler(this.button1_Click);
+            btnAceptar.Location = new System.Drawing.Point(368, 345);
+            btnAceptar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            btnAceptar.Name = "btnAceptar";
+            btnAceptar.Size = new System.Drawing.Size(203, 71);
+            btnAceptar.TabIndex = 4;
+            btnAceptar.Text = "Aceptar";
+            btnAceptar.UseVisualStyleBackColor = true;
+            btnAceptar.Click += button1_Click;
             // 
             // comboBoxEsp
             // 
-            this.comboBoxEsp.FormattingEnabled = true;
-            this.comboBoxEsp.Location = new System.Drawing.Point(306, 190);
-            this.comboBoxEsp.Name = "comboBoxEsp";
-            this.comboBoxEsp.Size = new System.Drawing.Size(240, 28);
-            this.comboBoxEsp.TabIndex = 5;
-            this.comboBoxEsp.SelectedIndexChanged += new System.EventHandler(this.comboBoxEsp_SelectedIndexChanged);
+            comboBoxEsp.FormattingEnabled = true;
+            comboBoxEsp.Location = new System.Drawing.Point(382, 238);
+            comboBoxEsp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            comboBoxEsp.Name = "comboBoxEsp";
+            comboBoxEsp.Size = new System.Drawing.Size(299, 33);
+            comboBoxEsp.TabIndex = 5;
+            comboBoxEsp.SelectedIndexChanged += comboBoxEsp_SelectedIndexChanged;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(170, 192);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 20);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Especialidad";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(212, 240);
+            label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(109, 25);
+            label1.TabIndex = 6;
+            label1.Text = "Especialidad";
+            label1.Click += label1_Click;
             // 
             // formAgregoPlan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBoxEsp);
-            this.Controls.Add(this.btnAceptar);
-            this.Controls.Add(this.lblDesc);
-            this.Controls.Add(this.lblAño);
-            this.Controls.Add(this.textBoxDesc);
-            this.Controls.Add(this.textBoxAño);
-            this.Name = "formAgregoPlan";
-            this.Text = "Agrego Plan";
-            this.Load += new System.EventHandler(this.formAgregoPlan_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(1000, 562);
+            Controls.Add(label1);
+            Controls.Add(comboBoxEsp);
+            Controls.Add(btnAceptar);
+            Controls.Add(lblDesc);
+            Controls.Add(lblAño);
+            Controls.Add(textBoxDesc);
+            Controls.Add(textBoxAño);
+            Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            Name = "formAgregoPlan";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            Text = "Agrego Plan";
+            Load += formAgregoPlan_Load;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

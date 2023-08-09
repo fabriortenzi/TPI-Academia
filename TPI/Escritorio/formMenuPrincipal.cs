@@ -22,6 +22,7 @@ namespace Escritorio
 
             TPI.Datos.Especialidades.InicializarListaEspecialidades();
             TPI.Datos.Plan.InicializarListaPlanes();
+            TPI.Datos.Materia.inicializarMaterias();
         }
 
         private void formMenuPrincipal_FormClosed(object sender, FormClosedEventArgs e)
