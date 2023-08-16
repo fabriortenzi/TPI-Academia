@@ -38,8 +38,7 @@ namespace TPI.Datos.Migrations
                 name: "personas",
                 columns: table => new
                 {
-                    Dni = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Dni = table.Column<int>(type: "int", nullable: false),
                     Nombre = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Apellido = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Direccion = table.Column<string>(type: "nvarchar(max)", nullable: true),

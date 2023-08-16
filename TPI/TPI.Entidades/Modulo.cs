@@ -9,6 +9,8 @@ namespace TPI.Entidades
 {
     public class Modulo
     {
+        public static int UltimoId = 1;
+
         [Key]
         public int Id { get; private set; }
 
@@ -18,6 +20,7 @@ namespace TPI.Entidades
 
         public Modulo(string descripcion, string ejecuta)
         {
+            Id = UltimoId++;
             Descripcion = descripcion;
             Ejecuta = ejecuta;
         }

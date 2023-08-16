@@ -33,9 +33,7 @@ namespace Escritorio
 
         private void inscripcionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TPI.Datos.Usuario.InicializarListaUsuarios();
-            TPI.Datos.Persona.InicializarListaPersonas();
-            TPI.Datos.TipoDeUsuario.InicializarTiposDeUsuario();
+            
         }
 
         private void nuevaToolStripMenuItem_Click(object sender, EventArgs e)

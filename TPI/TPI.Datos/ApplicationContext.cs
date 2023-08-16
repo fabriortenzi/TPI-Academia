@@ -34,6 +34,14 @@ namespace TPI.Datos
         public ApplicationContext(DbContextOptions<ApplicationContext> contextOptions)
             : base(contextOptions) { }
 
+        public static ApplicationContext CreateContext()
+        {
+            var optionsBuilder = new DbContextOptionsBuilder<ApplicationContext>();
+            optionsBuilder.UseSqlServer(@"Data Source=LOCALHOST\SQLEXPRESS;Initial Catalog=tpi2023tm01;Integrated Security=true;");
+
+            return new ApplicationContext(optionsBuilder.Options);
+        }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Entidades.ModuloUsuario>()
