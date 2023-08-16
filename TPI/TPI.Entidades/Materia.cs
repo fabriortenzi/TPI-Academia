@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,9 +10,18 @@ namespace TPI.Entidades
 {
     public class Materia
     {
-       private static int UlitmoId = 1;
-
+        [Key]
+        [Column(Order = 0)]
         public int idMateria { get; private set; }
+
+        [Column(Order = 1)]
+        public int IdEspecialidad { get; private set; }
+
+        [Column(Order = 2)]
+        public int anio { get; private set; }
+
+        [ForeignKey("IdEspecialidad, anio")]
+        public Plan Plan { get; private set; }
 
         public string descMateria { get; private set; }
 
@@ -18,11 +29,10 @@ namespace TPI.Entidades
 
         public int horaTot { get; private set; }
 
-        public Plan Plan { get; private set; }
+        public Materia() { }
 
         public Materia (string desc, int hora_sem, int hora_tot, Plan plan)
         {
-            idMateria = UlitmoId++ ;
             descMateria = desc;
             horaSem = hora_sem;
             horaTot = hora_tot;
