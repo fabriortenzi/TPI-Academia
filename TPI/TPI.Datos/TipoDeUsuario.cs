@@ -9,28 +9,44 @@ namespace TPI.Datos
 {
     public class TipoDeUsuario
     {
-        public static List<Entidades.TipoDeUsuario> tiposDeUsuario = new List<Entidades.TipoDeUsuario>();
-
-        public static void InicializarTiposDeUsuario()
+        public static Entidades.TipoDeUsuario GetTipoAlumno()
         {
-            Entidades.TipoDeUsuario alumno = new Entidades.TipoDeUsuario("Alumno");
-            Entidades.TipoDeUsuario profesor = new Entidades.TipoDeUsuario("Profesor");
-            Entidades.TipoDeUsuario admin = new Entidades.TipoDeUsuario("Admin");
-
-            tiposDeUsuario.Add(alumno);
-            tiposDeUsuario.Add(profesor);
-            tiposDeUsuario.Add(admin);
+            using (var context = ApplicationContext.CreateContext())
+            {
+                return context.tipos_de_usuario.FirstOrDefault(x => x.Descripcion == "Alumno");
+            }
         }
 
-        public static Entidades.TipoDeUsuario GetTipoAlumno() => tiposDeUsuario.FirstOrDefault(x => x.Descripcion == "Alumno");
+        public static Entidades.TipoDeUsuario GetTipoProfesor()
+        {
+            using (var context = ApplicationContext.CreateContext())
+            {
+                return context.tipos_de_usuario.FirstOrDefault(x => x.Descripcion == "Profesor");
+            }
+        }
 
-        public static Entidades.TipoDeUsuario GetTipoProfesor() => tiposDeUsuario.FirstOrDefault(x => x.Descripcion == "Profesor");
+        public static Entidades.TipoDeUsuario GetTipoAdmin()
+        {
+            using (var context = ApplicationContext.CreateContext())
+            {
+                return context.tipos_de_usuario.FirstOrDefault(x => x.Descripcion == "Admin");
+            }
+        }
 
-        public static Entidades.TipoDeUsuario GetTipoAdmin() => tiposDeUsuario.FirstOrDefault(x => x.Descripcion == "Admin");
-
-        public static List<Entidades.TipoDeUsuario> GetAllTiposDeUsuario() => tiposDeUsuario;
+        public static List<Entidades.TipoDeUsuario> GetAllTiposDeUsuario()
+        {
+            using (var context = ApplicationContext.CreateContext())
+            {
+                return context.tipos_de_usuario.ToList();
+            }
+        }
 
         public static Entidades.TipoDeUsuario GetTipoUsuarioPorDescripcion(string descripcion)
-            => tiposDeUsuario.FirstOrDefault(x => x.Descripcion == descripcion);
+        {
+            using (var context = ApplicationContext.CreateContext())
+            {
+                return context.tipos_de_usuario.FirstOrDefault(x => x.Descripcion == descripcion);
+            }
+        }
     }
 }
