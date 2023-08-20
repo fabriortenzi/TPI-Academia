@@ -131,14 +131,17 @@
             // 
             // inscripcionACursadoToolStripMenuItem
             // 
+            inscripcionACursadoToolStripMenuItem.AutoSize = false;
             inscripcionACursadoToolStripMenuItem.Name = "inscripcionACursadoToolStripMenuItem";
-            inscripcionACursadoToolStripMenuItem.Size = new System.Drawing.Size(284, 34);
+            inscripcionACursadoToolStripMenuItem.Size = new System.Drawing.Size(284, 50);
             inscripcionACursadoToolStripMenuItem.Text = "Inscripcion a Cursado";
+            inscripcionACursadoToolStripMenuItem.Click += inscripcionACursadoToolStripMenuItem_Click_1;
             // 
             // eliminarInscripcionToolStripMenuItem
             // 
+            eliminarInscripcionToolStripMenuItem.AutoSize = false;
             eliminarInscripcionToolStripMenuItem.Name = "eliminarInscripcionToolStripMenuItem";
-            eliminarInscripcionToolStripMenuItem.Size = new System.Drawing.Size(284, 34);
+            eliminarInscripcionToolStripMenuItem.Size = new System.Drawing.Size(284, 50);
             eliminarInscripcionToolStripMenuItem.Text = "Eliminar Inscripcion";
             // 
             // planDeEstudioToolStripMenuItem
@@ -167,14 +170,14 @@
             // nuevoCurso
             // 
             nuevoCurso.Name = "nuevoCurso";
-            nuevoCurso.Size = new System.Drawing.Size(270, 34);
+            nuevoCurso.Size = new System.Drawing.Size(166, 34);
             nuevoCurso.Text = "Nuevo";
             nuevoCurso.Click += nuevoCurso_Click;
             // 
             // editarToolStripMenuItem3
             // 
             editarToolStripMenuItem3.Name = "editarToolStripMenuItem3";
-            editarToolStripMenuItem3.Size = new System.Drawing.Size(270, 34);
+            editarToolStripMenuItem3.Size = new System.Drawing.Size(166, 34);
             editarToolStripMenuItem3.Text = "Editar";
             // 
             // evaluacionToolStripMenuItem
