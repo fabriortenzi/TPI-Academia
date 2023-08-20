@@ -33,7 +33,7 @@ namespace Escritorio
 
         private void inscripcionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void nuevaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -120,6 +120,12 @@ namespace Escritorio
         {
             formCrearCurso formCrearCurso = new();
             formCrearCurso.Show();
+        }
+
+        private void inscripcionACursadoToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            formInscripcionCursado formInscripcionCursado = new(Usuario);
+            formInscripcionCursado.Show();
         }
     }
 }
