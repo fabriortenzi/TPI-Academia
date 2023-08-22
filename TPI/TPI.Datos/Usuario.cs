@@ -15,8 +15,7 @@ namespace TPI.Datos
         {
             using (var context = ApplicationContext.CreateContext())
             {
-                context.usuarios.Attach(usuario);
-                context.Entry(usuario).State = EntityState.Added;
+                context.usuarios.Add(usuario);
                 context.SaveChanges();
             }            
         } 

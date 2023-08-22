@@ -44,6 +44,6 @@ namespace TPI.Datos
             => ModulosUsuarios;
 
         public static Entidades.ModuloUsuario GetModuloUsuario(Entidades.Modulo modulo, Entidades.TipoDeUsuario tipoDeUsuario)
-            => ModulosUsuarios.FirstOrDefault(x => x.Modulo.Descripcion == modulo.Descripcion && x.TipoDeUsuario.Descripcion == tipoDeUsuario.Descripcion);
+            => ModulosUsuarios.FirstOrDefault(x => x.Modulo == modulo && x.TipoDeUsuario == tipoDeUsuario);
     }
 }
