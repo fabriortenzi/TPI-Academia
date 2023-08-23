@@ -66,6 +66,18 @@ namespace TPI.Datos
 
             modelBuilder.Entity<Entidades.Plan>()
                 .HasKey(e => new { e.IdEspecialidad, e.anio });
+
+            modelBuilder.Entity<Entidades.MateriaAprobada>()
+                .HasKey(e => new { e.idMateria, e.Legajo });
+
+            modelBuilder.Entity<Entidades.MateriaComision>()
+               .HasKey(e => new { e.idMateria, e.idEspecialidad, e.IdCom });
+            
+            modelBuilder.Entity<Entidades.ProfesorCurso>()
+               .HasKey(e => new { e.idMateria, e.Legajo, e.Anio });
+
+            modelBuilder.Entity<Entidades.Evaluacion>()
+              .HasKey(e => new { e.idEvaluacion});
         }
     }
 }

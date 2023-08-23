@@ -17,13 +17,13 @@ namespace TPI.Datos
             }
         }
 
-        public static Entidades.Evaluacion GetEvaluacion(int legajo, int id_materia, int anio, int id_evaluacion)
+        public static Entidades.Evaluacion GetEvaluacion(int id_evaluacion)
         {
             Entidades.Evaluacion evaluacion = null;
 
             using (var context = ApplicationContext.CreateContext())
             {
-                evaluacion = context.evaluaciones.FirstOrDefault(x => x.Legajo == legajo && x.idMateria == id_materia && x.Anio == anio && x.idEvaluacion == id_evaluacion );
+                evaluacion = context.evaluaciones.FirstOrDefault(x => x.idEvaluacion == id_evaluacion );
             }
 
             return evaluacion;

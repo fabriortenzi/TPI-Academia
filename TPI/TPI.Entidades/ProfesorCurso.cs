@@ -23,7 +23,7 @@ namespace TPI.Entidades
         public Usuario Usuario { get; set; }
 
         [ForeignKey("idMateria, Anio")]
-        public Materia Materia { get; set; }
+        public Curso Curso { get; set; }
 
 
         public String Cargo { get; set; }

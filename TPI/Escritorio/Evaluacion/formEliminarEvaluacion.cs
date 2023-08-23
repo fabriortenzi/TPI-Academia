@@ -28,11 +28,11 @@ namespace Escritorio.Evaluacion
 
             if (conf == DialogResult.Yes)
             {
-                int id_materia = int.Parse(txtIdMateria.Text);
-            int legajo = int.Parse(txtLegajo.Text);
-            int anio = int.Parse(txtAnio.Text);
-            int id_evaluacion = int.Parse(txtIdEvaluacion.Text);
-            TPI.Entidades.Evaluacion evaluacion = TPI.Negocio.Evaluaciones.GetEvaluacion(legajo,id_materia, anio, id_evaluacion);
+            
+            
+          
+                int id_evaluacion = int.Parse(txtIdEvaluacion.Text);
+            TPI.Entidades.Evaluacion evaluacion = TPI.Negocio.Evaluaciones.GetEvaluacion(id_evaluacion);
             }
             else { this.Close(); }
         }

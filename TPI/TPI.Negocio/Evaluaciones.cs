@@ -14,9 +14,9 @@ namespace TPI.Negocio
             TPI.Datos.Evaluaciones.Agregar(evaluacion);
         }
 
-        public static Entidades.Evaluacion GetEvaluacion(int legajo, int id_materia, int anio, int id_evaluacion)
+        public static Entidades.Evaluacion GetEvaluacion(int id_evaluacion)
         {
-            return TPI.Datos.Evaluaciones.GetEvaluacion(legajo, id_materia, anio, id_evaluacion);
+            return TPI.Datos.Evaluaciones.GetEvaluacion(id_evaluacion);
         }
         public static List<Entidades.Evaluacion> GetAllEvaluacion()
         {
