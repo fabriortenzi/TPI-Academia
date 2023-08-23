@@ -31,6 +31,14 @@ namespace TPI.Datos
 
         public DbSet<Entidades.Plan> planes { get; set; }
 
+        public DbSet<Entidades.MateriaAprobada> materias_aprobadas { get; set; }
+
+        public DbSet<Entidades.MateriaComision> materias_comisiones { get; set; }
+
+        public DbSet<Entidades.ProfesorCurso> profesores_cursos { get; set; }
+        
+        public DbSet<Entidades.Evaluacion> evaluaciones { get; set; }
+
         public ApplicationContext(DbContextOptions<ApplicationContext> contextOptions)
             : base(contextOptions) { }
 

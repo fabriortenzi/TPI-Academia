@@ -9,6 +9,8 @@ namespace TPI.Entidades
 {
     public class Usuario
     {
+        private static int UltimoLegajo = 1;
+
         [Key]
         public int Legajo { get; private set; }  
         
@@ -24,6 +26,7 @@ namespace TPI.Entidades
 
         public Usuario(string contraseña, Persona persona, TipoDeUsuario tipoDeUsuario)
         {
+            Legajo = UltimoLegajo++;
             Contraseña = contraseña;
             Persona = persona;
             TipoDeUsuario = tipoDeUsuario;

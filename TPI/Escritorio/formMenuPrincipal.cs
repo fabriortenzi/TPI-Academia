@@ -1,4 +1,8 @@
-﻿using System;
+﻿using Escritorio.Evaluacion;
+using Escritorio.MateriaAprobada;
+using Escritorio.MateriaComision;
+using Escritorio.ProfesorCurso;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -122,11 +126,72 @@ namespace Escritorio
             formCrearCurso.Show();
         }
 
-        private void inscripcionACursadoToolStripMenuItem_Click_1(object sender, EventArgs e)
+        #region MateriaAprobada
+        private void agregarMateriaAprobadatoolStripMenuItem_Click(object sender, EventArgs e)
         {
-            formInscripcionCursado formInscripcionCursado = new(Usuario);
-            formInscripcionCursado.Show();
+            formAgregarMateriaAprobada frmAgregarMateriaAprobada = new();
+            frmAgregarMateriaAprobada.Show();
         }
+
+        private void eliminarMateriaAprobadatoolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formEliminarMateriaAprobada frmEliminarMateriaAprobada = new();
+            frmEliminarMateriaAprobada.Show();
+
+        }
+
+        private void consultarMateriasAprobadasToolStripMenuItem_Click(object sender, EventArgs e) 
+        {
+            formConsultarMateriaAprobada frmConsultarMateriaAprobada = new();
+            frmConsultarMateriaAprobada.Show();
+        }
+        #endregion
+
+        #region MateriaComision
+        private void agregarMateriaComisiontoolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formAgregarMateriaComision frmAgregaMateriaComision = new();
+            frmAgregaMateriaComision.Show();
+        }
+
+        private void eliminarMateriaComisiontoolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formEliminarMateriaComision frmEliminarMateriaComision = new();
+            frmEliminarMateriaComision.Show();
+        }
+
+        #endregion
+
+        #region ProfesorCurso
+
+        private void agregarProfesorCursotoolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formAgregarProfesorCurso frmAgregaProfesorCurso = new();
+            frmAgregaProfesorCurso.Show();
+        }
+
+        private void eliminarProfesorCursotoolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formEliminarProfesorCurso frmEliminarProfesorCurso = new();
+            frmEliminarProfesorCurso.Show();
+        }
+        #endregion
+
+        #region Evaluacion
+        private void agregarEvaluaciontoolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formAgregarEvaluacion frmAgregaEvaluaciones = new();
+            frmAgregaEvaluaciones.Show();
+        }
+
+        private void eliminarEvaluaciontoolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formEliminarEvaluacion frmEliminarEvaluaciones = new();
+            frmEliminarEvaluaciones.Show();
+        }
+        #endregion
+
+
     }
 }
 
