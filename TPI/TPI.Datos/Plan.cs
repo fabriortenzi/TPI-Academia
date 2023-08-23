@@ -35,7 +35,7 @@ namespace TPI.Datos
         public static List<Entidades.Plan> GetPlanesPorEspecialidad(Entidades.Especialidad Especialidad)
             => planes.Where(x => x.especialidad == Especialidad).ToList();
 
-        public static Entidades.Plan GetPlanPorEspecialidadAño(Entidades.Especialidad Especialidad, int Año)
-            => planes.FirstOrDefault(x => x.especialidad == Especialidad && x.anio == Año);
+        public static Entidades.Plan GetPlanPorEspecialidadAnio(Entidades.Especialidad Especialidad, int Anio)
+            => planes.FirstOrDefault(x => x.especialidad == Especialidad && x.anio == Anio);
     }
 }

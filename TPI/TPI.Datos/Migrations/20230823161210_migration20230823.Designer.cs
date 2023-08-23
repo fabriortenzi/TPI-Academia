@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TPI.Datos;
 
 namespace TPI.Datos.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20230823161210_migration20230823")]
+    partial class migration20230823
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -169,7 +171,7 @@ namespace TPI.Datos.Migrations
                     b.Property<int>("idMateria")
                         .HasColumnType("int");
 
-                    b.Property<int>("idEspecialidad")
+                    b.Property<int>("IdEspecialidad")
                         .HasColumnType("int");
 
                     b.Property<int>("IdCom")
@@ -187,7 +189,10 @@ namespace TPI.Datos.Migrations
                     b.Property<TimeSpan>("hora_ini")
                         .HasColumnType("time");
 
-                    b.HasKey("idMateria", "idEspecialidad", "IdCom");
+                    b.Property<int?>("idEspecialidad")
+                        .HasColumnType("int");
+
+                    b.HasKey("idMateria", "IdEspecialidad", "IdCom");
 
                     b.HasIndex("IdCom", "idEspecialidad");
 
@@ -453,9 +458,7 @@ namespace TPI.Datos.Migrations
 
                     b.HasOne("TPI.Entidades.Comisiones", "Comisiones")
                         .WithMany()
-                        .HasForeignKey("IdCom", "idEspecialidad")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("IdCom", "idEspecialidad");
 
                     b.Navigation("Comisiones");
 

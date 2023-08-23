@@ -28,136 +28,113 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnCancelar = new System.Windows.Forms.Button();
-            btnAgregar = new System.Windows.Forms.Button();
-            txtidMaeria = new System.Windows.Forms.TextBox();
-            label2 = new System.Windows.Forms.Label();
-            txtLegajo = new System.Windows.Forms.TextBox();
-            label1 = new System.Windows.Forms.Label();
-            nudNota = new System.Windows.Forms.NumericUpDown();
-            label3 = new System.Windows.Forms.Label();
-            label4 = new System.Windows.Forms.Label();
-            txtAnio = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)nudNota).BeginInit();
-            SuspendLayout();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtLegajo = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.nudNota = new System.Windows.Forms.NumericUpDown();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dtpFecha_hora = new System.Windows.Forms.DateTimePicker();
+            ((System.ComponentModel.ISupportInitialize)(this.nudNota)).BeginInit();
+            this.SuspendLayout();
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new System.Drawing.Point(26, 242);
-            btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new System.Drawing.Size(75, 23);
-            btnCancelar.TabIndex = 21;
-            btnCancelar.Text = "Cancelar";
-            btnCancelar.UseVisualStyleBackColor = true;
-            btnCancelar.Click += btnCancelar_Click;
+            this.btnCancelar.Location = new System.Drawing.Point(26, 242);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 21;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
             // 
             // btnAgregar
             // 
-            btnAgregar.Location = new System.Drawing.Point(194, 242);
-            btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new System.Drawing.Size(75, 23);
-            btnAgregar.TabIndex = 20;
-            btnAgregar.Text = "Agregar";
-            btnAgregar.UseVisualStyleBackColor = true;
-            btnAgregar.Click += btnAgregar_Click;
-            // 
-            // txtidMaeria
-            // 
-            txtidMaeria.Location = new System.Drawing.Point(107, 93);
-            txtidMaeria.Name = "txtidMaeria";
-            txtidMaeria.Size = new System.Drawing.Size(100, 23);
-            txtidMaeria.TabIndex = 19;
+            this.btnAgregar.Location = new System.Drawing.Point(194, 242);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregar.TabIndex = 20;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(41, 96);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(60, 15);
-            label2.TabIndex = 18;
-            label2.Text = "idMateria:";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(31, 88);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(70, 15);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Fecha_hora:";
             // 
             // txtLegajo
             // 
-            txtLegajo.Location = new System.Drawing.Point(107, 47);
-            txtLegajo.Name = "txtLegajo";
-            txtLegajo.Size = new System.Drawing.Size(100, 23);
-            txtLegajo.TabIndex = 17;
+            this.txtLegajo.Location = new System.Drawing.Point(107, 47);
+            this.txtLegajo.Name = "txtLegajo";
+            this.txtLegajo.Size = new System.Drawing.Size(100, 23);
+            this.txtLegajo.TabIndex = 17;
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(56, 50);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(45, 15);
-            label1.TabIndex = 16;
-            label1.Text = "Legajo:";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(56, 50);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(45, 15);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Legajo:";
             // 
             // nudNota
             // 
-            nudNota.Location = new System.Drawing.Point(129, 175);
-            nudNota.Name = "nudNota";
-            nudNota.Size = new System.Drawing.Size(37, 23);
-            nudNota.TabIndex = 23;
+            this.nudNota.Location = new System.Drawing.Point(119, 127);
+            this.nudNota.Name = "nudNota";
+            this.nudNota.Size = new System.Drawing.Size(37, 23);
+            this.nudNota.TabIndex = 23;
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(56, 177);
-            label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(36, 15);
-            label3.TabIndex = 22;
-            label3.Text = "Nota:";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(56, 129);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(36, 15);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "Nota:";
             // 
-            // label4
+            // dtpFecha_hora
             // 
-            label4.AutoSize = true;
-            label4.Location = new System.Drawing.Point(60, 138);
-            label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(32, 15);
-            label4.TabIndex = 24;
-            label4.Text = "Año:";
+            this.dtpFecha_hora.Location = new System.Drawing.Point(107, 85);
+            this.dtpFecha_hora.Name = "dtpFecha_hora";
+            this.dtpFecha_hora.Size = new System.Drawing.Size(100, 23);
+            this.dtpFecha_hora.TabIndex = 24;
             // 
-            // txtAnio
+            // formAgregarEvaluacion
             // 
-            txtAnio.Location = new System.Drawing.Point(107, 135);
-            txtAnio.Name = "txtAnio";
-            txtAnio.Size = new System.Drawing.Size(100, 23);
-            txtAnio.TabIndex = 25;
-            // 
-            // formEvaluaciones
-            // 
-            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(291, 290);
-            Controls.Add(txtAnio);
-            Controls.Add(label4);
-            Controls.Add(nudNota);
-            Controls.Add(label3);
-            Controls.Add(btnCancelar);
-            Controls.Add(btnAgregar);
-            Controls.Add(txtidMaeria);
-            Controls.Add(label2);
-            Controls.Add(txtLegajo);
-            Controls.Add(label1);
-            Name = "formEvaluaciones";
-            Text = "formEvaluaciones";
-            ((System.ComponentModel.ISupportInitialize)nudNota).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(291, 290);
+            this.Controls.Add(this.dtpFecha_hora);
+            this.Controls.Add(this.nudNota);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnAgregar);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtLegajo);
+            this.Controls.Add(this.label1);
+            this.Name = "formAgregarEvaluacion";
+            this.Text = "formEvaluaciones";
+            ((System.ComponentModel.ISupportInitialize)(this.nudNota)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
 
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.TextBox txtidMaeria;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtLegajo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown nudNota;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtAnio;
+        private System.Windows.Forms.DateTimePicker dtpFecha_hora;
     }
 }

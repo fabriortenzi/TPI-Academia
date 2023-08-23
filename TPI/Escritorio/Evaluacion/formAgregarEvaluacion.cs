@@ -20,9 +20,9 @@ namespace Escritorio.Evaluacion
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             TPI.Entidades.Evaluacion evaluacion = new TPI.Entidades.Evaluacion();
-            evaluacion.idMateria = int.Parse(txtidMaeria.Text);
-            evaluacion.Legajo = int.Parse(txtLegajo.Text);
-            evaluacion.Anio = int.Parse(txtAnio.Text);
+            
+            evaluacion.LegajoUsuario = int.Parse(txtLegajo.Text);
+            evaluacion.FechaHora = (DateTime)dtpFecha_hora.Value;
             evaluacion.Nota = (int)nudNota.Value;
             TPI.Negocio.Evaluaciones.Agregar(evaluacion);
         }
