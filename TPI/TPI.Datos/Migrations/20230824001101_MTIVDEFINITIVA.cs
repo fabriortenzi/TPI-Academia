@@ -2,7 +2,7 @@
 
 namespace TPI.Datos.Migrations
 {
-    public partial class MTIV5 : Migration
+    public partial class MTIVDEFINITIVA : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

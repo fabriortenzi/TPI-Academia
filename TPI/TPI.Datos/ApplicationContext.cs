@@ -71,13 +71,11 @@ namespace TPI.Datos
                 .HasKey(e => new { e.idMateria, e.Legajo });
 
             modelBuilder.Entity<Entidades.MateriaComision>()
-               .HasKey(e => new { e.idMateria, e.idEspecialidad, e.IdCom });
+               .HasKey(e => new { e.idMateria, e.IdEspecialidad, e.IdCom });
             
             modelBuilder.Entity<Entidades.ProfesorCurso>()
                .HasKey(e => new { e.idMateria, e.Legajo, e.Anio });
 
-            modelBuilder.Entity<Entidades.Evaluacion>()
-              .HasKey(e => new { e.idEvaluacion});
         }
     }
 }

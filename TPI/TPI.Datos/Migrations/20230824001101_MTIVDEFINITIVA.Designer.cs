@@ -10,8 +10,8 @@ using TPI.Datos;
 namespace TPI.Datos.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20230823180356_MTIV9")]
-    partial class MTIV9
+    [Migration("20230824001101_MTIVDEFINITIVA")]
+    partial class MTIVDEFINITIVA
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -171,7 +171,7 @@ namespace TPI.Datos.Migrations
                     b.Property<int>("idMateria")
                         .HasColumnType("int");
 
-                    b.Property<int>("idEspecialidad")
+                    b.Property<int>("IdEspecialidad")
                         .HasColumnType("int");
 
                     b.Property<int>("IdCom")
@@ -189,9 +189,9 @@ namespace TPI.Datos.Migrations
                     b.Property<TimeSpan>("hora_ini")
                         .HasColumnType("time");
 
-                    b.HasKey("idMateria", "idEspecialidad", "IdCom");
+                    b.HasKey("idMateria", "IdEspecialidad", "IdCom");
 
-                    b.HasIndex("IdCom", "idEspecialidad");
+                    b.HasIndex("IdCom", "IdEspecialidad");
 
                     b.ToTable("materias_comisiones");
                 });
@@ -455,7 +455,7 @@ namespace TPI.Datos.Migrations
 
                     b.HasOne("TPI.Entidades.Comisiones", "Comisiones")
                         .WithMany()
-                        .HasForeignKey("IdCom", "idEspecialidad")
+                        .HasForeignKey("IdCom", "IdEspecialidad")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

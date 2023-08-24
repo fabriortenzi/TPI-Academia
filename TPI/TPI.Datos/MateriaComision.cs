@@ -23,7 +23,7 @@ namespace TPI.Datos
 
             using (var context = ApplicationContext.CreateContext())
             {
-                materia_comision = context.materias_comisiones.FirstOrDefault(x => x.idMateria == id_materia && x.idEspecialidad == id_especialidad && x.IdCom == id_comision);
+                materia_comision = context.materias_comisiones.FirstOrDefault(x => x.idMateria == id_materia && x.IdEspecialidad == id_especialidad && x.IdCom == id_comision);
             }
 
             return materia_comision;

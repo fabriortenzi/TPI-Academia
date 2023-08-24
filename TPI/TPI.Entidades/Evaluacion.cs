@@ -10,7 +10,7 @@ namespace TPI.Entidades
 {
     public class Evaluacion
     {
-
+        [Key]
         [Column(Order = 0)]
         public int idEvaluacion { get; set; }
 
