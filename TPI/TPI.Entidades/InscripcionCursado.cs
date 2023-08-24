@@ -37,12 +37,11 @@ namespace TPI.Entidades
 
         public InscripcionCursado() { }
 
-        public InscripcionCursado(Curso curso, Usuario usuario, Comisiones comision, DateTime fechaHora)
+        public InscripcionCursado(Curso curso, Usuario usuario, Comisiones comision)
         {
             Curso = curso;
             Usuario = usuario;
             Comision = comision;
-            FechaHora = fechaHora;
         }
     }
 }

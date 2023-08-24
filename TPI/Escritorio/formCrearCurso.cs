@@ -66,7 +66,7 @@ namespace Escritorio
             {
                 var añoPlanSeleccionado = Convert.ToInt32(cbxPlanes.SelectedItem.ToString());
                 Año = añoPlanSeleccionado;
-                var planSeleccionado = TPI.Negocio.Plan.GetPlanPorEspecialidadAño(Especialidad, Año);
+                var planSeleccionado = TPI.Negocio.Plan.GetPlanPorEspecialidadAnio(Especialidad, Año);
                 Plan = planSeleccionado;
                 var materiasPlan = TPI.Negocio.Materia.GetMateriasPorPlan(planSeleccionado);
 

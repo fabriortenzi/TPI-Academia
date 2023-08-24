@@ -15,5 +15,8 @@ namespace TPI.Negocio
         {
             Datos.Curso.AgregarCurso(curso);
         }
+
+        public static List<Entidades.Curso> GetCursosPorPlanYAñoActual(Entidades.Plan plan)
+            => Datos.Curso.GetCursosPorPlanYAñoActual(plan);
     }
 }
