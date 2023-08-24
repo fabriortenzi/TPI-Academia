@@ -54,7 +54,7 @@ namespace Escritorio
         private void cbxPlanes_SelectedIndexChanged(object sender, EventArgs e)
         {
             var añoplanseleccionado = Convert.ToInt32(cbxPlanes.SelectedItem.ToString());
-            var plan = TPI.Datos.Plan.GetPlanPorEspecialidadAño(Especialidad,añoplanseleccionado);
+            var plan = TPI.Datos.Plan.GetPlanPorEspecialidadAnio(Especialidad,añoplanseleccionado);
            
             Plan = plan;
         }

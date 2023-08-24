@@ -10,8 +10,8 @@ using TPI.Datos;
 namespace TPI.Datos.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20230824001101_MTIVDEFINITIVA")]
-    partial class MTIVDEFINITIVA
+    [Migration("20230824114433_materias-aprobadas")]
+    partial class materiasaprobadas
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
