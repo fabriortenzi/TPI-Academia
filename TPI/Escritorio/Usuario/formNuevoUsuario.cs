@@ -47,8 +47,11 @@ namespace Escritorio
                     formInscripcionPlan formInscripcionPlan = new(usuario);
                     formInscripcionPlan.Show();
                 }
+                else
+                {
+                    MessageBox.Show("Usuario creado con exito!");
+                }
 
-                MessageBox.Show("Usuario creado con exito!");
                 this.Dispose();
             }
             else

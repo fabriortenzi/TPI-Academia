@@ -15,7 +15,8 @@ namespace TPI.Datos
         {
             using (var context = ApplicationContext.CreateContext())
             {
-                context.usuarios.Add(usuario);
+                context.usuarios.Attach(usuario);
+                context.Entry(usuario).State = EntityState.Added;
                 context.SaveChanges();
             }            
         } 
@@ -27,6 +28,7 @@ namespace TPI.Datos
                 return context.usuarios
                     .Include(x => x.TipoDeUsuario)
                     .Include(x => x.Persona)
+                    .Include(x => x.Plan)
                     .FirstOrDefault(x => x.Legajo == legajo && x.Contraseña == contraseña);
             }
         }
@@ -48,6 +50,17 @@ namespace TPI.Datos
             {
                 var usuarioCambiar = context.usuarios.FirstOrDefault(x => x == usuario);
                 usuarioCambiar.Contraseña = nuevaCont;
+                context.SaveChanges();
+            }
+        }
+
+        public static void AsignarPlanAUsuario(Entidades.Plan _Plan, Entidades.Usuario Usuario)
+        {
+            Usuario.Plan = _Plan;
+            using (ApplicationContext context = ApplicationContext.CreateContext())
+            {
+                context.usuarios.Attach(Usuario);
+                context.Entry(Usuario).State = EntityState.Modified;
                 context.SaveChanges();
             }
         }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -9,11 +10,12 @@ namespace TPI.Datos
 {
     public class Curso
     {
-        private static List<Entidades.Curso> cursos = new();
-
         public static void AgregarCurso(Entidades.Curso curso)
         {
-            cursos.Add(curso);
+            using (var context = ApplicationContext.CreateContext())
+            {
+                context.cursos.Add(curso);
+            }
         }
 
         public static List<Entidades.Curso> GetCursosPorPlanYAñoActual(Entidades.Plan plan)
@@ -21,11 +23,16 @@ namespace TPI.Datos
             DateTime fechaActual = DateTime.Today;
             int añoActual = fechaActual.Year;
 
-            var cursosDisponibles = cursos.Where(c => c.Año == añoActual
-                && c.Materia.Plan.Equals(plan)
-                && c.Cupo > 0).ToList();
+            using (var context = ApplicationContext.CreateContext())
+            {
+                var cursosDisponibles = context.cursos
+                    .Include(c => c.Materia)
+                    .Where(c => c.Año == añoActual
+                            && c.Materia.Plan.Equals(plan)
+                            && c.Cupo > 0).ToList();
 
-            return cursosDisponibles;
+                return cursosDisponibles;
+            }
         }
     }
 }

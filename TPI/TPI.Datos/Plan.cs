@@ -1,41 +1,43 @@
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TPI.Entidades;
 
 namespace TPI.Datos
 {
     public class Plan
     {
-        private static List<Entidades.Plan> planes = new List<Entidades.Plan>();
-
         public static void AgregarPlanes(Entidades.Plan plan)
         {
-            planes.Add(plan);
-        }
-
-        public static void InicializarListaPlanes()
-        {
-            Entidades.Especialidad esp1 = Especialidades.GetEspecialidad("Ingenieria en Sistemas");
-            Entidades.Especialidad esp2 = Especialidades.GetEspecialidad("Ingenieria Quimica");
-
-            Entidades.Plan plan1 = new(2008, "Plan 2008", esp1 );
-            Entidades.Plan plan2 = new(2023, "Plan 2023", esp2 );
-
-            AgregarPlanes(plan1);
-            AgregarPlanes(plan2);
-        }
-
-        public static List<Entidades.Plan> GetPlanes()
-        {
-            return planes;
+            using (var context = ApplicationContext.CreateContext())
+            {
+                context.planes.Attach(plan);
+                context.Entry(plan).State = EntityState.Added;
+                context.SaveChanges();
+            }
         }
 
         public static List<Entidades.Plan> GetPlanesPorEspecialidad(Entidades.Especialidad Especialidad)
-            => planes.Where(x => x.especialidad == Especialidad).ToList();
+        {
+            using (var context = ApplicationContext.CreateContext())
+            {
+                return context.planes
+                    .Include(x => x.especialidad)
+                    .Where(x => x.especialidad.descEspec == Especialidad.descEspec).ToList();
+            }
+        }
 
         public static Entidades.Plan GetPlanPorEspecialidadAnio(Entidades.Especialidad Especialidad, int Anio)
-            => planes.FirstOrDefault(x => x.especialidad == Especialidad && x.anio == Anio);
+        {
+            using (var context = ApplicationContext.CreateContext())
+            {
+                return context.planes
+                    .Include(x => x.especialidad)
+                    .FirstOrDefault(x => x.especialidad.descEspec == Especialidad.descEspec && x.anio == Anio);
+            }
+        }
     }
 }

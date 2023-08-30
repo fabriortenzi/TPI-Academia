@@ -8,11 +8,12 @@ namespace TPI.Datos
 {
     public class Materia
     {
-        private static List<Entidades.Materia> materias = new List<Entidades.Materia>();
-
         public static void AgregarMateria (TPI.Entidades.Materia materia)
         {
-            materias.Add(materia);
+            using (var context = ApplicationContext.CreateContext())
+            {
+                context.materias.Add(materia);
+            }
         } 
 
         public static void inicializarMaterias()
@@ -34,15 +35,23 @@ namespace TPI.Datos
             AgregarMateria(materia4);
         }
 
-        public static List<Entidades.Materia> GetMaterias()
+        public static List<Entidades.Materia> GetMateriasPorPlan(Entidades.Plan plan)
         {
-            return materias;
+            using (var context = ApplicationContext.CreateContext())
+            {
+                return context.materias.Where(x => x.Plan == plan).ToList();
+            }
         }
 
-        public static List<Entidades.Materia> GetMateriasPorPlan(Entidades.Plan plan)
-            => materias.Where(x => x.Plan == plan).ToList();
-
         public static Entidades.Materia GetMateriaPorDescripcionYPlan(string descripcionMateriaSelecc, Entidades.Plan plan)
-            => materias.FirstOrDefault(x => x.descMateria == descripcionMateriaSelecc && x.Plan == plan);
+        {
+            using (var context = ApplicationContext.CreateContext())
+            {
+                return context.materias.FirstOrDefault(
+                    x => x.descMateria == descripcionMateriaSelecc 
+                    && x.Plan.IdEspecialidad == plan.IdEspecialidad
+                    && x.Plan.anio == plan.anio);
+            }
+        }
     }
 }
