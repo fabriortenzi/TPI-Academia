@@ -1,0 +1,122 @@
+﻿
+namespace Escritorio
+{
+    partial class formInscripcionPlan
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            btnAceptar = new System.Windows.Forms.Button();
+            comboBoxEspecialidades = new System.Windows.Forms.ComboBox();
+            label1 = new System.Windows.Forms.Label();
+            label2 = new System.Windows.Forms.Label();
+            cbxPlanes = new System.Windows.Forms.ComboBox();
+            SuspendLayout();
+            // 
+            // btnAceptar
+            // 
+            btnAceptar.Enabled = false;
+            btnAceptar.Location = new System.Drawing.Point(207, 218);
+            btnAceptar.Margin = new System.Windows.Forms.Padding(4);
+            btnAceptar.Name = "btnAceptar";
+            btnAceptar.Size = new System.Drawing.Size(197, 58);
+            btnAceptar.TabIndex = 0;
+            btnAceptar.Text = "Aceptar";
+            btnAceptar.UseVisualStyleBackColor = true;
+            btnAceptar.Click += btnAceptar_Click;
+            // 
+            // comboBoxEspecialidades
+            // 
+            comboBoxEspecialidades.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            comboBoxEspecialidades.FormattingEnabled = true;
+            comboBoxEspecialidades.Location = new System.Drawing.Point(279, 56);
+            comboBoxEspecialidades.Margin = new System.Windows.Forms.Padding(4);
+            comboBoxEspecialidades.Name = "comboBoxEspecialidades";
+            comboBoxEspecialidades.Size = new System.Drawing.Size(296, 33);
+            comboBoxEspecialidades.TabIndex = 1;
+            comboBoxEspecialidades.SelectedIndexChanged += comboBoxEspecialidades_SelectedIndexChanged;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(24, 60);
+            label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(230, 25);
+            label1.TabIndex = 2;
+            label1.Text = "Seleccione una Especialidad";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(24, 138);
+            label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(157, 25);
+            label2.TabIndex = 3;
+            label2.Text = "Seleccione un Plan";
+            // 
+            // cbxPlanes
+            // 
+            cbxPlanes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cbxPlanes.Enabled = false;
+            cbxPlanes.FormattingEnabled = true;
+            cbxPlanes.Location = new System.Drawing.Point(279, 138);
+            cbxPlanes.Margin = new System.Windows.Forms.Padding(4);
+            cbxPlanes.Name = "cbxPlanes";
+            cbxPlanes.Size = new System.Drawing.Size(296, 33);
+            cbxPlanes.TabIndex = 4;
+            cbxPlanes.SelectedIndexChanged += cbxPlanes_SelectedIndexChanged;
+            // 
+            // formInscripcionPlan
+            // 
+            AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(621, 300);
+            Controls.Add(cbxPlanes);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(comboBoxEspecialidades);
+            Controls.Add(btnAceptar);
+            Margin = new System.Windows.Forms.Padding(4);
+            Name = "formInscripcionPlan";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            Text = "Asignar Plan de Estudio";
+            FormClosing += formInscripcionPlan_FormClosing;
+            Load += formInscripcionCursado_Load;
+            ResumeLayout(false);
+            PerformLayout();
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.ComboBox comboBoxEspecialidades;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cbxPlanes;
+    }
+}

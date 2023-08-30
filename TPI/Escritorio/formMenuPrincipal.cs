@@ -1,4 +1,5 @@
 ﻿using Escritorio.Evaluacion;
+using Escritorio.Inscripcion;
 using Escritorio.MateriaAprobada;
 using Escritorio.MateriaComision;
 using Escritorio.ProfesorCurso;
@@ -11,7 +12,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using TPI.Datos;
 
 namespace Escritorio
 {
@@ -19,179 +19,128 @@ namespace Escritorio
     {
         private TPI.Entidades.Usuario Usuario;
 
-        public formMenuPrincipal(TPI.Entidades.Usuario usuario)
+        public formMenuPrincipal(TPI.Entidades.Usuario _usuario)
         {
+            Usuario = _usuario;
             InitializeComponent();
-            Usuario = usuario;
+        }
 
-            TPI.Datos.Especialidades.InicializarListaEspecialidades();
-            TPI.Datos.Plan.InicializarListaPlanes();
-            TPI.Datos.Materia.inicializarMaterias();
+        private void editarPersonaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void formMenuPrincipal_FormClosed(object sender, FormClosedEventArgs e)
         {
-            this.Dispose();
             Application.Exit();
         }
 
-        private void inscripcionToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void nuevaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void crearPersonaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             formNuevaPersona formNuevaPersona = new();
             formNuevaPersona.Show();
         }
 
-        private void editarToolStripMenuItem_Click(object sender, EventArgs e)
+        private void editarPersonaToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             formEditarPersona formEditarPersona = new(Usuario.Persona);
             formEditarPersona.Show();
         }
 
-        private void nuevoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void nuevaInscripcionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formInscripcionCursado formInscripcionCursado = new(Usuario);
+            formInscripcionCursado.Show();
+        }
+
+        private void crearUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             formNuevoUsuario formNuevoUsuario = new();
             formNuevoUsuario.Show();
         }
 
-        private void inscripcionACursadoToolStripMenuItem_Click(object sender, EventArgs e)
-        { }
-
-        private void nuevoToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            formAgregoPlan formAgregoPlan = new();
-            formAgregoPlan.Show();
-        }
-
-        private void nuevaToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            formCrearMateria formCrearMateria = new();
-            formCrearMateria.Show();
-        }
-
-        private void formMenuPrincipal_Load(object sender, EventArgs e)
-        {
-            // Inicializar Listas en la Capa Datos
-            TPI.Datos.Modulo.InicializarListaModulos();
-            TPI.Datos.ModuloUsuario.InicializarListaModulosUsuarios();
-
-
-            // Opcion del Menu: Persona
-            TPI.Entidades.Modulo moduloPersona = TPI.Negocio.Modulo.GetModuloPersona();
-            TPI.Entidades.ModuloUsuario moduloUsuarioPersona = TPI.Negocio.ModuloUsuario.GetModuloUsuario(moduloPersona, Usuario.TipoDeUsuario);
-
-            nuevaMenuItemPersona.Visible = moduloUsuarioPersona.Alta;
-            editarMenuItemPersona.Visible = moduloUsuarioPersona.Modificacion;
-
-
-            // Opcion del Menu: Usuario
-            TPI.Entidades.Modulo moduloUsuario = TPI.Negocio.Modulo.GetModuloUsuario();
-            TPI.Entidades.ModuloUsuario moduloUsuarioUsuario = TPI.Negocio.ModuloUsuario.GetModuloUsuario(moduloUsuario, Usuario.TipoDeUsuario);
-
-            nuevoMenuItemUsuario.Visible = moduloUsuarioUsuario.Alta;
-            consultarDatosMenuItemUsuario.Visible = moduloUsuarioUsuario.Consulta;
-            cambiarContraseñaMenuItemUsuario.Visible = moduloUsuarioUsuario.Modificacion;
-        }
-
-        private void formMenuPrincipal_FormClosed_1(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void nuevaMenuItemPersona_Click(object sender, EventArgs e)
-        {
-            formNuevoUsuario formNuevoUsuario = new();
-            formNuevoUsuario.Show();
-        }
-
-        private void consultarDatosMenuItemUsuario_Click(object sender, EventArgs e)
-        {
-            formConsultarDatosUsuario formConsultarDatosUsuario = new(Usuario);
-            formConsultarDatosUsuario.Show();
-        }
-
-        private void cambiarContraseñaMenuItemUsuario_Click(object sender, EventArgs e)
+        private void cambiarContraseñaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             formCambiarContraseña formCambiarContraseña = new(Usuario);
             formCambiarContraseña.Show();
         }
 
-        private void nuevoCurso_Click(object sender, EventArgs e)
+        private void consultarDatosPersonalesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formConsultarDatosUsuario formConsultarDatosUsuario = new(Usuario);
+            formConsultarDatosUsuario.Show();
+        }
+
+        private void crearNuevaMateriaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formCrearMateria formCrearMateria = new();
+            formCrearMateria.Show();
+        }
+
+        private void crearNuevoPlanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formAgregoPlan formAgregoPlan = new();
+            formAgregoPlan.Show();
+        }
+
+        private void crearCursoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             formCrearCurso formCrearCurso = new();
             formCrearCurso.Show();
         }
 
-        #region MateriaAprobada
-        private void agregarMateriaAprobadatoolStripMenuItem_Click(object sender, EventArgs e)
+        private void agregarEvaluacionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            formAgregarMateriaAprobada frmAgregarMateriaAprobada = new();
-            frmAgregarMateriaAprobada.Show();
+            formAgregarEvaluacion formAgregarEvaluacion = new();
+            formAgregarEvaluacion.Show();
         }
 
-        private void eliminarMateriaAprobadatoolStripMenuItem_Click(object sender, EventArgs e)
+        private void eliminarEvaluacionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            formEliminarMateriaAprobada frmEliminarMateriaAprobada = new();
-            frmEliminarMateriaAprobada.Show();
-
+            formEliminarEvaluacion formEliminarEvaluacion = new();
+            formEliminarEvaluacion.Show();
         }
 
-        private void consultarMateriasAprobadasToolStripMenuItem_Click(object sender, EventArgs e) 
+        private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            formConsultarMateriaAprobada frmConsultarMateriaAprobada = new();
-            frmConsultarMateriaAprobada.Show();
-        }
-        #endregion
-
-        #region MateriaComision
-        private void agregarMateriaComisiontoolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            formAgregarMateriaComision frmAgregaMateriaComision = new();
-            frmAgregaMateriaComision.Show();
+            formConsultarMateriaAprobada formConsultarMateriaAprobada = new();
+            formConsultarMateriaAprobada.Show();
         }
 
-        private void eliminarMateriaComisiontoolStripMenuItem_Click(object sender, EventArgs e)
+        private void agregarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            formEliminarMateriaComision frmEliminarMateriaComision = new();
-            frmEliminarMateriaComision.Show();
+            formAgregarMateriaAprobada formAgregarMateriaAprobada = new();
+            formAgregarMateriaAprobada.Show();
         }
 
-        #endregion
-
-        #region ProfesorCurso
-
-        private void agregarProfesorCursotoolStripMenuItem_Click(object sender, EventArgs e)
+        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            formAgregarProfesorCurso frmAgregaProfesorCurso = new();
-            frmAgregaProfesorCurso.Show();
+            formEliminarMateriaAprobada formEliminarMateriaAprobada = new();
+            formEliminarMateriaAprobada.Show();
         }
 
-        private void eliminarProfesorCursotoolStripMenuItem_Click(object sender, EventArgs e)
+        private void agregarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            formEliminarProfesorCurso frmEliminarProfesorCurso = new();
-            frmEliminarProfesorCurso.Show();
-        }
-        #endregion
-
-        #region Evaluacion
-        private void agregarEvaluaciontoolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            formAgregarEvaluacion frmAgregaEvaluaciones = new();
-            frmAgregaEvaluaciones.Show();
+            formAgregarMateriaComision formAgregarMateriaComision = new();
+            formAgregarMateriaComision.Show();
         }
 
-        private void eliminarEvaluaciontoolStripMenuItem_Click(object sender, EventArgs e)
+        private void eliminarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            formEliminarEvaluacion frmEliminarEvaluaciones = new();
-            frmEliminarEvaluaciones.Show();
+            formEliminarMateriaComision formEliminarMateriaComision = new();
+            formEliminarMateriaComision.Show();
         }
-        #endregion
 
+        private void agregarToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            formAgregarProfesorCurso formAgregarProfesorCurso = new();
+            formAgregarProfesorCurso.Show();
+        }
 
+        private void eliminarToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            formEliminarProfesorCurso formEliminarProfesorCurso = new();
+            formEliminarProfesorCurso.Show();
+        }
     }
 }
-
