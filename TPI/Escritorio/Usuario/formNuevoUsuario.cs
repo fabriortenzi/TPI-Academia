@@ -25,7 +25,7 @@ namespace Escritorio
         }
 
         private void btnCrear_Click(object sender, EventArgs e)
-        {            
+        {
             string descripcionTipo = this.cbxTiposDeUsuario.GetItemText(this.cbxTiposDeUsuario.SelectedItem);
             string contraseña = txtContraseña.Text;
             string confContraseña = txtConfContraseña.Text;
@@ -49,7 +49,7 @@ namespace Escritorio
                 }
                 else
                 {
-                    MessageBox.Show("Usuario creado con exito!");
+                    MessageBox.Show($"Usuario legajo numero {usuario.Legajo} creado con exito!");
                 }
 
                 this.Dispose();
@@ -57,13 +57,13 @@ namespace Escritorio
             else
             {
                 MessageBox.Show("Las contraseñas no coinciden");
-            }            
+            }
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             int dni = 0;
-            
+
             try
             {
                 dni = Convert.ToInt32(txtDni.Text);
@@ -108,6 +108,11 @@ namespace Escritorio
 
                 MessageBox.Show("No se encontro la persona, intente nuevamente");
             }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Dispose();
         }
     }
 }

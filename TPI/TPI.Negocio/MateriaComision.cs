@@ -8,8 +8,6 @@ namespace TPI.Negocio
 {
     public class MateriaComision
     {
-
-
         public static void Agregar(Entidades.MateriaComision materia_comision)
         {
             TPI.Datos.MateriaComision.Agregar(materia_comision);
@@ -32,7 +30,8 @@ namespace TPI.Negocio
             TPI.Datos.MateriaComision.Eliminar(materia_comision);
         }
 
-
+        public static List<Entidades.Comisiones> GetComisionesPorMateria(Entidades.Materia materia)
+            => Datos.MateriaComision.GetComisionesPorMateria(materia);
     }
     
 }

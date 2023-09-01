@@ -41,6 +41,7 @@
             btnBuscar = new System.Windows.Forms.Button();
             lblTitApeNom = new System.Windows.Forms.Label();
             lblApellidoNombre = new System.Windows.Forms.Label();
+            btnCancelar = new System.Windows.Forms.Button();
             SuspendLayout();
             // 
             // cbxTiposDeUsuario
@@ -112,9 +113,9 @@
             // btnCrear
             // 
             btnCrear.Enabled = false;
-            btnCrear.Location = new System.Drawing.Point(331, 408);
+            btnCrear.Location = new System.Drawing.Point(441, 418);
             btnCrear.Name = "btnCrear";
-            btnCrear.Size = new System.Drawing.Size(149, 45);
+            btnCrear.Size = new System.Drawing.Size(217, 77);
             btnCrear.TabIndex = 7;
             btnCrear.Text = "Crear";
             btnCrear.UseVisualStyleBackColor = true;
@@ -167,11 +168,24 @@
             lblApellidoNombre.Text = "label7";
             lblApellidoNombre.Visible = false;
             // 
+            // btnCancelar
+            // 
+            btnCancelar.Location = new System.Drawing.Point(156, 418);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new System.Drawing.Size(217, 77);
+            btnCancelar.TabIndex = 13;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
+            // 
             // formNuevoUsuario
             // 
+            AcceptButton = btnCrear;
             AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            CancelButton = btnCancelar;
             ClientSize = new System.Drawing.Size(818, 523);
+            Controls.Add(btnCancelar);
             Controls.Add(lblApellidoNombre);
             Controls.Add(lblTitApeNom);
             Controls.Add(btnBuscar);
@@ -207,5 +221,6 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label lblTitApeNom;
         private System.Windows.Forms.Label lblApellidoNombre;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

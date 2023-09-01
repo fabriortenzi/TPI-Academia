@@ -29,139 +29,180 @@ namespace Escritorio
         /// </summary>
         private void InitializeComponent()
         {
-            this.cbxEspecialidades = new System.Windows.Forms.ComboBox();
-            this.cbxPlanes = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtDescMateria = new System.Windows.Forms.TextBox();
-            this.txtHorasSem = new System.Windows.Forms.TextBox();
-            this.txtHorasTot = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.btnCrear = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            cbxEspecialidades = new System.Windows.Forms.ComboBox();
+            cbxPlanes = new System.Windows.Forms.ComboBox();
+            label1 = new System.Windows.Forms.Label();
+            label2 = new System.Windows.Forms.Label();
+            txtDescMateria = new System.Windows.Forms.TextBox();
+            txtHorasSem = new System.Windows.Forms.TextBox();
+            txtHorasTot = new System.Windows.Forms.TextBox();
+            label3 = new System.Windows.Forms.Label();
+            label4 = new System.Windows.Forms.Label();
+            label5 = new System.Windows.Forms.Label();
+            btnCrear = new System.Windows.Forms.Button();
+            label6 = new System.Windows.Forms.Label();
+            btnCancelar = new System.Windows.Forms.Button();
+            SuspendLayout();
             // 
             // cbxEspecialidades
             // 
-            this.cbxEspecialidades.FormattingEnabled = true;
-            this.cbxEspecialidades.Location = new System.Drawing.Point(357, 62);
-            this.cbxEspecialidades.Name = "cbxEspecialidades";
-            this.cbxEspecialidades.Size = new System.Drawing.Size(151, 28);
-            this.cbxEspecialidades.TabIndex = 0;
-            this.cbxEspecialidades.SelectedIndexChanged += new System.EventHandler(this.cbxEspecialidades_SelectedIndexChanged);
+            cbxEspecialidades.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cbxEspecialidades.FormattingEnabled = true;
+            cbxEspecialidades.Location = new System.Drawing.Point(378, 136);
+            cbxEspecialidades.Margin = new System.Windows.Forms.Padding(4);
+            cbxEspecialidades.Name = "cbxEspecialidades";
+            cbxEspecialidades.Size = new System.Drawing.Size(287, 33);
+            cbxEspecialidades.TabIndex = 0;
+            cbxEspecialidades.SelectedIndexChanged += cbxEspecialidades_SelectedIndexChanged;
             // 
             // cbxPlanes
             // 
-            this.cbxPlanes.Enabled = false;
-            this.cbxPlanes.FormattingEnabled = true;
-            this.cbxPlanes.Location = new System.Drawing.Point(357, 117);
-            this.cbxPlanes.Name = "cbxPlanes";
-            this.cbxPlanes.Size = new System.Drawing.Size(151, 28);
-            this.cbxPlanes.TabIndex = 1;
-            this.cbxPlanes.SelectedIndexChanged += new System.EventHandler(this.cbxPlanes_SelectedIndexChanged);
+            cbxPlanes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cbxPlanes.Enabled = false;
+            cbxPlanes.FormattingEnabled = true;
+            cbxPlanes.Location = new System.Drawing.Point(378, 204);
+            cbxPlanes.Margin = new System.Windows.Forms.Padding(4);
+            cbxPlanes.Name = "cbxPlanes";
+            cbxPlanes.Size = new System.Drawing.Size(287, 33);
+            cbxPlanes.TabIndex = 1;
+            cbxPlanes.SelectedIndexChanged += cbxPlanes_SelectedIndexChanged;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(186, 64);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 20);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Especialidad";
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(164, 138);
+            label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(109, 25);
+            label1.TabIndex = 2;
+            label1.Text = "Especialidad";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(186, 119);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 20);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Plan";
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(164, 207);
+            label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(45, 25);
+            label2.TabIndex = 3;
+            label2.Text = "Plan";
             // 
             // txtDescMateria
             // 
-            this.txtDescMateria.Location = new System.Drawing.Point(357, 181);
-            this.txtDescMateria.Name = "txtDescMateria";
-            this.txtDescMateria.Size = new System.Drawing.Size(151, 27);
-            this.txtDescMateria.TabIndex = 4;
-            this.txtDescMateria.TextChanged += new System.EventHandler(this.txtDescMateria_TextChanged);
+            txtDescMateria.Location = new System.Drawing.Point(378, 284);
+            txtDescMateria.Margin = new System.Windows.Forms.Padding(4);
+            txtDescMateria.Name = "txtDescMateria";
+            txtDescMateria.Size = new System.Drawing.Size(287, 31);
+            txtDescMateria.TabIndex = 4;
+            txtDescMateria.TextChanged += txtDescMateria_TextChanged;
             // 
             // txtHorasSem
             // 
-            this.txtHorasSem.Location = new System.Drawing.Point(357, 242);
-            this.txtHorasSem.Name = "txtHorasSem";
-            this.txtHorasSem.Size = new System.Drawing.Size(151, 27);
-            this.txtHorasSem.TabIndex = 5;
-            this.txtHorasSem.TextChanged += new System.EventHandler(this.txtHorasSem_TextChanged);
+            txtHorasSem.Location = new System.Drawing.Point(378, 360);
+            txtHorasSem.Margin = new System.Windows.Forms.Padding(4);
+            txtHorasSem.Name = "txtHorasSem";
+            txtHorasSem.Size = new System.Drawing.Size(188, 31);
+            txtHorasSem.TabIndex = 5;
+            txtHorasSem.TextChanged += txtHorasSem_TextChanged;
             // 
             // txtHorasTot
             // 
-            this.txtHorasTot.Location = new System.Drawing.Point(357, 304);
-            this.txtHorasTot.Name = "txtHorasTot";
-            this.txtHorasTot.Size = new System.Drawing.Size(151, 27);
-            this.txtHorasTot.TabIndex = 6;
-            this.txtHorasTot.TextChanged += new System.EventHandler(this.txtHorasTot_TextChanged);
+            txtHorasTot.Location = new System.Drawing.Point(378, 438);
+            txtHorasTot.Margin = new System.Windows.Forms.Padding(4);
+            txtHorasTot.Name = "txtHorasTot";
+            txtHorasTot.Size = new System.Drawing.Size(188, 31);
+            txtHorasTot.TabIndex = 6;
+            txtHorasTot.TextChanged += txtHorasTot_TextChanged;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(186, 182);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(156, 20);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Nombre de la materia";
+            label3.AutoSize = true;
+            label3.Location = new System.Drawing.Point(164, 286);
+            label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(185, 25);
+            label3.TabIndex = 7;
+            label3.Text = "Nombre de la materia";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(186, 243);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(121, 20);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Horas semanales";
+            label4.AutoSize = true;
+            label4.Location = new System.Drawing.Point(164, 362);
+            label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(146, 25);
+            label4.TabIndex = 8;
+            label4.Text = "Horas semanales";
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(186, 305);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(99, 20);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Horas Totales";
+            label5.AutoSize = true;
+            label5.Location = new System.Drawing.Point(164, 439);
+            label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(118, 25);
+            label5.TabIndex = 9;
+            label5.Text = "Horas Totales";
             // 
             // btnCrear
             // 
-            this.btnCrear.Location = new System.Drawing.Point(357, 383);
-            this.btnCrear.Name = "btnCrear";
-            this.btnCrear.Size = new System.Drawing.Size(151, 29);
-            this.btnCrear.TabIndex = 10;
-            this.btnCrear.Text = "Crear";
-            this.btnCrear.UseVisualStyleBackColor = true;
-            this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
+            btnCrear.Location = new System.Drawing.Point(467, 540);
+            btnCrear.Margin = new System.Windows.Forms.Padding(4);
+            btnCrear.Name = "btnCrear";
+            btnCrear.Size = new System.Drawing.Size(246, 70);
+            btnCrear.TabIndex = 10;
+            btnCrear.Text = "Crear";
+            btnCrear.UseVisualStyleBackColor = true;
+            btnCrear.Click += btnCrear_Click;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new System.Drawing.Point(296, 34);
+            label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label6.Name = "label6";
+            label6.Size = new System.Drawing.Size(251, 25);
+            label6.TabIndex = 11;
+            label6.Text = "Complete los siguientes datos";
+            // 
+            // btnCancelar
+            // 
+            btnCancelar.Location = new System.Drawing.Point(139, 540);
+            btnCancelar.Margin = new System.Windows.Forms.Padding(4);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new System.Drawing.Size(246, 70);
+            btnCancelar.TabIndex = 12;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // formCrearMateria
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnCrear);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtHorasTot);
-            this.Controls.Add(this.txtHorasSem);
-            this.Controls.Add(this.txtDescMateria);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.cbxPlanes);
-            this.Controls.Add(this.cbxEspecialidades);
-            this.Name = "formCrearMateria";
-            this.Text = "Crear Materia";
-            this.Load += new System.EventHandler(this.formCrearMateria_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AcceptButton = btnCrear;
+            AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            CancelButton = btnCancelar;
+            ClientSize = new System.Drawing.Size(852, 647);
+            Controls.Add(btnCancelar);
+            Controls.Add(label6);
+            Controls.Add(btnCrear);
+            Controls.Add(label5);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(txtHorasTot);
+            Controls.Add(txtHorasSem);
+            Controls.Add(txtDescMateria);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(cbxPlanes);
+            Controls.Add(cbxEspecialidades);
+            Margin = new System.Windows.Forms.Padding(4);
+            Name = "formCrearMateria";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            Text = "Crear Materia";
+            Load += formCrearMateria_Load;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -177,5 +218,7 @@ namespace Escritorio
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnCrear;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

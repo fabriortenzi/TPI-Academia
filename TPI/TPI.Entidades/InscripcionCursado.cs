@@ -42,6 +42,7 @@ namespace TPI.Entidades
             Curso = curso;
             Usuario = usuario;
             Comision = comision;
+            FechaHora = DateTime.Now;
         }
     }
 }
