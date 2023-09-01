@@ -21,12 +21,9 @@ namespace Escritorio
 
         private void formCrearMateria_Load(object sender, EventArgs e)
         {
-            
-            TPI.Datos.Materia.inicializarMaterias();
-
             var especialidades = TPI.Negocio.Especialidad.GetAllEspecialidades();
 
-            foreach(var esp in especialidades)
+            foreach (var esp in especialidades)
             {
                 cbxEspecialidades.Items.Add(esp.descEspec);
             }
@@ -42,10 +39,10 @@ namespace Escritorio
             var especialidad = TPI.Datos.Especialidades.GetEspecialidad(especialidadSeleccionada);
 
             Especialidad = especialidad; //me llevo la especialidad que eligio
-            
+
             var planes = TPI.Datos.Plan.GetPlanesPorEspecialidad(especialidad);
-            
-            foreach(var plan in planes)
+
+            foreach (var plan in planes)
             {
                 cbxPlanes.Items.Add(plan.anio);
             }
@@ -53,10 +50,13 @@ namespace Escritorio
 
         private void cbxPlanes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var añoplanseleccionado = Convert.ToInt32(cbxPlanes.SelectedItem.ToString());
-            var plan = TPI.Datos.Plan.GetPlanPorEspecialidadAnio(Especialidad,añoplanseleccionado);
-           
-            Plan = plan;
+            if (cbxPlanes.SelectedIndex != -1)
+            {
+                var añoplanseleccionado = Convert.ToInt32(cbxPlanes.SelectedItem.ToString());
+                var plan = TPI.Datos.Plan.GetPlanPorEspecialidadAnio(Especialidad, añoplanseleccionado);
+
+                Plan = plan;
+            }
         }
 
         private void txtDescMateria_TextChanged(object sender, EventArgs e)
@@ -97,6 +97,11 @@ namespace Escritorio
                 MessageBox.Show("Asegurese de no haber ingresado letras a la hora de cargar las horas y" +
                     " de no haber dejado un campo en blanco");
             }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Dispose();
         }
     }
 }

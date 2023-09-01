@@ -10,5 +10,10 @@ namespace TPI.Negocio
     {
         public static Entidades.InscripcionCursado CrearInscripcion(Entidades.Curso curso, Entidades.Usuario usuario, Entidades.Comisiones comision)
             => new Entidades.InscripcionCursado(curso, usuario, comision);
+
+        public static void AgregarInscripcion(Entidades.InscripcionCursado inscripcion)
+        {
+            Datos.InscripcionCursado.AgregarInscripcion(inscripcion);
+        }
     }
 }

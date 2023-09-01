@@ -69,5 +69,15 @@ namespace TPI.Datos
             }
         }
 
-      }
+        public static List<Entidades.Comisiones> GetComisionesPorMateria(Entidades.Materia materia)
+        {
+            using (var context = ApplicationContext.CreateContext())
+            {
+                return context.materias_comisiones
+                    .Where(mc => mc.Materia.descMateria == materia.descMateria)
+                    .Select(mc => mc.Comisiones)
+                    .ToList();
+            }
+        }
     }
+}

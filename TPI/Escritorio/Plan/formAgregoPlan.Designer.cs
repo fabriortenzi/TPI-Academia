@@ -36,12 +36,14 @@ namespace Escritorio
             btnAceptar = new System.Windows.Forms.Button();
             comboBoxEsp = new System.Windows.Forms.ComboBox();
             label1 = new System.Windows.Forms.Label();
+            label2 = new System.Windows.Forms.Label();
+            btnCancelar = new System.Windows.Forms.Button();
             SuspendLayout();
             // 
             // textBoxAño
             // 
-            textBoxAño.Location = new System.Drawing.Point(382, 88);
-            textBoxAño.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            textBoxAño.Location = new System.Drawing.Point(299, 126);
+            textBoxAño.Margin = new System.Windows.Forms.Padding(4);
             textBoxAño.Name = "textBoxAño";
             textBoxAño.Size = new System.Drawing.Size(155, 31);
             textBoxAño.TabIndex = 0;
@@ -49,8 +51,8 @@ namespace Escritorio
             // 
             // textBoxDesc
             // 
-            textBoxDesc.Location = new System.Drawing.Point(382, 162);
-            textBoxDesc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            textBoxDesc.Location = new System.Drawing.Point(299, 200);
+            textBoxDesc.Margin = new System.Windows.Forms.Padding(4);
             textBoxDesc.Name = "textBoxDesc";
             textBoxDesc.Size = new System.Drawing.Size(155, 31);
             textBoxDesc.TabIndex = 1;
@@ -58,7 +60,7 @@ namespace Escritorio
             // lblAño
             // 
             lblAño.AutoSize = true;
-            lblAño.Location = new System.Drawing.Point(212, 96);
+            lblAño.Location = new System.Drawing.Point(129, 134);
             lblAño.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblAño.Name = "lblAño";
             lblAño.Size = new System.Drawing.Size(45, 25);
@@ -68,7 +70,7 @@ namespace Escritorio
             // lblDesc
             // 
             lblDesc.AutoSize = true;
-            lblDesc.Location = new System.Drawing.Point(212, 171);
+            lblDesc.Location = new System.Drawing.Point(129, 209);
             lblDesc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblDesc.Name = "lblDesc";
             lblDesc.Size = new System.Drawing.Size(104, 25);
@@ -78,10 +80,10 @@ namespace Escritorio
             // 
             // btnAceptar
             // 
-            btnAceptar.Location = new System.Drawing.Point(368, 345);
-            btnAceptar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            btnAceptar.Location = new System.Drawing.Point(402, 360);
+            btnAceptar.Margin = new System.Windows.Forms.Padding(4);
             btnAceptar.Name = "btnAceptar";
-            btnAceptar.Size = new System.Drawing.Size(203, 71);
+            btnAceptar.Size = new System.Drawing.Size(262, 71);
             btnAceptar.TabIndex = 4;
             btnAceptar.Text = "Aceptar";
             btnAceptar.UseVisualStyleBackColor = true;
@@ -89,9 +91,10 @@ namespace Escritorio
             // 
             // comboBoxEsp
             // 
+            comboBoxEsp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             comboBoxEsp.FormattingEnabled = true;
-            comboBoxEsp.Location = new System.Drawing.Point(382, 238);
-            comboBoxEsp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            comboBoxEsp.Location = new System.Drawing.Point(299, 276);
+            comboBoxEsp.Margin = new System.Windows.Forms.Padding(4);
             comboBoxEsp.Name = "comboBoxEsp";
             comboBoxEsp.Size = new System.Drawing.Size(299, 33);
             comboBoxEsp.TabIndex = 5;
@@ -100,7 +103,7 @@ namespace Escritorio
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(212, 240);
+            label1.Location = new System.Drawing.Point(129, 278);
             label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(109, 25);
@@ -108,11 +111,36 @@ namespace Escritorio
             label1.Text = "Especialidad";
             label1.Click += label1_Click;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(260, 30);
+            label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(251, 25);
+            label2.TabIndex = 7;
+            label2.Text = "Complete los siguientes datos";
+            // 
+            // btnCancelar
+            // 
+            btnCancelar.Location = new System.Drawing.Point(107, 360);
+            btnCancelar.Margin = new System.Windows.Forms.Padding(4);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new System.Drawing.Size(262, 71);
+            btnCancelar.TabIndex = 8;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
+            // 
             // formAgregoPlan
             // 
+            AcceptButton = btnAceptar;
             AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(1000, 562);
+            CancelButton = btnCancelar;
+            ClientSize = new System.Drawing.Size(771, 467);
+            Controls.Add(btnCancelar);
+            Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(comboBoxEsp);
             Controls.Add(btnAceptar);
@@ -120,7 +148,7 @@ namespace Escritorio
             Controls.Add(lblAño);
             Controls.Add(textBoxDesc);
             Controls.Add(textBoxAño);
-            Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            Margin = new System.Windows.Forms.Padding(4);
             Name = "formAgregoPlan";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "Agrego Plan";
@@ -138,5 +166,7 @@ namespace Escritorio
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.ComboBox comboBoxEsp;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

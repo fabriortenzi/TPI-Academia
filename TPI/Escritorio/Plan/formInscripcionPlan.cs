@@ -51,7 +51,7 @@ namespace Escritorio
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             TPI.Negocio.Usuario.AsignarPlanAUsuario(Plan, Usuario);
-            MessageBox.Show("Alumno Creado con Exito!");
+            MessageBox.Show($"Alumno legajo numero {Usuario.Legajo} Creado con Exito!");
             Dispose();
         }
 

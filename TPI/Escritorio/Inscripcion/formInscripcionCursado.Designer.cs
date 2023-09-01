@@ -56,6 +56,7 @@
             btnConfirmar.TabIndex = 14;
             btnConfirmar.Text = "Confirmar";
             btnConfirmar.UseVisualStyleBackColor = true;
+            btnConfirmar.Click += btnConfirmar_Click;
             // 
             // lblHorarioCurso
             // 
@@ -88,6 +89,7 @@
             // cbxComisiones
             // 
             cbxComisiones.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cbxComisiones.Enabled = false;
             cbxComisiones.FormattingEnabled = true;
             cbxComisiones.Location = new System.Drawing.Point(357, 152);
             cbxComisiones.Name = "cbxComisiones";
@@ -116,8 +118,10 @@
             // 
             // formInscripcionCursado
             // 
+            AcceptButton = btnConfirmar;
             AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            CancelButton = btnCancelar;
             ClientSize = new System.Drawing.Size(800, 450);
             Controls.Add(btnCancelar);
             Controls.Add(btnConfirmar);

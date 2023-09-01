@@ -14,7 +14,13 @@ namespace Escritorio.Inscripcion
     {
         private TPI.Entidades.Usuario Usuario;
 
+        private List<TPI.Entidades.Comisiones> Comisiones;
+
+        private TPI.Entidades.Comisiones Comision;
+
         private TPI.Entidades.MateriaComision MateriaComision;
+
+        private TPI.Entidades.Materia Materia;
 
         private TPI.Entidades.Curso Curso;
 
@@ -44,17 +50,41 @@ namespace Escritorio.Inscripcion
 
         private void cbxCursosMateria_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var materiaSeleccionada = cbxCursosMateria.SelectedIndex.ToString();
-            Curso = CursosMateria.FirstOrDefault(cm => cm.Materia.descMateria == materiaSeleccionada);
+            cbxComisiones.SelectedIndex = -1;
+            cbxComisiones.Items.Clear();
+            cbxComisiones.Enabled = true;
 
-            // Cargar las comisiones disponibles
+            var materiaSeleccionada = cbxCursosMateria.SelectedItem.ToString();
+            Curso = CursosMateria.FirstOrDefault(cm => cm.Materia.descMateria == materiaSeleccionada);
+            Materia = Curso.Materia;
+
+            var Comisiones = TPI.Negocio.MateriaComision.GetComisionesPorMateria(Curso.Materia);
+
+            foreach (var com in Comisiones)
+            {
+                cbxComisiones.Items.Add(com.IdCom);
+            }
         }
 
         private void cbxComisiones_SelectedIndexChanged(object sender, EventArgs e)
         {
+            var comisionSeleccionada = Convert.ToInt32(cbxComisiones.SelectedItem.ToString());
+            Comision = TPI.Negocio.Comision.GetComisionPorId(comisionSeleccionada, Usuario.Plan.IdEspecialidad);
+
+            MateriaComision = TPI.Negocio.MateriaComision.GetMateriaComision(Materia.idMateria, Comision.IdEspecialidad, Comision.IdCom);
+
             string horario = $"{MateriaComision.dia} de {MateriaComision.hora_ini} a {MateriaComision.hora_fin}";
             lblHorarioCurso.Text = horario;
             lblHorarioCurso.Visible = true;
+        }
+
+        private void btnConfirmar_Click(object sender, EventArgs e)
+        {
+            var inscripcion = TPI.Negocio.InscripcionCursado.CrearInscripcion(Curso, Usuario, Comision);
+            TPI.Negocio.InscripcionCursado.AgregarInscripcion(inscripcion);
+
+            MessageBox.Show("Inscripcion relizada con Exito!");
+            Dispose();
         }
     }
 }
