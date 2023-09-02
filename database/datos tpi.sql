@@ -8,7 +8,7 @@ VALUES
 INSERT INTO [tpi2023tm01].[dbo].[tipos_de_usuario] (Descripcion)
 VALUES ('Alumno'), ('Profesor'), ('Admin');
 
-INSERT INTO [tpi2023tm01].[dbo].[usuarios] (Contraseña, PersonaDni, TipoDeUsuarioId)
+INSERT INTO [tpi2023tm01].[dbo].[usuarios] (Contraseï¿½a, PersonaDni, TipoDeUsuarioId)
 VALUES ('c', 43127777, 1), ('c', 43127778, 2), ('c', 43127779, 3);
 
 INSERT INTO [tpi2023tm01].[dbo].[especialidades] (descEspec)
@@ -21,10 +21,10 @@ VALUES (1, 2023), (1, 2008);
 INSERT INTO [tpi2023tm01].[dbo].[materias] (IdEspecialidad, anio, descMateria, horaSem, horaTot)
 VALUES 
 (1, 2023, 'Bases de Datos', 4, 120), 
-(1, 2023, 'Diseño de Sistemas de Informacion', 6, 150),
+(1, 2023, 'Diseï¿½o de Sistemas de Informacion', 6, 150),
 (1, 2008, 'Gestion de Datos', 4, 120);
 
-INSERT INTO [tpi2023tm01].[dbo].[cursos] (IdMateria, Año, cupo)
+INSERT INTO [tpi2023tm01].[dbo].[cursos] (IdMateria, Aï¿½o, cupo)
 VALUES
 (1, 2023, 40),
 (1, 2022, 35),

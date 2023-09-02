@@ -24,5 +24,16 @@ namespace TPI.Negocio
 
         public static Entidades.Materia GetMateriaPorDescripcionYPlan(string descripcionMateriaSelecc, Entidades.Plan plan)
             => Datos.Materia.GetMateriaPorDescripcionYPlan(descripcionMateriaSelecc, plan);
+
+        public static Entidades.Materia GetMateriaPorDesc(string desc_materia) 
+        {
+            return Datos.Materia.GetMateriaPorDesc(desc_materia);
+        }
+
+        public static List<Entidades.Materia> GetAll() 
+        {
+            return Datos.Materia.GetAll();
+        }
+
     }
 }

@@ -15,5 +15,21 @@ namespace TPI.Negocio
         {
             Datos.InscripcionCursado.AgregarInscripcion(inscripcion);
         }
+
+
+
+        public static List<Entidades.InscripcionCursado> GetAllInscripcion()
+        {
+            return Datos.InscripcionCursado.GetAllInscripcion();
+
+        }
+
+        public static List<Entidades.Usuario> GetAllAlumnosPorMateria(Entidades.Materia materia)
+        {
+            return Datos.InscripcionCursado.GetAllAlumnosPorMateria(materia);
+
+        }
+
+
     }
 }

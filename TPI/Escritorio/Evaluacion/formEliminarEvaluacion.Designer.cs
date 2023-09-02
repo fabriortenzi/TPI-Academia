@@ -30,8 +30,8 @@
         {
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.txtIdEvaluacion = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.cbxEvaluacion = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnCancelar
@@ -52,13 +52,6 @@
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             // 
-            // txtIdEvaluacion
-            // 
-            this.txtIdEvaluacion.Location = new System.Drawing.Point(117, 101);
-            this.txtIdEvaluacion.Name = "txtIdEvaluacion";
-            this.txtIdEvaluacion.Size = new System.Drawing.Size(100, 23);
-            this.txtIdEvaluacion.TabIndex = 37;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -68,13 +61,21 @@
             this.label3.TabIndex = 38;
             this.label3.Text = "IdEvaluacion";
             // 
+            // cbxEvaluacion
+            // 
+            this.cbxEvaluacion.FormattingEnabled = true;
+            this.cbxEvaluacion.Location = new System.Drawing.Point(117, 101);
+            this.cbxEvaluacion.Name = "cbxEvaluacion";
+            this.cbxEvaluacion.Size = new System.Drawing.Size(121, 23);
+            this.cbxEvaluacion.TabIndex = 39;
+            // 
             // formEliminarEvaluacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(291, 290);
+            this.Controls.Add(this.cbxEvaluacion);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtIdEvaluacion);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnEliminar);
             this.Name = "formEliminarEvaluacion";
@@ -87,7 +88,7 @@
         #endregion
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.TextBox txtIdEvaluacion;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cbxEvaluacion;
     }
 }

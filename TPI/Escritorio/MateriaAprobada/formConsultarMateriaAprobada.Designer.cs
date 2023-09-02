@@ -28,81 +28,84 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnCancelar = new System.Windows.Forms.Button();
-            btnBuscar = new System.Windows.Forms.Button();
-            txtIdMateria = new System.Windows.Forms.TextBox();
-            label2 = new System.Windows.Forms.Label();
-            txtLegajo = new System.Windows.Forms.TextBox();
-            label1 = new System.Windows.Forms.Label();
-            SuspendLayout();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.cbxMateria = new System.Windows.Forms.ComboBox();
+            this.cbxAlumno = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.SuspendLayout();
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new System.Drawing.Point(23, 233);
-            btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new System.Drawing.Size(75, 23);
-            btnCancelar.TabIndex = 15;
-            btnCancelar.Text = "Cancelar";
-            btnCancelar.UseVisualStyleBackColor = true;
-            btnCancelar.Click += btnCancelar_Click;
+            this.btnCancelar.Location = new System.Drawing.Point(23, 233);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 15;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
             // 
             // btnBuscar
             // 
-            btnBuscar.Location = new System.Drawing.Point(398, 233);
-            btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new System.Drawing.Size(75, 23);
-            btnBuscar.TabIndex = 14;
-            btnBuscar.Text = "Buscar";
-            btnBuscar.UseVisualStyleBackColor = true;
-            btnBuscar.Click += btnBuscar_Click;
+            this.btnBuscar.Location = new System.Drawing.Point(398, 233);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.TabIndex = 14;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
             // 
-            // txtIdMateria
+            // cbxMateria
             // 
-            txtIdMateria.Location = new System.Drawing.Point(218, 82);
-            txtIdMateria.Name = "txtIdMateria";
-            txtIdMateria.Size = new System.Drawing.Size(127, 23);
-            txtIdMateria.TabIndex = 12;
+            this.cbxMateria.FormattingEnabled = true;
+            this.cbxMateria.Location = new System.Drawing.Point(213, 82);
+            this.cbxMateria.Name = "cbxMateria";
+            this.cbxMateria.Size = new System.Drawing.Size(127, 23);
+            this.cbxMateria.TabIndex = 19;
+            this.cbxMateria.SelectedIndexChanged += new System.EventHandler(this.cbxMateria_SelectedIndexChanged);
             // 
-            // label2
+            // cbxAlumno
             // 
-            label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(142, 82);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(60, 15);
-            label2.TabIndex = 11;
-            label2.Text = "idMateria:";
+            this.cbxAlumno.Enabled = false;
+            this.cbxAlumno.FormattingEnabled = true;
+            this.cbxAlumno.Location = new System.Drawing.Point(213, 122);
+            this.cbxAlumno.Name = "cbxAlumno";
+            this.cbxAlumno.Size = new System.Drawing.Size(127, 23);
+            this.cbxAlumno.TabIndex = 18;
             // 
-            // txtLegajo
+            // label3
             // 
-            txtLegajo.Location = new System.Drawing.Point(218, 129);
-            txtLegajo.Name = "txtLegajo";
-            txtLegajo.Size = new System.Drawing.Size(127, 23);
-            txtLegajo.TabIndex = 10;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(157, 85);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(50, 15);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "Materia:";
             // 
-            // label1
+            // label4
             // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(157, 132);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(45, 15);
-            label1.TabIndex = 9;
-            label1.Text = "Legajo:";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(154, 125);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 15);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "Alumno:";
             // 
             // formConsultarMateriaAprobada
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(517, 284);
-            Controls.Add(btnCancelar);
-            Controls.Add(btnBuscar);
-            Controls.Add(txtIdMateria);
-            Controls.Add(label2);
-            Controls.Add(txtLegajo);
-            Controls.Add(label1);
-            Name = "formConsultarMateriaAprobada";
-            Text = "formConsultarMateriaAprobada";
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(517, 284);
+            this.Controls.Add(this.cbxMateria);
+            this.Controls.Add(this.cbxAlumno);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnBuscar);
+            this.Name = "formConsultarMateriaAprobada";
+            this.Text = "formConsultarMateriaAprobada";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
@@ -111,9 +114,8 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtIdMateria;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtLegajo;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cbxMateria;
+        private System.Windows.Forms.ComboBox cbxAlumno;
+        private System.Windows.Forms.Label label4;
     }
 }

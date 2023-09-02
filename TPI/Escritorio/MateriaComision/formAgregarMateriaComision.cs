@@ -15,14 +15,35 @@ namespace Escritorio.MateriaComision
         public formAgregarMateriaComision()
         {
             InitializeComponent();
+            cargar_cbxes();
+        }
+
+        private void cargar_cbxes()
+        {
+            List<TPI.Entidades.Materia> materias = TPI.Negocio.Materia.GetAll();
+            List<TPI.Entidades.Comisiones> comisiones = TPI.Negocio.Comision.GetAll();
+
+            foreach(TPI.Entidades.Materia m in materias){ cbxMateria.Items.Add(m.descMateria); }
+            foreach (TPI.Entidades.Comisiones c in comisiones) { cbxComision.Items.Add(c.IdCom +" "+ c.Especialidad.descEspec ); }
+
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             TPI.Entidades.MateriaComision materia_comision = new TPI.Entidades.MateriaComision();
-            materia_comision.IdEspecialidad = int.Parse(txtidEspecialidad.Text);
-            materia_comision.idMateria = int.Parse(txtIdMateria.Text);
-            materia_comision.IdCom = int.Parse(txtIdComision.Text);
+
+            string desc_materia = this.cbxMateria.GetItemText(this.cbxMateria.SelectedItem);
+            string id_desc_esp = this.cbxMateria.GetItemText(this.cbxMateria.SelectedItem);
+
+            TPI.Entidades.Comisiones comision = TPI.Negocio.Comision.GetComisionPorIdyDescEsp(id_desc_esp);
+            TPI.Entidades.Materia materia = TPI.Negocio.Materia.GetMateriaPorDesc(desc_materia);
+
+
+
+
+            materia_comision.IdEspecialidad = comision.Especialidad.idEspec;
+            materia_comision.idMateria = materia.idMateria;
+            materia_comision.IdCom = comision.IdCom;
             materia_comision.Cupo = (int)nudCupo.Value;
             materia_comision.dia = (int)nudDS.Value;
 

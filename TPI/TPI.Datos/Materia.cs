@@ -36,5 +36,24 @@ namespace TPI.Datos
                     && x.Plan.anio == plan.anio);
             }
         }
+
+        public static Entidades.Materia GetMateriaPorDesc(string desc_materia) 
+        {
+            using (var context = ApplicationContext.CreateContext())
+            {
+                return context.materias.FirstOrDefault(x => x.descMateria == desc_materia);
+            }
+        }
+
+        public static List<Entidades.Materia> GetAll() 
+        {
+            List<Entidades.Materia> materias = new();
+            using (var context = ApplicationContext.CreateContext()) 
+            {
+                materias = context.materias.ToList();
+            }
+            return materias;
+        }
+
     }
 }

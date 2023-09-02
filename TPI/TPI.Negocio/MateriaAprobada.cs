@@ -11,7 +11,10 @@ namespace TPI.Negocio
     {
         public static void Agregar(Entidades.MateriaAprobada materia_aprobada)
         {
+            if (10>=materia_aprobada.Nota && materia_aprobada.Nota > 0) { 
             TPI.Datos.MateriaAprobada.Agregar(materia_aprobada);
+            }
+            else { throw new ArgumentException("La nota debe estar en el rango de 1 a 10."); }
         }
 
         public static Entidades.MateriaAprobada GetMateriaAprobada(int legajo, int id_materia)
@@ -24,7 +27,9 @@ namespace TPI.Negocio
         }
         public static void Cambiar(Entidades.MateriaAprobada materia_aprobada, int nueva_nota) 
         {
-          TPI.Datos.MateriaAprobada.Cambiar(materia_aprobada, nueva_nota);
+            if (10 >= materia_aprobada.Nota && materia_aprobada.Nota > 0)
+            { TPI.Datos.MateriaAprobada.Cambiar(materia_aprobada, nueva_nota); }
+            else { throw new ArgumentException("La nota debe estar en el rango de 1 a 10."); }
         }
         public static void Eliminar(Entidades.MateriaAprobada materia_aprobada) 
         {

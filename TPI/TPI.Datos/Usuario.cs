@@ -64,5 +64,39 @@ namespace TPI.Datos
                 context.SaveChanges();
             }
         }
+
+        public static Entidades.Usuario GetUsuarioPorNomyApe(string nom_apellido) 
+        {
+            using (ApplicationContext context = ApplicationContext.CreateContext())
+            {
+                var usuario = context.usuarios.FirstOrDefault(x => (x.Persona.Nombre + " " + x.Persona.Apellido) == nom_apellido);
+
+                return usuario;
+
+
+            }
+
+        }
+        public static List<Entidades.Usuario> GetAllProfesores()
+        {
+            using (ApplicationContext context = ApplicationContext.CreateContext())
+            {
+                var profesores = context.usuarios.Where(x => x.TipoDeUsuario.Descripcion == "Profesor").ToList();
+
+                return profesores;
+            }
+        }
+
+        public static List<Entidades.Usuario> GetAllAlumnos() 
+        {
+            using (ApplicationContext context = ApplicationContext.CreateContext()) 
+            { 
+             var alumnos = context.usuarios.Where(x => x.TipoDeUsuario.Descripcion == "Alumno").ToList();
+
+                return alumnos;
+            }
+        
+        }
+
     }
 }

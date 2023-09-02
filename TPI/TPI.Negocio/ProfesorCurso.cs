@@ -30,5 +30,60 @@ namespace TPI.Negocio
         {
             TPI.Datos.ProfesorCurso.Eliminar(profesor_curso);
         }
+        public static List<Entidades.Curso> GetCursos()
+        {
+            List<Entidades.ProfesorCurso> profesores_cursos = TPI.Datos.ProfesorCurso.GetAllProfesorCurso();
+
+            List<Entidades.Curso> cursos = new();
+
+            foreach (Entidades.ProfesorCurso pf in profesores_cursos)
+            {
+               if( !(cursos.Contains(pf.Curso)) ) { 
+               cursos.Add(pf.Curso);
+                }
+            }
+
+            return cursos ;
+        }
+
+        public static List<Entidades.Curso> GetCursos(Entidades.Usuario profesor)
+        {
+            List<Entidades.ProfesorCurso> profesores_cursos = TPI.Datos.ProfesorCurso.GetAllProfesorCurso();
+
+            List<Entidades.Curso> cursos = new();
+
+            var pc = profesores_cursos.Where(x => x.Usuario == profesor);
+
+
+            foreach (var pf in pc)
+            {
+                if (!(cursos.Contains(pf.Curso)))
+                {
+                    cursos.Add(pf.Curso);
+                }
+            }
+
+            return cursos;
+        }
+
+        public static List<Entidades.Materia> GetMaterias_Cursos(Entidades.Usuario profesor) 
+        {
+           
+            List<TPI.Entidades.Curso> cursos = GetCursos(profesor);
+            List<TPI.Entidades.Materia> materias = new();
+
+            foreach (TPI.Entidades.Curso c in cursos)
+            {
+             if( !(materias.Contains(c.Materia))) 
+                {
+                    materias.Add(c.Materia);    
+                }  
+                
+            }
+            return materias;
+        }
+
+
+
     }
 }

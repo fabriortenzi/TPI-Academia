@@ -34,5 +34,21 @@ namespace TPI.Negocio
         {
             Datos.Usuario.AsignarPlanAUsuario(Plan, Usuario);
         }
+
+        public static Entidades.Usuario GetUsuarioPorNomyApe(string nom_apellido)
+        {
+            return Datos.Usuario.GetUsuarioPorNomyApe(nom_apellido);
+        }
+
+        public static List<Entidades.Usuario> GetAllProfesores() 
+        {
+            return Datos.Usuario.GetAllProfesores();
+
+        }
+
+        public static List<Entidades.Usuario> GetAllAlumnos()
+        {
+            return Datos.Usuario.GetAllAlumnos();
+        }
     }
 }

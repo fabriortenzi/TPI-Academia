@@ -15,13 +15,31 @@ namespace Escritorio.ProfesorCurso
         public formAgregarProfesorCurso()
         {
             InitializeComponent();
+            cargar_cbx();
+
         }
+        private void cargar_cbx() 
+        {
+            List<TPI.Entidades.Usuario> usuarios = TPI.Negocio.Usuario.GetAllProfesores();
+            List<TPI.Entidades.Materia> materias = TPI.Negocio.Materia.GetAll();
+
+            foreach (TPI.Entidades.Usuario usu in usuarios) { cbxLegajo.Items.Add(usu.Legajo); }
+            foreach (TPI.Entidades.Materia mat in materias) { cbxMateria.Items.Add(mat.descMateria); }
+
+
+        }
+
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             TPI.Entidades.ProfesorCurso profesor_curso = new TPI.Entidades.ProfesorCurso();
-            profesor_curso.idMateria = int.Parse(txtIdMateria.Text);
-            profesor_curso.Legajo = int.Parse(txtIdMateria.Text);
+
+            string desc_materia = this.cbxMateria.GetItemText(this.cbxMateria.SelectedItem);
+            int legajo = int.Parse(this.cbxLegajo.GetItemText(this.cbxLegajo.SelectedItem));
+            TPI.Entidades.Materia materia = TPI.Negocio.Materia.GetMateriaPorDesc(desc_materia);
+
+            profesor_curso.idMateria = materia.idMateria;
+            profesor_curso.Legajo = legajo;
             profesor_curso.Anio = int.Parse(txtAnio.Text);
             profesor_curso.Cargo = (string)txtCargo.Text;
             TPI.Negocio.ProfesorCurso.Agregar(profesor_curso);

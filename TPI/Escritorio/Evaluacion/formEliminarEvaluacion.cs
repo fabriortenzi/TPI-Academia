@@ -15,8 +15,14 @@ namespace Escritorio.Evaluacion
         public formEliminarEvaluacion()
         {
             InitializeComponent();
+            cargar_cbxEvaluacion();
         }
 
+        private void cargar_cbxEvaluacion() 
+        {
+            List<TPI.Entidades.Evaluacion> evaluaciones = TPI.Negocio.Evaluaciones.GetAllEvaluacion();
+            foreach(TPI.Entidades.Evaluacion ev in evaluaciones) { cbxEvaluacion.Items.Add(ev.idEvaluacion); }
+        }
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -31,7 +37,7 @@ namespace Escritorio.Evaluacion
             
             
           
-                int id_evaluacion = int.Parse(txtIdEvaluacion.Text);
+                int id_evaluacion = int.Parse(cbxEvaluacion.GetItemText(cbxEvaluacion.SelectedItem));
             TPI.Entidades.Evaluacion evaluacion = TPI.Negocio.Evaluaciones.GetEvaluacion(id_evaluacion);
             }
             else { this.Close(); }

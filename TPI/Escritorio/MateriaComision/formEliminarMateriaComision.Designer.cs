@@ -28,112 +28,90 @@
         /// </summary>
         private void InitializeComponent()
         {
-            txtIdComision = new System.Windows.Forms.TextBox();
-            label3 = new System.Windows.Forms.Label();
-            txtIdMateria = new System.Windows.Forms.TextBox();
-            label2 = new System.Windows.Forms.Label();
-            txtidEspecialidad = new System.Windows.Forms.TextBox();
-            label1 = new System.Windows.Forms.Label();
-            btnCancelar = new System.Windows.Forms.Button();
-            btnEliminar = new System.Windows.Forms.Button();
-            SuspendLayout();
-            // 
-            // txtIdComision
-            // 
-            txtIdComision.Location = new System.Drawing.Point(125, 103);
-            txtIdComision.Name = "txtIdComision";
-            txtIdComision.Size = new System.Drawing.Size(100, 23);
-            txtIdComision.TabIndex = 29;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(48, 103);
-            label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(71, 15);
-            label3.TabIndex = 28;
-            label3.Text = "idComision:";
-            // 
-            // txtIdMateria
-            // 
-            txtIdMateria.Location = new System.Drawing.Point(125, 61);
-            txtIdMateria.Name = "txtIdMateria";
-            txtIdMateria.Size = new System.Drawing.Size(100, 23);
-            txtIdMateria.TabIndex = 27;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(59, 64);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(60, 15);
-            label2.TabIndex = 26;
-            label2.Text = "idMateria:";
-            // 
-            // txtidEspecialidad
-            // 
-            txtidEspecialidad.Location = new System.Drawing.Point(125, 23);
-            txtidEspecialidad.Name = "txtidEspecialidad";
-            txtidEspecialidad.Size = new System.Drawing.Size(100, 23);
-            txtidEspecialidad.TabIndex = 25;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(34, 26);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(85, 15);
-            label1.TabIndex = 24;
-            label1.Text = "idEspecialidad:";
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.cbxComision = new System.Windows.Forms.ComboBox();
+            this.cbxMateria = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.SuspendLayout();
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new System.Drawing.Point(12, 165);
-            btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new System.Drawing.Size(75, 23);
-            btnCancelar.TabIndex = 31;
-            btnCancelar.Text = "Cancelar";
-            btnCancelar.UseVisualStyleBackColor = true;
-            btnCancelar.Click += button2_Click;
+            this.btnCancelar.Location = new System.Drawing.Point(12, 165);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 31;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
             // 
             // btnEliminar
             // 
-            btnEliminar.Location = new System.Drawing.Point(228, 165);
-            btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new System.Drawing.Size(75, 23);
-            btnEliminar.TabIndex = 30;
-            btnEliminar.Text = "Eliminar";
-            btnEliminar.UseVisualStyleBackColor = true;
-            btnEliminar.Click += button1_Click;
+            this.btnEliminar.Location = new System.Drawing.Point(228, 165);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.TabIndex = 30;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            // 
+            // cbxComision
+            // 
+            this.cbxComision.FormattingEnabled = true;
+            this.cbxComision.Location = new System.Drawing.Point(106, 87);
+            this.cbxComision.Name = "cbxComision";
+            this.cbxComision.Size = new System.Drawing.Size(121, 23);
+            this.cbxComision.TabIndex = 41;
+            // 
+            // cbxMateria
+            // 
+            this.cbxMateria.FormattingEnabled = true;
+            this.cbxMateria.Location = new System.Drawing.Point(106, 39);
+            this.cbxMateria.Name = "cbxMateria";
+            this.cbxMateria.Size = new System.Drawing.Size(121, 23);
+            this.cbxMateria.TabIndex = 40;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(42, 92);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(61, 15);
+            this.label4.TabIndex = 39;
+            this.label4.Text = "Comision:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(53, 42);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(50, 15);
+            this.label5.TabIndex = 38;
+            this.label5.Text = "Materia:";
             // 
             // formEliminarMateriaComision
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(315, 200);
-            Controls.Add(btnCancelar);
-            Controls.Add(btnEliminar);
-            Controls.Add(txtIdComision);
-            Controls.Add(label3);
-            Controls.Add(txtIdMateria);
-            Controls.Add(label2);
-            Controls.Add(txtidEspecialidad);
-            Controls.Add(label1);
-            Name = "formEliminarMateriaComision";
-            Text = "formEliminarMateriaComision";
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(315, 200);
+            this.Controls.Add(this.cbxComision);
+            this.Controls.Add(this.cbxMateria);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnEliminar);
+            this.Name = "formEliminarMateriaComision";
+            this.Text = "formEliminarMateriaComision";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtIdComision;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtIdMateria;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtidEspecialidad;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.ComboBox cbxComision;
+        private System.Windows.Forms.ComboBox cbxMateria;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }

@@ -103,19 +103,19 @@ namespace Escritorio
 
         private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            formConsultarMateriaAprobada formConsultarMateriaAprobada = new();
+            formConsultarMateriaAprobada formConsultarMateriaAprobada = new formConsultarMateriaAprobada(Usuario);
             formConsultarMateriaAprobada.Show();
         }
 
         private void agregarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            formAgregarMateriaAprobada formAgregarMateriaAprobada = new();
+            formAgregarMateriaAprobada formAgregarMateriaAprobada = new formAgregarMateriaAprobada(Usuario);
             formAgregarMateriaAprobada.Show();
         }
 
         private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            formEliminarMateriaAprobada formEliminarMateriaAprobada = new();
+            formEliminarMateriaAprobada formEliminarMateriaAprobada = new formEliminarMateriaAprobada(Usuario);
             formEliminarMateriaAprobada.Show();
         }
 
@@ -141,6 +141,24 @@ namespace Escritorio
         {
             formEliminarProfesorCurso formEliminarProfesorCurso = new();
             formEliminarProfesorCurso.Show();
+        }
+
+        private void consultarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            formConsultarMateriaComision formConsultarMateriaComision = new();
+            formConsultarMateriaComision.Show();
+        }
+
+        private void consultarToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            formConsultarProfesorCurso formConsultarProfesorCurso = new();
+            formConsultarProfesorCurso.Show();
+        }
+
+        private void consultarToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            formConsultarEvaluacion formConsultarEvaluacion = new();
+            formConsultarEvaluacion.Show();
         }
     }
 }

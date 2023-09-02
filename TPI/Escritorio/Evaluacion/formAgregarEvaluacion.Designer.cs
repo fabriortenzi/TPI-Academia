@@ -31,11 +31,11 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtLegajo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.nudNota = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.dtpFecha_hora = new System.Windows.Forms.DateTimePicker();
+            this.cbxLegajo = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudNota)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,13 +65,6 @@
             this.label2.Size = new System.Drawing.Size(70, 15);
             this.label2.TabIndex = 18;
             this.label2.Text = "Fecha_hora:";
-            // 
-            // txtLegajo
-            // 
-            this.txtLegajo.Location = new System.Drawing.Point(107, 47);
-            this.txtLegajo.Name = "txtLegajo";
-            this.txtLegajo.Size = new System.Drawing.Size(100, 23);
-            this.txtLegajo.TabIndex = 17;
             // 
             // label1
             // 
@@ -105,18 +98,26 @@
             this.dtpFecha_hora.Size = new System.Drawing.Size(100, 23);
             this.dtpFecha_hora.TabIndex = 24;
             // 
+            // cbxLegajo
+            // 
+            this.cbxLegajo.FormattingEnabled = true;
+            this.cbxLegajo.Location = new System.Drawing.Point(107, 47);
+            this.cbxLegajo.Name = "cbxLegajo";
+            this.cbxLegajo.Size = new System.Drawing.Size(100, 23);
+            this.cbxLegajo.TabIndex = 25;
+            // 
             // formAgregarEvaluacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(291, 290);
+            this.Controls.Add(this.cbxLegajo);
             this.Controls.Add(this.dtpFecha_hora);
             this.Controls.Add(this.nudNota);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtLegajo);
             this.Controls.Add(this.label1);
             this.Name = "formAgregarEvaluacion";
             this.Text = "formEvaluaciones";
@@ -131,10 +132,10 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtLegajo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown nudNota;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dtpFecha_hora;
+        private System.Windows.Forms.ComboBox cbxLegajo;
     }
 }
