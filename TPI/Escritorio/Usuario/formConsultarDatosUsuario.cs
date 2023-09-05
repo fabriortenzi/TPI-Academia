@@ -23,8 +23,13 @@ namespace Escritorio
         private void formConsultarDatosUsuario_Load(object sender, EventArgs e)
         {
             lblLegajo.Text = Usuario.Legajo.ToString();
-            // lblEspecialidad.Text = Usuario.Especialidad.Descripcion;
-            // lblPlan.Text = 
+            lblEspecialidad.Text = Usuario.Plan.especialidad.descEspec;
+            lblPlan.Text = Usuario.Plan.anio.ToString();
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            Dispose();
         }
     }
 }

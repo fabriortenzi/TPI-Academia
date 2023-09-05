@@ -1,4 +1,5 @@
-﻿using Escritorio.Evaluacion;
+﻿using Escritorio.Comision;
+using Escritorio.Evaluacion;
 using Escritorio.Inscripcion;
 using Escritorio.MateriaAprobada;
 using Escritorio.MateriaComision;
@@ -159,6 +160,12 @@ namespace Escritorio
         {
             formConsultarEvaluacion formConsultarEvaluacion = new();
             formConsultarEvaluacion.Show();
+        }
+
+        private void nuevaComisionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formCrearComision formCrearComision = new();
+            formCrearComision.Show();
         }
     }
 }

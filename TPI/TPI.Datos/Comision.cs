@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TPI.Entidades;
 
 namespace TPI.Datos
 {
@@ -38,7 +40,14 @@ namespace TPI.Datos
             return comisiones;
         }
 
-            
-
+        public static void AgregarComision(Entidades.Comisiones comision)
+        {
+            using (var context = ApplicationContext.CreateContext())
+            {
+                context.comisiones.Attach(comision);
+                context.Entry(comision).State = EntityState.Added;
+                context.SaveChanges();
+            }
+        }
     }
 }

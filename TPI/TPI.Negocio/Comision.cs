@@ -19,11 +19,12 @@ namespace TPI.Negocio
         public static List<Entidades.Comisiones> GetAll() 
         {
             return Datos.Comision.GetAll();
-
         }
 
+        public static Entidades.Comisiones CrearComision(int idCom, Entidades.Especialidad especialidad)
+            => new Entidades.Comisiones(idCom, especialidad);
+
+        public static void AgregarComision(Entidades.Comisiones comision)
+            => Datos.Comision.AgregarComision(comision);
     }
-
-   
-
 }

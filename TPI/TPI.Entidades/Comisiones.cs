@@ -21,9 +21,10 @@ namespace TPI.Entidades
 
         public Comisiones() { }
 
-        public Comisiones (int id_com)
+        public Comisiones (int id_com, Especialidad especialidad)
         {
-            IdCom = id_com; 
+            IdCom = id_com;
+            Especialidad = especialidad;
         }
     }
 }
