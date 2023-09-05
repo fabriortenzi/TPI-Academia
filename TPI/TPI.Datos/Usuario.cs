@@ -29,6 +29,7 @@ namespace TPI.Datos
                     .Include(x => x.TipoDeUsuario)
                     .Include(x => x.Persona)
                     .Include(x => x.Plan)
+                    .ThenInclude(x => x.especialidad)
                     .FirstOrDefault(x => x.Legajo == legajo && x.Contraseña == contraseña);
             }
         }
