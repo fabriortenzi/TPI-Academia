@@ -32,5 +32,9 @@ namespace TPI.Negocio
         {
             Datos.Persona.EliminarPersona(persona);
         }
+        public static List<Entidades.Persona> GetAll()
+        {
+            return Datos.Persona.GetAll();
+        }
     }
 }

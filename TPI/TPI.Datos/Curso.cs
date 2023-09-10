@@ -34,5 +34,13 @@ namespace TPI.Datos
                 return cursosDisponibles;
             }
         }
+
+        public static List<Entidades.Curso> GetAll()
+        {
+            using (ApplicationContext context = ApplicationContext.CreateContext())
+            {
+                return context.cursos.ToList();
+            }
+        }
     }
 }
