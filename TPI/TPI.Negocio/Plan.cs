@@ -24,5 +24,11 @@ namespace TPI.Negocio
 
         public static Entidades.Plan GetPlanPorEspecialidadAnio(Entidades.Especialidad especialidad, int año)
             => Datos.Plan.GetPlanPorEspecialidadAnio(especialidad, año);
+        public static List<Entidades.Plan> GetAll()
+        {
+            return Datos.Plan.GetAll();
+        }
     }
+
+   
 }

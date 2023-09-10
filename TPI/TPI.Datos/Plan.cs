@@ -39,5 +39,14 @@ namespace TPI.Datos
                     .FirstOrDefault(x => x.especialidad.descEspec == Especialidad.descEspec && x.anio == Anio);
             }
         }
+
+        public static List<Entidades.Plan> GetAll()
+        {
+            using (var context = ApplicationContext.CreateContext())
+            {
+                return context.planes.ToList();
+            }
+
+        }
     }
 }

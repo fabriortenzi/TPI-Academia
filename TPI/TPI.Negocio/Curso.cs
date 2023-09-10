@@ -18,5 +18,9 @@ namespace TPI.Negocio
 
         public static List<Entidades.Curso> GetCursosPorPlanYAñoActual(Entidades.Plan plan)
             => Datos.Curso.GetCursosPorPlanYAñoActual(plan);
+        public static List<Entidades.Curso> GetAll()
+        {
+            return Datos.Curso.GetAll();
+        }
     }
 }

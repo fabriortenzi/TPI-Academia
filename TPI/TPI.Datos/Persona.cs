@@ -58,5 +58,14 @@ namespace TPI.Datos
                 return context.personas.FirstOrDefault(x => x.Dni == dni);
             }
         }
+
+        public static List<Entidades.Persona> GetAll()
+        {
+            using (ApplicationContext context = ApplicationContext.CreateContext())
+            {
+                return context.personas.ToList();
+            }
+
+        }
     }
 }

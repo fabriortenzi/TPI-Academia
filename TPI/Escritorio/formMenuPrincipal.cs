@@ -4,6 +4,7 @@ using Escritorio.Inscripcion;
 using Escritorio.MateriaAprobada;
 using Escritorio.MateriaComision;
 using Escritorio.ProfesorCurso;
+using Escritorio.Generalizado;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -166,6 +167,72 @@ namespace Escritorio
         {
             formCrearComision formCrearComision = new();
             formCrearComision.Show();
+        }
+
+        private void listarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formListar frmListar = new formListar(typeof(TPI.Entidades.Persona));
+            frmListar.Show();
+        }
+
+        private void listarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            formListar frmListar = new formListar(typeof(TPI.Entidades.Usuario));
+            frmListar.Show();
+        }
+
+        private void listarToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            formListar frmListar = new formListar(typeof(TPI.Entidades.InscripcionCursado));
+            frmListar.Show();
+        }
+
+        private void listarToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            formListar frmListar = new formListar(typeof(TPI.Entidades.Materia));
+            frmListar.Show();
+        }
+
+        private void listarToolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            formListar frmListar = new formListar(typeof(TPI.Entidades.Comisiones));
+            frmListar.Show();
+        }
+
+        private void listarToolStripMenuItem5_Click(object sender, EventArgs e)
+        {
+            formListar frmListar = new formListar(typeof(TPI.Entidades.Curso));
+            frmListar.Show();
+        }
+
+        private void listarToolStripMenuItem6_Click(object sender, EventArgs e)
+        {
+            formListar frmListar = new formListar(typeof(TPI.Entidades.Plan));
+            frmListar.Show();
+        }
+
+        private void listarToolStripMenuItem7_Click(object sender, EventArgs e)
+        {
+            formListar frmListar = new formListar(typeof(TPI.Entidades.Evaluacion));
+            frmListar.Show();
+        }
+
+        private void listarToolStripMenuItem8_Click(object sender, EventArgs e)
+        {
+            formListar frmListar = new formListar(typeof(TPI.Entidades.MateriaAprobada));
+            frmListar.Show();
+        }
+
+        private void listarToolStripMenuItem9_Click(object sender, EventArgs e)
+        {
+            formListar frmListar = new formListar(typeof(TPI.Entidades.MateriaComision));
+            frmListar.Show();
+        }
+
+        private void listarToolStripMenuItem10_Click(object sender, EventArgs e)
+        {
+            formListar frmListar = new formListar(typeof(TPI.Entidades.ProfesorCurso));
+            frmListar.Show();
         }
     }
 }
