@@ -234,5 +234,11 @@ namespace Escritorio
             formListar frmListar = new formListar(typeof(TPI.Entidades.ProfesorCurso));
             frmListar.Show();
         }
+
+        private void eliminarInscripcionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formEliminarInscripcion formEliminarInscripcion = new(Usuario);
+            formEliminarInscripcion.Show();
+        }
     }
 }

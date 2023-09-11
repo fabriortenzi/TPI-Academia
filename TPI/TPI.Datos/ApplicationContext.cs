@@ -61,9 +61,6 @@ namespace TPI.Datos
             modelBuilder.Entity<Entidades.Curso>()
                 .HasKey(e => new { e.IdMateria, e.Año });
 
-            modelBuilder.Entity<Entidades.InscripcionCursado>()
-                .HasKey(e => new { e.LegajoUsuario, e.FechaHora });
-
             modelBuilder.Entity<Entidades.Plan>()
                 .HasKey(e => new { e.IdEspecialidad, e.anio });
 
@@ -76,6 +73,11 @@ namespace TPI.Datos
             modelBuilder.Entity<Entidades.ProfesorCurso>()
                .HasKey(e => new { e.idMateria, e.Legajo, e.Anio });
 
+            modelBuilder.Entity<Entidades.InscripcionCursado>()
+                .HasKey(ic => new { ic.Id });
+
+            modelBuilder.Entity<Entidades.Evaluacion>()
+                .HasKey(ev => new { ev.Id });
         }
     }
 }

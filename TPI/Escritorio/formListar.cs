@@ -148,7 +148,7 @@ namespace Escritorio.Generalizado
                 else if (tipoDato == typeof(TPI.Entidades.Evaluacion))
                 {
                     List<TPI.Entidades.Evaluacion> evaluaciones = TPI.Negocio.Evaluaciones.GetAllEvaluacion();
-                    dgvGrilla.DataSource = evaluaciones.Where(x => x.idEvaluacion.ToString().Contains(consulta)).ToList();
+                    dgvGrilla.DataSource = evaluaciones.Where(x => x.Id.ToString().Contains(consulta)).ToList();
                 }
                 else if (tipoDato == typeof(TPI.Entidades.Curso))
                 {

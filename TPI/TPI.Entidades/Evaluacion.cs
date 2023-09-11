@@ -11,21 +11,13 @@ namespace TPI.Entidades
     public class Evaluacion
     {
         [Key]
-        [Column(Order = 0)]
-        public int idEvaluacion { get; set; }
-
-        [Column(Order = 1)]
-        public int LegajoUsuario { get;  set; }
-        
-        [Column(Order = 2)]
-        public DateTime FechaHora { get; set; }
-
-        [ForeignKey("LegajoUsuario, FechaHora")]
-        public InscripcionCursado InscripcionCursado { get; set; }
-
-
+        public int Id { get; }
 
         public int Nota { get;  set; }
 
+        public int IdInscripcion { get;  set; }        
+
+        [ForeignKey("IdInscripcion")]
+        public InscripcionCursado InscripcionCursado { get; set; }
     }
 }

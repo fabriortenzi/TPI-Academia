@@ -11,26 +11,25 @@ namespace TPI.Entidades
     public class InscripcionCursado
     {
         [Key]
-        [Column(Order = 1)]
-        public int LegajoUsuario { get; set; }
+        public int Id { get; }
 
-        [Key]
-        [Column(Order = 2)]
         public DateTime FechaHora { get; private set; }
+
+        public int LegajoUsuario { get; }
 
         [ForeignKey("LegajoUsuario")]
         public Usuario Usuario { get; private set; }
 
-        public int IdMateria { get; set; }
+        public int IdMateria { get; }
 
-        public int AñoCurso { get; set; }
+        public int AñoCurso { get; }
 
         [ForeignKey("IdMateria, AñoCurso")]
         public Curso Curso { get; private set; }
 
-        public int IdComision { get; set; }
+        public int IdComision { get; }
 
-        public int IdEspecialidad { get; set; }
+        public int IdEspecialidad { get; }
 
         [ForeignKey("IdComision, IdEspecialidad")]
         public Comisiones Comision { get; private set; }

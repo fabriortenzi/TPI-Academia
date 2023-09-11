@@ -23,8 +23,8 @@ namespace Escritorio.MateriaComision
             List<TPI.Entidades.Materia> materias = TPI.Negocio.Materia.GetAll();
             List<TPI.Entidades.Comisiones> comisiones = TPI.Negocio.Comision.GetAll();
 
-            foreach(TPI.Entidades.Materia m in materias){ cbxMateria.Items.Add(m.descMateria); }
-            foreach (TPI.Entidades.Comisiones c in comisiones) { cbxComision.Items.Add(c.IdCom +" "+ c.Especialidad.descEspec ); }
+            foreach (TPI.Entidades.Materia m in materias) { cbxMateria.Items.Add(m.descMateria); }
+            foreach (TPI.Entidades.Comisiones c in comisiones) { cbxComision.Items.Add(c.IdCom + " " + c.Especialidad.descEspec); }
 
         }
 
