@@ -14,7 +14,9 @@ namespace TPI.Datos
         {
             using (var context = ApplicationContext.CreateContext())
             {
-                context.cursos.Add(curso);
+                context.cursos.Attach(curso);
+                context.Entry(curso).State = EntityState.Added;
+                context.SaveChanges();
             }
         }
 

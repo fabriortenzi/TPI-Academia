@@ -23,7 +23,7 @@ namespace TPI.Datos
 
             using (var context = ApplicationContext.CreateContext())
             {
-                evaluacion = context.evaluaciones.FirstOrDefault(x => x.idEvaluacion == id_evaluacion );
+                evaluacion = context.evaluaciones.FirstOrDefault(x => x.Id == id_evaluacion );
             }
 
             return evaluacion;

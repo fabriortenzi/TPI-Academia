@@ -28,16 +28,15 @@ namespace TPI.Datos
             }
 
         }
-        public static List<Entidades.Comisiones> GetAll() { 
-        List<Entidades.Comisiones> comisiones = new();
+        public static List<Entidades.Comisiones> GetAll() 
+        { 
             using (var context = ApplicationContext.CreateContext())
             {
-
-                comisiones = context.comisiones.ToList();
-
+                return context
+                    .comisiones
+                    .Include(c => c.Especialidad)
+                    .ToList();
             }
-
-            return comisiones;
         }
 
         public static void AgregarComision(Entidades.Comisiones comision)

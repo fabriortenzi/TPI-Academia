@@ -17,9 +17,9 @@ namespace Escritorio.Evaluacion
         {
             InitializeComponent();
 
-            lblLegajo.Text = evaluacion.LegajoUsuario.ToString();
-            lblEvaluacion.Text = evaluacion.idEvaluacion.ToString();
-            lblFecha_hora.Text = evaluacion.FechaHora.ToString();
+            lblLegajo.Text = evaluacion.Id.ToString();
+            //lblEvaluacion.Text = evaluacion.idEvaluacion.ToString();
+            //lblFecha_hora.Text = evaluacion.FechaHora.ToString();
             Evaluacion = evaluacion;
         }
        

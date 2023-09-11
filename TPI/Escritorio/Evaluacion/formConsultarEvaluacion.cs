@@ -21,7 +21,7 @@ namespace Escritorio.Evaluacion
         private void cargar_cbxEvaluacion()
         {
             List<TPI.Entidades.Evaluacion> evaluaciones = TPI.Negocio.Evaluaciones.GetAllEvaluacion();
-            foreach (TPI.Entidades.Evaluacion ev in evaluaciones) { cbxEvaluacion.Items.Add(ev.idEvaluacion); }
+            foreach (TPI.Entidades.Evaluacion ev in evaluaciones) { cbxEvaluacion.Items.Add(ev.Id); }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

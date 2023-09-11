@@ -39,7 +39,7 @@
             label6 = new System.Windows.Forms.Label();
             txtAño = new System.Windows.Forms.TextBox();
             txtCupo = new System.Windows.Forms.TextBox();
-            button1 = new System.Windows.Forms.Button();
+            btnCrear = new System.Windows.Forms.Button();
             SuspendLayout();
             // 
             // label1
@@ -143,22 +143,23 @@
             txtCupo.Size = new System.Drawing.Size(143, 31);
             txtCupo.TabIndex = 10;
             // 
-            // button1
+            // btnCrear
             // 
-            button1.Location = new System.Drawing.Point(310, 428);
-            button1.Name = "button1";
-            button1.Size = new System.Drawing.Size(257, 56);
-            button1.TabIndex = 11;
-            button1.Text = "Crear";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            btnCrear.Location = new System.Drawing.Point(310, 428);
+            btnCrear.Name = "btnCrear";
+            btnCrear.Size = new System.Drawing.Size(257, 56);
+            btnCrear.TabIndex = 11;
+            btnCrear.Text = "Crear";
+            btnCrear.UseVisualStyleBackColor = true;
+            btnCrear.Click += button1_Click;
             // 
             // formCrearCurso
             // 
+            AcceptButton = btnCrear;
             AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(859, 517);
-            Controls.Add(button1);
+            Controls.Add(btnCrear);
             Controls.Add(txtCupo);
             Controls.Add(txtAño);
             Controls.Add(label6);
@@ -191,6 +192,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtAño;
         private System.Windows.Forms.TextBox txtCupo;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCrear;
     }
 }

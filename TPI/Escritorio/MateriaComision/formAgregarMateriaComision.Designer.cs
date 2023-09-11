@@ -28,172 +28,187 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnAgregar = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.mtbHora_ini = new System.Windows.Forms.MaskedTextBox();
-            this.mtbHora_fin = new System.Windows.Forms.MaskedTextBox();
-            this.nudCupo = new System.Windows.Forms.NumericUpDown();
-            this.nudDS = new System.Windows.Forms.NumericUpDown();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cbxMateria = new System.Windows.Forms.ComboBox();
-            this.cbxComision = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.nudCupo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDS)).BeginInit();
-            this.SuspendLayout();
+            btnCancelar = new System.Windows.Forms.Button();
+            btnAgregar = new System.Windows.Forms.Button();
+            label4 = new System.Windows.Forms.Label();
+            label5 = new System.Windows.Forms.Label();
+            label6 = new System.Windows.Forms.Label();
+            label7 = new System.Windows.Forms.Label();
+            mtbHora_ini = new System.Windows.Forms.MaskedTextBox();
+            mtbHora_fin = new System.Windows.Forms.MaskedTextBox();
+            nudCupo = new System.Windows.Forms.NumericUpDown();
+            nudDS = new System.Windows.Forms.NumericUpDown();
+            label1 = new System.Windows.Forms.Label();
+            label2 = new System.Windows.Forms.Label();
+            cbxMateria = new System.Windows.Forms.ComboBox();
+            cbxComision = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)nudCupo).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nudDS).BeginInit();
+            SuspendLayout();
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(31, 237);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 21;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Location = new System.Drawing.Point(44, 395);
+            btnCancelar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new System.Drawing.Size(107, 38);
+            btnCancelar.TabIndex = 21;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = true;
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(325, 237);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
-            this.btnAgregar.TabIndex = 20;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
+            btnAgregar.Location = new System.Drawing.Point(464, 395);
+            btnAgregar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            btnAgregar.Name = "btnAgregar";
+            btnAgregar.Size = new System.Drawing.Size(107, 38);
+            btnAgregar.TabIndex = 20;
+            btnAgregar.Text = "Agregar";
+            btnAgregar.UseVisualStyleBackColor = true;
+            btnAgregar.Click += btnAgregar_Click;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(295, 35);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(39, 15);
-            this.label4.TabIndex = 25;
-            this.label4.Text = "Cupo:";
+            label4.AutoSize = true;
+            label4.Location = new System.Drawing.Point(421, 58);
+            label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(59, 25);
+            label4.TabIndex = 25;
+            label4.Text = "Cupo:";
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(235, 70);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(99, 15);
-            this.label5.TabIndex = 26;
-            this.label5.Text = "Dia de la semana:";
+            label5.AutoSize = true;
+            label5.Location = new System.Drawing.Point(336, 117);
+            label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(151, 25);
+            label5.TabIndex = 26;
+            label5.Text = "Dia de la semana:";
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(250, 106);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(84, 15);
-            this.label6.TabIndex = 28;
-            this.label6.Text = "Hora de inicio:";
+            label6.AutoSize = true;
+            label6.Location = new System.Drawing.Point(357, 177);
+            label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label6.Name = "label6";
+            label6.Size = new System.Drawing.Size(126, 25);
+            label6.TabIndex = 28;
+            label6.Text = "Hora de inicio:";
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(265, 140);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(69, 15);
-            this.label7.TabIndex = 29;
-            this.label7.Text = "Hora de fin:";
+            label7.AutoSize = true;
+            label7.Location = new System.Drawing.Point(379, 233);
+            label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label7.Name = "label7";
+            label7.Size = new System.Drawing.Size(105, 25);
+            label7.TabIndex = 29;
+            label7.Text = "Hora de fin:";
             // 
             // mtbHora_ini
             // 
-            this.mtbHora_ini.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.mtbHora_ini.Location = new System.Drawing.Point(340, 103);
-            this.mtbHora_ini.Mask = "00:00";
-            this.mtbHora_ini.Name = "mtbHora_ini";
-            this.mtbHora_ini.Size = new System.Drawing.Size(35, 23);
-            this.mtbHora_ini.TabIndex = 30;
-            this.mtbHora_ini.ValidatingType = typeof(System.DateTime);
+            mtbHora_ini.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            mtbHora_ini.Location = new System.Drawing.Point(486, 172);
+            mtbHora_ini.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            mtbHora_ini.Mask = "00:00";
+            mtbHora_ini.Name = "mtbHora_ini";
+            mtbHora_ini.Size = new System.Drawing.Size(48, 31);
+            mtbHora_ini.TabIndex = 30;
+            mtbHora_ini.ValidatingType = typeof(System.DateTime);
             // 
             // mtbHora_fin
             // 
-            this.mtbHora_fin.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.mtbHora_fin.Location = new System.Drawing.Point(340, 137);
-            this.mtbHora_fin.Mask = "00:00";
-            this.mtbHora_fin.Name = "mtbHora_fin";
-            this.mtbHora_fin.Size = new System.Drawing.Size(35, 23);
-            this.mtbHora_fin.TabIndex = 31;
-            this.mtbHora_fin.ValidatingType = typeof(System.DateTime);
+            mtbHora_fin.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            mtbHora_fin.Location = new System.Drawing.Point(486, 228);
+            mtbHora_fin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            mtbHora_fin.Mask = "00:00";
+            mtbHora_fin.Name = "mtbHora_fin";
+            mtbHora_fin.Size = new System.Drawing.Size(48, 31);
+            mtbHora_fin.TabIndex = 31;
+            mtbHora_fin.ValidatingType = typeof(System.DateTime);
             // 
             // nudCupo
             // 
-            this.nudCupo.Location = new System.Drawing.Point(340, 33);
-            this.nudCupo.Name = "nudCupo";
-            this.nudCupo.Size = new System.Drawing.Size(35, 23);
-            this.nudCupo.TabIndex = 32;
+            nudCupo.Location = new System.Drawing.Point(486, 55);
+            nudCupo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            nudCupo.Name = "nudCupo";
+            nudCupo.Size = new System.Drawing.Size(50, 31);
+            nudCupo.TabIndex = 32;
             // 
             // nudDS
             // 
-            this.nudDS.Location = new System.Drawing.Point(340, 68);
-            this.nudDS.Name = "nudDS";
-            this.nudDS.Size = new System.Drawing.Size(35, 23);
-            this.nudDS.TabIndex = 33;
+            nudDS.Location = new System.Drawing.Point(486, 113);
+            nudDS.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            nudDS.Name = "nudDS";
+            nudDS.Size = new System.Drawing.Size(50, 31);
+            nudDS.TabIndex = 33;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 61);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 15);
-            this.label1.TabIndex = 34;
-            this.label1.Text = "Materia:";
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(46, 102);
+            label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(75, 25);
+            label1.TabIndex = 34;
+            label1.Text = "Materia:";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 111);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 15);
-            this.label2.TabIndex = 35;
-            this.label2.Text = "Comision:";
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(30, 185);
+            label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(91, 25);
+            label2.TabIndex = 35;
+            label2.Text = "Comision:";
             // 
             // cbxMateria
             // 
-            this.cbxMateria.FormattingEnabled = true;
-            this.cbxMateria.Location = new System.Drawing.Point(85, 58);
-            this.cbxMateria.Name = "cbxMateria";
-            this.cbxMateria.Size = new System.Drawing.Size(121, 23);
-            this.cbxMateria.TabIndex = 36;
+            cbxMateria.FormattingEnabled = true;
+            cbxMateria.Location = new System.Drawing.Point(121, 97);
+            cbxMateria.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            cbxMateria.Name = "cbxMateria";
+            cbxMateria.Size = new System.Drawing.Size(171, 33);
+            cbxMateria.TabIndex = 36;
             // 
             // cbxComision
             // 
-            this.cbxComision.FormattingEnabled = true;
-            this.cbxComision.Location = new System.Drawing.Point(85, 106);
-            this.cbxComision.Name = "cbxComision";
-            this.cbxComision.Size = new System.Drawing.Size(121, 23);
-            this.cbxComision.TabIndex = 37;
+            cbxComision.FormattingEnabled = true;
+            cbxComision.Location = new System.Drawing.Point(121, 177);
+            cbxComision.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            cbxComision.Name = "cbxComision";
+            cbxComision.Size = new System.Drawing.Size(171, 33);
+            cbxComision.TabIndex = 37;
             // 
             // formAgregarMateriaComision
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(432, 281);
-            this.Controls.Add(this.cbxComision);
-            this.Controls.Add(this.cbxMateria);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.nudDS);
-            this.Controls.Add(this.nudCupo);
-            this.Controls.Add(this.mtbHora_fin);
-            this.Controls.Add(this.mtbHora_ini);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnAgregar);
-            this.Name = "formAgregarMateriaComision";
-            this.Text = "formAgregarMateriaComision";
-            ((System.ComponentModel.ISupportInitialize)(this.nudCupo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDS)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(617, 468);
+            Controls.Add(cbxComision);
+            Controls.Add(cbxMateria);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(nudDS);
+            Controls.Add(nudCupo);
+            Controls.Add(mtbHora_fin);
+            Controls.Add(mtbHora_ini);
+            Controls.Add(label7);
+            Controls.Add(label6);
+            Controls.Add(label5);
+            Controls.Add(label4);
+            Controls.Add(btnCancelar);
+            Controls.Add(btnAgregar);
+            Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            Name = "formAgregarMateriaComision";
+            Text = "formAgregarMateriaComision";
+            ((System.ComponentModel.ISupportInitialize)nudCupo).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nudDS).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

@@ -30,8 +30,8 @@ namespace Escritorio.Evaluacion
             TPI.Entidades.Evaluacion evaluacion = new TPI.Entidades.Evaluacion();
             
             int legajo = int.Parse(this.cbxLegajo.GetItemText(this.cbxLegajo.SelectedItem));
-            evaluacion.LegajoUsuario = legajo;
-            evaluacion.FechaHora = (DateTime)dtpFecha_hora.Value;
+            //evaluacion.LegajoUsuario = legajo;
+            //evaluacion.FechaHora = (DateTime)dtpFecha_hora.Value;
             evaluacion.Nota = (int)nudNota.Value;
             TPI.Negocio.Evaluaciones.Agregar(evaluacion);
         }
