@@ -10,15 +10,15 @@ namespace TPI.Entidades
     public class Persona
     {
         [Key]
-        public int Dni { get; private set; }
+        public int Dni { get; set; }
 
-        public string Nombre { get; private set; }
+        public string Nombre { get; set; }
 
-        public string Apellido { get; private set; }
+        public string Apellido { get; set; }
 
         public string Direccion { get; set; }
 
-        public DateTime FechaNacimiento { get; private set; }
+        public DateTime FechaNacimiento { get; set; }
 
         public string Telefono { get; set; }
 

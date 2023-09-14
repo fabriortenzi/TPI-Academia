@@ -8,23 +8,23 @@ namespace TPI.Negocio
 {
     public class Comision
     {
-        public static Entidades.Comisiones GetComisionPorId(int idCom, int idEsp)
+        public static Entidades.Comision GetComisionPorId(int idCom, int idEsp)
             => Datos.Comision.GetComisionPorId(idCom, idEsp);
 
-        public static Entidades.Comisiones GetComisionPorIdyDescEsp(string id_desc_esp)
+        public static Entidades.Comision GetComisionPorIdyDescEsp(string id_desc_esp)
         {
             return Datos.Comision.GetComisionPorIdyDescEsp(id_desc_esp);
         }
 
-        public static List<Entidades.Comisiones> GetAll() 
+        public static List<Entidades.Comision> GetAll() 
         {
             return Datos.Comision.GetAll();
         }
 
-        public static Entidades.Comisiones CrearComision(int idCom, Entidades.Especialidad especialidad)
-            => new Entidades.Comisiones(idCom, especialidad);
+        public static Entidades.Comision CrearComision(int idCom, Entidades.Especialidad especialidad)
+            => new Entidades.Comision(idCom, especialidad);
 
-        public static void AgregarComision(Entidades.Comisiones comision)
+        public static void AgregarComision(Entidades.Comision comision)
             => Datos.Comision.AgregarComision(comision);
     }
 }

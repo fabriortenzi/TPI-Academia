@@ -8,9 +8,9 @@ namespace TPI.Entidades
 {
     public class TipoDeUsuario
     {
-        public int Id { get; private set; }
+        public int Id { get; }
 
-        public string Descripcion { get; private set; }
+        public string Descripcion { get; set; }
 
         public TipoDeUsuario(string descripcion)
         {

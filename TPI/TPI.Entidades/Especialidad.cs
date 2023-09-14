@@ -10,10 +10,13 @@ namespace TPI.Entidades
     public class Especialidad
     {
         [Key]
-        public int idEspec { get; private set; }
+        public int Id { get; }
 
-        public string descEspec { get; private set; }
+        public string Descripcion { get; set; }
 
-        public Especialidad() { }
+        public Especialidad(string descripcion) 
+        {
+            Descripcion = descripcion;
+        }
     }
 }

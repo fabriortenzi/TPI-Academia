@@ -340,26 +340,26 @@
             // agregarToolStripMenuItem1
             // 
             agregarToolStripMenuItem1.Name = "agregarToolStripMenuItem1";
-            agregarToolStripMenuItem1.Size = new System.Drawing.Size(270, 34);
+            agregarToolStripMenuItem1.Size = new System.Drawing.Size(189, 34);
             agregarToolStripMenuItem1.Text = "Agregar";
             agregarToolStripMenuItem1.Click += agregarToolStripMenuItem1_Click;
             // 
             // eliminarToolStripMenuItem1
             // 
             eliminarToolStripMenuItem1.Name = "eliminarToolStripMenuItem1";
-            eliminarToolStripMenuItem1.Size = new System.Drawing.Size(270, 34);
+            eliminarToolStripMenuItem1.Size = new System.Drawing.Size(189, 34);
             eliminarToolStripMenuItem1.Text = "Eliminar";
             // 
             // consultarToolStripMenuItem1
             // 
             consultarToolStripMenuItem1.Name = "consultarToolStripMenuItem1";
-            consultarToolStripMenuItem1.Size = new System.Drawing.Size(270, 34);
+            consultarToolStripMenuItem1.Size = new System.Drawing.Size(189, 34);
             consultarToolStripMenuItem1.Text = "Consultar";
             // 
             // listarToolStripMenuItem9
             // 
             listarToolStripMenuItem9.Name = "listarToolStripMenuItem9";
-            listarToolStripMenuItem9.Size = new System.Drawing.Size(270, 34);
+            listarToolStripMenuItem9.Size = new System.Drawing.Size(189, 34);
             listarToolStripMenuItem9.Text = "Listar";
             listarToolStripMenuItem9.Click += listarToolStripMenuItem9_Click;
             // 
@@ -409,6 +409,7 @@
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "Menu Principal";
             FormClosed += formMenuPrincipal_FormClosed;
+            Load += formMenuPrincipal_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);

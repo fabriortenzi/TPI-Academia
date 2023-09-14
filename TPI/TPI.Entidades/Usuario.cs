@@ -10,13 +10,13 @@ namespace TPI.Entidades
     public class Usuario
     {
         [Key]
-        public int Legajo { get; private set; }  
+        public int Legajo { get; }  
         
         public string Contraseña { get; set; }
 
-        public Persona Persona { get; private set; }
+        public Persona Persona { get; set; }
 
-        public TipoDeUsuario TipoDeUsuario { get; private set; }
+        public TipoDeUsuario TipoDeUsuario { get; set; }
 
         public Plan? Plan { get; set; }
 

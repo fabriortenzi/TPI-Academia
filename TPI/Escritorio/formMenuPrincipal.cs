@@ -183,8 +183,8 @@ namespace Escritorio
 
         private void listarToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            formListar frmListar = new formListar(typeof(TPI.Entidades.InscripcionCursado));
-            frmListar.Show();
+            //formListar frmListar = new formListar(typeof(TPI.Entidades.InscripcionCursado));
+            //frmListar.Show();
         }
 
         private void listarToolStripMenuItem3_Click(object sender, EventArgs e)
@@ -195,7 +195,7 @@ namespace Escritorio
 
         private void listarToolStripMenuItem4_Click(object sender, EventArgs e)
         {
-            formListar frmListar = new formListar(typeof(TPI.Entidades.Comisiones));
+            formListar frmListar = new formListar(typeof(TPI.Entidades.Comision));
             frmListar.Show();
         }
 
@@ -213,20 +213,20 @@ namespace Escritorio
 
         private void listarToolStripMenuItem7_Click(object sender, EventArgs e)
         {
-            formListar frmListar = new formListar(typeof(TPI.Entidades.Evaluacion));
-            frmListar.Show();
+            //formListar frmListar = new formListar(typeof(TPI.Entidades.Evaluacion));
+            //frmListar.Show();
         }
 
         private void listarToolStripMenuItem8_Click(object sender, EventArgs e)
         {
-            formListar frmListar = new formListar(typeof(TPI.Entidades.MateriaAprobada));
-            frmListar.Show();
+            //formListar frmListar = new formListar(typeof(TPI.Entidades.MateriaAprobada));
+            //frmListar.Show();
         }
 
         private void listarToolStripMenuItem9_Click(object sender, EventArgs e)
         {
-            formListar frmListar = new formListar(typeof(TPI.Entidades.MateriaComision));
-            frmListar.Show();
+            //formListar frmListar = new formListar(typeof(TPI.Entidades.MateriaComision));
+            //frmListar.Show();
         }
 
         private void listarToolStripMenuItem10_Click(object sender, EventArgs e)
@@ -239,6 +239,14 @@ namespace Escritorio
         {
             formEliminarInscripcion formEliminarInscripcion = new(Usuario);
             formEliminarInscripcion.Show();
+        }
+
+        private void formMenuPrincipal_Load(object sender, EventArgs e)
+        {
+            if (Usuario.TipoDeUsuario.Descripcion == "Alumno")
+            {
+                planDeEstudioToolStripMenuItem.Enabled = false;
+            }
         }
     }
 }

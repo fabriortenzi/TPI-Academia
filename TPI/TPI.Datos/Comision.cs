@@ -10,7 +10,7 @@ namespace TPI.Datos
 {
     public class Comision
     {
-        public static Entidades.Comisiones GetComisionPorId(int idCom, int idEsp)
+        public static Entidades.Comision GetComisionPorId(int idCom, int idEsp)
         {
             using (var context = ApplicationContext.CreateContext())
             {
@@ -19,7 +19,7 @@ namespace TPI.Datos
             }
         }
 
-        public static Entidades.Comisiones GetComisionPorIdyDescEsp(string id_desc_esp) 
+        public static Entidades.Comision GetComisionPorIdyDescEsp(string id_desc_esp) 
         {
             using (var context = ApplicationContext.CreateContext())
             {
@@ -28,7 +28,7 @@ namespace TPI.Datos
             }
 
         }
-        public static List<Entidades.Comisiones> GetAll() 
+        public static List<Entidades.Comision> GetAll() 
         { 
             using (var context = ApplicationContext.CreateContext())
             {
@@ -39,7 +39,7 @@ namespace TPI.Datos
             }
         }
 
-        public static void AgregarComision(Entidades.Comisiones comision)
+        public static void AgregarComision(Entidades.Comision comision)
         {
             using (var context = ApplicationContext.CreateContext())
             {

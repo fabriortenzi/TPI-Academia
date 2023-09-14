@@ -11,25 +11,18 @@ namespace TPI.Entidades
     public class Plan
     {
         [Key]
-        [Column(Order = 0)]
-        public int IdEspecialidad { get; private set; }
+        public int Id { get; }
 
-        [Key]
-        [Column(Order = 1)]
-        public int anio { get; private set; }
+        public int Anio { get; set; }
 
-        [ForeignKey("IdEspecialidad")]
-        public TPI.Entidades.Especialidad especialidad { get; private set; }
-
-        public string descPlan { get; private set; }
+        public Especialidad Especialidad { get; set; }
 
         public Plan() { }
 
-        public Plan (int anioP, string desc_plan, Especialidad Especialidad)
+        public Plan (int anioP, Especialidad especialidad)
         {
-            anio = anioP;
-            descPlan = desc_plan;
-            especialidad = Especialidad;
+            Anio = anioP;
+            Especialidad = especialidad;
         }
     }
 }
