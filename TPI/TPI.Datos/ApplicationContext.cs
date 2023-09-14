@@ -23,7 +23,7 @@ namespace TPI.Datos
 
         public DbSet<Entidades.Curso> cursos { get; set; }
 
-        public DbSet<Entidades.Comisiones> comisiones { get; set; }
+        public DbSet<Entidades.Comision> comisiones { get; set; }
 
         public DbSet<Entidades.Materia> materias { get; set; }
 
@@ -55,7 +55,7 @@ namespace TPI.Datos
             modelBuilder.Entity<Entidades.ModuloUsuario>()
                 .HasKey(e => new { e.IdModulo, e.IdTipoDeUsuario });
 
-            modelBuilder.Entity<Entidades.Comisiones>()
+            modelBuilder.Entity<Entidades.Comision>()
                 .HasKey(e => new { e.IdCom, e.IdEspecialidad });
 
             modelBuilder.Entity<Entidades.Curso>()

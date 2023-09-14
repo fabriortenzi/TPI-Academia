@@ -14,9 +14,9 @@ namespace Escritorio.Inscripcion
     {
         private TPI.Entidades.Usuario Usuario;
 
-        private List<TPI.Entidades.Comisiones> Comisiones;
+        private List<TPI.Entidades.Comision> Comisiones;
 
-        private TPI.Entidades.Comisiones Comision;
+        private TPI.Entidades.Comision Comision;
 
         private TPI.Entidades.MateriaComision MateriaComision;
 

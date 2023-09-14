@@ -30,7 +30,7 @@ namespace TPI.Negocio
             TPI.Datos.MateriaComision.Eliminar(materia_comision);
         }
 
-        public static List<Entidades.Comisiones> GetComisionesPorMateria(Entidades.Materia materia)
+        public static List<Entidades.Comision> GetComisionesPorMateria(Entidades.Materia materia)
             => Datos.MateriaComision.GetComisionesPorMateria(materia);
     }
     

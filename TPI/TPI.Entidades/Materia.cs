@@ -11,31 +11,23 @@ namespace TPI.Entidades
     public class Materia
     {
         [Key]
-        [Column(Order = 0)]
-        public int idMateria { get; private set; }
+        public int Id { get; }
 
-        [Column(Order = 1)]
-        public int IdEspecialidad { get; private set; }
+        public Plan Plan { get; set; }
 
-        [Column(Order = 2)]
-        public int anio { get; private set; }
+        public string Descripcion { get; }
 
-        [ForeignKey("IdEspecialidad, anio")]
-        public Plan Plan { get; private set; }
+        public int HorasSemanales { get; set; }
 
-        public string descMateria { get; private set; }
-
-        public int horaSem { get; private set; }
-
-        public int horaTot { get; private set; }
+        public int HorasTotales { get; set; }
 
         public Materia() { }
 
         public Materia (string desc, int hora_sem, int hora_tot, Plan plan)
         {
-            descMateria = desc;
-            horaSem = hora_sem;
-            horaTot = hora_tot;
+            Descripcion = desc;
+            HorasSemanales = hora_sem;
+            HorasTotales = hora_tot;
             Plan = plan;
         }
     }

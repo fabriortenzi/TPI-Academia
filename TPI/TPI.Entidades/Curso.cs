@@ -11,25 +11,33 @@ namespace TPI.Entidades
     public class Curso
     {
         [Key]
-        [Column(Order = 1)]
-        public int IdMateria { get; set; }
+        public int Id { get; }
 
-        [Key]
-        [Column(Order = 2)]
-        public int Año { get; private set; }
+        public int CicloLectivo { get; set; }
 
-        [ForeignKey("IdMateria")]
-        public Materia Materia { get; private set; }
+        public Materia Materia { get; set; }
 
-        public int Cupo { get; private set; }
+        public Comision Comision { get; set; }
+
+        public int Cupo { get; set; }
+
+        public string Dia { get; set; }
+
+        public TimeSpan HoraInicio { get; set; }
+
+        public TimeSpan HoraFin { get; set; }
 
         public Curso() { }
 
-        public Curso(Materia materia, int año, int cupo)
+        public Curso(Materia materia, int cicloLectivo, Comision comision, int cupo, string dia, TimeSpan horaInicio, TimeSpan horaFin)
         {
             Materia = materia;
-            Año = año;
+            CicloLectivo = cicloLectivo;
             Cupo = cupo;
+            Dia = dia;
+            Comision = comision;
+            HoraInicio = horaInicio;
+            HoraFin = horaFin;
         }
     }
 }

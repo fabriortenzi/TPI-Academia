@@ -10,23 +10,17 @@ namespace TPI.Entidades
 {
     public class ProfesorCurso
     {
-        [Column(Order = 0)]
-        public int Legajo { get; set; }
-
-        [Column(Order = 1)]
-        public int idMateria { get; set; }
-
-        [Column(Order = 2)]
-        public int Anio { get; set; }
-
-
-        [ForeignKey("Legajo")]
         public Usuario Usuario { get; set; }
 
-        [ForeignKey("idMateria, Anio")]
         public Curso Curso { get; set; }
 
+        public string Cargo { get; set; }
 
-        public String Cargo { get; set; }
+        public ProfesorCurso(Usuario usuario, Curso curso, string cargo)
+        {
+            Usuario = usuario;
+            Curso = curso;
+            Cargo = cargo;
+        }
     }
 }
