@@ -15,5 +15,11 @@ namespace AcademiaWeb.Data
         }
 
         public DbSet<AcademiaWeb.Models.Persona> Persona { get; set; }
+
+        public DbSet<AcademiaWeb.Models.Comision> Comision { get; set; }
+
+        public DbSet<AcademiaWeb.Models.Curso> Curso { get; set; }
+
+        public DbSet<AcademiaWeb.Models.Especialidad> Especialidad { get; set; }
     }
 }
