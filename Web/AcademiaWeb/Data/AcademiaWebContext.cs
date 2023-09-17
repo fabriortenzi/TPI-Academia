@@ -14,6 +14,15 @@ namespace AcademiaWeb.Data
         {
         }
 
+        public async Task<List<Persona>> ObtenerPersonasAsync()
+        {
+            return await Persona.ToListAsync();
+        }
+
         public DbSet<AcademiaWeb.Models.Persona> Persona { get; set; }
+
+        public DbSet<AcademiaWeb.Models.Usuario> Usuario { get; set; }
+
+        public DbSet<AcademiaWeb.Models.TipoDeUsuario> TipoDeUsuario { get; set; }
     }
 }
