@@ -7,25 +7,26 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using AcademiaWeb.Data;
 using AcademiaWeb.Models;
+using System.ComponentModel;
 
 namespace AcademiaWeb.Controllers
 {
-    public class PersonasController : Controller
+    public class UsuariosController : Controller
     {
         private readonly AcademiaWebContext _context;
 
-        public PersonasController(AcademiaWebContext context)
+        public UsuariosController(AcademiaWebContext context)
         {
             _context = context;
         }
 
-        // GET: Personas
+        // GET: Usuarios
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Persona.ToListAsync());
+            return View(await _context.Usuario.ToListAsync());
         }
 
-        // GET: Personas/Details/5
+        // GET: Usuarios/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -33,39 +34,53 @@ namespace AcademiaWeb.Controllers
                 return NotFound();
             }
 
-            var persona = await _context.Persona
-                .FirstOrDefaultAsync(m => m.Dni == id);
-            if (persona == null)
+            var usuario = await _context.Usuario
+                .FirstOrDefaultAsync(m => m.Legajo == id);
+            if (usuario == null)
             {
                 return NotFound();
             }
 
-            return View(persona);
+            return View(usuario);
         }
 
-        // GET: Personas/Create
-        public IActionResult Create()
+        // GET: Usuarios/Create
+        public async Task<IActionResult> Create()
         {
+            var personas = await _context.ObtenerPersonasAsync();
+            ViewBag.Personas = new SelectList(personas, "Dni", "Dni");
+
+            var tiposDeUsuario = await _context.ObtenerTiposDeUsuarioAsync();
+            ViewBag.TiposDeUsuario = new SelectList(tiposDeUsuario, "Id", "Descripcion");
+
             return View();
         }
 
-        // POST: Personas/Create
+        // POST: Usuarios/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Dni,Nombre,Apellido,Direccion,FechaNacimiento,Telefono")] Persona persona)
+        public async Task<IActionResult> Create([Bind("Legajo,Contraseña")] Usuario usuario, [Bind("PersonaDni")] int PersonaDni, [Bind("TipoDeUsuarioId")] int TipoDeUsuarioId)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(persona);
+                var persona = await _context.Persona.FindAsync(PersonaDni);
+                usuario.Persona = persona;
+
+                var tipoDeUsuario = await _context.TipoDeUsuario.FindAsync(TipoDeUsuarioId);
+                usuario.TipoDeUsuario = tipoDeUsuario;
+
+                _context.Usuario.Attach(usuario);
+                _context.Entry(usuario).State = EntityState.Added;
+
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(persona);
+            return View(usuario);
         }
 
-        // GET: Personas/Edit/5
+        // GET: Usuarios/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -73,31 +88,36 @@ namespace AcademiaWeb.Controllers
                 return NotFound();
             }
 
-            var persona = await _context.Persona.FindAsync(id);
-            if (persona == null)
+            var usuario = await _context.Usuario.FindAsync(id);
+            if (usuario == null)
             {
                 return NotFound();
             }
-            return View(persona);
+            return View(usuario);
         }
 
-        // POST: Personas/Edit/5
+        // POST: Usuarios/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int Dni, [Bind("Dni,Nombre,Apellido,Direccion,FechaNacimiento,Telefono")] Persona persona)
+        public async Task<IActionResult> Edit(int id, [Bind("Legajo,Contraseña")] Usuario usuario)
         {
+            if (id != usuario.Legajo)
+            {
+                return NotFound();
+            }
+
             if (ModelState.IsValid)
             {
                 try
                 {
-                    _context.Update(persona);
+                    _context.Update(usuario);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!PersonaExists(persona.Dni))
+                    if (!UsuarioExists(usuario.Legajo))
                     {
                         return NotFound();
                     }
@@ -108,10 +128,10 @@ namespace AcademiaWeb.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(persona);
+            return View(usuario);
         }
 
-        // GET: Personas/Delete/5
+        // GET: Usuarios/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -119,30 +139,30 @@ namespace AcademiaWeb.Controllers
                 return NotFound();
             }
 
-            var persona = await _context.Persona
-                .FirstOrDefaultAsync(m => m.Dni == id);
-            if (persona == null)
+            var usuario = await _context.Usuario
+                .FirstOrDefaultAsync(m => m.Legajo == id);
+            if (usuario == null)
             {
                 return NotFound();
             }
 
-            return View(persona);
+            return View(usuario);
         }
 
-        // POST: Personas/Delete/5
+        // POST: Usuarios/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var persona = await _context.Persona.FindAsync(id);
-            _context.Persona.Remove(persona);
+            var usuario = await _context.Usuario.FindAsync(id);
+            _context.Usuario.Remove(usuario);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool PersonaExists(int id)
+        private bool UsuarioExists(int id)
         {
-            return _context.Persona.Any(e => e.Dni == id);
+            return _context.Usuario.Any(e => e.Legajo == id);
         }
     }
 }
