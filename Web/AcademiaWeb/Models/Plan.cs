@@ -9,6 +9,6 @@ namespace AcademiaWeb.Models
 
         public int Anio { get; set; }
 
-        //public Especialidad Especialidad { get; set; }
+        public Especialidad Especialidad { get; set; }
     }
 }

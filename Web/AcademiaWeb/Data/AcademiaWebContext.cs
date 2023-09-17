@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -19,6 +19,16 @@ namespace AcademiaWeb.Data
             return await Persona.ToListAsync();
         }
 
+        public async Task<List<TipoDeUsuario>> ObtenerTiposDeUsuarioAsync()
+        {
+            return await TipoDeUsuario.ToListAsync();
+        }
+
+        public async Task<List<Especialidad>> ObtenerEspecialidadesAsync()
+        {
+            return await Especialidad.ToListAsync();
+        }
+
         public DbSet<AcademiaWeb.Models.Persona> Persona { get; set; }
 
         public DbSet<AcademiaWeb.Models.Usuario> Usuario { get; set; }
@@ -30,5 +40,7 @@ namespace AcademiaWeb.Data
         public DbSet<AcademiaWeb.Models.Curso> Curso { get; set; }
 
         public DbSet<AcademiaWeb.Models.Especialidad> Especialidad { get; set; }
+
+        public DbSet<AcademiaWeb.Models.Plan> Plan { get; set; }
     }
 }

@@ -15,7 +15,18 @@
             <div class="form-group">
                 <label for="PersonaDni">Dni persona</label>
                 <select id="PersonaDni" name="PersonaDni">
+                    <option value="" default></option>
                     @foreach (SelectListItem item in (SelectList)ViewBag.Personas)
+                    {
+                        <option value="@item.Value">@item.Text</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="TipoDeUsuarioId">Tipo de Usuario</label>
+                <select id="TipoDeUsuarioId" name="TipoDeUsuarioId">
+                    <option value="" default></option>
+                    @foreach (SelectListItem item in (SelectList)ViewBag.TiposDeUsuario)
                     {
                         <option value="@item.Value">@item.Text</option>
                     }

@@ -86,13 +86,8 @@ namespace AcademiaWeb.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Dni,Nombre,Apellido,Direccion,FechaNacimiento,Telefono")] Persona persona)
+        public async Task<IActionResult> Edit(int Dni, [Bind("Dni,Nombre,Apellido,Direccion,FechaNacimiento,Telefono")] Persona persona)
         {
-            if (id != persona.Dni)
-            {
-                return NotFound();
-            }
-
             if (ModelState.IsValid)
             {
                 try
