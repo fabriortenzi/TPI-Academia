@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -24,5 +24,11 @@ namespace AcademiaWeb.Data
         public DbSet<AcademiaWeb.Models.Usuario> Usuario { get; set; }
 
         public DbSet<AcademiaWeb.Models.TipoDeUsuario> TipoDeUsuario { get; set; }
+
+        public DbSet<AcademiaWeb.Models.Comision> Comision { get; set; }
+
+        public DbSet<AcademiaWeb.Models.Curso> Curso { get; set; }
+
+        public DbSet<AcademiaWeb.Models.Especialidad> Especialidad { get; set; }
     }
 }
