@@ -1,8 +1,5 @@
 ﻿using Escritorio.Comision;
-using Escritorio.Evaluacion;
 using Escritorio.Inscripcion;
-using Escritorio.MateriaAprobada;
-using Escritorio.MateriaComision;
 using Escritorio.ProfesorCurso;
 using Escritorio.Generalizado;
 using System;
@@ -93,44 +90,30 @@ namespace Escritorio
 
         private void agregarEvaluacionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            formAgregarEvaluacion formAgregarEvaluacion = new();
-            formAgregarEvaluacion.Show();
         }
 
         private void eliminarEvaluacionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            formEliminarEvaluacion formEliminarEvaluacion = new();
-            formEliminarEvaluacion.Show();
         }
 
         private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            formConsultarMateriaAprobada formConsultarMateriaAprobada = new formConsultarMateriaAprobada(Usuario);
-            formConsultarMateriaAprobada.Show();
         }
 
         private void agregarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            formAgregarMateriaAprobada formAgregarMateriaAprobada = new formAgregarMateriaAprobada(Usuario);
-            formAgregarMateriaAprobada.Show();
         }
 
         private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            formEliminarMateriaAprobada formEliminarMateriaAprobada = new formEliminarMateriaAprobada(Usuario);
-            formEliminarMateriaAprobada.Show();
         }
 
         private void agregarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            formAgregarMateriaComision formAgregarMateriaComision = new();
-            formAgregarMateriaComision.Show();
         }
 
         private void eliminarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            formEliminarMateriaComision formEliminarMateriaComision = new();
-            formEliminarMateriaComision.Show();
         }
 
         private void agregarToolStripMenuItem2_Click(object sender, EventArgs e)
@@ -147,8 +130,6 @@ namespace Escritorio
 
         private void consultarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            formConsultarMateriaComision formConsultarMateriaComision = new();
-            formConsultarMateriaComision.Show();
         }
 
         private void consultarToolStripMenuItem2_Click(object sender, EventArgs e)
@@ -159,8 +140,6 @@ namespace Escritorio
 
         private void consultarToolStripMenuItem3_Click(object sender, EventArgs e)
         {
-            formConsultarEvaluacion formConsultarEvaluacion = new();
-            formConsultarEvaluacion.Show();
         }
 
         private void nuevaComisionToolStripMenuItem_Click(object sender, EventArgs e)

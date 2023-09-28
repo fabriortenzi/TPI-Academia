@@ -10,24 +10,24 @@ namespace TPI.Datos
 {
     public class Comision
     {
-        public static Entidades.Comision GetComisionPorId(int idCom, int idEsp)
-        {
-            using (var context = ApplicationContext.CreateContext())
-            {
-                return context.comisiones
-                    .FirstOrDefault(c => c.IdCom == idCom && c.IdEspecialidad == idEsp);
-            }
-        }
+        //public static Entidades.Comision GetComisionPorId(int idCom, int idEsp)
+        //{
+        //    using (var context = ApplicationContext.CreateContext())
+        //    {
+        //        return context.comisiones
+        //            .FirstOrDefault(c => c.IdCom == idCom && c.IdEspecialidad == idEsp);
+        //    }
+        //}
 
-        public static Entidades.Comision GetComisionPorIdyDescEsp(string id_desc_esp) 
-        {
-            using (var context = ApplicationContext.CreateContext())
-            {
-                return context.comisiones
-                    .FirstOrDefault(c => (c.IdCom.ToString() + " " + c.Especialidad.descEspec) == id_desc_esp );
-            }
+        //public static Entidades.Comision GetComisionPorIdyDescEsp(string id_desc_esp) 
+        //{
+        //    using (var context = ApplicationContext.CreateContext())
+        //    {
+        //        return context.comisiones
+        //            .FirstOrDefault(c => (c.IdCom.ToString() + " " + c.Especialidad.descEspec) == id_desc_esp );
+        //    }
 
-        }
+        //}
         public static List<Entidades.Comision> GetAll() 
         { 
             using (var context = ApplicationContext.CreateContext())

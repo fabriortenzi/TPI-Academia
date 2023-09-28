@@ -22,30 +22,16 @@ namespace Escritorio.Generalizado
         private void formListar_Load(object sender, EventArgs e)
         {
             string nom_clase = "";
-            if (tipoDato == typeof(TPI.Entidades.MateriaAprobada))
-            {
-               nom_clase = "Materias Aprobadas";
-            }
-            else if (tipoDato == typeof(TPI.Entidades.MateriaComision))
-            {
-
-                nom_clase = "Materias Comisiones";
-            }
-            else if (tipoDato == typeof(TPI.Entidades.ProfesorCurso))
+            if (tipoDato == typeof(TPI.Entidades.ProfesorCurso))
             {
 
                 nom_clase = "Profesores Cursos";
-            }
-            else if (tipoDato == typeof(TPI.Entidades.Evaluacion))
-            {
-
-                nom_clase = "Evaluaciones";
             }
             else if (tipoDato == typeof(TPI.Entidades.Curso))
             {
                 nom_clase = "Cursos";
             }
-            else if (tipoDato == typeof(TPI.Entidades.InscripcionCursado))
+            else if (tipoDato == typeof(TPI.Entidades.Cursado))
             {
                 nom_clase = "Inscripciones";
             }
@@ -78,29 +64,17 @@ namespace Escritorio.Generalizado
 
             dgvGrilla.DataSource = null;
 
-            if (tipoDato == typeof(TPI.Entidades.MateriaAprobada)) 
-            {
-                dgvGrilla.DataSource = TPI.Negocio.MateriaAprobada.GetAllMateriaAprobada();  
-            }
-            else if (tipoDato == typeof(TPI.Entidades.MateriaComision)) 
-            {
-                dgvGrilla.DataSource = TPI.Negocio.MateriaComision.GetAllMateriaComision();
-            }
-            else if (tipoDato == typeof(TPI.Entidades.ProfesorCurso))
+            if (tipoDato == typeof(TPI.Entidades.ProfesorCurso))
             {
                 dgvGrilla.DataSource = TPI.Negocio.ProfesorCurso.GetAllProfesorCurso();
-            }
-            else if (tipoDato == typeof(TPI.Entidades.Evaluacion))
-            {
-                dgvGrilla.DataSource = TPI.Negocio.Evaluaciones.GetAllEvaluacion();
             }
             else if (tipoDato == typeof(TPI.Entidades.Curso))
             {
                 dgvGrilla.DataSource = TPI.Negocio.Curso.GetAll();
             }
-            else if (tipoDato == typeof(TPI.Entidades.InscripcionCursado))
+            else if (tipoDato == typeof(TPI.Entidades.Cursado))
             {
-                dgvGrilla.DataSource = TPI.Negocio.InscripcionCursado.GetAllInscripcion();
+                //dgvGrilla.DataSource = TPI.Negocio.InscripcionCursado.GetAllInscripcion();
             }
             else if (tipoDato == typeof(TPI.Entidades.Materia))
             {
@@ -130,42 +104,42 @@ namespace Escritorio.Generalizado
         {
             string consulta =txtConsulta.Text;
             
-                if (tipoDato == typeof(TPI.Entidades.MateriaAprobada))
-                {
-                    List<TPI.Entidades.MateriaAprobada> materias_aprobadas = TPI.Negocio.MateriaAprobada.GetAllMateriaAprobada();
-                    dgvGrilla.DataSource = materias_aprobadas.Where(x => x.Legajo.ToString().Contains(consulta) || x.idMateria.ToString().Contains(consulta)).ToList();
-                }
-                else if (tipoDato == typeof(TPI.Entidades.MateriaComision))
-                {
-                    List<TPI.Entidades.MateriaComision> materias_comisiones = TPI.Negocio.MateriaComision.GetAllMateriaComision();
-                    dgvGrilla.DataSource = materias_comisiones.Where(x => x.idMateria.ToString().Contains(consulta) || x.IdEspecialidad.ToString().Contains(consulta) || x.IdCom.ToString().Contains(consulta)).ToList();
-                }
-                else if (tipoDato == typeof(TPI.Entidades.ProfesorCurso))
-                {
-                    List<TPI.Entidades.ProfesorCurso> profesor_curso = TPI.Negocio.ProfesorCurso.GetAllProfesorCurso();
-                    dgvGrilla.DataSource = profesor_curso.Where(x => x.Legajo.ToString().Contains(consulta) || x.Anio.ToString().Contains(consulta) || x.idMateria.ToString().Contains(consulta)).ToList();
-                }
-                else if (tipoDato == typeof(TPI.Entidades.Evaluacion))
-                {
-                    List<TPI.Entidades.Evaluacion> evaluaciones = TPI.Negocio.Evaluaciones.GetAllEvaluacion();
-                    dgvGrilla.DataSource = evaluaciones.Where(x => x.Id.ToString().Contains(consulta)).ToList();
-                }
-                else if (tipoDato == typeof(TPI.Entidades.Curso))
-                {
-                    List <TPI.Entidades.Curso> cursos = TPI.Negocio.Curso.GetAll();
-                    dgvGrilla.DataSource = cursos.Where(x => x.Año.ToString().Contains(consulta) || x.IdMateria.ToString().Contains(consulta));
-                }
-                else if (tipoDato == typeof(TPI.Entidades.InscripcionCursado))
-                {
-                    List<TPI.Entidades.InscripcionCursado> inscripciones = TPI.Negocio.InscripcionCursado.GetAllInscripcion();
-                    dgvGrilla.DataSource = inscripciones.Where(x => x.LegajoUsuario.ToString().Contains(consulta) || x.FechaHora.ToString().Contains(consulta));
-                }
-                else if (tipoDato == typeof(TPI.Entidades.Materia))
-                {
-                    List<TPI.Entidades.Curso> cursos = TPI.Negocio.Curso.GetAll();
-                    dgvGrilla.DataSource = cursos.Where(x => x.Año.ToString().Contains(consulta) || x.IdMateria.ToString().Contains(consulta));
-                }
-                else if (tipoDato == typeof(TPI.Entidades.Persona))
+                //if (tipoDato == typeof(TPI.Entidades.MateriaAprobada))
+                //{
+                //    List<TPI.Entidades.MateriaAprobada> materias_aprobadas = TPI.Negocio.MateriaAprobada.GetAllMateriaAprobada();
+                //    dgvGrilla.DataSource = materias_aprobadas.Where(x => x.Legajo.ToString().Contains(consulta) || x.idMateria.ToString().Contains(consulta)).ToList();
+                //}
+                //else if (tipoDato == typeof(TPI.Entidades.MateriaComision))
+                //{
+                //    List<TPI.Entidades.MateriaComision> materias_comisiones = TPI.Negocio.MateriaComision.GetAllMateriaComision();
+                //    dgvGrilla.DataSource = materias_comisiones.Where(x => x.idMateria.ToString().Contains(consulta) || x.IdEspecialidad.ToString().Contains(consulta) || x.IdCom.ToString().Contains(consulta)).ToList();
+                //}
+                //else if (tipoDato == typeof(TPI.Entidades.ProfesorCurso))
+                //{
+                //    List<TPI.Entidades.ProfesorCurso> profesor_curso = TPI.Negocio.ProfesorCurso.GetAllProfesorCurso();
+                //    dgvGrilla.DataSource = profesor_curso.Where(x => x.Legajo.ToString().Contains(consulta) || x.Anio.ToString().Contains(consulta) || x.idMateria.ToString().Contains(consulta)).ToList();
+                //}
+                //else if (tipoDato == typeof(TPI.Entidades.Evaluacion))
+                //{
+                //    List<TPI.Entidades.Evaluacion> evaluaciones = TPI.Negocio.Evaluaciones.GetAllEvaluacion();
+                //    dgvGrilla.DataSource = evaluaciones.Where(x => x.Id.ToString().Contains(consulta)).ToList();
+                //}
+                //else if (tipoDato == typeof(TPI.Entidades.Curso))
+                //{
+                //    List <TPI.Entidades.Curso> cursos = TPI.Negocio.Curso.GetAll();
+                //    dgvGrilla.DataSource = cursos.Where(x => x.Año.ToString().Contains(consulta) || x.IdMateria.ToString().Contains(consulta));
+                //}
+                //else if (tipoDato == typeof(TPI.Entidades.InscripcionCursado))
+                //{
+                //    List<TPI.Entidades.InscripcionCursado> inscripciones = TPI.Negocio.InscripcionCursado.GetAllInscripcion();
+                //    dgvGrilla.DataSource = inscripciones.Where(x => x.LegajoUsuario.ToString().Contains(consulta) || x.FechaHora.ToString().Contains(consulta));
+                //}
+                //else if (tipoDato == typeof(TPI.Entidades.Materia))
+                //{
+                //    List<TPI.Entidades.Curso> cursos = TPI.Negocio.Curso.GetAll();
+                //    dgvGrilla.DataSource = cursos.Where(x => x.Año.ToString().Contains(consulta) || x.IdMateria.ToString().Contains(consulta));
+                //}
+                if (tipoDato == typeof(TPI.Entidades.Persona))
                 {
                     List<TPI.Entidades.Persona> personas = TPI.Negocio.Persona.GetAll();
                     dgvGrilla.DataSource = personas.Where(x => x.Dni.ToString().Contains(consulta));
@@ -173,7 +147,7 @@ namespace Escritorio.Generalizado
                 else if (tipoDato == typeof(TPI.Entidades.Plan))
                 {
                     List<TPI.Entidades.Plan> planes = TPI.Negocio.Plan.GetAll();
-                    dgvGrilla.DataSource = planes.Where(x => x.anio.ToString().Contains(consulta) || x.IdEspecialidad.ToString().Contains(consulta));
+                    dgvGrilla.DataSource = planes.Where(x => x.Anio.ToString().Contains(consulta) || x.Especialidad.Id.ToString().Contains(consulta));
                 }
                 else if (tipoDato == typeof(TPI.Entidades.Usuario))
                 {

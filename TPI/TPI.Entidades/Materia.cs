@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -11,12 +11,11 @@ namespace TPI.Entidades
     public class Materia
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; }
+        public int Id { get; set; }
 
         public Plan Plan { get; set; }
 
-        public string Descripcion { get; }
+        public string Descripcion { get; set; }
 
         public int HorasSemanales { get; set; }
 

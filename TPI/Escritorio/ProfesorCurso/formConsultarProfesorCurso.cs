@@ -24,7 +24,7 @@ namespace Escritorio.ProfesorCurso
             List<TPI.Entidades.Materia> materias = TPI.Negocio.Materia.GetAll();
 
             foreach (TPI.Entidades.Usuario usu in usuarios) { cbxLegajo.Items.Add(usu.Legajo); }
-            foreach (TPI.Entidades.Materia mat in materias) { cbxMateria.Items.Add(mat.descMateria); }
+            foreach (TPI.Entidades.Materia mat in materias) { cbxMateria.Items.Add(mat.Descripcion); }
 
 
         }
@@ -41,7 +41,7 @@ namespace Escritorio.ProfesorCurso
 
             int anio = int.Parse(txtAnio.Text);
 
-            TPI.Entidades.ProfesorCurso profesorCurso = TPI.Negocio.ProfesorCurso.GetProfesorCurso(legajo, anio, materia.idMateria);
+            TPI.Entidades.ProfesorCurso profesorCurso = TPI.Negocio.ProfesorCurso.GetProfesorCurso(legajo, anio, materia.Id);
 
             formMostrarProfesorCurso frmMostrarProfesorCurso = new formMostrarProfesorCurso(profesorCurso);
             frmMostrarProfesorCurso.Show();

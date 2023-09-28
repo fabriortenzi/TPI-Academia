@@ -15,11 +15,7 @@ namespace TPI.Datos
 
         public DbSet<Entidades.Usuario> usuarios { get; set; }
 
-        public DbSet<Entidades.Modulo> modulos { get; set; }
-
-        public DbSet<Entidades.ModuloUsuario> modulos_usuarios { get; set; }
-
-        public DbSet<Entidades.InscripcionCursado> inscripciones_cursados { get; set; }
+        public DbSet<Entidades.Cursado> cursados { get; set; }
 
         public DbSet<Entidades.Curso> cursos { get; set; }
 
@@ -31,13 +27,8 @@ namespace TPI.Datos
 
         public DbSet<Entidades.Plan> planes { get; set; }
 
-        public DbSet<Entidades.MateriaAprobada> materias_aprobadas { get; set; }
-
-        public DbSet<Entidades.MateriaComision> materias_comisiones { get; set; }
-
         public DbSet<Entidades.ProfesorCurso> profesores_cursos { get; set; }
-        
-        public DbSet<Entidades.Evaluacion> evaluaciones { get; set; }
+ 
 
         public ApplicationContext(DbContextOptions<ApplicationContext> contextOptions)
             : base(contextOptions) { }
@@ -52,32 +43,32 @@ namespace TPI.Datos
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Entidades.ModuloUsuario>()
-                .HasKey(e => new { e.IdModulo, e.IdTipoDeUsuario });
-
             modelBuilder.Entity<Entidades.Comision>()
-                .HasKey(e => new { e.IdCom, e.IdEspecialidad });
+                .HasKey(c => new { c.Id });
+
+            modelBuilder.Entity<Entidades.Cursado>()
+                .HasKey(c => new { c.Id });
 
             modelBuilder.Entity<Entidades.Curso>()
-                .HasKey(e => new { e.IdMateria, e.Año });
+                .HasKey(c => new { c.Id });
+
+            modelBuilder.Entity<Entidades.Especialidad>()
+                .HasKey(e => new { e.Id });
+
+            modelBuilder.Entity<Entidades.Materia>()
+                .HasKey(m => new { m.Id });
 
             modelBuilder.Entity<Entidades.Plan>()
-                .HasKey(e => new { e.IdEspecialidad, e.anio });
+               .HasKey(p => new { p.Id });
 
-            modelBuilder.Entity<Entidades.MateriaAprobada>()
-                .HasKey(e => new { e.idMateria, e.Legajo });
-
-            modelBuilder.Entity<Entidades.MateriaComision>()
-               .HasKey(e => new { e.idMateria, e.IdEspecialidad, e.IdCom });
-            
             modelBuilder.Entity<Entidades.ProfesorCurso>()
-               .HasKey(e => new { e.idMateria, e.Legajo, e.Anio });
+               .HasKey(pc => new { pc.Id });
 
-            modelBuilder.Entity<Entidades.InscripcionCursado>()
-                .HasKey(ic => new { ic.Id });
+            modelBuilder.Entity<Entidades.TipoDeUsuario>()
+               .HasKey(t => new { t.Id });
 
-            modelBuilder.Entity<Entidades.Evaluacion>()
-                .HasKey(ev => new { ev.Id });
+            modelBuilder.Entity<Entidades.Usuario>()
+               .HasKey(u => new { u.Legajo });
         }
     }
 }

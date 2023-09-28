@@ -22,7 +22,7 @@ namespace TPI.Datos
         {
             using (ApplicationContext context = ApplicationContext.CreateContext())
             {
-                return context.especialidades.FirstOrDefault(x => x.descEspec == desc_Espec);
+                return context.especialidades.FirstOrDefault(x => x.Descripcion == desc_Espec);
             }
         }
     }
