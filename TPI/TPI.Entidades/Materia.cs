@@ -11,11 +11,11 @@ namespace TPI.Entidades
     public class Materia
     {
         [Key]
-        public int Id { get; }
+        public int Id { get; set; }
 
         public Plan Plan { get; set; }
 
-        public string Descripcion { get; }
+        public string Descripcion { get; set; }
 
         public int HorasSemanales { get; set; }
 

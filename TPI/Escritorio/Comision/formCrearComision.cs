@@ -60,7 +60,7 @@ namespace Escritorio.Comision
         {
             foreach (var esp in TPI.Negocio.Especialidad.GetAllEspecialidades())
             {
-                cbxEspecialidades.Items.Add(esp.descEspec);
+                cbxEspecialidades.Items.Add(esp.Descripcion);
             }
         }
 

@@ -25,7 +25,7 @@ namespace Escritorio
 
             foreach (var esp in especialidades)
             {
-                cbxEspecialidades.Items.Add(esp.descEspec);
+                cbxEspecialidades.Items.Add(esp.Descripcion);
             }
         }
 
@@ -44,7 +44,7 @@ namespace Escritorio
 
             foreach (var plan in planes)
             {
-                cbxPlanes.Items.Add(plan.anio);
+                cbxPlanes.Items.Add(plan.Anio);
             }
         }
 

@@ -28,7 +28,7 @@ namespace Escritorio
 
             foreach (var esp in especialidades)
             {
-                cbxEspecialidades.Items.Add(esp.descEspec);
+                cbxEspecialidades.Items.Add(esp.Descripcion);
             }
         }
 
@@ -52,7 +52,7 @@ namespace Escritorio
 
             foreach (var plan in planesPorEspecialidad)
             {
-                cbxPlanes.Items.Add(plan.anio);
+                cbxPlanes.Items.Add(plan.Anio);
             }
         }
 
@@ -72,7 +72,7 @@ namespace Escritorio
 
                 foreach (var materia in materiasPlan)
                 {
-                    cbxMaterias.Items.Add(materia.descMateria);
+                    cbxMaterias.Items.Add(materia.Descripcion);
                 }
             }
         }
@@ -101,8 +101,8 @@ namespace Escritorio
 
             if (año != 0 && cupo != 0)
             {
-                var curso = TPI.Negocio.Curso.CrearCurso(año, cupo, Materia);
-                TPI.Negocio.Curso.AgregarCurso(curso);
+                //var curso = TPI.Negocio.Curso.CrearCurso(año, cupo, Materia);
+                //TPI.Negocio.Curso.AgregarCurso(curso);
                 MessageBox.Show("Curso creado exitosamente!");
                 Dispose();
             }

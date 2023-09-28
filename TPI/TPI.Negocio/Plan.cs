@@ -10,7 +10,7 @@ namespace TPI.Negocio
     {
         public static Entidades.Plan CrearPlan(int año , string descplan, Entidades.Especialidad especialidad)
         {
-            Entidades.Plan plan = new(año, descplan, especialidad);
+            Entidades.Plan plan = new(año, especialidad);
             return plan;
         }
 

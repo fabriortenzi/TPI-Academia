@@ -23,7 +23,7 @@ namespace TPI.Datos
 
             using (var context = ApplicationContext.CreateContext())
             {
-                profesor_curso = context.profesores_cursos.FirstOrDefault(x => x.Legajo == legajo && x.Anio== anio && x.idMateria == id_materia);
+                profesor_curso = context.profesores_cursos.FirstOrDefault(x => x.Usuario.Legajo == legajo && x.Curso.CicloLectivo == anio && x.Curso.Materia.Id == id_materia);
             }
 
             return profesor_curso;

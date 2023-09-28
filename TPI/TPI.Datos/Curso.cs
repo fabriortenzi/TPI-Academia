@@ -29,7 +29,7 @@ namespace TPI.Datos
             {
                 var cursosDisponibles = context.cursos
                     .Include(c => c.Materia)
-                    .Where(c => c.Año == añoActual
+                    .Where(c => c.CicloLectivo == añoActual
                             && c.Materia.Plan.Equals(plan)
                             && c.Cupo > 0).ToList();
 

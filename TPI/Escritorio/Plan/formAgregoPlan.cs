@@ -31,7 +31,7 @@ namespace Escritorio
         {
             foreach (var especialidad in TPI.Datos.Especialidades.GetEspecialidades())
             {
-                comboBoxEsp.Items.Add(especialidad.descEspec);
+                comboBoxEsp.Items.Add(especialidad.Descripcion);
             }
         }
 
