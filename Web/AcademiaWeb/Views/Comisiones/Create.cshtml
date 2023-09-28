@@ -2,6 +2,8 @@
 
 @{
     ViewData["Title"] = "Create";
+    
+
 }
 
 <h1>Create</h1>
@@ -17,9 +19,28 @@
                 <input asp-for="NroComision" class="form-control" />
                 <span asp-validation-for="NroComision" class="text-danger"></span>
             </div>
+
+
+
+            <div class="form-group">
+                <label for="Especialidad">Especialidad</label>
+                <div>
+                    <select id="idEspecialidad" name="idEspecialidad">
+                        <option value="Seleccione una especialidad"></option>
+                        @foreach (SelectListItem item in (SelectList)ViewBag.Especialidades)
+                        {
+                            <option value="@item.Value"> @item.Text </option>
+                        }
+                    </select>
+                </div>
+                <span asp-validation-for="Especialidad" class="text-danger"></span>
+            </div>
+
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
+
+
         </form>
     </div>
 </div>

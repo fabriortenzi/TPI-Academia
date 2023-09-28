@@ -44,8 +44,12 @@ namespace AcademiaWeb.Controllers
         }
 
         // GET: Comisions/Create
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
+
+            var especialidades = await _context.ObtenerEspecialidadesAsync();
+            ViewBag.Especialidades = new SelectList(especialidades, "Id", "Descripcion");
+
             return View();
         }
 
@@ -54,10 +58,12 @@ namespace AcademiaWeb.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,NroComision")] Comision comision)
+        public async Task<IActionResult> Create([Bind("Id,NroComision")] Comision comision, [Bind("idEspecialidad")] int idEspecialidad)
         {
             if (ModelState.IsValid)
             {
+                var especialidad = await _context.Especialidad.FindAsync(idEspecialidad);
+                comision.Especialidad = especialidad;
                 _context.Add(comision);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));

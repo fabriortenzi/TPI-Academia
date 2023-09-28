@@ -11,6 +11,7 @@ namespace TPI.Entidades
     public class Materia
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; }
 
         public Plan Plan { get; set; }

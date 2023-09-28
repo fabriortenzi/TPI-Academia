@@ -10,6 +10,9 @@ namespace TPI.Entidades
 {
     public class ProfesorCurso
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int id { get; set; }
         public Usuario Usuario { get; set; }
 
         public Curso Curso { get; set; }

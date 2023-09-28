@@ -10,11 +10,11 @@ using AcademiaWeb.Models;
 
 namespace AcademiaWeb.Controllers
 {
-    public class EspecialidadsController : Controller
+    public class EspecialidadesController : Controller
     {
         private readonly AcademiaWebContext _context;
 
-        public EspecialidadsController(AcademiaWebContext context)
+        public EspecialidadesController(AcademiaWebContext context)
         {
             _context = context;
         }

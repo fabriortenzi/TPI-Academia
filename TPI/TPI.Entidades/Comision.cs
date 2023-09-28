@@ -11,7 +11,8 @@ namespace TPI.Entidades
     public class Comision
     {
         [Key]
-        public int Id { get; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }
 
         public int NroComision { get; set; }
 
