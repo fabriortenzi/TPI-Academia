@@ -11,6 +11,7 @@ namespace TPI.Entidades
     public class Plan
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; }
 
         public int Anio { get; set; }

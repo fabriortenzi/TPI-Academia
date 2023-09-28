@@ -11,6 +11,7 @@ namespace TPI.Entidades
     public class Curso
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; }
 
         public int CicloLectivo { get; set; }
