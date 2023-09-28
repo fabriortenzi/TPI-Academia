@@ -8,8 +8,8 @@ namespace TPI.Negocio
 {
     public class Curso
     {
-        public static Entidades.Curso CrearCurso(int año, int cupo, Entidades.Materia materia)
-            => new Entidades.Curso(materia, año, cupo);
+        //public static Entidades.Curso CrearCurso(int año, int cupo, Entidades.Materia materia)
+        //    => new Entidades.Curso(materia, año, cupo);
 
         public static void AgregarCurso(Entidades.Curso curso)
         {

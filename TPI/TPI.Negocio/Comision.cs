@@ -8,13 +8,13 @@ namespace TPI.Negocio
 {
     public class Comision
     {
-        public static Entidades.Comision GetComisionPorId(int idCom, int idEsp)
-            => Datos.Comision.GetComisionPorId(idCom, idEsp);
+        //public static Entidades.Comision GetComisionPorId(int idCom, int idEsp)
+        //    => Datos.Comision.GetComisionPorId(idCom, idEsp);
 
-        public static Entidades.Comision GetComisionPorIdyDescEsp(string id_desc_esp)
-        {
-            return Datos.Comision.GetComisionPorIdyDescEsp(id_desc_esp);
-        }
+        //public static Entidades.Comision GetComisionPorIdyDescEsp(string id_desc_esp)
+        //{
+        //    return Datos.Comision.GetComisionPorIdyDescEsp(id_desc_esp);
+        //}
 
         public static List<Entidades.Comision> GetAll() 
         {

@@ -28,7 +28,7 @@ namespace Escritorio
         {
             foreach (var especialidad in TPI.Datos.Especialidades.GetEspecialidades())
             {
-                comboBoxEspecialidades.Items.Add(especialidad.descEspec);
+                comboBoxEspecialidades.Items.Add(especialidad.Descripcion);
             }
         }
 
@@ -42,7 +42,7 @@ namespace Escritorio
 
             foreach (var plan in TPI.Negocio.Plan.GetPlanesPorEspecialidad(Especialidad))
             {
-                cbxPlanes.Items.Add(plan.anio);
+                cbxPlanes.Items.Add(plan.Anio);
             }
 
             cbxPlanes.Enabled = true;

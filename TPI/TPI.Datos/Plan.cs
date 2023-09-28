@@ -25,8 +25,8 @@ namespace TPI.Datos
             using (var context = ApplicationContext.CreateContext())
             {
                 return context.planes
-                    .Include(x => x.especialidad)
-                    .Where(x => x.especialidad.descEspec == Especialidad.descEspec).ToList();
+                    .Include(x => x.Especialidad)
+                    .Where(x => x.Especialidad.Descripcion == Especialidad.Descripcion).ToList();
             }
         }
 
@@ -35,8 +35,8 @@ namespace TPI.Datos
             using (var context = ApplicationContext.CreateContext())
             {
                 return context.planes
-                    .Include(x => x.especialidad)
-                    .FirstOrDefault(x => x.especialidad.descEspec == Especialidad.descEspec && x.anio == Anio);
+                    .Include(x => x.Especialidad)
+                    .FirstOrDefault(x => x.Especialidad.Descripcion == Especialidad.Descripcion && x.Anio == Anio);
             }
         }
 

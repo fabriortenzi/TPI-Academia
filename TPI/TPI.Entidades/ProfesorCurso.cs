@@ -10,11 +10,17 @@ namespace TPI.Entidades
 {
     public class ProfesorCurso
     {
+        [Key]
+        public int Id { get; set; }
+
         public Usuario Usuario { get; set; }
 
         public Curso Curso { get; set; }
 
         public string Cargo { get; set; }
+
+        public ProfesorCurso()
+        { }
 
         public ProfesorCurso(Usuario usuario, Curso curso, string cargo)
         {

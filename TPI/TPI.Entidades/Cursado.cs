@@ -18,6 +18,9 @@ namespace TPI.Entidades
 
         public int NotaFinal { get; set; }
 
+        public Cursado()
+        { }
+
         public Cursado(Usuario usuario, Curso curso, DateTime fechaHoraInscripcion, int notaFinal)
         {
             Usuario = usuario;

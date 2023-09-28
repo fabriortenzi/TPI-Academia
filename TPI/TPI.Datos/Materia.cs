@@ -31,9 +31,9 @@ namespace TPI.Datos
             using (var context = ApplicationContext.CreateContext())
             {
                 return context.materias.FirstOrDefault(
-                    x => x.descMateria == descripcionMateriaSelecc 
-                    && x.Plan.IdEspecialidad == plan.IdEspecialidad
-                    && x.Plan.anio == plan.anio);
+                    x => x.Descripcion == descripcionMateriaSelecc 
+                    && x.Plan.Especialidad.Id == plan.Especialidad.Id
+                    && x.Plan.Anio == plan.Anio);
             }
         }
 
@@ -41,7 +41,7 @@ namespace TPI.Datos
         {
             using (var context = ApplicationContext.CreateContext())
             {
-                return context.materias.FirstOrDefault(x => x.descMateria == desc_materia);
+                return context.materias.FirstOrDefault(x => x.Descripcion == desc_materia);
             }
         }
 
@@ -54,6 +54,5 @@ namespace TPI.Datos
             }
             return materias;
         }
-
     }
 }

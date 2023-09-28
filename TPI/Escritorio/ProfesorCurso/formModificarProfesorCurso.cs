@@ -16,9 +16,9 @@ namespace Escritorio.ProfesorCurso
         public formModificarProfesorCurso(TPI.Entidades.ProfesorCurso profesor_curso)
         {
             InitializeComponent();
-            lblMateria.Text = profesor_curso.Curso.Materia.descMateria;
-            lblLegajo.Text = profesor_curso.Legajo.ToString();
-            lblAnio.Text = profesor_curso.Anio.ToString();
+            lblMateria.Text = profesor_curso.Curso.Materia.Descripcion;
+            //lblLegajo.Text = profesor_curso.Legajo.ToString();
+            //lblAnio.Text = profesor_curso.Anio.ToString();
             profesorCurso = profesor_curso;
 
         }
