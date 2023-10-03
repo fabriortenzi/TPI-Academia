@@ -14,9 +14,9 @@ namespace TPI.Negocio
             return materia;
         }
 
-        public static void AgregaMateria(TPI.Entidades.Materia materia)
+        public async static Task<bool> AgregaMateria(TPI.Entidades.Materia materia)
         {
-            TPI.Datos.Materia.AgregarMateria(materia);
+            return await TPI.Datos.Materia.AgregarMateria(materia);
         }
 
         public static List<Entidades.Materia> GetMateriasPorPlan(Entidades.Plan plan)

@@ -46,6 +46,7 @@
             // 
             // cbxTiposDeUsuario
             // 
+            cbxTiposDeUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cbxTiposDeUsuario.Enabled = false;
             cbxTiposDeUsuario.FormattingEnabled = true;
             cbxTiposDeUsuario.Location = new System.Drawing.Point(387, 222);

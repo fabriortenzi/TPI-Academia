@@ -15,6 +15,15 @@ namespace TPI.Negocio
         {
             return Datos.Especialidades.GetEspecialidad(especialidad);
         }       
+
+        public async static Task<bool> CrearEspecialidad(string descripcion)
+        {
+            var especialidad = new Entidades.Especialidad(descripcion);
+            return await Datos.Especialidades.CrearEspecialidad(especialidad);
+        }
+
+        public async static Task<bool> ModificarEspecialidad(Entidades.Especialidad _especialidad)
+            => await Datos.Especialidades.ModificarEspecialidad(_especialidad);
     }
 }
     

@@ -51,7 +51,7 @@ namespace Escritorio
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             TPI.Negocio.Usuario.AsignarPlanAUsuario(Plan, Usuario);
-            MessageBox.Show($"Alumno legajo numero {Usuario.Legajo} Creado con Exito!");
+            MessageBox.Show($"Alumno legajo numero {Usuario.Legajo} creado con exito!");
             Dispose();
         }
 
@@ -73,10 +73,10 @@ namespace Escritorio
 
         }
 
-        private void cbxPlanes_SelectedIndexChanged(object sender, EventArgs e)
+        private async void cbxPlanes_SelectedIndexChanged(object sender, EventArgs e)
         {
             var añoPlan = Convert.ToInt32(cbxPlanes.SelectedItem.ToString());
-            Plan = TPI.Negocio.Plan.GetPlanPorEspecialidadAnio(Especialidad, añoPlan);
+            Plan = await TPI.Negocio.Plan.GetPlanPorEspecialidadAnio(Especialidad, añoPlan);
 
             btnAceptar.Enabled = true;
         }

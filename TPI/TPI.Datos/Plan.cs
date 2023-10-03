@@ -10,13 +10,27 @@ namespace TPI.Datos
 {
     public class Plan
     {
-        public static void AgregarPlanes(Entidades.Plan plan)
+        public async static Task<bool> AgregarPlanes(Entidades.Plan plan)
         {
-            using (var context = ApplicationContext.CreateContext())
+            try
             {
-                context.planes.Attach(plan);
-                context.Entry(plan).State = EntityState.Added;
-                context.SaveChanges();
+                using (var context = ApplicationContext.CreateContext())
+                {
+                    var planE = await GetPlanPorEspecialidadAnio(plan.Especialidad, plan.Anio);
+                    if (planE != null)
+                    {
+                        return false;
+                    }
+
+                    context.planes.Attach(plan);
+                    context.Entry(plan).State = EntityState.Added;
+                    await context.SaveChangesAsync();
+                    return true;
+                }
+            }
+            catch
+            {
+                return false;
             }
         }
 
@@ -30,13 +44,13 @@ namespace TPI.Datos
             }
         }
 
-        public static Entidades.Plan GetPlanPorEspecialidadAnio(Entidades.Especialidad Especialidad, int Anio)
+        public async static Task<Entidades.Plan> GetPlanPorEspecialidadAnio(Entidades.Especialidad Especialidad, int Anio)
         {
             using (var context = ApplicationContext.CreateContext())
             {
-                return context.planes
+                return await context.planes
                     .Include(x => x.Especialidad)
-                    .FirstOrDefault(x => x.Especialidad.Descripcion == Especialidad.Descripcion && x.Anio == Anio);
+                    .FirstOrDefaultAsync(x => x.Especialidad.Descripcion == Especialidad.Descripcion && x.Anio == Anio);
             }
         }
 

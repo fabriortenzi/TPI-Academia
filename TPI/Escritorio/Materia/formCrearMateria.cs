@@ -48,12 +48,12 @@ namespace Escritorio
             }
         }
 
-        private void cbxPlanes_SelectedIndexChanged(object sender, EventArgs e)
+        private async void cbxPlanes_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cbxPlanes.SelectedIndex != -1)
             {
                 var añoplanseleccionado = Convert.ToInt32(cbxPlanes.SelectedItem.ToString());
-                var plan = TPI.Datos.Plan.GetPlanPorEspecialidadAnio(Especialidad, añoplanseleccionado);
+                var plan = await TPI.Datos.Plan.GetPlanPorEspecialidadAnio(Especialidad, añoplanseleccionado);
 
                 Plan = plan;
             }
@@ -74,29 +74,37 @@ namespace Escritorio
 
         }
 
-        private void btnCrear_Click(object sender, EventArgs e)
+        private async void btnCrear_Click(object sender, EventArgs e)
         {
+            string descMateria;
+            int horas_sem;
+            int horas_tot;
             try
             {
-                var descMateria = txtDescMateria.Text;
-
-                var horas_sem = Convert.ToInt32(txtHorasSem.Text);
-
-                var horas_tot = Convert.ToInt32(txtHorasTot.Text);
-
-                var nuevamateria = TPI.Negocio.Materia.CrearMateria(descMateria, horas_sem, horas_tot, Plan);
-
-                TPI.Negocio.Materia.AgregaMateria(nuevamateria);
-
-                MessageBox.Show("Materia creada con exito!");
-                Dispose();
+                descMateria = txtDescMateria.Text;
+                horas_sem = Convert.ToInt32(txtHorasSem.Text);
+                horas_tot = Convert.ToInt32(txtHorasTot.Text);
             }
-
             catch
             {
-                MessageBox.Show("Asegurese de no haber ingresado letras a la hora de cargar las horas y" +
-                    " de no haber dejado un campo en blanco");
+                MessageBox.Show("Asegurese de no haber ingresado letras a la hora de" +
+                                "cargar las horas y de no haber dejado un campo en blanco");
+                return;
             }
+
+            var nuevamateria = TPI.Negocio.Materia.CrearMateria(descMateria, horas_sem, horas_tot, Plan);
+
+            if(await TPI.Negocio.Materia.AgregaMateria(nuevamateria))
+            {
+                MessageBox.Show("Materia creada con exito!");
+            }
+            else
+            {
+                MessageBox.Show("Error al crear la Materia, intente con otro nombre");
+                return;
+            }
+
+            Dispose();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
