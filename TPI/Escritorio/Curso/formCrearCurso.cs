@@ -16,6 +16,7 @@ namespace Escritorio
         private int Año;
         private TPI.Entidades.Materia Materia;
         private TPI.Entidades.Plan Plan;
+        private TPI.Entidades.Comision comision;
 
         public formCrearCurso()
         {
@@ -40,27 +41,36 @@ namespace Escritorio
         {
             cbxPlanes.SelectedIndex = -1;
             cbxPlanes.Items.Clear();
-            cbxPlanes.Enabled = true;
+            
 
-            cbxMaterias.SelectedIndex = -1;
-            cbxMaterias.Items.Clear();
+            
 
             var especialidadSeleccionada = cbxEspecialidades.SelectedItem.ToString();
             var especialidad = TPI.Negocio.Especialidad.Getespecialidadpordesc(especialidadSeleccionada);
             Especialidad = especialidad;
             var planesPorEspecialidad = TPI.Negocio.Plan.GetPlanesPorEspecialidad(especialidad);
 
+            cbxPlanes.SelectedIndex = -1;
+            cbxPlanes.Items.Clear();
+            foreach (var com in TPI.Negocio.Comision.BuscarComisionesPorEspecialidad(especialidad))
+            {
+                cbxComision.Items.Add(com.NroComision);
+            }
+            cbxPlanes.Enabled = true;
+
+
             foreach (var plan in planesPorEspecialidad)
             {
                 cbxPlanes.Items.Add(plan.Anio);
             }
+            cbxPlanes.Enabled = true;
         }
 
         private void cbxPlanes_SelectedIndexChanged(object sender, EventArgs e)
         {
             cbxMaterias.SelectedIndex = -1;
             cbxMaterias.Items.Clear();
-            cbxMaterias.Enabled = true;
+            
 
             if (cbxPlanes.SelectedItem != null)
             {
@@ -70,10 +80,13 @@ namespace Escritorio
                 Plan = planSeleccionado;
                 var materiasPlan = TPI.Negocio.Materia.GetMateriasPorPlan(planSeleccionado);
 
+                
+
                 foreach (var materia in materiasPlan)
                 {
                     cbxMaterias.Items.Add(materia.Descripcion);
                 }
+                cbxMaterias.Enabled = true;
             }
         }
 
@@ -87,25 +100,36 @@ namespace Escritorio
         private void button1_Click(object sender, EventArgs e)
         {
             int año = 0, cupo = 0;
-
+            string dia;
+            TimeSpan hora_ini, hora_fin;
             try
             {
                 año = Convert.ToInt32(txtAño.Text);
                 cupo = Convert.ToInt32(txtCupo.Text);
+                dia = txtDia.Text;
+                hora_ini = dtpHoraIni.Value.TimeOfDay;
+                 hora_fin = dtpHoraFin.Value.TimeOfDay;
+
             }
             catch
             {
-                MessageBox.Show("Año y cupo no pueden contener letras ni estar vacios");
+                MessageBox.Show("Error en los datos del formulario de curso");
                 return;
             }
 
             if (año != 0 && cupo != 0)
             {
-                //var curso = TPI.Negocio.Curso.CrearCurso(año, cupo, Materia);
-                //TPI.Negocio.Curso.AgregarCurso(curso);
+                var curso = TPI.Negocio.Curso.Crear(Materia, año, comision, cupo, dia, hora_ini, hora_fin);
+                TPI.Negocio.Curso.Agregar(curso);
                 MessageBox.Show("Curso creado exitosamente!");
                 Dispose();
             }
+        }
+
+        private void cbxComision_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            int nro_com = int.Parse(cbxComision.SelectedItem.ToString());
+            comision = TPI.Negocio.Comision.BuscarComisionPorNroEspecialidad(nro_com, Especialidad);
         }
     }
 }

@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -17,54 +19,52 @@ namespace TPI.Datos
             }
         }
 
-        public static Entidades.ProfesorCurso GetProfesorCurso(int legajo, int anio, int id_materia)
+        public static Entidades.ProfesorCurso GetOne(int id)
         {
-            Entidades.ProfesorCurso profesor_curso = null;
-
             using (var context = ApplicationContext.CreateContext())
             {
-                profesor_curso = context.profesores_cursos.FirstOrDefault(x => x.Usuario.Legajo == legajo && x.Curso.CicloLectivo == anio && x.Curso.Materia.Id == id_materia);
+                return context.profesores_cursos
+                    .Include(x=>x.Curso)
+                    .Include(x => x.Usuario)
+                    .FirstOrDefault(x => x.Id == id);
             }
 
-            return profesor_curso;
         }
 
 
-        public static List<Entidades.ProfesorCurso> GetAllProfesorCurso()
+        public static List<Entidades.ProfesorCurso> GetAll()
         {
             using (var context = ApplicationContext.CreateContext())
             {
-                return context.profesores_cursos.ToList();
+                return context.profesores_cursos
+                    .Include(x => x.Curso)
+                    .Include(x => x.Usuario)
+                    .ToList();
             }
         }
 
-        public static void Cambiar(Entidades.ProfesorCurso profesor_curso, string cargo)
+        public static void Cambiar(Entidades.ProfesorCurso profesor_curso, string cargo, Entidades.Usuario usuario, Entidades.Curso curso)
         {
             using (var context = ApplicationContext.CreateContext())
             {
-                var profesor_cursoCambiar = context.profesores_cursos.FirstOrDefault(x => x == profesor_curso);
-                if (profesor_cursoCambiar != null)
-                {
+                Entidades.ProfesorCurso profesor_cursoCambiar = context.profesores_cursos.FirstOrDefault(x => x == profesor_curso);
+                
 
                     profesor_cursoCambiar.Cargo = cargo;
-                    
+                    profesor_cursoCambiar.Usuario = usuario;
+                    profesor_cursoCambiar.Curso = curso;
 
-                    context.SaveChanges();
-                }
+                context.SaveChanges();
+                
             }
         }
 
         public static void Eliminar(Entidades.ProfesorCurso profesor_curso)
         {
             using (var context = ApplicationContext.CreateContext())
-            {
-                var profesor_cursoEliminar = context.profesores_cursos.FirstOrDefault(x => x == profesor_curso);
-                if (profesor_cursoEliminar != null)
-                {
-                    context.profesores_cursos.Remove(profesor_cursoEliminar);
-                    context.SaveChanges();
-                }
-
+            {                                               
+                    context.profesores_cursos.Remove(profesor_curso);
+                    context.SaveChanges();             
             }
         }
 

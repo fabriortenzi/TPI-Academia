@@ -8,23 +8,35 @@ namespace TPI.Negocio
 {
     public class Comision
     {
-        //public static Entidades.Comision GetComisionPorId(int idCom, int idEsp)
-        //    => Datos.Comision.GetComisionPorId(idCom, idEsp);
+        public static Entidades.Comision BuscarComisionPorNroEspecialidad(int nro_com,Entidades.Especialidad esp)
+        {
+            return TPI.Datos.Comision.GetAll().Find(x=>x.NroComision == nro_com && x.Especialidad == esp);
+        }
 
-        //public static Entidades.Comision GetComisionPorIdyDescEsp(string id_desc_esp)
-        //{
-        //    return Datos.Comision.GetComisionPorIdyDescEsp(id_desc_esp);
-        //}
+        public static List<Entidades.Comision> BuscarComisionesPorEspecialidad(Entidades.Especialidad esp)
+        {
+            return TPI.Datos.Comision.GetAll().Where(x=>x.Especialidad == esp).ToList();
+        }
+        public static Entidades.Comision Crear(int id, Entidades.Especialidad especialidad)
+        { return new Entidades.Comision(id, especialidad); }
+        
+        public static Entidades.Comision GetOne(int id)
+        {
+            return Datos.Comision.GetOne(id);
+        }
 
-        public static List<Entidades.Comision> GetAll() 
+        public static List<Entidades.Comision> GetAll()
         {
             return Datos.Comision.GetAll();
         }
 
-        public static Entidades.Comision CrearComision(int idCom, Entidades.Especialidad especialidad)
-            => new Entidades.Comision(idCom, especialidad);
-
-        public static void AgregarComision(Entidades.Comision comision)
+        public static void Agregar(Entidades.Comision comision)
             => Datos.Comision.AgregarComision(comision);
+        
+        public static void Eliminar(Entidades.Comision comision)
+           => Datos.Comision.Eliminar(comision);
+        public static void Cambiar(Entidades.Comision comision, int nroComision, Entidades.Especialidad especialidad)
+           => Datos.Comision.Cambiar(comision, nroComision, especialidad);
+
     }
 }
