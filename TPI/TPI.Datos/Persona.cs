@@ -24,7 +24,7 @@ namespace TPI.Datos
         {
             using (ApplicationContext context = ApplicationContext.CreateContext())
             {
-                var personaEditar = context.personas.FirstOrDefault(x => x == persona);
+                var personaEditar = context.personas.Find(persona.Dni);
 
                 // Edito solo si se modifico el campo
 

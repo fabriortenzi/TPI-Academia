@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Escritorio.Especialidad;
 
 namespace Escritorio
 {
@@ -22,11 +23,6 @@ namespace Escritorio
         {
             Usuario = _usuario;
             InitializeComponent();
-        }
-
-        private void editarPersonaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void formMenuPrincipal_FormClosed(object sender, FormClosedEventArgs e)
@@ -222,10 +218,33 @@ namespace Escritorio
 
         private void formMenuPrincipal_Load(object sender, EventArgs e)
         {
-            if (Usuario.TipoDeUsuario.Descripcion == "Alumno")
+            if (Usuario.TipoDeUsuario.Descripcion != "Admin")
             {
-                planDeEstudioToolStripMenuItem.Enabled = false;
+                crearPersonaToolStripMenuItem.Enabled = false;
+                crearUsuarioToolStripMenuItem.Enabled = false;
+                especialidadToolStripMenuItem.Visible = false;
+                listarPerToolStripMenuItem.Enabled = false;
+                listarUsuToolStripMenuItem1.Enabled = false;
+                planDeEstudioToolStripMenuItem.Visible = false;
+                materiaToolStripMenuItem.Visible = false;
             }
+
+            if (Usuario.TipoDeUsuario.Descripcion != "Alumno")
+            {
+                consultarDatosPersonalesToolStripMenuItem.Enabled = false;
+            }
+        }
+
+        private void crearToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formCrearEspecialidad f = new formCrearEspecialidad();
+            f.Show();
+        }
+
+        private void eliminarToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            formModificarEspecialidad f = new formModificarEspecialidad();
+            f.Show();
         }
     }
 }

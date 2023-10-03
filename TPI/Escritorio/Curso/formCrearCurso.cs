@@ -56,7 +56,7 @@ namespace Escritorio
             }
         }
 
-        private void cbxPlanes_SelectedIndexChanged(object sender, EventArgs e)
+        private async void cbxPlanes_SelectedIndexChanged(object sender, EventArgs e)
         {
             cbxMaterias.SelectedIndex = -1;
             cbxMaterias.Items.Clear();
@@ -66,7 +66,7 @@ namespace Escritorio
             {
                 var añoPlanSeleccionado = Convert.ToInt32(cbxPlanes.SelectedItem.ToString());
                 Año = añoPlanSeleccionado;
-                var planSeleccionado = TPI.Negocio.Plan.GetPlanPorEspecialidadAnio(Especialidad, Año);
+                var planSeleccionado = await TPI.Negocio.Plan.GetPlanPorEspecialidadAnio(Especialidad, Año);
                 Plan = planSeleccionado;
                 var materiasPlan = TPI.Negocio.Materia.GetMateriasPorPlan(planSeleccionado);
 
