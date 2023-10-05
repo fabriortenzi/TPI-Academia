@@ -36,7 +36,7 @@ namespace Escritorio.ProfesorCurso
             this.lblMateria1 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblLegajo = new System.Windows.Forms.Label();
-            this.lblMateria = new System.Windows.Forms.Label();
+            this.lblCurso = new System.Windows.Forms.Label();
             this.lblAnio = new System.Windows.Forms.Label();
             this.lblCargo = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -82,11 +82,11 @@ namespace Escritorio.ProfesorCurso
             // lblMateria1
             // 
             this.lblMateria1.AutoSize = true;
-            this.lblMateria1.Location = new System.Drawing.Point(30, 79);
+            this.lblMateria1.Location = new System.Drawing.Point(40, 79);
             this.lblMateria1.Name = "lblMateria1";
-            this.lblMateria1.Size = new System.Drawing.Size(50, 15);
+            this.lblMateria1.Size = new System.Drawing.Size(41, 15);
             this.lblMateria1.TabIndex = 23;
-            this.lblMateria1.Text = "Materia:";
+            this.lblMateria1.Text = "Curso:";
             // 
             // label1
             // 
@@ -106,14 +106,14 @@ namespace Escritorio.ProfesorCurso
             this.lblLegajo.TabIndex = 29;
             this.lblLegajo.Text = "lblLegajo";
             // 
-            // lblMateria
+            // lblCurso
             // 
-            this.lblMateria.AutoSize = true;
-            this.lblMateria.Location = new System.Drawing.Point(101, 79);
-            this.lblMateria.Name = "lblMateria";
-            this.lblMateria.Size = new System.Drawing.Size(60, 15);
-            this.lblMateria.TabIndex = 30;
-            this.lblMateria.Text = "lblMateria";
+            this.lblCurso.AutoSize = true;
+            this.lblCurso.Location = new System.Drawing.Point(101, 79);
+            this.lblCurso.Name = "lblCurso";
+            this.lblCurso.Size = new System.Drawing.Size(51, 15);
+            this.lblCurso.TabIndex = 30;
+            this.lblCurso.Text = "lblCurso";
             // 
             // lblAnio
             // 
@@ -140,7 +140,7 @@ namespace Escritorio.ProfesorCurso
             this.ClientSize = new System.Drawing.Size(245, 281);
             this.Controls.Add(this.lblCargo);
             this.Controls.Add(this.lblAnio);
-            this.Controls.Add(this.lblMateria);
+            this.Controls.Add(this.lblCurso);
             this.Controls.Add(this.lblLegajo);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -163,7 +163,7 @@ namespace Escritorio.ProfesorCurso
         private System.Windows.Forms.Label lblMateria1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblLegajo;
-        private System.Windows.Forms.Label lblMateria;
+        private System.Windows.Forms.Label lblCurso;
         private System.Windows.Forms.Label lblAnio;
         private System.Windows.Forms.Label lblCargo;
     }

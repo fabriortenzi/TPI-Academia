@@ -12,6 +12,8 @@ namespace Escritorio.ProfesorCurso
 {
     public partial class formAgregarProfesorCurso : Form
     {
+        private TPI.Entidades.Usuario Usuario;
+        private TPI.Entidades.Curso Curso;
         public formAgregarProfesorCurso()
         {
             InitializeComponent();
@@ -21,10 +23,10 @@ namespace Escritorio.ProfesorCurso
         private void cargar_cbx() 
         {
             List<TPI.Entidades.Usuario> usuarios = TPI.Negocio.Usuario.GetAllProfesores();
-            List<TPI.Entidades.Materia> materias = TPI.Negocio.Materia.GetAll();
+            List<TPI.Entidades.Curso> curso = TPI.Negocio.Curso.GetAll();
 
             foreach (TPI.Entidades.Usuario usu in usuarios) { cbxLegajo.Items.Add(usu.Legajo); }
-            foreach (TPI.Entidades.Materia mat in materias) { cbxMateria.Items.Add(mat.Descripcion); }
+            foreach (TPI.Entidades.Curso cur in curso) { cbxMateria.Items.Add(cur.Id); }
 
 
         }
@@ -32,22 +34,30 @@ namespace Escritorio.ProfesorCurso
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            // TPI.Entidades.ProfesorCurso profesor_curso = new TPI.Entidades.ProfesorCurso();
+            TPI.Entidades.ProfesorCurso profesor_curso = new TPI.Entidades.ProfesorCurso();
 
-            string desc_materia = this.cbxMateria.GetItemText(this.cbxMateria.SelectedItem);
-            int legajo = int.Parse(this.cbxLegajo.GetItemText(this.cbxLegajo.SelectedItem));
-            TPI.Entidades.Materia materia = TPI.Negocio.Materia.GetMateriaPorDesc(desc_materia);
-
-            //profesor_curso.Curso.Materia.Id = materia.Id;
-            //profesor_curso.Legajo = legajo;
-            //profesor_curso.Anio = int.Parse(txtAnio.Text);
-            //profesor_curso.Cargo = (string)txtCargo.Text;
-            //TPI.Negocio.ProfesorCurso.Agregar(profesor_curso);
+            profesor_curso.Curso = Curso;
+            profesor_curso.Usuario = Usuario;
+            profesor_curso.Cargo = txtCargo.Text;
+            TPI.Negocio.ProfesorCurso.Agregar(profesor_curso);
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cbxLegajo_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            int leg = Convert.ToInt32(cbxLegajo.SelectedItem.ToString());
+            Usuario = TPI.Negocio.Usuario.GetAllProfesores().FirstOrDefault(x => x.Legajo == leg);
+
+        }
+
+        private void cbxMateria_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            var idCurso = Convert.ToInt32(cbxMateria.SelectedItem.ToString());
+            Curso = TPI.Negocio.Curso.GetOne(idCurso);
         }
     }
 }

@@ -8,6 +8,10 @@ namespace TPI.Negocio
 {
     public class Curso
     {
+        public static List<Entidades.Curso> BuscarCursosPorPlanCicloLectivo(Entidades.Plan plan, int ciclo) 
+        {
+            return TPI.Datos.Curso.GetAll().Where(x => x.Materia.Plan == plan && x.CicloLectivo == ciclo).ToList();
+        }
         public static Entidades.Curso BuscarCursoPorMateriaComision(Entidades.Materia materia, Entidades.Comision comision) 
         {
             return TPI.Datos.Curso.GetAll().FirstOrDefault(x => x.Materia == materia && x.Comision == comision);

@@ -8,6 +8,15 @@ namespace TPI.Negocio
 {
     public class ProfesorCurso
     {
+        public static List<Entidades.ProfesorCurso> BuscarPorUsuario(Entidades.Usuario us) 
+        {
+            return Datos.ProfesorCurso.GetAll().Where(x=>x.Usuario == us).ToList();
+        }
+
+        public static Entidades.ProfesorCurso BuscarPorUsuarioCurso(Entidades.Usuario us, Entidades.Curso cu) 
+        {
+            return Datos.ProfesorCurso.GetAll().FirstOrDefault(x=>x.Curso == cu && x.Usuario == us);
+        }
 
         public static void Agregar(Entidades.ProfesorCurso profesor_curso)
          => TPI.Datos.ProfesorCurso.Agregar(profesor_curso);
