@@ -9,13 +9,27 @@ namespace TPI.Datos
 {
     public class Materia
     {
-        public static void AgregarMateria (TPI.Entidades.Materia materia)
+        public async static Task<bool> AgregarMateria (TPI.Entidades.Materia materia)
         {
-            using (var context = ApplicationContext.CreateContext())
+            try
             {
-                context.materias.Attach(materia);
-                context.Entry(materia).State = EntityState.Added;
-                context.SaveChanges();
+                using (var context = ApplicationContext.CreateContext())
+                {
+                    var materiaE = GetMateriaPorDescripcionYPlan(materia.Descripcion, materia.Plan);
+                    if (materiaE != null)
+                    {
+                        return false;
+                    }
+
+                    context.materias.Attach(materia);
+                    context.Entry(materia).State = EntityState.Added;
+                    await context.SaveChangesAsync();
+                    return true;
+                }
+            }
+            catch
+            {
+                return false;
             }
         } 
         public static List<Entidades.Materia> GetMateriasPorPlan(Entidades.Plan plan)

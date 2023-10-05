@@ -35,28 +35,34 @@ namespace Escritorio
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
+            int año;
             try
             {
-                int año = Convert.ToInt32(this.textBoxAño.Text);
-                string descplan = this.textBoxDesc.Text;
-                string esp = this.comboBoxEsp.SelectedItem.ToString();
-
-
-                TPI.Entidades.Especialidad especialidad = TPI.Negocio.Especialidad.Getespecialidadpordesc(esp);
-
-                var Plan = TPI.Negocio.Plan.CrearPlan(año, descplan, especialidad);
-
-                TPI.Negocio.Plan.AgregoPlan(Plan);
-
-                MessageBox.Show("Plan creado con exito!");
-
-                this.Dispose();
+                año = Convert.ToInt32(this.textBoxAño.Text);
             }
             catch
             {
-                MessageBox.Show("Algunos campos son incorrectos o quedaron en blanco");
+                MessageBox.Show("Ingrese el Año correctamente");
+                return;
+            }
+
+            string esp = this.comboBoxEsp.SelectedItem.ToString();
+
+            TPI.Entidades.Especialidad especialidad = TPI.Negocio.Especialidad.Getespecialidadpordesc(esp);
+
+            var Plan = TPI.Negocio.Plan.CrearPlan(año, especialidad);
+
+            if (await TPI.Negocio.Plan.AgregoPlan(Plan))
+            {
+                MessageBox.Show("Plan creado con exito!");
+                this.Dispose();
+            }
+            else
+            {
+                MessageBox.Show("Error al crear el Plan, intente con otro Año");
+                return;
             }
         }
 

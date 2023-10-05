@@ -30,9 +30,7 @@ namespace Escritorio
         private void InitializeComponent()
         {
             textBoxAño = new System.Windows.Forms.TextBox();
-            textBoxDesc = new System.Windows.Forms.TextBox();
             lblAño = new System.Windows.Forms.Label();
-            lblDesc = new System.Windows.Forms.Label();
             btnAceptar = new System.Windows.Forms.Button();
             comboBoxEsp = new System.Windows.Forms.ComboBox();
             label1 = new System.Windows.Forms.Label();
@@ -42,45 +40,27 @@ namespace Escritorio
             // 
             // textBoxAño
             // 
-            textBoxAño.Location = new System.Drawing.Point(299, 126);
+            textBoxAño.Location = new System.Drawing.Point(302, 190);
             textBoxAño.Margin = new System.Windows.Forms.Padding(4);
             textBoxAño.Name = "textBoxAño";
+            textBoxAño.PlaceholderText = "AAAA";
             textBoxAño.Size = new System.Drawing.Size(155, 31);
             textBoxAño.TabIndex = 0;
             textBoxAño.TextChanged += textBoxAño_TextChanged;
             // 
-            // textBoxDesc
-            // 
-            textBoxDesc.Location = new System.Drawing.Point(299, 200);
-            textBoxDesc.Margin = new System.Windows.Forms.Padding(4);
-            textBoxDesc.Name = "textBoxDesc";
-            textBoxDesc.Size = new System.Drawing.Size(155, 31);
-            textBoxDesc.TabIndex = 1;
-            // 
             // lblAño
             // 
             lblAño.AutoSize = true;
-            lblAño.Location = new System.Drawing.Point(129, 134);
+            lblAño.Location = new System.Drawing.Point(249, 193);
             lblAño.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblAño.Name = "lblAño";
             lblAño.Size = new System.Drawing.Size(45, 25);
             lblAño.TabIndex = 2;
             lblAño.Text = "Año";
             // 
-            // lblDesc
-            // 
-            lblDesc.AutoSize = true;
-            lblDesc.Location = new System.Drawing.Point(129, 209);
-            lblDesc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            lblDesc.Name = "lblDesc";
-            lblDesc.Size = new System.Drawing.Size(104, 25);
-            lblDesc.TabIndex = 3;
-            lblDesc.Text = "Descripcion";
-            lblDesc.Click += label2_Click;
-            // 
             // btnAceptar
             // 
-            btnAceptar.Location = new System.Drawing.Point(402, 360);
+            btnAceptar.Location = new System.Drawing.Point(382, 292);
             btnAceptar.Margin = new System.Windows.Forms.Padding(4);
             btnAceptar.Name = "btnAceptar";
             btnAceptar.Size = new System.Drawing.Size(262, 71);
@@ -93,7 +73,7 @@ namespace Escritorio
             // 
             comboBoxEsp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             comboBoxEsp.FormattingEnabled = true;
-            comboBoxEsp.Location = new System.Drawing.Point(299, 276);
+            comboBoxEsp.Location = new System.Drawing.Point(249, 118);
             comboBoxEsp.Margin = new System.Windows.Forms.Padding(4);
             comboBoxEsp.Name = "comboBoxEsp";
             comboBoxEsp.Size = new System.Drawing.Size(299, 33);
@@ -103,7 +83,7 @@ namespace Escritorio
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(129, 278);
+            label1.Location = new System.Drawing.Point(132, 121);
             label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(109, 25);
@@ -114,7 +94,7 @@ namespace Escritorio
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(260, 30);
+            label2.Location = new System.Drawing.Point(225, 35);
             label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label2.Name = "label2";
             label2.Size = new System.Drawing.Size(251, 25);
@@ -123,7 +103,7 @@ namespace Escritorio
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new System.Drawing.Point(107, 360);
+            btnCancelar.Location = new System.Drawing.Point(97, 292);
             btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new System.Drawing.Size(262, 71);
@@ -138,15 +118,13 @@ namespace Escritorio
             AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             CancelButton = btnCancelar;
-            ClientSize = new System.Drawing.Size(771, 467);
+            ClientSize = new System.Drawing.Size(725, 420);
             Controls.Add(btnCancelar);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(comboBoxEsp);
             Controls.Add(btnAceptar);
-            Controls.Add(lblDesc);
             Controls.Add(lblAño);
-            Controls.Add(textBoxDesc);
             Controls.Add(textBoxAño);
             Margin = new System.Windows.Forms.Padding(4);
             Name = "formAgregoPlan";
@@ -160,9 +138,7 @@ namespace Escritorio
         #endregion
 
         private System.Windows.Forms.TextBox textBoxAño;
-        private System.Windows.Forms.TextBox textBoxDesc;
         private System.Windows.Forms.Label lblAño;
-        private System.Windows.Forms.Label lblDesc;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.ComboBox comboBoxEsp;
         private System.Windows.Forms.Label label1;
