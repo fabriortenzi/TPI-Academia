@@ -14,7 +14,7 @@ namespace Escritorio.Inscripcion
     {
         private TPI.Entidades.Usuario Usuario;
 
-        private List<TPI.Entidades.Comision> Comisiones;
+        
 
         private TPI.Entidades.Comision Comision;
 
@@ -37,10 +37,11 @@ namespace Escritorio.Inscripcion
 
         private void formInscripcionCursado_Load(object sender, EventArgs e)
         {
-            var cursosMateria = TPI.Negocio.Curso.GetCursosPorPlanYAñoActual(Usuario.Plan);
-            CursosMateria = cursosMateria;
+            
+            CursosMateria = TPI.Negocio.Curso.BuscarCursosPorPlanCicloLectivo(Usuario.Plan, DateTime.Now.Year);
 
-            foreach (TPI.Entidades.Curso curso in cursosMateria)
+
+            foreach (TPI.Entidades.Curso curso in CursosMateria)
             {
                 cbxCursosMateria.Items.Add(curso.Materia.Descripcion);
             }
@@ -53,36 +54,42 @@ namespace Escritorio.Inscripcion
             cbxComisiones.Enabled = true;
 
             var materiaSeleccionada = cbxCursosMateria.SelectedItem.ToString();
-            Curso = CursosMateria.FirstOrDefault(cm => cm.Materia.Descripcion == materiaSeleccionada);
-            Materia = Curso.Materia;
-
-            //var Comisiones = TPI.Negocio.MateriaComision.GetComisionesPorMateria(Curso.Materia);
-
-            foreach (var com in Comisiones)
+            Materia = TPI.Negocio.Materia.GetMateriaPorDesc(materiaSeleccionada);
+            CursosMateria = CursosMateria.Where(x => x.Materia == Materia).ToList();
+            
+            foreach (var cur in CursosMateria)
             {
-                cbxComisiones.Items.Add(com.Id);
+                cbxComisiones.Items.Add(cur.Comision.Id);
             }
         }
 
         private void cbxComisiones_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //var comisionSeleccionada = Convert.ToInt32(cbxComisiones.SelectedItem.ToString());
-            //Comision = TPI.Negocio.Comision.GetComisionPorId(comisionSeleccionada, Usuario.Plan.IdEspecialidad);
+            var  nro_com = Convert.ToInt32(cbxComisiones.SelectedItem.ToString());
+            Comision = TPI.Negocio.Comision.BuscarComisionPorNroEspecialidad(nro_com, Usuario.Plan.Especialidad);
 
-            //MateriaComision = TPI.Negocio.MateriaComision.GetMateriaComision(Materia.idMateria, Comision.IdEspecialidad, Comision.IdCom);
+            if (Materia != null && Comision!=null) {
+                Curso = TPI.Negocio.Curso.BuscarCursoPorMateriaComision(Materia, Comision);
+              }
 
-            //string horario = $"{MateriaComision.dia} de {MateriaComision.hora_ini} a {MateriaComision.hora_fin}";
-            //lblHorarioCurso.Text = horario;
-            //lblHorarioCurso.Visible = true;
+            string horario = $"{Curso.Dia} de {Curso.HoraInicio} a {Curso.HoraFin}";
+            lblHorarioCurso.Text = horario;
+            lblHorarioCurso.Visible = true;
         }
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            //var inscripcion = TPI.Negocio.InscripcionCursado.CrearInscripcion(Curso, Usuario, Comision);
-            //TPI.Negocio.InscripcionCursado.AgregarInscripcion(inscripcion);
-
-            MessageBox.Show("Inscripcion relizada con Exito!");
-            Dispose();
+            try
+            {
+                TPI.Entidades.Cursado cursado = TPI.Negocio.Cursado.Crear(Usuario, Curso, DateTime.Now);
+                TPI.Negocio.Cursado.Agregar(cursado);
+                MessageBox.Show("Inscripcion relizada con Exito!");
+                Dispose();
+            }
+            catch
+            {
+                MessageBox.Show("Error al agregar cursado");
+            }
         }
     }
 }

@@ -32,11 +32,9 @@ namespace Escritorio.ProfesorCurso
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.cbxLegajo = new System.Windows.Forms.ComboBox();
-            this.cbxMateria = new System.Windows.Forms.ComboBox();
+            this.cbxCurso = new System.Windows.Forms.ComboBox();
             this.lblMateria = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtAnio = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnCancelar
@@ -66,23 +64,26 @@ namespace Escritorio.ProfesorCurso
             this.cbxLegajo.Name = "cbxLegajo";
             this.cbxLegajo.Size = new System.Drawing.Size(100, 23);
             this.cbxLegajo.TabIndex = 37;
+            this.cbxLegajo.SelectedIndexChanged += new System.EventHandler(this.cbxLegajo_SelectedIndexChanged);
             // 
-            // cbxMateria
+            // cbxCurso
             // 
-            this.cbxMateria.FormattingEnabled = true;
-            this.cbxMateria.Location = new System.Drawing.Point(84, 91);
-            this.cbxMateria.Name = "cbxMateria";
-            this.cbxMateria.Size = new System.Drawing.Size(100, 23);
-            this.cbxMateria.TabIndex = 36;
+            this.cbxCurso.Enabled = false;
+            this.cbxCurso.FormattingEnabled = true;
+            this.cbxCurso.Location = new System.Drawing.Point(84, 91);
+            this.cbxCurso.Name = "cbxCurso";
+            this.cbxCurso.Size = new System.Drawing.Size(100, 23);
+            this.cbxCurso.TabIndex = 36;
+            this.cbxCurso.SelectedIndexChanged += new System.EventHandler(this.cbxCurso_SelectedIndexChanged);
             // 
             // lblMateria
             // 
             this.lblMateria.AutoSize = true;
             this.lblMateria.Location = new System.Drawing.Point(26, 94);
             this.lblMateria.Name = "lblMateria";
-            this.lblMateria.Size = new System.Drawing.Size(50, 15);
+            this.lblMateria.Size = new System.Drawing.Size(41, 15);
             this.lblMateria.TabIndex = 35;
-            this.lblMateria.Text = "Materia:";
+            this.lblMateria.Text = "Curso:";
             // 
             // label1
             // 
@@ -93,37 +94,20 @@ namespace Escritorio.ProfesorCurso
             this.label1.TabIndex = 34;
             this.label1.Text = "Legajo:";
             // 
-            // txtAnio
-            // 
-            this.txtAnio.Location = new System.Drawing.Point(84, 138);
-            this.txtAnio.Name = "txtAnio";
-            this.txtAnio.Size = new System.Drawing.Size(100, 23);
-            this.txtAnio.TabIndex = 33;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(44, 141);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(32, 15);
-            this.label3.TabIndex = 32;
-            this.label3.Text = "Año:";
-            // 
             // formConsultarProfesorCurso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(245, 281);
             this.Controls.Add(this.cbxLegajo);
-            this.Controls.Add(this.cbxMateria);
+            this.Controls.Add(this.cbxCurso);
             this.Controls.Add(this.lblMateria);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtAnio);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnConsultar);
             this.Name = "formConsultarProfesorCurso";
             this.Text = "formConsultarProfesorCurso";
+            this.Load += new System.EventHandler(this.formConsultarProfesorCurso_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -133,10 +117,8 @@ namespace Escritorio.ProfesorCurso
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnConsultar;
         private System.Windows.Forms.ComboBox cbxLegajo;
-        private System.Windows.Forms.ComboBox cbxMateria;
+        private System.Windows.Forms.ComboBox cbxCurso;
         private System.Windows.Forms.Label lblMateria;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtAnio;
-        private System.Windows.Forms.Label label3;
     }
 }

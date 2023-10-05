@@ -28,155 +28,251 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new System.Windows.Forms.Label();
-            label2 = new System.Windows.Forms.Label();
-            cbxEspecialidades = new System.Windows.Forms.ComboBox();
-            label3 = new System.Windows.Forms.Label();
-            cbxPlanes = new System.Windows.Forms.ComboBox();
-            cbxMaterias = new System.Windows.Forms.ComboBox();
-            label4 = new System.Windows.Forms.Label();
-            label5 = new System.Windows.Forms.Label();
-            label6 = new System.Windows.Forms.Label();
-            txtAño = new System.Windows.Forms.TextBox();
-            txtCupo = new System.Windows.Forms.TextBox();
-            btnCrear = new System.Windows.Forms.Button();
-            SuspendLayout();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cbxEspecialidades = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cbxPlanes = new System.Windows.Forms.ComboBox();
+            this.cbxMaterias = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtAño = new System.Windows.Forms.TextBox();
+            this.txtCupo = new System.Windows.Forms.TextBox();
+            this.btnCrear = new System.Windows.Forms.Button();
+            this.lblComision = new System.Windows.Forms.Label();
+            this.txtDia = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.dtpHoraIni = new System.Windows.Forms.DateTimePicker();
+            this.dtpHoraFin = new System.Windows.Forms.DateTimePicker();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.cbxComision = new System.Windows.Forms.ComboBox();
+            this.SuspendLayout();
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(139, 96);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(230, 25);
-            label1.TabIndex = 0;
-            label1.Text = "Seleccione una Especialidad";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(72, 56);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(75, 15);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Especialidad:";
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(212, 165);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(157, 25);
-            label2.TabIndex = 1;
-            label2.Text = "Seleccione un Plan";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(114, 97);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(33, 15);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Plan:";
             // 
             // cbxEspecialidades
             // 
-            cbxEspecialidades.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            cbxEspecialidades.FormattingEnabled = true;
-            cbxEspecialidades.Location = new System.Drawing.Point(375, 93);
-            cbxEspecialidades.Name = "cbxEspecialidades";
-            cbxEspecialidades.Size = new System.Drawing.Size(306, 33);
-            cbxEspecialidades.TabIndex = 2;
-            cbxEspecialidades.SelectedIndexChanged += cbxEspecialidades_SelectedIndexChanged;
+            this.cbxEspecialidades.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxEspecialidades.FormattingEnabled = true;
+            this.cbxEspecialidades.Location = new System.Drawing.Point(151, 53);
+            this.cbxEspecialidades.Margin = new System.Windows.Forms.Padding(2);
+            this.cbxEspecialidades.Name = "cbxEspecialidades";
+            this.cbxEspecialidades.Size = new System.Drawing.Size(148, 23);
+            this.cbxEspecialidades.TabIndex = 2;
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(177, 227);
-            label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(192, 25);
-            label3.TabIndex = 3;
-            label3.Text = "Seleccione una Materia";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(97, 142);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(50, 15);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Materia:";
             // 
             // cbxPlanes
             // 
-            cbxPlanes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            cbxPlanes.Enabled = false;
-            cbxPlanes.FormattingEnabled = true;
-            cbxPlanes.Location = new System.Drawing.Point(375, 162);
-            cbxPlanes.Name = "cbxPlanes";
-            cbxPlanes.Size = new System.Drawing.Size(306, 33);
-            cbxPlanes.TabIndex = 4;
-            cbxPlanes.SelectedIndexChanged += cbxPlanes_SelectedIndexChanged;
+            this.cbxPlanes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxPlanes.Enabled = false;
+            this.cbxPlanes.FormattingEnabled = true;
+            this.cbxPlanes.Location = new System.Drawing.Point(151, 97);
+            this.cbxPlanes.Margin = new System.Windows.Forms.Padding(2);
+            this.cbxPlanes.Name = "cbxPlanes";
+            this.cbxPlanes.Size = new System.Drawing.Size(148, 23);
+            this.cbxPlanes.TabIndex = 4;
             // 
             // cbxMaterias
             // 
-            cbxMaterias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            cbxMaterias.Enabled = false;
-            cbxMaterias.FormattingEnabled = true;
-            cbxMaterias.Location = new System.Drawing.Point(375, 224);
-            cbxMaterias.Name = "cbxMaterias";
-            cbxMaterias.Size = new System.Drawing.Size(306, 33);
-            cbxMaterias.TabIndex = 5;
-            cbxMaterias.SelectedIndexChanged += cbxMaterias_SelectedIndexChanged;
+            this.cbxMaterias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxMaterias.Enabled = false;
+            this.cbxMaterias.FormattingEnabled = true;
+            this.cbxMaterias.Location = new System.Drawing.Point(151, 134);
+            this.cbxMaterias.Margin = new System.Windows.Forms.Padding(2);
+            this.cbxMaterias.Name = "cbxMaterias";
+            this.cbxMaterias.Size = new System.Drawing.Size(148, 23);
+            this.cbxMaterias.TabIndex = 5;
             // 
             // label4
             // 
-            label4.AutoSize = true;
-            label4.Location = new System.Drawing.Point(292, 36);
-            label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(251, 25);
-            label4.TabIndex = 6;
-            label4.Text = "Complete los siguientes datos";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(204, 22);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(165, 15);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Complete los siguientes datos";
             // 
             // label5
             // 
-            label5.AutoSize = true;
-            label5.Location = new System.Drawing.Point(169, 287);
-            label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(200, 25);
-            label5.TabIndex = 7;
-            label5.Text = "Ingrese el año del curso";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(110, 178);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(37, 15);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Ciclo:";
             // 
             // label6
             // 
-            label6.AutoSize = true;
-            label6.Location = new System.Drawing.Point(159, 341);
-            label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(210, 25);
-            label6.TabIndex = 8;
-            label6.Text = "Ingrese el cupo del curso";
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(108, 211);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(39, 15);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Cupo:";
             // 
             // txtAño
             // 
-            txtAño.Location = new System.Drawing.Point(375, 284);
-            txtAño.Name = "txtAño";
-            txtAño.PlaceholderText = "AAAA";
-            txtAño.Size = new System.Drawing.Size(143, 31);
-            txtAño.TabIndex = 9;
+            this.txtAño.Location = new System.Drawing.Point(151, 170);
+            this.txtAño.Margin = new System.Windows.Forms.Padding(2);
+            this.txtAño.Name = "txtAño";
+            this.txtAño.PlaceholderText = "AAAA";
+            this.txtAño.Size = new System.Drawing.Size(101, 23);
+            this.txtAño.TabIndex = 9;
             // 
             // txtCupo
             // 
-            txtCupo.Location = new System.Drawing.Point(375, 338);
-            txtCupo.Name = "txtCupo";
-            txtCupo.Size = new System.Drawing.Size(143, 31);
-            txtCupo.TabIndex = 10;
+            this.txtCupo.Location = new System.Drawing.Point(151, 203);
+            this.txtCupo.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCupo.Name = "txtCupo";
+            this.txtCupo.Size = new System.Drawing.Size(101, 23);
+            this.txtCupo.TabIndex = 10;
             // 
             // btnCrear
             // 
-            btnCrear.Location = new System.Drawing.Point(310, 428);
-            btnCrear.Name = "btnCrear";
-            btnCrear.Size = new System.Drawing.Size(257, 56);
-            btnCrear.TabIndex = 11;
-            btnCrear.Text = "Crear";
-            btnCrear.UseVisualStyleBackColor = true;
-            btnCrear.Click += button1_Click;
+            this.btnCrear.Location = new System.Drawing.Point(217, 257);
+            this.btnCrear.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCrear.Name = "btnCrear";
+            this.btnCrear.Size = new System.Drawing.Size(180, 34);
+            this.btnCrear.TabIndex = 11;
+            this.btnCrear.Text = "Crear";
+            this.btnCrear.UseVisualStyleBackColor = true;
+            // 
+            // lblComision
+            // 
+            this.lblComision.AutoSize = true;
+            this.lblComision.Location = new System.Drawing.Point(336, 59);
+            this.lblComision.Name = "lblComision";
+            this.lblComision.Size = new System.Drawing.Size(61, 15);
+            this.lblComision.TabIndex = 12;
+            this.lblComision.Text = "Comision:";
+            // 
+            // txtDia
+            // 
+            this.txtDia.Location = new System.Drawing.Point(403, 90);
+            this.txtDia.Name = "txtDia";
+            this.txtDia.Size = new System.Drawing.Size(121, 23);
+            this.txtDia.TabIndex = 14;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(370, 94);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(27, 15);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "Dia:";
+            // 
+            // dtpHoraIni
+            // 
+            this.dtpHoraIni.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpHoraIni.Location = new System.Drawing.Point(405, 129);
+            this.dtpHoraIni.Name = "dtpHoraIni";
+            this.dtpHoraIni.Size = new System.Drawing.Size(87, 23);
+            this.dtpHoraIni.TabIndex = 16;
+            // 
+            // dtpHoraFin
+            // 
+            this.dtpHoraFin.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpHoraFin.Location = new System.Drawing.Point(403, 171);
+            this.dtpHoraFin.Name = "dtpHoraFin";
+            this.dtpHoraFin.Size = new System.Drawing.Size(87, 23);
+            this.dtpHoraFin.TabIndex = 17;
+            this.dtpHoraFin.Value = new System.DateTime(2023, 10, 1, 21, 9, 30, 0);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(313, 137);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(84, 15);
+            this.label9.TabIndex = 19;
+            this.label9.Text = "Hora de inicio:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(328, 176);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(69, 15);
+            this.label8.TabIndex = 20;
+            this.label8.Text = "Hora de fin:";
+            // 
+            // cbxComision
+            // 
+            this.cbxComision.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxComision.Enabled = false;
+            this.cbxComision.FormattingEnabled = true;
+            this.cbxComision.Location = new System.Drawing.Point(402, 53);
+            this.cbxComision.Margin = new System.Windows.Forms.Padding(2);
+            this.cbxComision.Name = "cbxComision";
+            this.cbxComision.Size = new System.Drawing.Size(148, 23);
+            this.cbxComision.TabIndex = 21;
             // 
             // formCrearCurso
             // 
-            AcceptButton = btnCrear;
-            AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
-            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(859, 517);
-            Controls.Add(btnCrear);
-            Controls.Add(txtCupo);
-            Controls.Add(txtAño);
-            Controls.Add(label6);
-            Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(cbxMaterias);
-            Controls.Add(cbxPlanes);
-            Controls.Add(label3);
-            Controls.Add(cbxEspecialidades);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Name = "formCrearCurso";
-            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            Text = "Crear Curso";
-            Load += formCrearCurso_Load;
-            ResumeLayout(false);
-            PerformLayout();
+            this.AcceptButton = this.btnCrear;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(601, 310);
+            this.Controls.Add(this.cbxComision);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.dtpHoraFin);
+            this.Controls.Add(this.dtpHoraIni);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.txtDia);
+            this.Controls.Add(this.lblComision);
+            this.Controls.Add(this.btnCrear);
+            this.Controls.Add(this.txtCupo);
+            this.Controls.Add(this.txtAño);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.cbxMaterias);
+            this.Controls.Add(this.cbxPlanes);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.cbxEspecialidades);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "formCrearCurso";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Crear Curso";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
@@ -193,5 +289,13 @@
         private System.Windows.Forms.TextBox txtAño;
         private System.Windows.Forms.TextBox txtCupo;
         private System.Windows.Forms.Button btnCrear;
+        private System.Windows.Forms.Label lblComision;
+        private System.Windows.Forms.TextBox txtDia;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DateTimePicker dtpHoraIni;
+        private System.Windows.Forms.DateTimePicker dtpHoraFin;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox cbxComision;
     }
 }

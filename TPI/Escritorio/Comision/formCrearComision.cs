@@ -41,10 +41,10 @@ namespace Escritorio.Comision
 
             if (idCom != 0)
             {
-                var comision = TPI.Negocio.Comision.CrearComision(idCom, Especialidad);
+                var comision = TPI.Negocio.Comision.Crear(idCom, Especialidad);
                 try
                 {
-                    TPI.Negocio.Comision.AgregarComision(comision);
+                    TPI.Negocio.Comision.Agregar(comision);
                     MessageBox.Show("Comision creada con exito!");
                     Dispose();
                 }

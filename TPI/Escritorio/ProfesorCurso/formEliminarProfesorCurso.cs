@@ -12,22 +12,15 @@ namespace Escritorio.ProfesorCurso
 {
     public partial class formEliminarProfesorCurso : Form
     {
+        private TPI.Entidades.Usuario? Usuario;
+        private TPI.Entidades.Curso Curso;
         public formEliminarProfesorCurso()
         {
             InitializeComponent();
-            cargar_cbx();
+            
         }
 
-        private void cargar_cbx()
-        {
-            List<TPI.Entidades.Usuario> usuarios = TPI.Negocio.Usuario.GetAllProfesores();
-            List<TPI.Entidades.Materia> materias = TPI.Negocio.Materia.GetAll();
-
-            foreach (TPI.Entidades.Usuario usu in usuarios) { cbxLegajo.Items.Add(usu.Legajo); }
-            foreach (TPI.Entidades.Materia mat in materias) { cbxMateria.Items.Add(mat.Descripcion); }
-
-
-        }
+        
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
@@ -36,15 +29,8 @@ namespace Escritorio.ProfesorCurso
             if (conf == DialogResult.Yes)
             {
 
-                string desc_materia = this.cbxMateria.GetItemText(this.cbxMateria.SelectedItem);
-                int legajo = int.Parse(this.cbxLegajo.GetItemText(this.cbxLegajo.SelectedItem));
-                TPI.Entidades.Materia materia = TPI.Negocio.Materia.GetMateriaPorDesc(desc_materia);
-
-                int id_materia = materia.Id;
-            
-            int anio = int.Parse(txtAnio.Text);
-            TPI.Entidades.ProfesorCurso profesor_curso = TPI.Negocio.ProfesorCurso.GetProfesorCurso(legajo, anio, id_materia);
-            TPI.Negocio.ProfesorCurso.Eliminar(profesor_curso);
+                TPI.Entidades.ProfesorCurso profesor_curso = TPI.Negocio.ProfesorCurso.BuscarPorUsuarioCurso(Usuario, Curso);
+                TPI.Negocio.ProfesorCurso.Eliminar(profesor_curso);
             }
             else { this.Close(); }
         }
@@ -52,6 +38,34 @@ namespace Escritorio.ProfesorCurso
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void formEliminarProfesorCurso_Load(object sender, EventArgs e)
+        {
+            List<TPI.Entidades.Usuario> usuarios = TPI.Negocio.Usuario.GetAllProfesores();
+
+
+            foreach (TPI.Entidades.Usuario usu in usuarios) { cbxLegajo.Items.Add(usu.Legajo); }
+
+        }
+
+        private void cbxCurso_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            int id_curso = Convert.ToInt32(this.cbxCurso.GetItemText(this.cbxCurso.SelectedItem));
+            Curso = TPI.Negocio.Curso.GetOne(id_curso);
+        }
+
+        private void cbxLegajo_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            int legajo = int.Parse(this.cbxLegajo.GetItemText(this.cbxLegajo.SelectedItem));
+            Usuario = TPI.Negocio.Usuario.GetAllProfesores().FirstOrDefault(x => x.Legajo == legajo);
+
+            if (Usuario != null) { 
+            List<TPI.Entidades.ProfesorCurso> profesores_cursos = TPI.Negocio.ProfesorCurso.BuscarPorUsuario(Usuario);
+
+            foreach (TPI.Entidades.ProfesorCurso cur in profesores_cursos) { cbxCurso.Items.Add(cur.Curso.Id); }
+            cbxCurso.Enabled = true;
+            }
         }
     }
 }

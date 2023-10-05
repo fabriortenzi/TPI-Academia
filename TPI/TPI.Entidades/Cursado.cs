@@ -24,6 +24,13 @@ namespace TPI.Entidades
 
         public Cursado()
         { }
+        public Cursado(Usuario usuario, Curso curso, DateTime fechaHoraInscripcion)
+        {
+            Usuario = usuario;
+            Curso = curso;
+            FechaHoraInscripcion = fechaHoraInscripcion;
+            
+        }
 
         public Cursado(Usuario usuario, Curso curso, DateTime fechaHoraInscripcion, int notaFinal)
         {

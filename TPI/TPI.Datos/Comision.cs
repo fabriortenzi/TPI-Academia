@@ -10,26 +10,27 @@ namespace TPI.Datos
 {
     public class Comision
     {
-        //public static Entidades.Comision GetComisionPorId(int idCom, int idEsp)
-        //{
-        //    using (var context = ApplicationContext.CreateContext())
-        //    {
-        //        return context.comisiones
-        //            .FirstOrDefault(c => c.IdCom == idCom && c.IdEspecialidad == idEsp);
-        //    }
-        //}
+        public static Entidades.Comision GetComisionPorId(int idCom, Especialidad especialidad)
+        {
+            using (var context = ApplicationContext.CreateContext())
+            {
+                return context.comisiones
+                    .FirstOrDefault(c => c.Id == idCom && c.Especialidad == especialidad);
+            }
+        }
 
-        //public static Entidades.Comision GetComisionPorIdyDescEsp(string id_desc_esp) 
-        //{
-        //    using (var context = ApplicationContext.CreateContext())
-        //    {
-        //        return context.comisiones
-        //            .FirstOrDefault(c => (c.IdCom.ToString() + " " + c.Especialidad.descEspec) == id_desc_esp );
-        //    }
+        public static Entidades.Comision GetComisionPorIdyDescEsp(string id_desc_esp)
+        {
+            using (var context = ApplicationContext.CreateContext())
+            {
+                return context.comisiones
+                    .FirstOrDefault(c => (c.Id.ToString() + " " + c.Especialidad.Descripcion) == id_desc_esp);
+            }
+        }
 
-        //}
-        public static List<Entidades.Comision> GetAll() 
-        { 
+
+        public static List<Entidades.Comision> GetAll()
+        {
             using (var context = ApplicationContext.CreateContext())
             {
                 return context
@@ -48,5 +49,37 @@ namespace TPI.Datos
                 context.SaveChanges();
             }
         }
+
+        public static Entidades.Comision GetOne(int id)
+        {
+            using (var context = ApplicationContext.CreateContext())
+            {
+                return context.comisiones
+                       .Include(x => x.Especialidad)
+                       .FirstOrDefault(x => x.Id == id);
+
+            }
+
+        }
+        public static void Cambiar(Entidades.Comision comision, int nroComision, Entidades.Especialidad especialidad)
+        {
+            using (var context = ApplicationContext.CreateContext())
+            {
+                Entidades.Comision comisionACambiar = context.comisiones.FirstOrDefault(x => x == comision);
+                comisionACambiar.NroComision = nroComision;
+                comisionACambiar.Especialidad = especialidad;
+                context.SaveChanges();
+            }
+        }
+        public static void Eliminar(Entidades.Comision comision) 
+        {
+            using (var context = ApplicationContext.CreateContext())
+            {
+                context.comisiones.Remove(comision);
+                context.SaveChanges();
+            }
+
+        }
+
     }
 }

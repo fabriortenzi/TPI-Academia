@@ -15,16 +15,22 @@ namespace Escritorio.ProfesorCurso
         private TPI.Entidades.ProfesorCurso? profesorCurso;
         public formMostrarProfesorCurso(TPI.Entidades.ProfesorCurso profesor_curso)
         {
-            InitializeComponent();
-            lblMateria.Text = profesor_curso.Curso.Materia.Descripcion;
-            //lblLegajo.Text = profesor_curso.Legajo.ToString();
-            //lblAnio.Text = profesor_curso.Anio.ToString();
-            lblCargo.Text = profesor_curso.Cargo;
             profesorCurso = profesor_curso;
+            InitializeComponent();
+            lblCurso.Text = profesor_curso.Curso.Id.ToString();
+            lblLegajo.Text = profesor_curso.Usuario.Legajo.ToString();
+            lblAnio.Text = profesor_curso.Curso.CicloLectivo.ToString();
+            lblCargo.Text = profesor_curso.Cargo;
+            
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
+            if (profesorCurso != null) { 
+            formModificarProfesorCurso formModificarProfesorCurso = new formModificarProfesorCurso(profesorCurso)
+            formModificarProfesorCurso.Show();
+            }
+            else { MessageBox.Show("Error"); }
 
         }
 

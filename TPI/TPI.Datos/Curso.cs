@@ -10,7 +10,7 @@ namespace TPI.Datos
 {
     public class Curso
     {
-        public static void AgregarCurso(Entidades.Curso curso)
+        public static void Agregar(Entidades.Curso curso)
         {
             using (var context = ApplicationContext.CreateContext())
             {
@@ -29,6 +29,7 @@ namespace TPI.Datos
             {
                 var cursosDisponibles = context.cursos
                     .Include(c => c.Materia)
+                    .Include(c => c.Comision)
                     .Where(c => c.CicloLectivo == añoActual
                             && c.Materia.Plan.Equals(plan)
                             && c.Cupo > 0).ToList();
@@ -41,8 +42,52 @@ namespace TPI.Datos
         {
             using (ApplicationContext context = ApplicationContext.CreateContext())
             {
-                return context.cursos.ToList();
+                return context.cursos
+                    .Include(x => x.Materia)
+                    .Include(x => x.Comision)
+                    .ToList();
             }
         }
+
+        public static Entidades.Curso GetOne(int id) 
+        {
+            using (ApplicationContext context = ApplicationContext.CreateContext())
+            {
+                return context.cursos
+                       .Include(x => x.Materia)
+                       .Include(x => x.Comision)
+                       .FirstOrDefault(x => x.Id == id);
+
+            }
+
+        }
+
+        public static void Cambiar(Entidades.Curso curso, int ciclo, Entidades.Materia materia, Entidades.Comision comision, int cupo, string dia, TimeSpan hora_ini, TimeSpan hora_fin) 
+        {
+            using (ApplicationContext context = ApplicationContext.CreateContext())
+            {
+                Entidades.Curso cursoAcambiar = GetOne(curso.Id);
+                cursoAcambiar.CicloLectivo = ciclo;
+                cursoAcambiar.Materia = materia;
+                cursoAcambiar.Comision = comision;
+                cursoAcambiar.Cupo = cupo;
+                cursoAcambiar.Dia = dia;
+                cursoAcambiar.HoraInicio = hora_ini;
+                cursoAcambiar.HoraFin = hora_fin;
+                context.SaveChanges();
+            }
+
+
+        }
+
+        public static void Eliminar(Entidades.Curso curso)
+        {
+            using (ApplicationContext context = ApplicationContext.CreateContext())
+            {
+                context.cursos.Remove(curso);
+                context.SaveChanges();
+            }
+        }
+
     }
 }
