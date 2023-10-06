@@ -41,22 +41,19 @@ namespace Escritorio
         {
             cbxPlanes.SelectedIndex = -1;
             cbxPlanes.Items.Clear();
-            
-
-            
 
             var especialidadSeleccionada = cbxEspecialidades.SelectedItem.ToString();
             var especialidad = TPI.Negocio.Especialidad.Getespecialidadpordesc(especialidadSeleccionada);
             Especialidad = especialidad;
             var planesPorEspecialidad = TPI.Negocio.Plan.GetPlanesPorEspecialidad(especialidad);
 
-            cbxPlanes.SelectedIndex = -1;
-            cbxPlanes.Items.Clear();
+            cbxComision.SelectedIndex = -1;
+            cbxComision.Items.Clear();
             foreach (var com in TPI.Negocio.Comision.BuscarComisionesPorEspecialidad(especialidad))
             {
                 cbxComision.Items.Add(com.NroComision);
             }
-            cbxPlanes.Enabled = true;
+            cbxComision.Enabled = true;
 
 
             foreach (var plan in planesPorEspecialidad)
@@ -70,7 +67,7 @@ namespace Escritorio
         {
             cbxMaterias.SelectedIndex = -1;
             cbxMaterias.Items.Clear();
-            
+
 
             if (cbxPlanes.SelectedItem != null)
             {
@@ -80,7 +77,7 @@ namespace Escritorio
                 Plan = planSeleccionado;
                 var materiasPlan = TPI.Negocio.Materia.GetMateriasPorPlan(planSeleccionado);
 
-                
+
 
                 foreach (var materia in materiasPlan)
                 {
@@ -108,8 +105,7 @@ namespace Escritorio
                 cupo = Convert.ToInt32(txtCupo.Text);
                 dia = txtDia.Text;
                 hora_ini = dtpHoraIni.Value.TimeOfDay;
-                 hora_fin = dtpHoraFin.Value.TimeOfDay;
-
+                hora_fin = dtpHoraFin.Value.TimeOfDay;
             }
             catch
             {
@@ -127,6 +123,10 @@ namespace Escritorio
         }
 
         private void cbxComision_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+        }
+
+        private void cbxComision_SelectedIndexChanged(object sender, EventArgs e)
         {
             int nro_com = int.Parse(cbxComision.SelectedItem.ToString());
             comision = TPI.Negocio.Comision.BuscarComisionPorNroEspecialidad(nro_com, Especialidad);

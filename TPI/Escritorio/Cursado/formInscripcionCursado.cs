@@ -12,9 +12,7 @@ namespace Escritorio.Inscripcion
 {
     public partial class formInscripcionCursado : Form
     {
-        private TPI.Entidades.Usuario Usuario;
-
-        
+        private TPI.Entidades.Usuario Usuario;        
 
         private TPI.Entidades.Comision Comision;
 
@@ -55,17 +53,17 @@ namespace Escritorio.Inscripcion
 
             var materiaSeleccionada = cbxCursosMateria.SelectedItem.ToString();
             Materia = TPI.Negocio.Materia.GetMateriaPorDesc(materiaSeleccionada);
-            CursosMateria = CursosMateria.Where(x => x.Materia == Materia).ToList();
+            CursosMateria = CursosMateria.Where(x => x.Materia.Id == Materia.Id).ToList();
             
             foreach (var cur in CursosMateria)
             {
-                cbxComisiones.Items.Add(cur.Comision.Id);
+                cbxComisiones.Items.Add(cur.Comision.NroComision);
             }
         }
 
         private void cbxComisiones_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var  nro_com = Convert.ToInt32(cbxComisiones.SelectedItem.ToString());
+            var nro_com = Convert.ToInt32(cbxComisiones.SelectedItem.ToString());
             Comision = TPI.Negocio.Comision.BuscarComisionPorNroEspecialidad(nro_com, Usuario.Plan.Especialidad);
 
             if (Materia != null && Comision!=null) {

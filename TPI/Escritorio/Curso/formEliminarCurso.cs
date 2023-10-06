@@ -36,7 +36,7 @@ namespace Escritorio.Curso
             }
         }
 
-        private void cbxPlanes_SelectionChangeCommitted(object sender, EventArgs e)
+        private async void cbxPlanes_SelectionChangeCommitted(object sender, EventArgs e)
         {
             foreach (TPI.Entidades.Materia mat in TPI.Negocio.Materia.GetMateriasPorPlan(plan))
             {
@@ -44,7 +44,7 @@ namespace Escritorio.Curso
             }
             cbxMaterias.Enabled = true;
             int anio = int.Parse(cbxPlanes.SelectedItem.ToString());
-            plan = TPI.Negocio.Plan.GetPlanPorEspecialidadAnio(especialidad, anio);
+            plan = await TPI.Negocio.Plan.GetPlanPorEspecialidadAnio(especialidad, anio);
         }
 
         private void cbxEspecialidades_SelectionChangeCommitted(object sender, EventArgs e)

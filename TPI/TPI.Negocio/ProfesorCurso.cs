@@ -10,12 +10,12 @@ namespace TPI.Negocio
     {
         public static List<Entidades.ProfesorCurso> BuscarPorUsuario(Entidades.Usuario us) 
         {
-            return Datos.ProfesorCurso.GetAll().Where(x=>x.Usuario == us).ToList();
+            return Datos.ProfesorCurso.GetAll().Where(x=>x.Usuario.Legajo == us.Legajo).ToList();
         }
 
         public static Entidades.ProfesorCurso BuscarPorUsuarioCurso(Entidades.Usuario us, Entidades.Curso cu) 
         {
-            return Datos.ProfesorCurso.GetAll().FirstOrDefault(x=>x.Curso == cu && x.Usuario == us);
+            return Datos.ProfesorCurso.GetAll().FirstOrDefault(x=>x.Curso.Id == cu.Id && x.Usuario.Legajo == us.Legajo);
         }
 
         public static void Agregar(Entidades.ProfesorCurso profesor_curso)

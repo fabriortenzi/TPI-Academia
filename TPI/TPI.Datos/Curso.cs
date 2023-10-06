@@ -44,6 +44,7 @@ namespace TPI.Datos
             {
                 return context.cursos
                     .Include(x => x.Materia)
+                    .ThenInclude(x => x.Plan)
                     .Include(x => x.Comision)
                     .ToList();
             }

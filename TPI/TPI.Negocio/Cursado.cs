@@ -15,11 +15,11 @@ namespace TPI.Negocio
         }
         public static Entidades.Cursado BuscarCursoPorUsuarioCurso(Entidades.Usuario usuario, Entidades.Curso curso) 
         {
-            return Datos.Cursado.GetAll().FirstOrDefault(x => x.Usuario == usuario && x.Curso == curso);
+            return Datos.Cursado.GetAll().FirstOrDefault(x => x.Usuario.Legajo == usuario.Legajo && x.Curso.Id == curso.Id);
         }
         public static List<Entidades.Cursado> BuscarCursadosPorUsuarioAño(Entidades.Usuario usuario, int ciclo)
         {
-            return TPI.Datos.Cursado.GetAll().Where(x => x.Usuario == usuario && x.Curso.CicloLectivo == ciclo).ToList();
+            return TPI.Datos.Cursado.GetAll().Where(x => x.Usuario.Legajo == usuario.Legajo && x.Curso.CicloLectivo == ciclo).ToList();
         }
         public static List<Entidades.Cursado> BuscarCursadosPorAño(int year) 
         {

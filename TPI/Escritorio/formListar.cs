@@ -66,7 +66,7 @@ namespace Escritorio.Generalizado
 
             if (tipoDato == typeof(TPI.Entidades.ProfesorCurso))
             {
-                dgvGrilla.DataSource = TPI.Negocio.ProfesorCurso.GetAllProfesorCurso();
+                dgvGrilla.DataSource = TPI.Negocio.ProfesorCurso.GetAll();
             }
             else if (tipoDato == typeof(TPI.Entidades.Curso))
             {
