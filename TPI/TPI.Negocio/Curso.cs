@@ -10,11 +10,11 @@ namespace TPI.Negocio
     {
         public static List<Entidades.Curso> BuscarCursosPorPlanCicloLectivo(Entidades.Plan plan, int ciclo) 
         {
-            return TPI.Datos.Curso.GetAll().Where(x => x.Materia.Plan == plan && x.CicloLectivo == ciclo).ToList();
+            return TPI.Datos.Curso.GetAll().Where(x => x.Materia.Plan.Id == plan.Id && x.CicloLectivo == ciclo).ToList();
         }
         public static Entidades.Curso BuscarCursoPorMateriaComision(Entidades.Materia materia, Entidades.Comision comision) 
         {
-            return TPI.Datos.Curso.GetAll().FirstOrDefault(x => x.Materia == materia && x.Comision == comision);
+            return TPI.Datos.Curso.GetAll().FirstOrDefault(x => x.Materia.Id == materia.Id && x.Comision.Id == comision.Id);
         }
         public static Entidades.Curso Crear(Entidades.Materia materia, int ciclo, Entidades.Comision comision, int cupo,  string dia, TimeSpan hora_ini, TimeSpan hora_fin) 
         {

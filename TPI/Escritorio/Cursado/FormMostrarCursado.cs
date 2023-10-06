@@ -40,7 +40,7 @@ namespace Escritorio.Inscripcion
             }
             else 
             {
-                lblNota.Text ="Nota no cargada"
+                lblNota.Text = "Nota no cargada";
             }
 
         }

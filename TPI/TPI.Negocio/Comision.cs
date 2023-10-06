@@ -10,12 +10,12 @@ namespace TPI.Negocio
     {
         public static Entidades.Comision BuscarComisionPorNroEspecialidad(int nro_com,Entidades.Especialidad esp)
         {
-            return TPI.Datos.Comision.GetAll().Find(x=>x.NroComision == nro_com && x.Especialidad == esp);
+            return TPI.Datos.Comision.GetAll().First(x => x.NroComision == nro_com && x.Especialidad.Id == esp.Id);
         }
 
         public static List<Entidades.Comision> BuscarComisionesPorEspecialidad(Entidades.Especialidad esp)
         {
-            return TPI.Datos.Comision.GetAll().Where(x=>x.Especialidad == esp).ToList();
+            return TPI.Datos.Comision.GetAll().Where(x => x.Especialidad.Id == esp.Id).ToList();
         }
         public static Entidades.Comision Crear(int id, Entidades.Especialidad especialidad)
         { return new Entidades.Comision(id, especialidad); }

@@ -12,12 +12,7 @@ namespace TPI.Datos
     {
         public static void Agregar(Entidades.Cursado cursado) 
         {
-            using (var context = ApplicationContext.CreateContext())
-            {
-                context.cursados.Attach(cursado);
-                context.Entry(cursado).State = EntityState.Added;
-                context.SaveChanges();
-            }
+            // Hacer con ADO.NET
         }
         public static void Eliminar(Entidades.Cursado cursado)
         {

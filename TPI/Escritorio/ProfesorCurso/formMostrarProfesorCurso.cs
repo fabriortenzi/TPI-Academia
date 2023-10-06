@@ -26,8 +26,8 @@ namespace Escritorio.ProfesorCurso
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            if (profesorCurso != null) { 
-            formModificarProfesorCurso formModificarProfesorCurso = new formModificarProfesorCurso(profesorCurso)
+            if (profesorCurso != null) {
+                formModificarProfesorCurso formModificarProfesorCurso = new formModificarProfesorCurso(profesorCurso);
             formModificarProfesorCurso.Show();
             }
             else { MessageBox.Show("Error"); }
