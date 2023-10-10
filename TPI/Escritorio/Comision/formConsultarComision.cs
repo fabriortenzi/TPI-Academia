@@ -32,6 +32,8 @@ namespace Escritorio.Comision
             string desc_especialidad = cbxEspecialidad.SelectedItem.ToString();
             esp = TPI.Negocio.Especialidad.Getespecialidadpordesc(desc_especialidad);
 
+            cbxComision.Items.Clear();
+            
             foreach (var com in TPI.Negocio.Comision.BuscarComisionesPorEspecialidad(esp))
             {
                 cbxComision.Items.Add(com.NroComision);
@@ -52,9 +54,12 @@ namespace Escritorio.Comision
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             TPI.Entidades.Comision com = TPI.Negocio.Comision.BuscarComisionPorNroEspecialidad(nro_com, esp);
+            if (com != null) { 
             MessageBox.Show($"Comision Encontrada ID: {com.Id}");
             formMostrarComision formMostrarComision = new formMostrarComision(com);
             formMostrarComision.Show();
+            }
+            else { MessageBox.Show($"Operacion invalida, intente nuevamente"); }
         }
     }
 }

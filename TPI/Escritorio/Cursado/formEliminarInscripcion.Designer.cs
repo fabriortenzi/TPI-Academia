@@ -61,7 +61,7 @@
             // 
             // Comision
             // 
-            Comision.DataPropertyName = "IdComision";
+            Comision.DataPropertyName = "nroComision";
             Comision.HeaderText = "Comision";
             Comision.MinimumWidth = 8;
             Comision.Name = "Comision";

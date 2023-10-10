@@ -17,6 +17,7 @@ namespace Escritorio
         private TPI.Entidades.Materia Materia;
         private TPI.Entidades.Plan Plan;
         private TPI.Entidades.Comision comision;
+        private string DiaSemana;
 
         public formCrearCurso()
         {

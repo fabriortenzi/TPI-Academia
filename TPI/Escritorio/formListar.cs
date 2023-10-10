@@ -112,7 +112,7 @@ namespace Escritorio.Generalizado
                 //else if (tipoDato == typeof(TPI.Entidades.MateriaComision))
                 //{
                 //    List<TPI.Entidades.MateriaComision> materias_comisiones = TPI.Negocio.MateriaComision.GetAllMateriaComision();
-                //    dgvGrilla.DataSource = materias_comisiones.Where(x => x.idMateria.ToString().Contains(consulta) || x.IdEspecialidad.ToString().Contains(consulta) || x.IdCom.ToString().Contains(consulta)).ToList();
+                //    dgvGrilla.DataSource = materias_comisiones.Where(x => x.idMateria.ToString().Contains(consulta) || x.IdEspecialidad.ToString().Contains(consulta) || x.nroCom.ToString().Contains(consulta)).ToList();
                 //}
                 //else if (tipoDato == typeof(TPI.Entidades.ProfesorCurso))
                 //{

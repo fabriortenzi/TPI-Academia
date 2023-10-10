@@ -57,10 +57,10 @@ namespace Escritorio.Comision
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            int idCom = 0;
+            int nroCom = 0;
             try
             {
-                idCom = Convert.ToInt32(txtNroCom.Text);
+                nroCom = Convert.ToInt32(txtNroCom.Text);
             }
             catch
             {
@@ -68,12 +68,12 @@ namespace Escritorio.Comision
                 return;
             }
 
-            if (idCom != 0)
+            if (nroCom != 0)
             {
                 
                 try
                 {
-                    TPI.Negocio.Comision.Cambiar(comision, idCom, Especialidad);
+                    TPI.Negocio.Comision.Cambiar(comision, nroCom, Especialidad);
                     MessageBox.Show("Modificada con exito!");
                     Dispose();
                 }
