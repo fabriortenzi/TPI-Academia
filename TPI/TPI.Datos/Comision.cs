@@ -10,12 +10,12 @@ namespace TPI.Datos
 {
     public class Comision
     {
-        public static Entidades.Comision GetComisionPorId(int idCom, Especialidad especialidad)
+        public static Entidades.Comision GetComisionPorId(int nroCom, Especialidad especialidad)
         {
             using (var context = ApplicationContext.CreateContext())
             {
                 return context.comisiones
-                    .FirstOrDefault(c => c.Id == idCom && c.Especialidad == especialidad);
+                    .FirstOrDefault(c => c.Id == nroCom && c.Especialidad.Id == especialidad.Id);
             }
         }
 
@@ -65,7 +65,7 @@ namespace TPI.Datos
         {
             using (var context = ApplicationContext.CreateContext())
             {
-                Entidades.Comision comisionACambiar = context.comisiones.FirstOrDefault(x => x == comision);
+                Entidades.Comision comisionACambiar = context.comisiones.FirstOrDefault(x => x.Id == comision.Id);
                 comisionACambiar.NroComision = nroComision;
                 comisionACambiar.Especialidad = especialidad;
                 context.SaveChanges();
@@ -75,6 +75,7 @@ namespace TPI.Datos
         {
             using (var context = ApplicationContext.CreateContext())
             {
+                //Hay que eliminar todos los cursos de dicha comision editar .OnDelete(DeleteBehavior.Cascade)
                 context.comisiones.Remove(comision);
                 context.SaveChanges();
             }

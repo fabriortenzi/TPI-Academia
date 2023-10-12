@@ -29,122 +29,118 @@ namespace Escritorio.Cursado
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnModificar = new System.Windows.Forms.Button();
-            this.nupNota = new System.Windows.Forms.NumericUpDown();
-            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
-            this.cbxCurso = new System.Windows.Forms.ComboBox();
-            this.cbxUsuario = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.nupNota)).BeginInit();
-            this.SuspendLayout();
+            label1 = new System.Windows.Forms.Label();
+            label2 = new System.Windows.Forms.Label();
+            label3 = new System.Windows.Forms.Label();
+            label4 = new System.Windows.Forms.Label();
+            btnModificar = new System.Windows.Forms.Button();
+            nupNota = new System.Windows.Forms.NumericUpDown();
+            dtpFecha = new System.Windows.Forms.DateTimePicker();
+            cbxCurso = new System.Windows.Forms.ComboBox();
+            cbxUsuario = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)nupNota).BeginInit();
+            SuspendLayout();
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(36, 39);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Usuario:";
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(36, 39);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(50, 15);
+            label1.TabIndex = 0;
+            label1.Text = "Usuario:";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(41, 86);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 15);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Curso:";
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(41, 86);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(41, 15);
+            label2.TabIndex = 1;
+            label2.Text = "Curso:";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(41, 125);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 15);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Fecha:";
+            label3.AutoSize = true;
+            label3.Location = new System.Drawing.Point(41, 125);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(41, 15);
+            label3.TabIndex = 2;
+            label3.Text = "Fecha:";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(44, 168);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(36, 15);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Nota:";
+            label4.AutoSize = true;
+            label4.Location = new System.Drawing.Point(44, 168);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(36, 15);
+            label4.TabIndex = 3;
+            label4.Text = "Nota:";
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(81, 228);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(75, 23);
-            this.btnModificar.TabIndex = 4;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.UseVisualStyleBackColor = true;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            btnModificar.Location = new System.Drawing.Point(81, 228);
+            btnModificar.Name = "btnModificar";
+            btnModificar.Size = new System.Drawing.Size(75, 23);
+            btnModificar.TabIndex = 4;
+            btnModificar.Text = "Modificar";
+            btnModificar.UseVisualStyleBackColor = true;
+            btnModificar.Click += btnModificar_Click;
             // 
             // nupNota
             // 
-            this.nupNota.Location = new System.Drawing.Point(91, 165);
-            this.nupNota.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.nupNota.Name = "nupNota";
-            this.nupNota.Size = new System.Drawing.Size(109, 23);
-            this.nupNota.TabIndex = 5;
+            nupNota.Location = new System.Drawing.Point(91, 165);
+            nupNota.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
+            nupNota.Name = "nupNota";
+            nupNota.Size = new System.Drawing.Size(109, 23);
+            nupNota.TabIndex = 5;
             // 
             // dtpFecha
             // 
-            this.dtpFecha.Location = new System.Drawing.Point(88, 119);
-            this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(112, 23);
-            this.dtpFecha.TabIndex = 6;
+            dtpFecha.Location = new System.Drawing.Point(88, 119);
+            dtpFecha.Name = "dtpFecha";
+            dtpFecha.Size = new System.Drawing.Size(112, 23);
+            dtpFecha.TabIndex = 6;
             // 
             // cbxCurso
             // 
-            this.cbxCurso.FormattingEnabled = true;
-            this.cbxCurso.Location = new System.Drawing.Point(90, 79);
-            this.cbxCurso.Name = "cbxCurso";
-            this.cbxCurso.Size = new System.Drawing.Size(121, 23);
-            this.cbxCurso.TabIndex = 7;
-            this.cbxCurso.SelectedIndexChanged += new System.EventHandler(this.cbxCurso_SelectedIndexChanged);
+            cbxCurso.FormattingEnabled = true;
+            cbxCurso.Location = new System.Drawing.Point(90, 79);
+            cbxCurso.Name = "cbxCurso";
+            cbxCurso.Size = new System.Drawing.Size(121, 23);
+            cbxCurso.TabIndex = 7;
+            cbxCurso.SelectedIndexChanged += cbxCurso_SelectedIndexChanged;
             // 
             // cbxUsuario
             // 
-            this.cbxUsuario.FormattingEnabled = true;
-            this.cbxUsuario.Location = new System.Drawing.Point(91, 36);
-            this.cbxUsuario.Name = "cbxUsuario";
-            this.cbxUsuario.Size = new System.Drawing.Size(121, 23);
-            this.cbxUsuario.TabIndex = 8;
-            this.cbxUsuario.SelectionChangeCommitted += new System.EventHandler(this.cbxUsuario_SelectionChangeCommitted);
+            cbxUsuario.FormattingEnabled = true;
+            cbxUsuario.Location = new System.Drawing.Point(91, 36);
+            cbxUsuario.Name = "cbxUsuario";
+            cbxUsuario.Size = new System.Drawing.Size(121, 23);
+            cbxUsuario.TabIndex = 8;
+            cbxUsuario.SelectedIndexChanged += cbxUsuario_SelectedIndexChanged;
+            cbxUsuario.SelectionChangeCommitted += cbxUsuario_SelectionChangeCommitted;
             // 
             // formModificarCursado
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(246, 310);
-            this.Controls.Add(this.cbxUsuario);
-            this.Controls.Add(this.cbxCurso);
-            this.Controls.Add(this.dtpFecha);
-            this.Controls.Add(this.nupNota);
-            this.Controls.Add(this.btnModificar);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Name = "formModificarCursado";
-            this.Text = "formModificarCursado";
-            this.Load += new System.EventHandler(this.formModificarCursado_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.nupNota)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(246, 310);
+            Controls.Add(cbxUsuario);
+            Controls.Add(cbxCurso);
+            Controls.Add(dtpFecha);
+            Controls.Add(nupNota);
+            Controls.Add(btnModificar);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Name = "formModificarCursado";
+            Text = "formModificarCursado";
+            Load += formModificarCursado_Load;
+            ((System.ComponentModel.ISupportInitialize)nupNota).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

@@ -30,23 +30,11 @@ namespace Escritorio.Inscripcion
 
         private void cbxUsuario_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            string nom_ape = cbxUsuario.SelectedItem.ToString();
-            Usuario = TPI.Negocio.Usuario.GetUsuarioPorNomyApe(nom_ape);
-            if (txtCiclo.Text != null || txtCiclo.Text != "")
-            {
-                int ciclo = int.Parse(txtCiclo.Text);
-                foreach (TPI.Entidades.Cursado cur in TPI.Negocio.Cursado.BuscarCursadosPorUsuarioAño(Usuario, ciclo))
-                {
-                    cbxCurso.Items.Add(cur.Curso.Id);
-                }
 
-            }
         }
 
         private void cbxCurso_TextChanged(object sender, EventArgs e)
         {
-            int idCurso = int.Parse(cbxCurso.SelectedItem.ToString());
-            Curso = TPI.Negocio.Curso.GetOne(idCurso);
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -56,14 +44,47 @@ namespace Escritorio.Inscripcion
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
-            try { 
-            Cursado = TPI.Negocio.Cursado.BuscarCursoPorUsuarioCurso(Usuario, Curso);
-                FormMostrarCursado formMostrarCursado = new FormMostrarCursado(Cursado);
-                formMostrarCursado.Show();
+            try
+            {
+                if(Usuario!= null && Curso!= null) { 
+                Cursado = TPI.Negocio.Cursado.BuscarCursoPorUsuarioCurso(Usuario, Curso);
+                    if (Cursado != null)
+                    {
+                        FormMostrarCursado formMostrarCursado = new FormMostrarCursado(Cursado);
+                        formMostrarCursado.Show();
+                    }
+                    else { MessageBox.Show("Cursado Inexistenete"); }
+                }
+                else { MessageBox.Show("Falta usuario o curso"); }
             }
             catch
             {
                 MessageBox.Show("Error al consultar cursado");
+            }
+        }
+
+        private void cbxUsuario_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string nom_ape = cbxUsuario.SelectedItem.ToString();
+            Usuario = TPI.Negocio.Usuario.GetUsuarioPorNomyApe(nom_ape);
+            if (Usuario != null) { 
+            if (txtCiclo.Text != null || txtCiclo.Text != "")
+            {
+                int ciclo = int.Parse(txtCiclo.Text);
+                foreach (TPI.Entidades.Cursado cur in TPI.Negocio.Cursado.BuscarCursadosPorUsuarioAño(Usuario, ciclo))
+                {
+                    cbxCurso.Items.Add(cur.Curso.Id);
+                }
+
+            }
+            }
+        }
+
+        private void cbxCurso_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cbxCurso.SelectedItem != null) { 
+            int idCurso = int.Parse(cbxCurso.SelectedItem.ToString());
+            Curso = TPI.Negocio.Curso.GetOne(idCurso);
             }
         }
     }

@@ -1,3 +1,7 @@
+using Escritorio.Comision;
+using Escritorio.Curso;
+using Escritorio.Inscripcion;
+using Escritorio.ProfesorCurso;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,14 +18,24 @@ namespace Escritorio
         [STAThread]
         static void Main()
         {
+            
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+
+
             Application.Run(new formLogin());
+            
 
-            // Conectarse a Base de Datos
 
-        //
+
+
+
+
+
+
+            //
         }
     }
 }

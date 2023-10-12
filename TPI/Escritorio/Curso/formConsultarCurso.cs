@@ -37,58 +37,119 @@ namespace Escritorio.Curso
 
         private void cbxEspecialidades_SelectionChangeCommitted(object sender, EventArgs e)
         {
-
-            foreach (TPI.Entidades.Plan pl in TPI.Negocio.Plan.GetPlanesPorEspecialidad(especialidad))
-            {
-                cbxPlanes.Items.Add(pl.Anio);
-            }
-            foreach (TPI.Entidades.Comision com in TPI.Negocio.Comision.BuscarComisionesPorEspecialidad(especialidad))
-            {
-                cbxComision.Items.Add(com.NroComision);
-            }
-            cbxPlanes.Enabled = true;
-            cbxComision.Enabled = true;
-            string desc_especialidad = cbxEspecialidades.SelectedItem.ToString();
-            especialidad = TPI.Negocio.Especialidad.Getespecialidadpordesc(desc_especialidad);
         }
 
         private async void cbxPlanes_SelectionChangeCommitted(object sender, EventArgs e)
         {
+          
+        }
+
+        private void cbxMaterias_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void cbxComision_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (materia != null && comision != null)
+                {
+                    curso = TPI.Negocio.Curso.BuscarCursoPorMateriaComision(materia, comision);
+                    
+                    if (curso == null) { MessageBox.Show("Curso no encontrado"); }
+                    else { 
+                    formMostrarCurso formMostrarCurso = new formMostrarCurso(curso);
+                    formMostrarCurso.Show();
+                    }
+                    
+                }
+                else { MessageBox.Show("Error en datos del formulario"); }
+            }
+            catch
+            {
+                MessageBox.Show("Error al buscar o mostrar el curso");
+            }
+        }
+
+        private void cbxEspecialidades_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbxPlanes.Items.Clear();
+            cbxMaterias.Items.Clear();
+            cbxComision.Items.Clear();
+            if (cbxEspecialidades.SelectedItem != null)
+            {
+                var desc_especialidad = cbxEspecialidades.SelectedItem.ToString();
+                if (desc_especialidad != null)
+                {
+                    especialidad = TPI.Negocio.Especialidad.Getespecialidadpordesc(desc_especialidad);
+
+                    if (especialidad != null)
+                    {
+                        
+                        foreach (TPI.Entidades.Plan pl in TPI.Negocio.Plan.GetPlanesPorEspecialidad(especialidad))
+                        {
+                            cbxPlanes.Items.Add(pl.Anio);
+                        }
+                        
+                        foreach (TPI.Entidades.Comision com in TPI.Negocio.Comision.BuscarComisionesPorEspecialidad(especialidad))
+                        {
+                            cbxComision.Items.Add(com.NroComision);
+                        }
+                        cbxPlanes.Enabled = true;
+                        cbxComision.Enabled = true;
+                    }
+                }
+            }
+        }
+
+        private async void cbxPlanes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbxMaterias.Items.Clear();
             foreach (TPI.Entidades.Materia mat in TPI.Negocio.Materia.GetMateriasPorPlan(plan))
             {
                 cbxMaterias.Items.Add(mat.Descripcion);
             }
             cbxMaterias.Enabled = true;
-            int anio = int.Parse(cbxPlanes.SelectedItem.ToString());
-            plan = await TPI.Negocio.Plan.GetPlanPorEspecialidadAnio(especialidad, anio);
-        }
-
-        private void cbxMaterias_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-            string desc_materia = cbxMaterias.SelectedItem.ToString();
-            materia = TPI.Negocio.Materia.GetMateriaPorDescripcionYPlan(desc_materia, plan);
-        }
-
-        private void cbxComision_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-            int nro_com = int.Parse(cbxComision.SelectedItem.ToString());
-            comision = TPI.Negocio.Comision.BuscarComisionPorNroEspecialidad(nro_com, especialidad);
-
-
-        }
-
-        private void btnConsultar_Click(object sender, EventArgs e)
-        {
-            try 
-            { 
-            curso = TPI.Negocio.Curso.BuscarCursoPorMateriaComision(materia, comision);
-                formMostrarCurso formMostrarCurso = new formMostrarCurso(curso);
-                formMostrarCurso.Show();
-            }
-            catch 
+            if (cbxPlanes.SelectedItem != null)
             {
-                MessageBox.Show("Error al buscar o mostrar el curso");
+                var anio = Convert.ToInt32((cbxPlanes.SelectedItem.ToString()));
+                if (especialidad != null)
+                {
+                    plan = await TPI.Negocio.Plan.GetPlanPorEspecialidadAnio(especialidad, anio);
+                }
             }
+        }
+
+        private void cbxMaterias_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbxMaterias.SelectedItem != null)
+            {
+                var desc_materia = cbxMaterias.SelectedItem.ToString();
+                if (desc_materia != null)
+                {
+                    materia = TPI.Negocio.Materia.GetMateriaPorDescripcionYPlan(desc_materia, plan);
+                }
+            }
+
+        }
+
+        private void cbxComision_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbxComision.SelectedItem != null)
+            {
+                var nro_com = Convert.ToInt32(cbxComision.SelectedItem.ToString());
+                if (especialidad != null)
+                {
+                    comision = TPI.Negocio.Comision.BuscarComisionPorNroEspecialidad(nro_com, especialidad);
+                }
+            }
+
         }
     }
 }

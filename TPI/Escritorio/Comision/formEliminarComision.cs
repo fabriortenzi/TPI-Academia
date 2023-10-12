@@ -31,19 +31,11 @@ namespace Escritorio.Comision
 
         private void cbxEspecialidad_StyleChanged(object sender, EventArgs e)
         {
-            string desc_especialidad = cbxEspecialidad.SelectedItem.ToString();
-            esp = TPI.Negocio.Especialidad.Getespecialidadpordesc(desc_especialidad);
-
-            foreach (var com in TPI.Negocio.Comision.BuscarComisionesPorEspecialidad(esp))
-            {
-                cbxComision.Items.Add(com.NroComision);
-            }
-            cbxComision.Enabled = true;
         }
 
         private void cbxComision_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            nro_com = int.Parse(cbxComision.SelectedItem.ToString());
+            
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -55,7 +47,7 @@ namespace Escritorio.Comision
         {
             DialogResult resultado = MessageBox.Show("¿Estás seguro de que deseas eliminar la comision?", "Confirmación de eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            // Comprobar la respuesta del usuario.
+            
             if (resultado == DialogResult.Yes)
             {
                 TPI.Entidades.Comision comision = TPI.Negocio.Comision.BuscarComisionPorNroEspecialidad(nro_com, esp);
@@ -65,6 +57,24 @@ namespace Escritorio.Comision
             else
             {
             }
+        }
+
+        private void cbxEspecialidad_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string desc_especialidad = cbxEspecialidad.SelectedItem.ToString();
+            esp = TPI.Negocio.Especialidad.Getespecialidadpordesc(desc_especialidad);
+
+            foreach (var com in TPI.Negocio.Comision.BuscarComisionesPorEspecialidad(esp))
+            {
+                cbxComision.Items.Add(com.NroComision);
+            }
+            cbxComision.Enabled = true;
+
+        }
+
+        private void cbxComision_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            nro_com = int.Parse(cbxComision.SelectedItem.ToString());
         }
     }
 }

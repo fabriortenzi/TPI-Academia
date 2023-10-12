@@ -22,8 +22,8 @@ namespace TPI.Negocio
         public static List<Entidades.Plan> GetPlanesPorEspecialidad(Entidades.Especialidad especialidad)
             => Datos.Plan.GetPlanesPorEspecialidad(especialidad);
 
-        public async static Task<Entidades.Plan> GetPlanPorEspecialidadAnio(Entidades.Especialidad especialidad, int año)
-            => await Datos.Plan.GetPlanPorEspecialidadAnio(especialidad, año);
+        public static Task<Entidades.Plan> GetPlanPorEspecialidadAnio(Entidades.Especialidad especialidad, int año)
+        { return Datos.Plan.GetPlanPorEspecialidadAnio(especialidad, año); }
         public static List<Entidades.Plan> GetAll()
         {
             return Datos.Plan.GetAll();

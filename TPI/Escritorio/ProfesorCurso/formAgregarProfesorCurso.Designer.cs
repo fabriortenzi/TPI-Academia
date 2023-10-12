@@ -28,104 +28,108 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnAgregar = new System.Windows.Forms.Button();
-            this.lblMateria = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtCargo = new System.Windows.Forms.TextBox();
-            this.cbxMateria = new System.Windows.Forms.ComboBox();
-            this.cbxLegajo = new System.Windows.Forms.ComboBox();
-            this.SuspendLayout();
+            btnCancelar = new System.Windows.Forms.Button();
+            btnAgregar = new System.Windows.Forms.Button();
+            lblMateria = new System.Windows.Forms.Label();
+            label1 = new System.Windows.Forms.Label();
+            label4 = new System.Windows.Forms.Label();
+            txtCargo = new System.Windows.Forms.TextBox();
+            cbxMateria = new System.Windows.Forms.ComboBox();
+            cbxLegajo = new System.Windows.Forms.ComboBox();
+            SuspendLayout();
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(19, 240);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 15;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Location = new System.Drawing.Point(19, 240);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new System.Drawing.Size(75, 23);
+            btnCancelar.TabIndex = 15;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = true;
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(144, 240);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
-            this.btnAgregar.TabIndex = 14;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
+            btnAgregar.Location = new System.Drawing.Point(144, 240);
+            btnAgregar.Name = "btnAgregar";
+            btnAgregar.Size = new System.Drawing.Size(75, 23);
+            btnAgregar.TabIndex = 14;
+            btnAgregar.Text = "Agregar";
+            btnAgregar.UseVisualStyleBackColor = true;
+            btnAgregar.Click += btnAgregar_Click_1;
             // 
             // lblMateria
             // 
-            this.lblMateria.AutoSize = true;
-            this.lblMateria.Location = new System.Drawing.Point(35, 81);
-            this.lblMateria.Name = "lblMateria";
-            this.lblMateria.Size = new System.Drawing.Size(41, 15);
-            this.lblMateria.TabIndex = 11;
-            this.lblMateria.Text = "Curso:";
+            lblMateria.AutoSize = true;
+            lblMateria.Location = new System.Drawing.Point(35, 81);
+            lblMateria.Name = "lblMateria";
+            lblMateria.Size = new System.Drawing.Size(41, 15);
+            lblMateria.TabIndex = 11;
+            lblMateria.Text = "Curso:";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(34, 32);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 15);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Legajo:";
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(34, 32);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(45, 15);
+            label1.TabIndex = 9;
+            label1.Text = "Legajo:";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(29, 132);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(42, 15);
-            this.label4.TabIndex = 18;
-            this.label4.Text = "Cargo:";
+            label4.AutoSize = true;
+            label4.Location = new System.Drawing.Point(29, 132);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(42, 15);
+            label4.TabIndex = 18;
+            label4.Text = "Cargo:";
             // 
             // txtCargo
             // 
-            this.txtCargo.Location = new System.Drawing.Point(85, 127);
-            this.txtCargo.Name = "txtCargo";
-            this.txtCargo.Size = new System.Drawing.Size(100, 23);
-            this.txtCargo.TabIndex = 19;
+            txtCargo.Location = new System.Drawing.Point(85, 127);
+            txtCargo.Name = "txtCargo";
+            txtCargo.Size = new System.Drawing.Size(100, 23);
+            txtCargo.TabIndex = 19;
             // 
             // cbxMateria
             // 
-            this.cbxMateria.FormattingEnabled = true;
-            this.cbxMateria.Location = new System.Drawing.Point(85, 78);
-            this.cbxMateria.Name = "cbxMateria";
-            this.cbxMateria.Size = new System.Drawing.Size(100, 23);
-            this.cbxMateria.TabIndex = 20;
-            this.cbxMateria.SelectionChangeCommitted += new System.EventHandler(this.cbxMateria_SelectionChangeCommitted);
+            cbxMateria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cbxMateria.FormattingEnabled = true;
+            cbxMateria.Location = new System.Drawing.Point(85, 78);
+            cbxMateria.Name = "cbxMateria";
+            cbxMateria.Size = new System.Drawing.Size(100, 23);
+            cbxMateria.TabIndex = 20;
+            cbxMateria.SelectedIndexChanged += cbxMateria_SelectedIndexChanged;
+            cbxMateria.SelectionChangeCommitted += cbxMateria_SelectionChangeCommitted;
             // 
             // cbxLegajo
             // 
-            this.cbxLegajo.FormattingEnabled = true;
-            this.cbxLegajo.Location = new System.Drawing.Point(85, 29);
-            this.cbxLegajo.Name = "cbxLegajo";
-            this.cbxLegajo.Size = new System.Drawing.Size(100, 23);
-            this.cbxLegajo.TabIndex = 21;
-            this.cbxLegajo.SelectionChangeCommitted += new System.EventHandler(this.cbxLegajo_SelectionChangeCommitted);
+            cbxLegajo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cbxLegajo.FormattingEnabled = true;
+            cbxLegajo.Location = new System.Drawing.Point(85, 29);
+            cbxLegajo.Name = "cbxLegajo";
+            cbxLegajo.Size = new System.Drawing.Size(100, 23);
+            cbxLegajo.TabIndex = 21;
+            cbxLegajo.SelectedIndexChanged += cbxLegajo_SelectedIndexChanged;
+            cbxLegajo.SelectionChangeCommitted += cbxLegajo_SelectionChangeCommitted;
             // 
             // formAgregarProfesorCurso
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(245, 284);
-            this.Controls.Add(this.cbxLegajo);
-            this.Controls.Add(this.cbxMateria);
-            this.Controls.Add(this.txtCargo);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.lblMateria);
-            this.Controls.Add(this.label1);
-            this.Name = "formAgregarProfesorCurso";
-            this.Text = "formProfesorCurso";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(245, 284);
+            Controls.Add(cbxLegajo);
+            Controls.Add(cbxMateria);
+            Controls.Add(txtCargo);
+            Controls.Add(label4);
+            Controls.Add(btnCancelar);
+            Controls.Add(btnAgregar);
+            Controls.Add(lblMateria);
+            Controls.Add(label1);
+            Name = "formAgregarProfesorCurso";
+            Text = "formProfesorCurso";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

@@ -28,10 +28,10 @@ namespace Escritorio.Comision
 
         private void btnCrear_Click(object sender, EventArgs e)
         {
-            int idCom = 0;
+            int nroCom = 0;
             try
             {
-                idCom = Convert.ToInt32(txtNroCom.Text);
+                nroCom = Convert.ToInt32(txtNroCom.Text);
             }
             catch
             {
@@ -39,11 +39,16 @@ namespace Escritorio.Comision
                 return;
             }
 
-            if (idCom != 0)
-            {
-                var comision = TPI.Negocio.Comision.Crear(idCom, Especialidad);
+            
+            if (nroCom == 0) { MessageBox.Show("El id de comision invalido"); }
+
+            var com = TPI.Negocio.Comision.BuscarComisionPorNroEspecialidad(nroCom, Especialidad);
+
+                    
+            if(nroCom !=0 && com == null) { 
+             var comision = TPI.Negocio.Comision.Crear(nroCom, Especialidad);
                 try
-                {
+                {   
                     TPI.Negocio.Comision.Agregar(comision);
                     MessageBox.Show("Comision creada con exito!");
                     Dispose();
@@ -54,6 +59,7 @@ namespace Escritorio.Comision
                     return;
                 }
             }
+            else { MessageBox.Show("La comision ya existe"); }
         }
 
         private void formCrearComision_Load(object sender, EventArgs e)

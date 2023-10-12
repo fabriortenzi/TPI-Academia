@@ -12,9 +12,10 @@ namespace TPI.Datos
     {
         public static void Agregar(Entidades.ProfesorCurso profesor_curso)
         {
-            using (var context = ApplicationContext.CreateContext())
+           using (var context = ApplicationContext.CreateContext())
             {
-                context.profesores_cursos.Add(profesor_curso);
+                context.profesores_cursos.Attach(profesor_curso);
+                context.Entry(profesor_curso).State = EntityState.Added;
                 context.SaveChanges();
             }
         }
@@ -62,9 +63,9 @@ namespace TPI.Datos
         public static void Eliminar(Entidades.ProfesorCurso profesor_curso)
         {
             using (var context = ApplicationContext.CreateContext())
-            {                                               
-                    context.profesores_cursos.Remove(profesor_curso);
-                    context.SaveChanges();             
+            {
+                context.profesores_cursos.Remove(profesor_curso);
+                context.SaveChanges();             
             }
         }
 

@@ -27,6 +27,7 @@ namespace TPI.Negocio
         }
         public static Entidades.Cursado Crear(Entidades.Usuario usuario, Entidades.Curso curso, DateTime fechaHoraInscripcion) 
         {
+            TPI.Datos.Curso.DescontarCupo(curso);
             return new Entidades.Cursado(usuario, curso, fechaHoraInscripcion);
         }
         public static void Agregar(Entidades.Cursado Cursado)
