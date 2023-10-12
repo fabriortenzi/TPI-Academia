@@ -47,7 +47,7 @@
             label9 = new System.Windows.Forms.Label();
             label8 = new System.Windows.Forms.Label();
             cbxComision = new System.Windows.Forms.ComboBox();
-            txtDia = new System.Windows.Forms.TextBox();
+            cbxDiaSemana = new System.Windows.Forms.ComboBox();
             SuspendLayout();
             // 
             // label1
@@ -75,7 +75,7 @@
             cbxEspecialidades.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cbxEspecialidades.FormattingEnabled = true;
             cbxEspecialidades.Location = new System.Drawing.Point(151, 53);
-            cbxEspecialidades.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            cbxEspecialidades.Margin = new System.Windows.Forms.Padding(2);
             cbxEspecialidades.Name = "cbxEspecialidades";
             cbxEspecialidades.Size = new System.Drawing.Size(148, 23);
             cbxEspecialidades.TabIndex = 2;
@@ -97,7 +97,7 @@
             cbxPlanes.Enabled = false;
             cbxPlanes.FormattingEnabled = true;
             cbxPlanes.Location = new System.Drawing.Point(151, 97);
-            cbxPlanes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            cbxPlanes.Margin = new System.Windows.Forms.Padding(2);
             cbxPlanes.Name = "cbxPlanes";
             cbxPlanes.Size = new System.Drawing.Size(148, 23);
             cbxPlanes.TabIndex = 4;
@@ -109,7 +109,7 @@
             cbxMaterias.Enabled = false;
             cbxMaterias.FormattingEnabled = true;
             cbxMaterias.Location = new System.Drawing.Point(151, 134);
-            cbxMaterias.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            cbxMaterias.Margin = new System.Windows.Forms.Padding(2);
             cbxMaterias.Name = "cbxMaterias";
             cbxMaterias.Size = new System.Drawing.Size(148, 23);
             cbxMaterias.TabIndex = 5;
@@ -148,7 +148,7 @@
             // txtAño
             // 
             txtAño.Location = new System.Drawing.Point(151, 170);
-            txtAño.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            txtAño.Margin = new System.Windows.Forms.Padding(2);
             txtAño.Name = "txtAño";
             txtAño.PlaceholderText = "AAAA";
             txtAño.Size = new System.Drawing.Size(101, 23);
@@ -157,7 +157,7 @@
             // txtCupo
             // 
             txtCupo.Location = new System.Drawing.Point(151, 203);
-            txtCupo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            txtCupo.Margin = new System.Windows.Forms.Padding(2);
             txtCupo.Name = "txtCupo";
             txtCupo.Size = new System.Drawing.Size(101, 23);
             txtCupo.TabIndex = 10;
@@ -165,7 +165,7 @@
             // btnCrear
             // 
             btnCrear.Location = new System.Drawing.Point(217, 257);
-            btnCrear.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            btnCrear.Margin = new System.Windows.Forms.Padding(2);
             btnCrear.Name = "btnCrear";
             btnCrear.Size = new System.Drawing.Size(180, 34);
             btnCrear.TabIndex = 11;
@@ -235,19 +235,22 @@
             cbxComision.Enabled = false;
             cbxComision.FormattingEnabled = true;
             cbxComision.Location = new System.Drawing.Point(402, 53);
-            cbxComision.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            cbxComision.Margin = new System.Windows.Forms.Padding(2);
             cbxComision.Name = "cbxComision";
             cbxComision.Size = new System.Drawing.Size(148, 23);
             cbxComision.TabIndex = 21;
             cbxComision.SelectedIndexChanged += cbxComision_SelectedIndexChanged;
             cbxComision.SelectionChangeCommitted += cbxComision_SelectionChangeCommitted;
             // 
-            // txtDia
+            // cbxDiaSemana
             // 
-            txtDia.Location = new System.Drawing.Point(403, 90);
-            txtDia.Name = "txtDia";
-            txtDia.Size = new System.Drawing.Size(121, 23);
-            txtDia.TabIndex = 14;
+            cbxDiaSemana.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cbxDiaSemana.FormattingEnabled = true;
+            cbxDiaSemana.Location = new System.Drawing.Point(405, 89);
+            cbxDiaSemana.Name = "cbxDiaSemana";
+            cbxDiaSemana.Size = new System.Drawing.Size(145, 23);
+            cbxDiaSemana.TabIndex = 22;
+            cbxDiaSemana.SelectedIndexChanged += cbxDiaSemana_SelectedIndexChanged;
             // 
             // formCrearCurso
             // 
@@ -255,13 +258,13 @@
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(601, 310);
+            Controls.Add(cbxDiaSemana);
             Controls.Add(cbxComision);
             Controls.Add(label8);
             Controls.Add(label9);
             Controls.Add(dtpHoraFin);
             Controls.Add(dtpHoraIni);
             Controls.Add(label7);
-            Controls.Add(txtDia);
             Controls.Add(lblComision);
             Controls.Add(btnCrear);
             Controls.Add(txtCupo);
@@ -275,7 +278,7 @@
             Controls.Add(cbxEspecialidades);
             Controls.Add(label2);
             Controls.Add(label1);
-            Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            Margin = new System.Windows.Forms.Padding(2);
             Name = "formCrearCurso";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "Crear Curso";
@@ -305,6 +308,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cbxComision;
-        private System.Windows.Forms.TextBox txtDia;
+        private System.Windows.Forms.ComboBox cbxDiaSemana;
     }
 }

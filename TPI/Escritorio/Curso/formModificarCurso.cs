@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TPI.Datos;
 
 namespace Escritorio.Curso
 {
@@ -45,7 +46,14 @@ namespace Escritorio.Curso
                 hora_ini = dtpHoraIni.Value.TimeOfDay;
                 hora_fin = dtpHoraFin.Value.TimeOfDay;
 
+
+                if(curso !=null && año>0 && curso.Materia!=null && curso.Comision !=null && cupo > 0) { 
                 TPI.Negocio.Curso.Cambiar(curso, año, curso.Materia, curso.Comision, cupo, dia, hora_ini, hora_fin);
+                }
+                if(curso == null) { MessageBox.Show("El curso no existe"); }
+                if (año <=0) { MessageBox.Show("Año incorrecto"); }
+                if (cupo <= 0) { MessageBox.Show("Cupo incorrecto"); }
+                if (curso.Materia == null || curso.Comision == null) { MessageBox.Show("El curso no posee o Materia o comision"); }
 
             }
             catch 

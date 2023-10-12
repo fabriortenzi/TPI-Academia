@@ -17,10 +17,10 @@ namespace Escritorio.ProfesorCurso
         public formConsultarProfesorCurso()
         {
             InitializeComponent();
-            
+
         }
 
-      
+
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -31,9 +31,10 @@ namespace Escritorio.ProfesorCurso
 
             TPI.Entidades.ProfesorCurso profesorCurso = TPI.Negocio.ProfesorCurso.BuscarPorUsuarioCurso(Usuario, Curso);
 
-            if (profesorCurso != null) { 
-            formMostrarProfesorCurso frmMostrarProfesorCurso = new formMostrarProfesorCurso(profesorCurso);
-            frmMostrarProfesorCurso.Show();
+            if (profesorCurso != null)
+            {
+                formMostrarProfesorCurso frmMostrarProfesorCurso = new formMostrarProfesorCurso(profesorCurso);
+                frmMostrarProfesorCurso.Show();
             }
             else { MessageBox.Show("Error"); }
 
@@ -62,10 +63,10 @@ namespace Escritorio.ProfesorCurso
         private void formConsultarProfesorCurso_Load(object sender, EventArgs e)
         {
             List<TPI.Entidades.Usuario> usuarios = TPI.Negocio.Usuario.GetAllProfesores();
-            
+
 
             foreach (TPI.Entidades.Usuario usu in usuarios) { cbxLegajo.Items.Add(usu.Legajo); }
-           
+
 
 
         }

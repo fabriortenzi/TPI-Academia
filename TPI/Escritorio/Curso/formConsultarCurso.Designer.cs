@@ -29,145 +29,148 @@ namespace Escritorio.Curso
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnConsultar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.cbxComision = new System.Windows.Forms.ComboBox();
-            this.lblComision = new System.Windows.Forms.Label();
-            this.cbxMaterias = new System.Windows.Forms.ComboBox();
-            this.cbxPlanes = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cbxEspecialidades = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.SuspendLayout();
+            btnConsultar = new System.Windows.Forms.Button();
+            btnCancelar = new System.Windows.Forms.Button();
+            cbxComision = new System.Windows.Forms.ComboBox();
+            lblComision = new System.Windows.Forms.Label();
+            cbxMaterias = new System.Windows.Forms.ComboBox();
+            cbxPlanes = new System.Windows.Forms.ComboBox();
+            label3 = new System.Windows.Forms.Label();
+            label2 = new System.Windows.Forms.Label();
+            cbxEspecialidades = new System.Windows.Forms.ComboBox();
+            label1 = new System.Windows.Forms.Label();
+            SuspendLayout();
             // 
             // btnConsultar
             // 
-            this.btnConsultar.Location = new System.Drawing.Point(200, 241);
-            this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(75, 23);
-            this.btnConsultar.TabIndex = 37;
-            this.btnConsultar.Text = "Consultar";
-            this.btnConsultar.UseVisualStyleBackColor = true;
-            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
+            btnConsultar.Location = new System.Drawing.Point(200, 241);
+            btnConsultar.Name = "btnConsultar";
+            btnConsultar.Size = new System.Drawing.Size(75, 23);
+            btnConsultar.TabIndex = 37;
+            btnConsultar.Text = "Consultar";
+            btnConsultar.UseVisualStyleBackColor = true;
+            btnConsultar.Click += btnConsultar_Click;
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(15, 241);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 36;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            btnCancelar.Location = new System.Drawing.Point(15, 241);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new System.Drawing.Size(75, 23);
+            btnCancelar.TabIndex = 36;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // cbxComision
             // 
-            this.cbxComision.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxComision.Enabled = false;
-            this.cbxComision.FormattingEnabled = true;
-            this.cbxComision.Location = new System.Drawing.Point(94, 144);
-            this.cbxComision.Margin = new System.Windows.Forms.Padding(2);
-            this.cbxComision.Name = "cbxComision";
-            this.cbxComision.Size = new System.Drawing.Size(148, 23);
-            this.cbxComision.TabIndex = 35;
-            this.cbxComision.SelectionChangeCommitted += new System.EventHandler(this.cbxComision_SelectionChangeCommitted);
+            cbxComision.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cbxComision.Enabled = false;
+            cbxComision.FormattingEnabled = true;
+            cbxComision.Location = new System.Drawing.Point(94, 144);
+            cbxComision.Margin = new System.Windows.Forms.Padding(2);
+            cbxComision.Name = "cbxComision";
+            cbxComision.Size = new System.Drawing.Size(148, 23);
+            cbxComision.TabIndex = 35;
+            cbxComision.SelectedIndexChanged += cbxComision_SelectedIndexChanged;
+            cbxComision.SelectionChangeCommitted += cbxComision_SelectionChangeCommitted;
             // 
             // lblComision
             // 
-            this.lblComision.AutoSize = true;
-            this.lblComision.Location = new System.Drawing.Point(28, 150);
-            this.lblComision.Name = "lblComision";
-            this.lblComision.Size = new System.Drawing.Size(61, 15);
-            this.lblComision.TabIndex = 34;
-            this.lblComision.Text = "Comision:";
+            lblComision.AutoSize = true;
+            lblComision.Location = new System.Drawing.Point(28, 150);
+            lblComision.Name = "lblComision";
+            lblComision.Size = new System.Drawing.Size(61, 15);
+            lblComision.TabIndex = 34;
+            lblComision.Text = "Comision:";
             // 
             // cbxMaterias
             // 
-            this.cbxMaterias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxMaterias.Enabled = false;
-            this.cbxMaterias.FormattingEnabled = true;
-            this.cbxMaterias.Location = new System.Drawing.Point(94, 98);
-            this.cbxMaterias.Margin = new System.Windows.Forms.Padding(2);
-            this.cbxMaterias.Name = "cbxMaterias";
-            this.cbxMaterias.Size = new System.Drawing.Size(148, 23);
-            this.cbxMaterias.TabIndex = 33;
-            this.cbxMaterias.SelectionChangeCommitted += new System.EventHandler(this.cbxMaterias_SelectionChangeCommitted);
+            cbxMaterias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cbxMaterias.Enabled = false;
+            cbxMaterias.FormattingEnabled = true;
+            cbxMaterias.Location = new System.Drawing.Point(94, 98);
+            cbxMaterias.Margin = new System.Windows.Forms.Padding(2);
+            cbxMaterias.Name = "cbxMaterias";
+            cbxMaterias.Size = new System.Drawing.Size(148, 23);
+            cbxMaterias.TabIndex = 33;
+            cbxMaterias.SelectedIndexChanged += cbxMaterias_SelectedIndexChanged;
+            cbxMaterias.SelectionChangeCommitted += cbxMaterias_SelectionChangeCommitted;
             // 
             // cbxPlanes
             // 
-            this.cbxPlanes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxPlanes.Enabled = false;
-            this.cbxPlanes.FormattingEnabled = true;
-            this.cbxPlanes.Location = new System.Drawing.Point(94, 61);
-            this.cbxPlanes.Margin = new System.Windows.Forms.Padding(2);
-            this.cbxPlanes.Name = "cbxPlanes";
-            this.cbxPlanes.Size = new System.Drawing.Size(148, 23);
-            this.cbxPlanes.TabIndex = 32;
-            this.cbxPlanes.SelectionChangeCommitted += new System.EventHandler(this.cbxPlanes_SelectionChangeCommitted);
+            cbxPlanes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cbxPlanes.Enabled = false;
+            cbxPlanes.FormattingEnabled = true;
+            cbxPlanes.Location = new System.Drawing.Point(94, 61);
+            cbxPlanes.Margin = new System.Windows.Forms.Padding(2);
+            cbxPlanes.Name = "cbxPlanes";
+            cbxPlanes.Size = new System.Drawing.Size(148, 23);
+            cbxPlanes.TabIndex = 32;
+            cbxPlanes.SelectedIndexChanged += cbxPlanes_SelectedIndexChanged;
+            cbxPlanes.SelectionChangeCommitted += cbxPlanes_SelectionChangeCommitted;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(40, 106);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 15);
-            this.label3.TabIndex = 31;
-            this.label3.Text = "Materia:";
+            label3.AutoSize = true;
+            label3.Location = new System.Drawing.Point(40, 106);
+            label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(50, 15);
+            label3.TabIndex = 31;
+            label3.Text = "Materia:";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(57, 61);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(33, 15);
-            this.label2.TabIndex = 30;
-            this.label2.Text = "Plan:";
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(57, 61);
+            label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(33, 15);
+            label2.TabIndex = 30;
+            label2.Text = "Plan:";
             // 
             // cbxEspecialidades
             // 
-            this.cbxEspecialidades.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxEspecialidades.FormattingEnabled = true;
-            this.cbxEspecialidades.Location = new System.Drawing.Point(94, 18);
-            this.cbxEspecialidades.Margin = new System.Windows.Forms.Padding(2);
-            this.cbxEspecialidades.Name = "cbxEspecialidades";
-            this.cbxEspecialidades.Size = new System.Drawing.Size(148, 23);
-            this.cbxEspecialidades.TabIndex = 29;
-            this.cbxEspecialidades.SelectionChangeCommitted += new System.EventHandler(this.cbxEspecialidades_SelectionChangeCommitted);
+            cbxEspecialidades.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cbxEspecialidades.FormattingEnabled = true;
+            cbxEspecialidades.Location = new System.Drawing.Point(94, 18);
+            cbxEspecialidades.Margin = new System.Windows.Forms.Padding(2);
+            cbxEspecialidades.Name = "cbxEspecialidades";
+            cbxEspecialidades.Size = new System.Drawing.Size(148, 23);
+            cbxEspecialidades.TabIndex = 29;
+            cbxEspecialidades.SelectedIndexChanged += cbxEspecialidades_SelectedIndexChanged;
+            cbxEspecialidades.SelectionChangeCommitted += cbxEspecialidades_SelectionChangeCommitted;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 21);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 15);
-            this.label1.TabIndex = 28;
-            this.label1.Text = "Especialidad:";
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(15, 21);
+            label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(75, 15);
+            label1.TabIndex = 28;
+            label1.Text = "Especialidad:";
             // 
             // formConsultarCurso
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(291, 283);
-            this.Controls.Add(this.btnConsultar);
-            this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.cbxComision);
-            this.Controls.Add(this.lblComision);
-            this.Controls.Add(this.cbxMaterias);
-            this.Controls.Add(this.cbxPlanes);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.cbxEspecialidades);
-            this.Controls.Add(this.label1);
-            this.Name = "formConsultarCurso";
-            this.Text = "formConsultarCurso";
-            this.Load += new System.EventHandler(this.formConsultarCurso_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(291, 283);
+            Controls.Add(btnConsultar);
+            Controls.Add(btnCancelar);
+            Controls.Add(cbxComision);
+            Controls.Add(lblComision);
+            Controls.Add(cbxMaterias);
+            Controls.Add(cbxPlanes);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(cbxEspecialidades);
+            Controls.Add(label1);
+            Name = "formConsultarCurso";
+            Text = "formConsultarCurso";
+            Load += formConsultarCurso_Load;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

@@ -59,8 +59,8 @@ INSERT INTO [dbo].[comisiones]([NroComision],[EspecialidadId])
 VALUES(101,1),(102,2),(103,1),(104,3),(105,2);
 
 
-INSERT INTO [tpi2023tm01].[dbo].[usuarios] (Contraseña, PersonaDni, TipoDeUsuarioId)
-VALUES ('c', 43127777, 1), ('c', 43127778, 2), ('c', 43127779, 3);
+INSERT INTO [tpi2023tm01].[dbo].[usuarios] (Contraseña, PersonaDni, TipoDeUsuarioId, PlanId)
+VALUES ('c', 43127777, 3, null), ('c', 43127778, 2, null), ('c', 43127779, 1, 1);
 
 
 INSERT INTO [tpi2023tm01].[dbo].[materias] (PlanId, Descripcion, HorasSemanales, HorasTotales)
@@ -77,4 +77,3 @@ VALUES
     (2023, 3, 3, 40, 'Miércoles', '10:00:00', '14:00:00'),
     (2023, 1, 4, 20, 'Jueves', '11:00:00', '15:00:00'),
     (2023, 2, 5, 35, 'Viernes', '12:00:00', '16:00:00');
-

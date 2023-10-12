@@ -1,4 +1,7 @@
 using Escritorio.Comision;
+using Escritorio.Curso;
+using Escritorio.Inscripcion;
+using Escritorio.ProfesorCurso;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,14 +25,16 @@ namespace Escritorio
 
 
 
-            //Application.Run(new formLogin());
-
-
-            Application.Run(new formCrearCurso());
-
-             
-
+            Application.Run(new formLogin());
             
+
+
+
+
+
+
+
+
             //
         }
     }

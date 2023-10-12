@@ -28,7 +28,10 @@ namespace Escritorio.ProfesorCurso
         {
 
             string cargo = txtCargo.Text;
+            //Hay que validar el cargo?
             TPI.Negocio.ProfesorCurso.Cambiar(profesorCurso, cargo, profesorCurso.Usuario, profesorCurso.Curso);
+            MessageBox.Show($"Cargo: {cargo} modificado y agregado con exito");
+            Dispose();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

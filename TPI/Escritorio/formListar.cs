@@ -68,13 +68,17 @@ namespace Escritorio.Generalizado
             {
                 dgvGrilla.DataSource = TPI.Negocio.ProfesorCurso.GetAll();
             }
+            else if (tipoDato == typeof(TPI.Entidades.Comision))
+            {
+                dgvGrilla.DataSource = TPI.Negocio.Comision.GetAll();
+            }
             else if (tipoDato == typeof(TPI.Entidades.Curso))
             {
                 dgvGrilla.DataSource = TPI.Negocio.Curso.GetAll();
             }
             else if (tipoDato == typeof(TPI.Entidades.Cursado))
             {
-                //dgvGrilla.DataSource = TPI.Negocio.InscripcionCursado.GetAllInscripcion();
+                dgvGrilla.DataSource = TPI.Negocio.Cursado.GetAll();
             }
             else if (tipoDato == typeof(TPI.Entidades.Materia))
             {

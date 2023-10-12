@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,6 +11,18 @@ namespace TPI.Datos
 {
     public class Curso
     {
+        public static void DescontarCupo(Entidades.Curso curso)
+        {
+            using (ApplicationContext context = ApplicationContext.CreateContext())
+            {
+                Entidades.Curso cursoAcambiar = GetOne(curso.Id);
+               if (cursoAcambiar.Cupo > 0) { 
+               cursoAcambiar.Cupo = cursoAcambiar.Cupo - 1;
+               }
+               else { }
+                context.SaveChanges();
+            }
+        }
         public static void Agregar(Entidades.Curso curso)
         {
             using (var context = ApplicationContext.CreateContext())

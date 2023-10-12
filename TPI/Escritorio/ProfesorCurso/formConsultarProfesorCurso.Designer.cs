@@ -29,88 +29,89 @@ namespace Escritorio.ProfesorCurso
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnConsultar = new System.Windows.Forms.Button();
-            this.cbxLegajo = new System.Windows.Forms.ComboBox();
-            this.cbxCurso = new System.Windows.Forms.ComboBox();
-            this.lblMateria = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.SuspendLayout();
+            btnCancelar = new System.Windows.Forms.Button();
+            btnConsultar = new System.Windows.Forms.Button();
+            cbxLegajo = new System.Windows.Forms.ComboBox();
+            cbxCurso = new System.Windows.Forms.ComboBox();
+            lblMateria = new System.Windows.Forms.Label();
+            label1 = new System.Windows.Forms.Label();
+            SuspendLayout();
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(22, 230);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 25;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            btnCancelar.Location = new System.Drawing.Point(22, 230);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new System.Drawing.Size(75, 23);
+            btnCancelar.TabIndex = 25;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // btnConsultar
             // 
-            this.btnConsultar.Location = new System.Drawing.Point(147, 230);
-            this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(75, 23);
-            this.btnConsultar.TabIndex = 24;
-            this.btnConsultar.Text = "Consultar";
-            this.btnConsultar.UseVisualStyleBackColor = true;
-            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
+            btnConsultar.Location = new System.Drawing.Point(147, 230);
+            btnConsultar.Name = "btnConsultar";
+            btnConsultar.Size = new System.Drawing.Size(75, 23);
+            btnConsultar.TabIndex = 24;
+            btnConsultar.Text = "Consultar";
+            btnConsultar.UseVisualStyleBackColor = true;
+            btnConsultar.Click += btnConsultar_Click;
             // 
             // cbxLegajo
             // 
-            this.cbxLegajo.FormattingEnabled = true;
-            this.cbxLegajo.Location = new System.Drawing.Point(84, 42);
-            this.cbxLegajo.Name = "cbxLegajo";
-            this.cbxLegajo.Size = new System.Drawing.Size(100, 23);
-            this.cbxLegajo.TabIndex = 37;
-            this.cbxLegajo.SelectedIndexChanged += new System.EventHandler(this.cbxLegajo_SelectedIndexChanged);
+            cbxLegajo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cbxLegajo.FormattingEnabled = true;
+            cbxLegajo.Location = new System.Drawing.Point(84, 42);
+            cbxLegajo.Name = "cbxLegajo";
+            cbxLegajo.Size = new System.Drawing.Size(100, 23);
+            cbxLegajo.TabIndex = 37;
+            cbxLegajo.SelectedIndexChanged += cbxLegajo_SelectedIndexChanged;
             // 
             // cbxCurso
             // 
-            this.cbxCurso.Enabled = false;
-            this.cbxCurso.FormattingEnabled = true;
-            this.cbxCurso.Location = new System.Drawing.Point(84, 91);
-            this.cbxCurso.Name = "cbxCurso";
-            this.cbxCurso.Size = new System.Drawing.Size(100, 23);
-            this.cbxCurso.TabIndex = 36;
-            this.cbxCurso.SelectedIndexChanged += new System.EventHandler(this.cbxCurso_SelectedIndexChanged);
+            cbxCurso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cbxCurso.Enabled = false;
+            cbxCurso.FormattingEnabled = true;
+            cbxCurso.Location = new System.Drawing.Point(84, 91);
+            cbxCurso.Name = "cbxCurso";
+            cbxCurso.Size = new System.Drawing.Size(100, 23);
+            cbxCurso.TabIndex = 36;
+            cbxCurso.SelectedIndexChanged += cbxCurso_SelectedIndexChanged;
             // 
             // lblMateria
             // 
-            this.lblMateria.AutoSize = true;
-            this.lblMateria.Location = new System.Drawing.Point(26, 94);
-            this.lblMateria.Name = "lblMateria";
-            this.lblMateria.Size = new System.Drawing.Size(41, 15);
-            this.lblMateria.TabIndex = 35;
-            this.lblMateria.Text = "Curso:";
+            lblMateria.AutoSize = true;
+            lblMateria.Location = new System.Drawing.Point(26, 94);
+            lblMateria.Name = "lblMateria";
+            lblMateria.Size = new System.Drawing.Size(41, 15);
+            lblMateria.TabIndex = 35;
+            lblMateria.Text = "Curso:";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(33, 45);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 15);
-            this.label1.TabIndex = 34;
-            this.label1.Text = "Legajo:";
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(33, 45);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(45, 15);
+            label1.TabIndex = 34;
+            label1.Text = "Legajo:";
             // 
             // formConsultarProfesorCurso
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(245, 281);
-            this.Controls.Add(this.cbxLegajo);
-            this.Controls.Add(this.cbxCurso);
-            this.Controls.Add(this.lblMateria);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnConsultar);
-            this.Name = "formConsultarProfesorCurso";
-            this.Text = "formConsultarProfesorCurso";
-            this.Load += new System.EventHandler(this.formConsultarProfesorCurso_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(245, 281);
+            Controls.Add(cbxLegajo);
+            Controls.Add(cbxCurso);
+            Controls.Add(lblMateria);
+            Controls.Add(label1);
+            Controls.Add(btnCancelar);
+            Controls.Add(btnConsultar);
+            Name = "formConsultarProfesorCurso";
+            Text = "formConsultarProfesorCurso";
+            Load += formConsultarProfesorCurso_Load;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

@@ -28,94 +28,96 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.cbxLegajo = new System.Windows.Forms.ComboBox();
-            this.cbxCurso = new System.Windows.Forms.ComboBox();
-            this.lblMateria = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.SuspendLayout();
+            btnCancelar = new System.Windows.Forms.Button();
+            btnEliminar = new System.Windows.Forms.Button();
+            cbxLegajo = new System.Windows.Forms.ComboBox();
+            lblMateria = new System.Windows.Forms.Label();
+            label1 = new System.Windows.Forms.Label();
+            cbxCurso = new System.Windows.Forms.ComboBox();
+            SuspendLayout();
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(22, 197);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 25;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Location = new System.Drawing.Point(22, 197);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new System.Drawing.Size(75, 23);
+            btnCancelar.TabIndex = 25;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = true;
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(147, 197);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
-            this.btnEliminar.TabIndex = 24;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Location = new System.Drawing.Point(147, 197);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new System.Drawing.Size(75, 23);
+            btnEliminar.TabIndex = 24;
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click_1;
             // 
             // cbxLegajo
             // 
-            this.cbxLegajo.FormattingEnabled = true;
-            this.cbxLegajo.Location = new System.Drawing.Point(95, 44);
-            this.cbxLegajo.Name = "cbxLegajo";
-            this.cbxLegajo.Size = new System.Drawing.Size(100, 23);
-            this.cbxLegajo.TabIndex = 41;
-            this.cbxLegajo.SelectionChangeCommitted += new System.EventHandler(this.cbxLegajo_SelectionChangeCommitted);
-            // 
-            // cbxCurso
-            // 
-            this.cbxCurso.Enabled = false;
-            this.cbxCurso.FormattingEnabled = true;
-            this.cbxCurso.Location = new System.Drawing.Point(95, 93);
-            this.cbxCurso.Name = "cbxCurso";
-            this.cbxCurso.Size = new System.Drawing.Size(100, 23);
-            this.cbxCurso.TabIndex = 40;
-            this.cbxCurso.SelectionChangeCommitted += new System.EventHandler(this.cbxCurso_SelectionChangeCommitted);
+            cbxLegajo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cbxLegajo.FormattingEnabled = true;
+            cbxLegajo.Location = new System.Drawing.Point(95, 44);
+            cbxLegajo.Name = "cbxLegajo";
+            cbxLegajo.Size = new System.Drawing.Size(100, 23);
+            cbxLegajo.TabIndex = 41;
+            cbxLegajo.SelectedIndexChanged += cbxLegajo_SelectedIndexChanged;
+            cbxLegajo.SelectionChangeCommitted += cbxLegajo_SelectionChangeCommitted;
             // 
             // lblMateria
             // 
-            this.lblMateria.AutoSize = true;
-            this.lblMateria.Location = new System.Drawing.Point(37, 96);
-            this.lblMateria.Name = "lblMateria";
-            this.lblMateria.Size = new System.Drawing.Size(41, 15);
-            this.lblMateria.TabIndex = 39;
-            this.lblMateria.Text = "Curso:";
+            lblMateria.AutoSize = true;
+            lblMateria.Location = new System.Drawing.Point(37, 96);
+            lblMateria.Name = "lblMateria";
+            lblMateria.Size = new System.Drawing.Size(41, 15);
+            lblMateria.TabIndex = 39;
+            lblMateria.Text = "Curso:";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(44, 47);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 15);
-            this.label1.TabIndex = 38;
-            this.label1.Text = "Legajo:";
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(44, 47);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(45, 15);
+            label1.TabIndex = 38;
+            label1.Text = "Legajo:";
+            // 
+            // cbxCurso
+            // 
+            cbxCurso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cbxCurso.FormattingEnabled = true;
+            cbxCurso.Location = new System.Drawing.Point(95, 93);
+            cbxCurso.Name = "cbxCurso";
+            cbxCurso.Size = new System.Drawing.Size(100, 23);
+            cbxCurso.TabIndex = 42;
+            cbxCurso.SelectedIndexChanged += cbxCurso_SelectedIndexChanged;
             // 
             // formEliminarProfesorCurso
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(245, 245);
-            this.Controls.Add(this.cbxLegajo);
-            this.Controls.Add(this.cbxCurso);
-            this.Controls.Add(this.lblMateria);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnEliminar);
-            this.Name = "formEliminarProfesorCurso";
-            this.Text = "formEliminarProfesorCurso";
-            this.Load += new System.EventHandler(this.formEliminarProfesorCurso_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(245, 245);
+            Controls.Add(cbxCurso);
+            Controls.Add(cbxLegajo);
+            Controls.Add(lblMateria);
+            Controls.Add(label1);
+            Controls.Add(btnCancelar);
+            Controls.Add(btnEliminar);
+            Name = "formEliminarProfesorCurso";
+            Text = "formEliminarProfesorCurso";
+            Load += formEliminarProfesorCurso_Load;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.ComboBox cbxLegajo;
-        private System.Windows.Forms.ComboBox cbxCurso;
         private System.Windows.Forms.Label lblMateria;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cbxCurso;
     }
 }

@@ -26,12 +26,26 @@ namespace Escritorio
 
         private void formCrearCurso_Load(object sender, EventArgs e)
         {
+            CargarDiaSemana();
             var especialidades = TPI.Negocio.Especialidad.GetAllEspecialidades();
 
             foreach (var esp in especialidades)
             {
                 cbxEspecialidades.Items.Add(esp.Descripcion);
             }
+        }
+
+        private void CargarDiaSemana()
+        {
+            cbxDiaSemana.Items.Clear();
+            cbxDiaSemana.Items.Add("Lunes");
+            cbxDiaSemana.Items.Add("Martes");
+            cbxDiaSemana.Items.Add("Miércoles");
+            cbxDiaSemana.Items.Add("Jueves");
+            cbxDiaSemana.Items.Add("Viernes");
+            cbxDiaSemana.Items.Add("Sábado");
+            cbxDiaSemana.Items.Add("Domingo");
+
         }
 
         private void cbxEspecialidades_TextUpdate(object sender, EventArgs e)
@@ -92,21 +106,50 @@ namespace Escritorio
         {
             var descripcionMateriaSelecc = cbxMaterias.SelectedItem.ToString();
             var materiaSeleccionada = TPI.Negocio.Materia.GetMateriaPorDescripcionYPlan(descripcionMateriaSelecc, Plan);
-            Materia = materiaSeleccionada;
+            if (materiaSeleccionada != null) { Materia = materiaSeleccionada; }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
+            
+            
+            
+            
             int año = 0, cupo = 0;
             string dia;
             TimeSpan hora_ini, hora_fin;
             try
             {
+                   
                 año = Convert.ToInt32(txtAño.Text);
                 cupo = Convert.ToInt32(txtCupo.Text);
-                dia = txtDia.Text;
+                dia = DiaSemana;
                 hora_ini = dtpHoraIni.Value.TimeOfDay;
                 hora_fin = dtpHoraFin.Value.TimeOfDay;
+
+                if (año <= 0 || cupo <= 0){ MessageBox.Show("Año o cupo invalido"); }
+                
+                
+                
+                
+
+                if(Materia == null || comision == null) { MessageBox.Show("No puede existir curso sin comision y materia"); }
+                              
+                if (año > 0 && cupo > 0 && Materia!=null && comision!=null)
+                {
+                    var cur = TPI.Negocio.Curso.BuscarCursoPorMateriaComision(Materia, comision);
+                    if (cur != null) { MessageBox.Show("El curso ya existe"); }
+                    else { 
+                    var curso = TPI.Negocio.Curso.Crear(Materia, año, comision, cupo, dia, hora_ini, hora_fin);
+                    TPI.Negocio.Curso.Agregar(curso);
+                    MessageBox.Show("Curso creado exitosamente!");
+                    Dispose();
+                    }
+                }
+                
+
+           
             }
             catch
             {
@@ -114,13 +157,6 @@ namespace Escritorio
                 return;
             }
 
-            if (año != 0 && cupo != 0)
-            {
-                var curso = TPI.Negocio.Curso.Crear(Materia, año, comision, cupo, dia, hora_ini, hora_fin);
-                TPI.Negocio.Curso.Agregar(curso);
-                MessageBox.Show("Curso creado exitosamente!");
-                Dispose();
-            }
         }
 
         private void cbxComision_SelectionChangeCommitted(object sender, EventArgs e)
@@ -129,8 +165,17 @@ namespace Escritorio
 
         private void cbxComision_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int nro_com = int.Parse(cbxComision.SelectedItem.ToString());
+            if (cbxComision.SelectedItem != null) { 
+            var nro_com = Convert.ToInt32(cbxComision.SelectedItem.ToString());
+            if (Especialidad !=null){ 
             comision = TPI.Negocio.Comision.BuscarComisionPorNroEspecialidad(nro_com, Especialidad);
+            }
+            }
+        }
+
+        private void cbxDiaSemana_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DiaSemana = cbxDiaSemana.SelectedItem.ToString();
         }
     }
 }
