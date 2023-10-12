@@ -96,19 +96,20 @@ namespace Escritorio.Inscripcion
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
             try
-            {
-                
-                if(Usuario!=null && Curso!= null) {
-                    if(Curso.Cupo > 0) { 
-                    var cur = TPI.Negocio.Cursado.BuscarCursoPorUsuarioCurso(Usuario, Curso);
-                
+            {                
+                if(Usuario!=null && Curso!= null) 
+                {
+                    if(Curso.Cupo > 0) 
+                    { 
+                        var cur = TPI.Negocio.Cursado.BuscarCursoPorUsuarioCurso(Usuario, Curso);                
 
-                    TPI.Entidades.Cursado cursado = TPI.Negocio.Cursado.Crear(Usuario, Curso, DateTime.Now);
-                 if (cursado != null && cur ==null) { 
-                TPI.Negocio.Cursado.Agregar(cursado);
-                MessageBox.Show("Inscripcion relizada con Exito!");
-                Dispose();
-                  }
+                        TPI.Entidades.Cursado cursado = TPI.Negocio.Cursado.Crear(Usuario, Curso, DateTime.Now);
+                        if (cursado != null && cur ==null) 
+                        { 
+                            TPI.Negocio.Cursado.Agregar(cursado);
+                            MessageBox.Show("Inscripcion relizada con Exito!");
+                            Dispose();
+                        }
                     
                     if (cur != null) { MessageBox.Show("Incripcion duplicada"); }
                     }

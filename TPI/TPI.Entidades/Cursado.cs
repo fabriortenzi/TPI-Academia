@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +12,6 @@ namespace TPI.Entidades
     public class Cursado
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         
         public Usuario Usuario { get; set; }
@@ -20,16 +20,17 @@ namespace TPI.Entidades
 
         public DateTime FechaHoraInscripcion { get; set; }
 
-        public int NotaFinal { get; set; }
+        [AllowNull]
+        public int? NotaFinal { get; set; }
 
         public Cursado()
         { }
+
         public Cursado(Usuario usuario, Curso curso, DateTime fechaHoraInscripcion)
         {
             Usuario = usuario;
             Curso = curso;
-            FechaHoraInscripcion = fechaHoraInscripcion;
-            
+            FechaHoraInscripcion = fechaHoraInscripcion;            
         }
 
         public Cursado(Usuario usuario, Curso curso, DateTime fechaHoraInscripcion, int notaFinal)

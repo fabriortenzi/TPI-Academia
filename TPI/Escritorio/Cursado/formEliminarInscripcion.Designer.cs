@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             label1 = new System.Windows.Forms.Label();
-            dgvInscripciones = new System.Windows.Forms.DataGridView();
-            Comision = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            Materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            Eliminar = new System.Windows.Forms.DataGridViewLinkColumn();
-            Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             btnCerrar = new System.Windows.Forms.Button();
+            cursadoBindingSource = new System.Windows.Forms.BindingSource(components);
+            dgvInscripciones = new System.Windows.Forms.DataGridView();
+            Eliminar = new System.Windows.Forms.DataGridViewLinkColumn();
+            ((System.ComponentModel.ISupportInitialize)cursadoBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvInscripciones).BeginInit();
             SuspendLayout();
             // 
@@ -47,57 +47,6 @@
             label1.TabIndex = 0;
             label1.Text = "Inscripciones que puedes eliminar";
             // 
-            // dgvInscripciones
-            // 
-            dgvInscripciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvInscripciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { Comision, Materia, Eliminar, Id });
-            dgvInscripciones.Location = new System.Drawing.Point(100, 74);
-            dgvInscripciones.Name = "dgvInscripciones";
-            dgvInscripciones.RowHeadersWidth = 62;
-            dgvInscripciones.RowTemplate.Height = 33;
-            dgvInscripciones.Size = new System.Drawing.Size(664, 311);
-            dgvInscripciones.TabIndex = 1;
-            dgvInscripciones.CellContentClick += dgvInscripciones_CellContentClick;
-            // 
-            // Comision
-            // 
-            Comision.DataPropertyName = "nroComision";
-            Comision.HeaderText = "Comision";
-            Comision.MinimumWidth = 8;
-            Comision.Name = "Comision";
-            Comision.ReadOnly = true;
-            Comision.Width = 150;
-            // 
-            // Materia
-            // 
-            Materia.DataPropertyName = "descMateria";
-            Materia.HeaderText = "Materia";
-            Materia.MinimumWidth = 8;
-            Materia.Name = "Materia";
-            Materia.ReadOnly = true;
-            Materia.Width = 300;
-            // 
-            // Eliminar
-            // 
-            Eliminar.HeaderText = "Eliminar";
-            Eliminar.MinimumWidth = 8;
-            Eliminar.Name = "Eliminar";
-            Eliminar.ReadOnly = true;
-            Eliminar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            Eliminar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            Eliminar.Text = "Eliminar";
-            Eliminar.UseColumnTextForLinkValue = true;
-            Eliminar.Width = 150;
-            // 
-            // Id
-            // 
-            Id.DataPropertyName = "Id";
-            Id.HeaderText = "Id";
-            Id.MinimumWidth = 8;
-            Id.Name = "Id";
-            Id.Visible = false;
-            Id.Width = 150;
-            // 
             // btnCerrar
             // 
             btnCerrar.Location = new System.Drawing.Point(296, 442);
@@ -108,19 +57,48 @@
             btnCerrar.UseVisualStyleBackColor = true;
             btnCerrar.Click += btnCerrar_Click;
             // 
+            // cursadoBindingSource
+            // 
+            cursadoBindingSource.DataSource = typeof(TPI.Entidades.Cursado);
+            // 
+            // dgvInscripciones
+            // 
+            dgvInscripciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvInscripciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { Eliminar });
+            dgvInscripciones.Location = new System.Drawing.Point(60, 114);
+            dgvInscripciones.Name = "dgvInscripciones";
+            dgvInscripciones.RowHeadersWidth = 62;
+            dgvInscripciones.RowTemplate.Height = 33;
+            dgvInscripciones.Size = new System.Drawing.Size(896, 212);
+            dgvInscripciones.TabIndex = 3;
+            dgvInscripciones.CellContentClick += dgvInscripciones_CellContentClick;
+            // 
+            // Eliminar
+            // 
+            Eliminar.HeaderText = "Eliminar";
+            Eliminar.MinimumWidth = 8;
+            Eliminar.Name = "Eliminar";
+            Eliminar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            Eliminar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            Eliminar.Text = "Eliminar";
+            Eliminar.ToolTipText = "Eliminar";
+            Eliminar.UseColumnTextForLinkValue = true;
+            Eliminar.Width = 150;
+            // 
             // formEliminarInscripcion
             // 
             AcceptButton = btnCerrar;
             AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(870, 547);
-            Controls.Add(btnCerrar);
+            ClientSize = new System.Drawing.Size(1051, 547);
             Controls.Add(dgvInscripciones);
+            Controls.Add(btnCerrar);
             Controls.Add(label1);
             Name = "formEliminarInscripcion";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "Eliminar Inscripcion";
             Load += formEliminarInscripcion_Load;
+            ((System.ComponentModel.ISupportInitialize)cursadoBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvInscripciones).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -129,11 +107,9 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dgvInscripciones;
         private System.Windows.Forms.Button btnCerrar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Comision;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Materia;
+        private System.Windows.Forms.BindingSource cursadoBindingSource;
+        private System.Windows.Forms.DataGridView dgvInscripciones;
         private System.Windows.Forms.DataGridViewLinkColumn Eliminar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
     }
 }

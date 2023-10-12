@@ -40,5 +40,10 @@ namespace TPI.Entidades
             HoraInicio = horaInicio;
             HoraFin = horaFin;
         }
+
+        public override string ToString()
+        {
+            return Materia.Descripcion;
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +11,35 @@ namespace TPI.Datos
 {
     public class Cursado
     {
+        private static SqlConnection conn = new SqlConnection(@"Data Source=LOCALHOST\SQLEXPRESS;Initial Catalog=tpi2023tm01;Integrated Security=true;");
+
         public static void Agregar(Entidades.Cursado cursado) 
-        {
-            // Hacer con ADO.NET
+        {            
+            try
+            {
+                conn.Open();
+                string query = "INSERT INTO cursados (UsuarioLegajo, CursoId, FechaHoraInscripcion)" +
+                               "VALUES (@UsuarioLegajo, @CursoId, @FechaHoraInscripcion)";
+                
+                SqlParameter UsuarioLegajo = new("@UsuarioLegajo", cursado.Usuario.Legajo);
+                SqlParameter CursoId = new("@CursoId", cursado.Curso.Id);
+                SqlParameter FechaHoraInscripcion = new("@FechaHoraInscripcion", cursado.FechaHoraInscripcion);
+
+                SqlCommand command = new(query, conn);
+                command.Parameters.Add(UsuarioLegajo);
+                command.Parameters.Add(CursoId);
+                command.Parameters.Add(FechaHoraInscripcion);
+
+                command.ExecuteNonQuery();
+            }
+            catch
+            {
+                throw;
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
         public static void Eliminar(Entidades.Cursado cursado)
         {
@@ -42,8 +69,7 @@ namespace TPI.Datos
                 return context.cursados
                     .Include(x=>x.Usuario)
                     .Include(x => x.Curso)
-                    .FirstOrDefault(x=>x.Id == id);
-                
+                    .FirstOrDefault(x=>x.Id == id);                
             }
 
         }
@@ -54,11 +80,9 @@ namespace TPI.Datos
                 return context.cursados
                      .Include(x => x.Usuario)
                      .Include(x => x.Curso)
+                     .ThenInclude(x => x.Materia)
                      .ToList();
-
-
             }
-
         }
     }
 }
