@@ -21,8 +21,8 @@ namespace Escritorio.Inscripcion
 
         private void formEliminarInscripcion_Load(object sender, EventArgs e)
         {
+            if (TPI.Negocio.Cursado.BuscarCursadosPorUsuarioAño(Usuario, DateTime.Now.Year) == null) { MessageBox.Show("No hay inscripciones para eliminar"); }
             dgvInscripciones.DataSource = TPI.Negocio.Cursado.BuscarCursadosPorUsuarioAño(Usuario, DateTime.Now.Year);
-            if(TPI.Negocio.Cursado.BuscarCursadosPorUsuarioAño(Usuario, DateTime.Now.Year) == null) { MessageBox.Show("No hay inscripciones para eliminar"); }
         }
 
         private void dgvInscripciones_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -31,14 +31,15 @@ namespace Escritorio.Inscripcion
 
             if (cell.Value.ToString() == "Eliminar")
             {
-                
-                try {
+
+                try
+                {
                     var idInscripcion = int.Parse(dgvInscripciones.Rows[e.RowIndex].Cells[1].Value.ToString());
                     TPI.Negocio.Cursado.Eliminar(TPI.Negocio.Cursado.GetOne(idInscripcion));
                     MessageBox.Show("Inscripcion elimnada");
                     dgvInscripciones.DataSource = TPI.Negocio.Cursado.BuscarCursadosPorUsuarioAño(Usuario, DateTime.Now.Year);
                 }
-                
+
                 catch
                 {
                     MessageBox.Show("Error al eliminar Inscripcion");

@@ -92,7 +92,10 @@ namespace TPI.Datos
         {
             using (ApplicationContext context = ApplicationContext.CreateContext()) 
             { 
-             var alumnos = context.usuarios.Where(x => x.TipoDeUsuario.Descripcion == "Alumno").ToList();
+                var alumnos = context.usuarios
+                    .Include(u => u.Persona)
+                    .Include(u => u.TipoDeUsuario)
+                    .Where(x => x.TipoDeUsuario.Descripcion == "Alumno").ToList();
 
                 return alumnos;
             }

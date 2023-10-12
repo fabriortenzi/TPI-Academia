@@ -22,10 +22,7 @@ namespace Escritorio.Inscripcion
 
         private void formConsultarCursado_Load(object sender, EventArgs e)
         {
-            foreach (TPI.Entidades.Usuario us in TPI.Negocio.Usuario.GetAllAlumnos())
-            {
-                cbxUsuario.Items.Add(us.Persona.Nombre + " " + us.Persona.Apellido);
-            }
+            
         }
 
         private void cbxUsuario_SelectionChangeCommitted(object sender, EventArgs e)
@@ -85,6 +82,11 @@ namespace Escritorio.Inscripcion
             if(cbxCurso.SelectedItem != null) { 
             int idCurso = int.Parse(cbxCurso.SelectedItem.ToString());
             Curso = TPI.Negocio.Curso.GetOne(idCurso);
+
+              foreach (TPI.Entidades.Usuario us in TPI.Negocio.Usuario.GetAllAlumnos())
+               {
+                    cbxUsuario.Items.Add(us.Persona.Nombre + " " + us.Persona.Apellido);
+               }
             }
         }
     }
