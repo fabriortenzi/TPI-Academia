@@ -8,14 +8,20 @@ namespace TPI.Negocio
 {
     public class Cursado
     {
-        public static bool ValidarNota(int nota) 
-        { 
-            if(nota>=0 && nota <= 10) { return true; }
+        public static bool ValidarNota(int nota)
+        {
+            if (nota >= 0 && nota <= 10) { return true; }
             else { return false; }
         }
+    
+            
+        
         public static Entidades.Cursado BuscarCursoPorUsuarioCurso(Entidades.Usuario usuario, Entidades.Curso curso) 
         {
-            return Datos.Cursado.GetAll().FirstOrDefault(x => x.Usuario.Legajo == usuario.Legajo && x.Curso.Id == curso.Id);
+            var cur = Datos.Cursado.GetAll().FirstOrDefault(x => x.Usuario.Legajo == usuario.Legajo && x.Curso.Id == curso.Id);
+            return Datos.Cursado.GetOne(cur.Id); 
+                
+                ;
         }
         public static List<Entidades.Cursado> BuscarCursadosPorUsuarioAño(Entidades.Usuario usuario, int ciclo)
         {
@@ -47,18 +53,17 @@ namespace TPI.Negocio
 
         public static bool ValidarCurso(Entidades.Usuario us, Entidades.Curso curso) 
         {
-            bool f1 = false;
+
+            bool f1 = true;
             foreach(Entidades.Cursado cursado in BuscarCursadosPorUsuarioAño(us, curso.CicloLectivo)) 
             {
-                //Evitando superposicion de cursos
-                //               | --Curso a agregar---|
-                // | -caso 1-- |                       | -caso 2-- |
-                //1 y dos son condiciones que se pueden cumplir lo demas no es admisible
-                if (cursado.Curso!=curso && ((cursado.Curso.HoraInicio<curso.HoraInicio && cursado.Curso.HoraFin <= curso.HoraInicio)||(cursado.Curso.HoraInicio>=curso.HoraFin && cursado.Curso.HoraFin>curso.HoraFin)))
+                if (cursado.Curso.Id!=curso.Id)
                 {
-                    f1 = true;
+
+                    if (!((cursado.Curso.HoraInicio < curso.HoraInicio && cursado.Curso.HoraFin <= curso.HoraInicio) || (cursado.Curso.HoraInicio >= curso.HoraFin && cursado.Curso.HoraFin > curso.HoraFin)))
+                    { f1 = false; break; }
+
                 }
-                else { f1 = false; }
 
             }
 

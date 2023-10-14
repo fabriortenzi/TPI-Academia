@@ -13,7 +13,11 @@ namespace Escritorio.ProfesorCurso
     public partial class formConsultarProfesorCurso : Form
     {
         private TPI.Entidades.Usuario? Usuario;
-        private TPI.Entidades.Curso Curso;
+        private TPI.Entidades.Especialidad especialidad;
+        private TPI.Entidades.Plan plan;
+        private TPI.Entidades.Materia materia;
+        private TPI.Entidades.Comision comision;
+        private TPI.Entidades.Curso curso;
         public formConsultarProfesorCurso()
         {
             InitializeComponent();
@@ -28,47 +32,135 @@ namespace Escritorio.ProfesorCurso
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
-
-            TPI.Entidades.ProfesorCurso profesorCurso = TPI.Negocio.ProfesorCurso.BuscarPorUsuarioCurso(Usuario, Curso);
-
-            if (profesorCurso != null)
+            if (materia != null && comision != null)
             {
-                formMostrarProfesorCurso frmMostrarProfesorCurso = new formMostrarProfesorCurso(profesorCurso);
-                frmMostrarProfesorCurso.Show();
+                curso = TPI.Negocio.Curso.BuscarCursoPorMateriaComision(materia, comision);
+                if (curso != null && Usuario != null)
+                {
+                    var profesor_curso = TPI.Negocio.ProfesorCurso.BuscarPorUsuarioCurso(Usuario, curso);
+                    if (profesor_curso != null)
+                    {
+                        formMostrarProfesorCurso frmMostrarProfesorCurso = new formMostrarProfesorCurso(profesor_curso);
+                        frmMostrarProfesorCurso.Show();
+                    }
+                    else { MessageBox.Show("Erro al ingresar datos por favor intenete nuevamente"); }
+                }
+                else { MessageBox.Show("Un profesor curso debe tener un usuario y un curso"); }
             }
-            else { MessageBox.Show("Error"); }
+            else { MessageBox.Show("Seleccione una materia y una comision"); }
+
+
+           
+
+        }
+
+
+
+
+
+        private void formConsultarProfesorCurso_Load(object sender, EventArgs e)
+        {
+            cargar_cbx();
+
+
+        }
+
+        private void cargar_cbx()
+        {
+
+
+            cbxLegajo.DisplayMember = "NombreCompleto";
+            cbxLegajo.ValueMember = "Legajo";
+
+            List<TPI.Entidades.Usuario> usuarios = TPI.Negocio.Usuario.GetAllProfesores();
+
+
+            foreach (TPI.Entidades.Especialidad esp in TPI.Negocio.Especialidad.GetAllEspecialidades())
+            {
+                cbxEspecialidades.Items.Add(esp.Descripcion);
+            }
+
+            cbxLegajo.DataSource = usuarios;
+
+
+            cbxEspecialidades.SelectedIndex = -1;
+            cbxLegajo.SelectedIndex = -1;
+
+
 
         }
 
         private void cbxLegajo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int legajo = int.Parse(this.cbxLegajo.GetItemText(this.cbxLegajo.SelectedItem));
-            Usuario = TPI.Negocio.Usuario.GetAllProfesores().FirstOrDefault(x => x.Legajo == legajo);
+            int leg = Convert.ToInt32(cbxLegajo.SelectedValue);
+            Usuario = TPI.Negocio.Usuario.GetOne(leg);
+        }
 
-            if (Usuario != null)
+        private void cbxEspecialidades_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbxPlanes.Items.Clear();
+            cbxMaterias.Items.Clear();
+            cbxComision.Items.Clear();
+            if (cbxEspecialidades.SelectedItem != null)
             {
-                List<TPI.Entidades.ProfesorCurso> profesores_cursos = TPI.Negocio.ProfesorCurso.BuscarPorUsuario(Usuario);
+                var desc_especialidad = cbxEspecialidades.SelectedItem.ToString();
+                if (desc_especialidad != null)
+                {
+                    especialidad = TPI.Negocio.Especialidad.Getespecialidadpordesc(desc_especialidad);
 
-                foreach (TPI.Entidades.ProfesorCurso cur in profesores_cursos) { cbxCurso.Items.Add(cur.Curso.Id); }
-                cbxCurso.Enabled = true;
+                    if (especialidad != null)
+                    {
+
+                        foreach (TPI.Entidades.Plan pl in TPI.Negocio.Plan.GetPlanesPorEspecialidad(especialidad))
+                        {
+                            cbxPlanes.Items.Add(pl.Anio);
+                        }
+
+                        foreach (TPI.Entidades.Comision com in TPI.Negocio.Comision.BuscarComisionesPorEspecialidad(especialidad))
+                        {
+                            cbxComision.Items.Add(com.NroComision);
+                        }
+                        cbxPlanes.Enabled = true;
+                        cbxComision.Enabled = true;
+                    }
+                }
             }
         }
 
-        private void cbxCurso_SelectedIndexChanged(object sender, EventArgs e)
+        private async void cbxPlanes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int id_curso = Convert.ToInt32(this.cbxCurso.GetItemText(this.cbxCurso.SelectedItem));
-            Curso = TPI.Negocio.Curso.GetOne(id_curso);
+            cbxMaterias.Items.Clear();
+            foreach (TPI.Entidades.Materia mat in TPI.Negocio.Materia.GetMateriasPorPlan(plan))
+            {
+                cbxMaterias.Items.Add(mat.Descripcion);
+            }
+            cbxMaterias.Enabled = true;
+            if (cbxPlanes.SelectedItem != null)
+            {
+                var anio = Convert.ToInt32((cbxPlanes.SelectedItem.ToString()));
+                if (especialidad != null)
+                {
+                    plan = await TPI.Negocio.Plan.GetPlanPorEspecialidadAnio(especialidad, anio);
+                }
+            }
         }
 
-        private void formConsultarProfesorCurso_Load(object sender, EventArgs e)
+        private void cbxMaterias_SelectedIndexChanged(object sender, EventArgs e)
         {
-            List<TPI.Entidades.Usuario> usuarios = TPI.Negocio.Usuario.GetAllProfesores();
+            var desc_materia = cbxMaterias.SelectedItem.ToString();
+            if (desc_materia != null)
+            {
+                materia = TPI.Negocio.Materia.GetMateriaPorDescripcionYPlan(desc_materia, plan);
+            }
+        }
 
-
-            foreach (TPI.Entidades.Usuario usu in usuarios) { cbxLegajo.Items.Add(usu.Legajo); }
-
-
-
+        private void cbxComision_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var nro_com = Convert.ToInt32(cbxComision.SelectedItem.ToString());
+            if (especialidad != null)
+            {
+                comision = TPI.Negocio.Comision.BuscarComisionPorNroEspecialidad(nro_com, especialidad);
+            }
         }
     }
 }

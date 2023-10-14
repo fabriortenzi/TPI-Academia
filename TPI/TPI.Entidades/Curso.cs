@@ -28,6 +28,8 @@ namespace TPI.Entidades
 
         public TimeSpan HoraFin { get; set; }
 
+        
+
         public Curso() { }
 
         public Curso(Materia materia, int cicloLectivo, Comision comision, int cupo, string dia, TimeSpan horaInicio, TimeSpan horaFin)

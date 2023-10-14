@@ -19,6 +19,7 @@ namespace TPI.Entidades
 
         public string Cargo { get; set; }
 
+        
         public ProfesorCurso()
         { }
 

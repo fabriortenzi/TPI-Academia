@@ -58,6 +58,7 @@ namespace TPI.Datos
                 return context.cursos
                     .Include(x => x.Materia)
                     .ThenInclude(x => x.Plan)
+                    .ThenInclude(x => x.Especialidad)
                     .Include(x => x.Comision)
                     .ToList();
             }
@@ -69,7 +70,9 @@ namespace TPI.Datos
             {
                 return context.cursos
                        .Include(x => x.Materia)
+                      .ThenInclude(x => x.Plan)
                        .Include(x => x.Comision)
+                       .ThenInclude(x => x.Especialidad)
                        .FirstOrDefault(x => x.Id == id);
 
             }

@@ -12,23 +12,25 @@ namespace Escritorio.ProfesorCurso
 {
     public partial class formMostrarProfesorCurso : Form
     {
-        private TPI.Entidades.ProfesorCurso? profesorCurso;
+        private TPI.Entidades.ProfesorCurso profesorCurso;
+        private TPI.Entidades.Curso Curso;
         public formMostrarProfesorCurso(TPI.Entidades.ProfesorCurso profesor_curso)
         {
-            profesorCurso = profesor_curso;
+            profesorCurso = TPI.Negocio.ProfesorCurso.GetOne(profesor_curso.Id);
+            Curso = TPI.Negocio.Curso.GetOne(profesor_curso.Curso.Id);
+
+
             InitializeComponent();
-            lblCurso.Text = profesor_curso.Curso.Id.ToString();
-            lblLegajo.Text = profesor_curso.Usuario.Legajo.ToString();
-            lblAnio.Text = profesor_curso.Curso.CicloLectivo.ToString();
-            lblCargo.Text = profesor_curso.Cargo;
-            
+
+
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            if (profesorCurso != null) {
+            if (profesorCurso != null)
+            {
                 formModificarProfesorCurso formModificarProfesorCurso = new formModificarProfesorCurso(profesorCurso);
-            formModificarProfesorCurso.Show();
+                formModificarProfesorCurso.Show();
             }
             else { MessageBox.Show("Error"); }
 
@@ -37,6 +39,18 @@ namespace Escritorio.ProfesorCurso
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void formMostrarProfesorCurso_Load(object sender, EventArgs e)
+        {
+            lblCurso.Text = profesorCurso.Curso.Id.ToString();
+            lblLegajo.Text = profesorCurso.Usuario.Legajo.ToString();
+            lblAnio.Text = Curso.CicloLectivo.ToString();
+            lblCargo.Text = profesorCurso.Cargo;
+            lblEsp.Text = Curso.Comision.Especialidad.Descripcion;
+            lblPlan.Text = Curso.Materia.Plan.Anio.ToString();
+            lblMateria.Text = Curso.Materia.Descripcion;
+            lblCom.Text = Curso.Comision.NroComision.ToString();
         }
     }
 }

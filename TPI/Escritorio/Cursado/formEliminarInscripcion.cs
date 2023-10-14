@@ -21,6 +21,7 @@ namespace Escritorio.Inscripcion
 
         private void formEliminarInscripcion_Load(object sender, EventArgs e)
         {
+            
             if (TPI.Negocio.Cursado.BuscarCursadosPorUsuarioAño(Usuario, DateTime.Now.Year) == null) { MessageBox.Show("No hay inscripciones para eliminar"); }
             dgvInscripciones.DataSource = TPI.Negocio.Cursado.BuscarCursadosPorUsuarioAño(Usuario, DateTime.Now.Year);
         }

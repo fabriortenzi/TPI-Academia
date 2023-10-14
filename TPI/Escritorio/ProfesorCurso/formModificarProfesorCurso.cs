@@ -12,15 +12,18 @@ namespace Escritorio.ProfesorCurso
 {
     public partial class formModificarProfesorCurso : Form
     {
-        private TPI.Entidades.ProfesorCurso? profesorCurso;
+        
+        private TPI.Entidades.ProfesorCurso profesorCurso;
+        private TPI.Entidades.Curso Curso;
         public formModificarProfesorCurso(TPI.Entidades.ProfesorCurso profesor_curso)
         {
+            profesorCurso = TPI.Negocio.ProfesorCurso.GetOne(profesor_curso.Id);
+            Curso = TPI.Negocio.Curso.GetOne(profesor_curso.Curso.Id);
+
             profesorCurso = profesor_curso;
             InitializeComponent();
-            lblCurso.Text = profesor_curso.Curso.Id.ToString();
-            lblLegajo.Text = profesor_curso.Usuario.Legajo.ToString();
-            lblAnio.Text = profesor_curso.Curso.CicloLectivo.ToString();
-            
+       
+
 
         }
 
@@ -37,6 +40,18 @@ namespace Escritorio.ProfesorCurso
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void formModificarProfesorCurso_Load(object sender, EventArgs e)
+        {
+            lblCurso.Text = profesorCurso.Curso.Id.ToString();
+            lblLegajo.Text = profesorCurso.Usuario.Legajo.ToString();
+            lblAnio.Text = Curso.CicloLectivo.ToString();
+            txtCargo.Text = profesorCurso.Cargo;
+            lblEsp.Text = Curso.Comision.Especialidad.Descripcion;
+            lblPlan.Text = Curso.Materia.Plan.Anio.ToString();
+            lblMateria.Text = Curso.Materia.Descripcion;
+            lblCom.Text = Curso.Comision.NroComision.ToString();
         }
     }
 }

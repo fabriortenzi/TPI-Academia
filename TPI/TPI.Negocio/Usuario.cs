@@ -11,6 +11,11 @@ namespace TPI.Negocio
 {
     public class Usuario
     {
+        public static Entidades.Usuario GetOne(int leg)
+
+           => Datos.Usuario.GetOne(leg);
+        
+
         public static Entidades.Usuario CrearUsuario(string contraseña, Entidades.Persona persona, Entidades.TipoDeUsuario tipoDeUsuario)
             => new(contraseña, persona, tipoDeUsuario);
 
