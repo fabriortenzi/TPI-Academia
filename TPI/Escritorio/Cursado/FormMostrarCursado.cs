@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Escritorio.Cursado;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,15 +8,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TPI.Datos;
 
 namespace Escritorio.Inscripcion
 {
     public partial class FormMostrarCursado : Form
     {
         private TPI.Entidades.Cursado Cursado;
+        private TPI.Entidades.Usuario usuario;
         public FormMostrarCursado(TPI.Entidades.Cursado cursado)
         {
             Cursado = cursado;
+            usuario = TPI.Negocio.Usuario.GetOne(cursado.Usuario.Legajo);
             InitializeComponent();
         }
 
@@ -26,19 +30,23 @@ namespace Escritorio.Inscripcion
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-
+            formModificarCursado formModificarCursado = new formModificarCursado(Cursado);
+            formModificarCursado.Show();
         }
 
         private void FormMostrarCursado_Load(object sender, EventArgs e)
         {
             lblAño.Text = Cursado.Curso.CicloLectivo.ToString();
-            lblUsuario.Text = (Cursado.Usuario.Persona.Nombre + " " + Cursado.Usuario.Persona.Apellido);
+
+
+            lblUsuario.Text = (usuario.Persona.Nombre + " " + usuario.Persona.Apellido);
             lblCurso.Text = Cursado.Curso.Id.ToString();
             lblFecha.Text = Cursado.FechaHoraInscripcion.ToString();
-            if (Cursado.NotaFinal>=0 && Cursado.NotaFinal <= 10) { 
-            lblNota.Text = Cursado.NotaFinal.ToString();
+            if (Cursado.NotaFinal != null)
+            {
+                lblNota.Text = Cursado.NotaFinal.ToString();
             }
-            else 
+            else
             {
                 lblNota.Text = "Nota no cargada";
             }

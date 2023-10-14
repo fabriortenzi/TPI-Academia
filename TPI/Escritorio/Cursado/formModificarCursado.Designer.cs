@@ -38,6 +38,8 @@ namespace Escritorio.Cursado
             dtpFecha = new System.Windows.Forms.DateTimePicker();
             cbxCurso = new System.Windows.Forms.ComboBox();
             cbxUsuario = new System.Windows.Forms.ComboBox();
+            lbl30 = new System.Windows.Forms.Label();
+            lblMateria = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)nupNota).BeginInit();
             SuspendLayout();
             // 
@@ -62,7 +64,7 @@ namespace Escritorio.Cursado
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(41, 125);
+            label3.Location = new System.Drawing.Point(41, 155);
             label3.Name = "label3";
             label3.Size = new System.Drawing.Size(41, 15);
             label3.TabIndex = 2;
@@ -71,7 +73,7 @@ namespace Escritorio.Cursado
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new System.Drawing.Point(44, 168);
+            label4.Location = new System.Drawing.Point(44, 198);
             label4.Name = "label4";
             label4.Size = new System.Drawing.Size(36, 15);
             label4.TabIndex = 3;
@@ -79,7 +81,7 @@ namespace Escritorio.Cursado
             // 
             // btnModificar
             // 
-            btnModificar.Location = new System.Drawing.Point(81, 228);
+            btnModificar.Location = new System.Drawing.Point(81, 258);
             btnModificar.Name = "btnModificar";
             btnModificar.Size = new System.Drawing.Size(75, 23);
             btnModificar.TabIndex = 4;
@@ -89,7 +91,7 @@ namespace Escritorio.Cursado
             // 
             // nupNota
             // 
-            nupNota.Location = new System.Drawing.Point(91, 165);
+            nupNota.Location = new System.Drawing.Point(91, 195);
             nupNota.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
             nupNota.Name = "nupNota";
             nupNota.Size = new System.Drawing.Size(109, 23);
@@ -97,22 +99,24 @@ namespace Escritorio.Cursado
             // 
             // dtpFecha
             // 
-            dtpFecha.Location = new System.Drawing.Point(88, 119);
+            dtpFecha.Location = new System.Drawing.Point(88, 149);
             dtpFecha.Name = "dtpFecha";
             dtpFecha.Size = new System.Drawing.Size(112, 23);
             dtpFecha.TabIndex = 6;
             // 
             // cbxCurso
             // 
+            cbxCurso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cbxCurso.FormattingEnabled = true;
             cbxCurso.Location = new System.Drawing.Point(90, 79);
             cbxCurso.Name = "cbxCurso";
-            cbxCurso.Size = new System.Drawing.Size(121, 23);
+            cbxCurso.Size = new System.Drawing.Size(122, 23);
             cbxCurso.TabIndex = 7;
             cbxCurso.SelectedIndexChanged += cbxCurso_SelectedIndexChanged;
             // 
             // cbxUsuario
             // 
+            cbxUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cbxUsuario.FormattingEnabled = true;
             cbxUsuario.Location = new System.Drawing.Point(91, 36);
             cbxUsuario.Name = "cbxUsuario";
@@ -121,11 +125,31 @@ namespace Escritorio.Cursado
             cbxUsuario.SelectedIndexChanged += cbxUsuario_SelectedIndexChanged;
             cbxUsuario.SelectionChangeCommitted += cbxUsuario_SelectionChangeCommitted;
             // 
+            // lbl30
+            // 
+            lbl30.AutoSize = true;
+            lbl30.Location = new System.Drawing.Point(44, 115);
+            lbl30.Name = "lbl30";
+            lbl30.Size = new System.Drawing.Size(50, 15);
+            lbl30.TabIndex = 9;
+            lbl30.Text = "Materia:";
+            // 
+            // lblMateria
+            // 
+            lblMateria.AutoSize = true;
+            lblMateria.Location = new System.Drawing.Point(102, 115);
+            lblMateria.Name = "lblMateria";
+            lblMateria.Size = new System.Drawing.Size(98, 15);
+            lblMateria.TabIndex = 10;
+            lblMateria.Text = "Materia del curso";
+            // 
             // formModificarCursado
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(246, 310);
+            Controls.Add(lblMateria);
+            Controls.Add(lbl30);
             Controls.Add(cbxUsuario);
             Controls.Add(cbxCurso);
             Controls.Add(dtpFecha);
@@ -154,5 +178,7 @@ namespace Escritorio.Cursado
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.ComboBox cbxCurso;
         private System.Windows.Forms.ComboBox cbxUsuario;
+        private System.Windows.Forms.Label lbl30;
+        private System.Windows.Forms.Label lblMateria;
     }
 }

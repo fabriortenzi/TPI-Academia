@@ -128,27 +128,25 @@ namespace Escritorio.Curso
 
         private void cbxMaterias_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbxMaterias.SelectedItem != null)
-            {
                 var desc_materia = cbxMaterias.SelectedItem.ToString();
                 if (desc_materia != null)
                 {
                     materia = TPI.Negocio.Materia.GetMateriaPorDescripcionYPlan(desc_materia, plan);
                 }
-            }
+            
 
         }
 
         private void cbxComision_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbxComision.SelectedItem != null)
-            {
+            
+            
                 var nro_com = Convert.ToInt32(cbxComision.SelectedItem.ToString());
                 if (especialidad != null)
                 {
                     comision = TPI.Negocio.Comision.BuscarComisionPorNroEspecialidad(nro_com, especialidad);
                 }
-            }
+            
 
         }
     }

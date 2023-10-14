@@ -11,6 +11,19 @@ namespace TPI.Datos
 {
     public class Usuario
     {
+        public static Entidades.Usuario GetOne(int leg) 
+        {
+            using (var context = ApplicationContext.CreateContext())
+            {
+               return context.usuarios
+                    .Include(x => x.TipoDeUsuario)
+                    .Include(x => x.Persona)
+                    .Include(x => x.Plan)
+                    .ThenInclude(x => x.Especialidad)
+                    .FirstOrDefault(x => x.Legajo == leg);
+            }
+        }
+
         public static void AgregarUsuario(Entidades.Usuario usuario)
         {
             using (var context = ApplicationContext.CreateContext())
@@ -70,7 +83,10 @@ namespace TPI.Datos
         {
             using (ApplicationContext context = ApplicationContext.CreateContext())
             {
-                var usuario = context.usuarios.FirstOrDefault(x => (x.Persona.Nombre + " " + x.Persona.Apellido) == nom_apellido);
+                var usuario = context.usuarios
+                    .Include(x => x.TipoDeUsuario)
+                    .Include(x => x.Persona)
+                    .FirstOrDefault(x => (x.Persona.Nombre + " " + x.Persona.Apellido) == nom_apellido);
 
                 return usuario;
 
@@ -82,9 +98,12 @@ namespace TPI.Datos
         {
             using (ApplicationContext context = ApplicationContext.CreateContext())
             {
-                var profesores = context.usuarios.Where(x => x.TipoDeUsuario.Descripcion == "Profesor").ToList();
+                return  context.usuarios
+                    .Include(x => x.TipoDeUsuario)
+                    .Include(x => x.Persona)
+                    .Where(x => x.TipoDeUsuario.Descripcion == "Profesor").ToList();
 
-                return profesores;
+                ;
             }
         }
 

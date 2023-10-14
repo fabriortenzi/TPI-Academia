@@ -35,14 +35,16 @@ namespace Escritorio.Cursado
 
         private void cbxUsuario_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            
+
         }
 
         private void cbxCurso_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbxCurso.SelectedItem != null) { 
-            var idCurso = Convert.ToInt32(cbxCurso.SelectedItem.ToString());
-            Curso = TPI.Negocio.Curso.GetOne(idCurso);
+            if (cbxCurso.SelectedItem != null)
+            {
+                var idCurso = Convert.ToInt32(cbxCurso.SelectedItem.ToString());
+                Curso = TPI.Negocio.Curso.GetOne(idCurso);
+                lblMateria.Text = Curso.ToString();
             }
         }
 
@@ -52,20 +54,21 @@ namespace Escritorio.Cursado
             try
             {
 
-                
+
                 bool validar_curso = TPI.Negocio.Cursado.ValidarCurso(Usuario, Curso);
                 bool validar_nota = TPI.Negocio.Cursado.ValidarNota(nota);
 
                 if (validar_curso && validar_nota)
                 {
-                    if(Cursado!=null && Usuario!=null && Curso != null) {
-                    
-                    TPI.Negocio.Cursado.Cambiar(Cursado, Usuario, Curso, dtpFecha.Value, nota);
+                    if (Cursado != null && Usuario != null && Curso != null)
+                    {
+
+                        TPI.Negocio.Cursado.Cambiar(Cursado, Usuario, Curso, dtpFecha.Value, nota);
                     }
                 }
                 if (validar_curso == false)
                 {
-                    MessageBox.Show("Error en el curso se superpone con otro curso");
+                    MessageBox.Show("Error en el curso se superpone con otro curso, elimine primero el curso superpuesto");
                 }
                 if (validar_nota == false)
                 {
@@ -82,9 +85,9 @@ namespace Escritorio.Cursado
 
         private void cbxUsuario_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbxUsuario.SelectedItem != null) { 
-            Usuario = TPI.Negocio.Usuario.GetUsuarioPorNomyApe(cbxUsuario.SelectedItem.ToString());
-            }
+            var usu = TPI.Negocio.Usuario.GetUsuarioPorNomyApe(cbxUsuario.SelectedItem.ToString());
+            Usuario = TPI.Negocio.Usuario.GetOne(usu.Legajo);
+
         }
     }
 }
