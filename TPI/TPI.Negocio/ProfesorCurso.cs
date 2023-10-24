@@ -32,5 +32,10 @@ namespace TPI.Negocio
         {
             return Datos.ProfesorCurso.GetAll();
         }
+
+        public static List<Entidades.ProfesorCurso> BuscarPorUsuarioCicloLectivo(int LegajoProfesor, int CicloLectivo)
+            => GetAll()
+               .Where(x => x.Usuario.Legajo == LegajoProfesor && x.Curso.CicloLectivo == CicloLectivo)
+               .ToList();
     }
 }

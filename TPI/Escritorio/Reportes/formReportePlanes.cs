@@ -16,5 +16,11 @@ namespace Escritorio.Reportes
         {
             InitializeComponent();
         }
+
+        private void formReportePlanes_Load(object sender, EventArgs e)
+        {
+            reportViewer1.LocalReport.ReportPath = @"TPI\Escritorio\Reportes\reportePlanes.rdlc";
+            reportViewer1.RefreshReport();
+        }
     }
 }

@@ -20,24 +20,12 @@ namespace TPI.Datos
             }
         }
 
-        public static void EditarDatosPersona(Entidades.Persona persona, string direccion, string telefono)
+        public static void EditarDatosPersona(Entidades.Persona persona)
         {
             using (ApplicationContext context = ApplicationContext.CreateContext())
             {
-                var personaEditar = context.personas.Find(persona.Dni);
-
-                // Edito solo si se modifico el campo
-
-                if (personaEditar.Direccion != direccion)
-                {
-                    personaEditar.Direccion = direccion;
-                }
-
-                if (personaEditar.Telefono != telefono)
-                {
-                    personaEditar.Telefono = telefono;
-                }
-
+                context.personas.Attach(persona);
+                context.Entry(persona).State = EntityState.Modified;
                 context.SaveChanges();
             }
         }

@@ -47,8 +47,13 @@ namespace Escritorio.Curso
                 hora_fin = dtpHoraFin.Value.TimeOfDay;
 
 
-                if(curso !=null && año>0 && curso.Materia!=null && curso.Comision !=null && cupo > 0) { 
-                TPI.Negocio.Curso.Cambiar(curso, año, curso.Materia, curso.Comision, cupo, dia, hora_ini, hora_fin);
+                if(curso !=null && año>0 && curso.Materia!=null && curso.Comision !=null && cupo > 0) {
+                    curso.Dia = dia;
+                    curso.CicloLectivo = año;
+                    curso.HoraInicio = hora_ini;
+                    curso.HoraFin = hora_fin;
+                    curso.Cupo = cupo;
+                    TPI.Negocio.Curso.Cambiar(curso);
                 }
                 if(curso == null) { MessageBox.Show("El curso no existe"); }
                 if (año <=0) { MessageBox.Show("Año incorrecto"); }

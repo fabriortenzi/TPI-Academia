@@ -25,7 +25,19 @@ namespace TPI.Negocio
 
         public static void EditarDatosPersona(Entidades.Persona persona, string direccion, string telefono)
         {
-            Datos.Persona.EditarDatosPersona(persona, direccion, telefono);
+            // Edito solo si se modifico el campo
+
+            if (persona.Direccion != direccion)
+            {
+                persona.Direccion = direccion;
+            }
+
+            if (persona.Telefono != telefono)
+            {
+                persona.Telefono = telefono;
+            }
+
+            Datos.Persona.EditarDatosPersona(persona);
         }
 
         public static void EliminarPersona(Entidades.Persona persona)

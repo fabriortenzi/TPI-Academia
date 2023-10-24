@@ -19,9 +19,15 @@ namespace TPI.Negocio
         public static Entidades.Cursado BuscarCursoPorUsuarioCurso(Entidades.Usuario usuario, Entidades.Curso curso) 
         {
             var cur = Datos.Cursado.GetAll().FirstOrDefault(x => x.Usuario.Legajo == usuario.Legajo && x.Curso.Id == curso.Id);
-            return Datos.Cursado.GetOne(cur.Id); 
-                
-                ;
+            
+            if (cur == null)
+            {
+                return null;
+            }
+            else
+            {
+                return Datos.Cursado.GetOne(cur.Id); 
+            }
         }
         public static List<Entidades.Cursado> BuscarCursadosPorUsuarioAño(Entidades.Usuario usuario, int ciclo)
         {
@@ -41,15 +47,11 @@ namespace TPI.Negocio
 
         public static void Eliminar(Entidades.Cursado Cursado)
         => Datos.Cursado.Eliminar(Cursado);
-        public static void Cambiar(Entidades.Cursado cursado, Entidades.Usuario usuario, Entidades.Curso curso, DateTime fechahorains, int notafinal)
-        {
-            
-            
-                Datos.Cursado.Cambiar(cursado, usuario, curso, fechahorains, notafinal);
-            
-            
 
-            }
+        public static void Cambiar(Entidades.Cursado cursado)
+        {              
+            Datos.Cursado.Cambiar(cursado);
+        }
 
         public static bool ValidarCurso(Entidades.Usuario us, Entidades.Curso curso) 
         {
@@ -78,6 +80,12 @@ namespace TPI.Negocio
         {
             return Datos.Cursado.GetOne(id);
         }
+
+        public static List<Entidades.Cursado> BuscarCursadosPorCurso(int IdCurso)
+            => GetAll().Where(c => c.Curso.Id == IdCurso).ToList();
+
+        public static List<Entidades.Cursado> BuscarCursadosPorAlumno(int LegajoAlummno)
+            => GetAll().Where(c => c.Usuario.Legajo == LegajoAlummno).OrderBy(c => c.FechaHoraInscripcion).ToList();
     }
 }
 

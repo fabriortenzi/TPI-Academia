@@ -35,21 +35,37 @@ namespace Escritorio.Inscripcion
 
         private void formInscripcionCursado_Load(object sender, EventArgs e)
         {
-            if (Usuario.Plan != null) { 
-            CursosMateria = TPI.Negocio.Curso.BuscarCursosPorPlanCicloLectivo(Usuario.Plan, DateTime.Now.Year);
+            if (Usuario.Plan != null) 
+            { 
+                CursosMateria = TPI.Negocio.Curso.BuscarCursosPorPlanCicloLectivo(Usuario, DateTime.Now.Year);
             }
-            if(Usuario.Plan == null) { MessageBox.Show("El usuario no posee un plan"); }
+            if(Usuario.Plan == null) 
+            { 
+                MessageBox.Show("El usuario no posee un plan");
+                Dispose();
+            }
 
-            if (CursosMateria != null) { 
-            foreach (TPI.Entidades.Curso curso in CursosMateria)
+            var materias = new List<string>();
+            foreach(var curso in CursosMateria)
             {
-                cbxCursosMateria.Items.Add(curso.Materia.Descripcion);
+                materias.Add(curso.Materia.Descripcion);
             }
+            // Como distintos Cursos pueden tener la misma Materia, lo filtro
+            materias = materias.Distinct().ToList();
+
+            if (CursosMateria != null) 
+            { 
+                foreach (string materia in materias)
+                {
+                    cbxCursosMateria.Items.Add(materia);
+                }
             }
         }
+        
 
         private void cbxCursosMateria_SelectedIndexChanged(object sender, EventArgs e)
         {
+            lblHorarioCurso.Text = "";
             cbxComisiones.SelectedIndex = -1;
             cbxComisiones.Items.Clear();
             cbxComisiones.Enabled = true;
@@ -59,9 +75,9 @@ namespace Escritorio.Inscripcion
             Materia = TPI.Negocio.Materia.GetMateriaPorDesc(materiaSeleccionada);
             if (Materia!= null) { 
                
-            CursosMateria = CursosMateria.Where(x => x.Materia.Id == Materia.Id).ToList();
+            var Cursos = CursosMateria.Where(x => x.Materia.Id == Materia.Id).ToList();
             
-            foreach (var cur in CursosMateria)
+            foreach (var cur in Cursos)
             {
                 cbxComisiones.Items.Add(cur.Comision.NroComision);
             }
@@ -105,15 +121,27 @@ namespace Escritorio.Inscripcion
 
                         TPI.Entidades.Cursado cursado = TPI.Negocio.Cursado.Crear(Usuario, Curso, DateTime.Now);
                         if (cursado != null && cur ==null) 
-                        { 
+                        {
+                            // Actualizo el Cupo 
+                            cursado.Curso.Cupo -= 1;
+                            TPI.Negocio.Curso.Cambiar(cursado.Curso);
+
+                            // Registro la Inscripcion
                             TPI.Negocio.Cursado.Agregar(cursado);
+
                             MessageBox.Show("Inscripcion relizada con Exito!");
                             Dispose();
                         }
                     
-                    if (cur != null) { MessageBox.Show("Incripcion duplicada"); }
+                        if (cur != null) 
+                        { 
+                            MessageBox.Show("Incripcion duplicada"); 
+                        }
                     }
-                    if (Curso.Cupo == 0) { MessageBox.Show("No hay cupos disponibles"); }
+                    else 
+                    { 
+                        MessageBox.Show("No hay cupos disponibles"); 
+                    }
                 }
             }
             catch

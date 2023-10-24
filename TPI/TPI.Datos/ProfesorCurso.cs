@@ -29,9 +29,7 @@ namespace TPI.Datos
                     .Include(x => x.Usuario)
                     .FirstOrDefault(x => x.Id == id);
             }
-
         }
-
 
         public static List<Entidades.ProfesorCurso> GetAll()
         {
@@ -39,7 +37,10 @@ namespace TPI.Datos
             {
                 return context.profesores_cursos
                     .Include(x => x.Curso)
+                    .ThenInclude(x => x.Materia)
+                    .Include(x => x.Curso.Comision)
                     .Include(x => x.Usuario)
+                    .ThenInclude(x => x.Persona)
                     .ToList();
             }
         }

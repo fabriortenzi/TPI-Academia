@@ -55,16 +55,19 @@
             cursoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             crearCursoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             listarToolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
+            misCursosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             inscripcionACursadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             nuevaInscripcionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             eliminarInscripcionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             listarToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             cargarNotaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            consultarNotasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             profesorCursoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            agregarToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            eliminarToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            consultarToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            listarToolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
+            agregarPCToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            eliminarPCToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            consultarPCToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            listarPCToolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
+            reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -80,7 +83,7 @@
             // 
             // opcionesToolStripMenuItem
             // 
-            opcionesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { personaToolStripMenuItem, usuarioToolStripMenuItem, especialidadToolStripMenuItem, planDeEstudioToolStripMenuItem, materiaToolStripMenuItem, comisionToolStripMenuItem, cursoToolStripMenuItem, inscripcionACursadoToolStripMenuItem, profesorCursoToolStripMenuItem });
+            opcionesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { personaToolStripMenuItem, usuarioToolStripMenuItem, especialidadToolStripMenuItem, planDeEstudioToolStripMenuItem, materiaToolStripMenuItem, comisionToolStripMenuItem, cursoToolStripMenuItem, inscripcionACursadoToolStripMenuItem, profesorCursoToolStripMenuItem, reportesToolStripMenuItem });
             opcionesToolStripMenuItem.Name = "opcionesToolStripMenuItem";
             opcionesToolStripMenuItem.Size = new System.Drawing.Size(103, 29);
             opcionesToolStripMenuItem.Text = "Opciones";
@@ -158,14 +161,14 @@
             // crearEspToolStripMenuItem
             // 
             crearEspToolStripMenuItem.Name = "crearEspToolStripMenuItem";
-            crearEspToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            crearEspToolStripMenuItem.Size = new System.Drawing.Size(189, 34);
             crearEspToolStripMenuItem.Text = "Crear";
             crearEspToolStripMenuItem.Click += crearToolStripMenuItem_Click;
             // 
             // eliminarToolStripMenuItem
             // 
             eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
-            eliminarToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            eliminarToolStripMenuItem.Size = new System.Drawing.Size(189, 34);
             eliminarToolStripMenuItem.Text = "Modificar";
             eliminarToolStripMenuItem.Click += eliminarToolStripMenuItem_Click_1;
             // 
@@ -234,7 +237,7 @@
             // 
             // cursoToolStripMenuItem
             // 
-            cursoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { crearCursoToolStripMenuItem, listarToolStripMenuItem5 });
+            cursoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { crearCursoToolStripMenuItem, listarToolStripMenuItem5, misCursosToolStripMenuItem });
             cursoToolStripMenuItem.Name = "cursoToolStripMenuItem";
             cursoToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             cursoToolStripMenuItem.Text = "Curso";
@@ -253,9 +256,16 @@
             listarToolStripMenuItem5.Text = "Listar";
             listarToolStripMenuItem5.Click += listarToolStripMenuItem5_Click;
             // 
+            // misCursosToolStripMenuItem
+            // 
+            misCursosToolStripMenuItem.Name = "misCursosToolStripMenuItem";
+            misCursosToolStripMenuItem.Size = new System.Drawing.Size(206, 34);
+            misCursosToolStripMenuItem.Text = "Mis Cursos";
+            misCursosToolStripMenuItem.Click += misCursosToolStripMenuItem_Click;
+            // 
             // inscripcionACursadoToolStripMenuItem
             // 
-            inscripcionACursadoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { nuevaInscripcionToolStripMenuItem, eliminarInscripcionToolStripMenuItem, listarToolStripMenuItem2, cargarNotaToolStripMenuItem });
+            inscripcionACursadoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { nuevaInscripcionToolStripMenuItem, eliminarInscripcionToolStripMenuItem, listarToolStripMenuItem2, cargarNotaToolStripMenuItem, consultarNotasToolStripMenuItem });
             inscripcionACursadoToolStripMenuItem.Name = "inscripcionACursadoToolStripMenuItem";
             inscripcionACursadoToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             inscripcionACursadoToolStripMenuItem.Text = "Cursado";
@@ -286,38 +296,56 @@
             cargarNotaToolStripMenuItem.Name = "cargarNotaToolStripMenuItem";
             cargarNotaToolStripMenuItem.Size = new System.Drawing.Size(266, 34);
             cargarNotaToolStripMenuItem.Text = "Cargar Nota";
+            cargarNotaToolStripMenuItem.Click += cargarNotaToolStripMenuItem_Click;
+            // 
+            // consultarNotasToolStripMenuItem
+            // 
+            consultarNotasToolStripMenuItem.Name = "consultarNotasToolStripMenuItem";
+            consultarNotasToolStripMenuItem.Size = new System.Drawing.Size(266, 34);
+            consultarNotasToolStripMenuItem.Text = "Consultar Notas";
+            consultarNotasToolStripMenuItem.Click += consultarNotasToolStripMenuItem_Click;
             // 
             // profesorCursoToolStripMenuItem
             // 
-            profesorCursoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { agregarToolStripMenuItem2, eliminarToolStripMenuItem2, consultarToolStripMenuItem2, listarToolStripMenuItem10 });
+            profesorCursoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { agregarPCToolStripMenuItem2, eliminarPCToolStripMenuItem2, consultarPCToolStripMenuItem2, listarPCToolStripMenuItem10 });
             profesorCursoToolStripMenuItem.Name = "profesorCursoToolStripMenuItem";
             profesorCursoToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             profesorCursoToolStripMenuItem.Text = "Profesor - Curso";
             // 
-            // agregarToolStripMenuItem2
+            // agregarPCToolStripMenuItem2
             // 
-            agregarToolStripMenuItem2.Name = "agregarToolStripMenuItem2";
-            agregarToolStripMenuItem2.Size = new System.Drawing.Size(189, 34);
-            agregarToolStripMenuItem2.Text = "Agregar";
+            agregarPCToolStripMenuItem2.Name = "agregarPCToolStripMenuItem2";
+            agregarPCToolStripMenuItem2.Size = new System.Drawing.Size(189, 34);
+            agregarPCToolStripMenuItem2.Text = "Agregar";
+            agregarPCToolStripMenuItem2.Click += agregarToolStripMenuItem2_Click;
             // 
-            // eliminarToolStripMenuItem2
+            // eliminarPCToolStripMenuItem2
             // 
-            eliminarToolStripMenuItem2.Name = "eliminarToolStripMenuItem2";
-            eliminarToolStripMenuItem2.Size = new System.Drawing.Size(189, 34);
-            eliminarToolStripMenuItem2.Text = "Eliminar";
+            eliminarPCToolStripMenuItem2.Name = "eliminarPCToolStripMenuItem2";
+            eliminarPCToolStripMenuItem2.Size = new System.Drawing.Size(189, 34);
+            eliminarPCToolStripMenuItem2.Text = "Eliminar";
+            eliminarPCToolStripMenuItem2.Click += eliminarToolStripMenuItem2_Click;
             // 
-            // consultarToolStripMenuItem2
+            // consultarPCToolStripMenuItem2
             // 
-            consultarToolStripMenuItem2.Name = "consultarToolStripMenuItem2";
-            consultarToolStripMenuItem2.Size = new System.Drawing.Size(189, 34);
-            consultarToolStripMenuItem2.Text = "Consultar";
+            consultarPCToolStripMenuItem2.Name = "consultarPCToolStripMenuItem2";
+            consultarPCToolStripMenuItem2.Size = new System.Drawing.Size(189, 34);
+            consultarPCToolStripMenuItem2.Text = "Consultar";
+            consultarPCToolStripMenuItem2.Click += consultarToolStripMenuItem2_Click;
             // 
-            // listarToolStripMenuItem10
+            // listarPCToolStripMenuItem10
             // 
-            listarToolStripMenuItem10.Name = "listarToolStripMenuItem10";
-            listarToolStripMenuItem10.Size = new System.Drawing.Size(189, 34);
-            listarToolStripMenuItem10.Text = "Listar";
-            listarToolStripMenuItem10.Click += listarToolStripMenuItem10_Click;
+            listarPCToolStripMenuItem10.Name = "listarPCToolStripMenuItem10";
+            listarPCToolStripMenuItem10.Size = new System.Drawing.Size(189, 34);
+            listarPCToolStripMenuItem10.Text = "Listar";
+            listarPCToolStripMenuItem10.Click += listarToolStripMenuItem10_Click;
+            // 
+            // reportesToolStripMenuItem
+            // 
+            reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
+            reportesToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            reportesToolStripMenuItem.Text = "Reportes";
+            reportesToolStripMenuItem.Click += reportesToolStripMenuItem_Click;
             // 
             // formMenuPrincipal
             // 
@@ -362,9 +390,9 @@
         private System.Windows.Forms.ToolStripMenuItem crearNuevoPlanToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem crearCursoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem profesorCursoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem agregarToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem consultarToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem agregarPCToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem eliminarPCToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem consultarPCToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem nuevaComisionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listarPerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listarUsuToolStripMenuItem1;
@@ -373,10 +401,13 @@
         private System.Windows.Forms.ToolStripMenuItem listarToolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem listarToolStripMenuItem5;
         private System.Windows.Forms.ToolStripMenuItem listarPlanToolStripMenuItem6;
-        private System.Windows.Forms.ToolStripMenuItem listarToolStripMenuItem10;
+        private System.Windows.Forms.ToolStripMenuItem listarPCToolStripMenuItem10;
         private System.Windows.Forms.ToolStripMenuItem cargarNotaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem especialidadToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem crearEspToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultarNotasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem misCursosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
     }
 }

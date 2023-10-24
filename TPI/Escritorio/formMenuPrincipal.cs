@@ -12,6 +12,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Escritorio.Especialidad;
+using Escritorio.Cursado;
+using Escritorio.Curso;
+using Escritorio.Reportes;
 
 namespace Escritorio
 {
@@ -220,18 +223,37 @@ namespace Escritorio
         {
             if (Usuario.TipoDeUsuario.Descripcion != "Admin")
             {
-                crearPersonaToolStripMenuItem.Enabled = false;
-                crearUsuarioToolStripMenuItem.Enabled = false;
+                crearPersonaToolStripMenuItem.Visible = false;
+                crearUsuarioToolStripMenuItem.Visible = false;
                 especialidadToolStripMenuItem.Visible = false;
-                listarPerToolStripMenuItem.Enabled = false;
-                listarUsuToolStripMenuItem1.Enabled = false;
+                listarPerToolStripMenuItem.Visible = false;
+                listarUsuToolStripMenuItem1.Visible = false;
+                comisionToolStripMenuItem.Visible = false;
+                crearCursoToolStripMenuItem.Visible = false;
+                listarToolStripMenuItem5.Visible = false;
+                listarToolStripMenuItem2.Visible = false;
                 planDeEstudioToolStripMenuItem.Visible = false;
                 materiaToolStripMenuItem.Visible = false;
+                profesorCursoToolStripMenuItem.Visible = false;
             }
 
             if (Usuario.TipoDeUsuario.Descripcion != "Alumno")
             {
-                consultarDatosPersonalesToolStripMenuItem.Enabled = false;
+                consultarDatosPersonalesToolStripMenuItem.Visible = false;
+                nuevaInscripcionToolStripMenuItem.Visible = false;
+                eliminarInscripcionToolStripMenuItem.Visible = false;
+                consultarNotasToolStripMenuItem.Visible = false;
+            }
+
+            if (Usuario.TipoDeUsuario.Descripcion != "Profesor")
+            {
+                cargarNotaToolStripMenuItem.Visible = false;
+                misCursosToolStripMenuItem.Visible = false;
+            }
+
+            if (Usuario.TipoDeUsuario.Descripcion == "Alumno")
+            {
+                cursoToolStripMenuItem.Visible = false;
             }
         }
 
@@ -245,6 +267,30 @@ namespace Escritorio
         {
             formModificarEspecialidad f = new formModificarEspecialidad();
             f.Show();
+        }
+
+        private void cargarNotaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formCargarNotas formCargarNotas = new(Usuario);
+            formCargarNotas.Show();
+        }
+
+        private void consultarNotasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formConsultarNotas formConsultarNotas = new(Usuario);
+            formConsultarNotas.Show();
+        }
+
+        private void misCursosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formCursosProfesor formCursosProfesor = new(Usuario);
+            formCursosProfesor.Show();
+        }
+
+        private void reportesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formReportePlanes formReportePlanes = new();
+            formReportePlanes.Show();
         }
     }
 }

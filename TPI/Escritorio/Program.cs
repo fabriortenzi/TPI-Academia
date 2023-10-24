@@ -24,7 +24,7 @@ namespace Escritorio
             Application.SetCompatibleTextRenderingDefault(false);
 
             //Application.Run(new formLogin());
-            Application.Run(new formConsultarProfesorCurso());
+            Application.Run(new formLogin());
         }
     }
 }
