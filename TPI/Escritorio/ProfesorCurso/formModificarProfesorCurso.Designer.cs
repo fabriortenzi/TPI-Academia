@@ -52,19 +52,21 @@ namespace Escritorio.ProfesorCurso
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new System.Drawing.Point(87, 402);
+            label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label4.Location = new System.Drawing.Point(121, 334);
             label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(64, 25);
+            label4.Size = new System.Drawing.Size(76, 29);
             label4.TabIndex = 38;
             label4.Text = "Cargo:";
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new System.Drawing.Point(41, 475);
+            btnCancelar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnCancelar.Location = new System.Drawing.Point(30, 436);
             btnCancelar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new System.Drawing.Size(107, 38);
+            btnCancelar.Size = new System.Drawing.Size(225, 57);
             btnCancelar.TabIndex = 36;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
@@ -72,10 +74,11 @@ namespace Escritorio.ProfesorCurso
             // 
             // btnModificar
             // 
-            btnModificar.Location = new System.Drawing.Point(261, 480);
+            btnModificar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnModificar.Location = new System.Drawing.Point(282, 436);
             btnModificar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             btnModificar.Name = "btnModificar";
-            btnModificar.Size = new System.Drawing.Size(107, 38);
+            btnModificar.Size = new System.Drawing.Size(225, 57);
             btnModificar.TabIndex = 35;
             btnModificar.Text = "Modificar";
             btnModificar.UseVisualStyleBackColor = true;
@@ -83,157 +86,174 @@ namespace Escritorio.ProfesorCurso
             // 
             // txtCargo
             // 
-            txtCargo.Location = new System.Drawing.Point(169, 395);
+            txtCargo.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            txtCargo.Location = new System.Drawing.Point(205, 331);
             txtCargo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             txtCargo.Name = "txtCargo";
-            txtCargo.Size = new System.Drawing.Size(141, 31);
+            txtCargo.Size = new System.Drawing.Size(192, 37);
             txtCargo.TabIndex = 43;
             // 
             // lblPlan
             // 
             lblPlan.AutoSize = true;
-            lblPlan.Location = new System.Drawing.Point(183, 183);
+            lblPlan.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblPlan.Location = new System.Drawing.Point(205, 167);
             lblPlan.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblPlan.Name = "lblPlan";
-            lblPlan.Size = new System.Drawing.Size(64, 25);
+            lblPlan.Size = new System.Drawing.Size(81, 29);
             lblPlan.TabIndex = 59;
             lblPlan.Text = "lblPlan";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(100, 183);
+            label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label2.Location = new System.Drawing.Point(135, 167);
             label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(49, 25);
+            label2.Size = new System.Drawing.Size(62, 29);
             label2.TabIndex = 58;
             label2.Text = "Plan:";
             // 
             // lblCom
             // 
             lblCom.AutoSize = true;
-            lblCom.Location = new System.Drawing.Point(186, 283);
+            lblCom.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblCom.Location = new System.Drawing.Point(205, 244);
             lblCom.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblCom.Name = "lblCom";
-            lblCom.Size = new System.Drawing.Size(69, 25);
+            lblCom.Size = new System.Drawing.Size(83, 29);
             lblCom.TabIndex = 57;
             lblCom.Text = "lblCom";
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new System.Drawing.Point(70, 283);
+            label9.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label9.Location = new System.Drawing.Point(86, 244);
             label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label9.Name = "label9";
-            label9.Size = new System.Drawing.Size(91, 25);
+            label9.Size = new System.Drawing.Size(111, 29);
             label9.TabIndex = 56;
             label9.Text = "Comision:";
             // 
             // lblMateria
             // 
             lblMateria.AutoSize = true;
-            lblMateria.Location = new System.Drawing.Point(186, 230);
+            lblMateria.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblMateria.Location = new System.Drawing.Point(205, 205);
             lblMateria.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblMateria.Name = "lblMateria";
-            lblMateria.Size = new System.Drawing.Size(90, 25);
+            lblMateria.Size = new System.Drawing.Size(117, 29);
             lblMateria.TabIndex = 55;
             lblMateria.Text = "lblMateria";
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new System.Drawing.Point(83, 230);
+            label7.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label7.Location = new System.Drawing.Point(99, 205);
             label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label7.Name = "label7";
-            label7.Size = new System.Drawing.Size(75, 25);
+            label7.Size = new System.Drawing.Size(98, 29);
             label7.TabIndex = 54;
             label7.Text = "Materia:";
             // 
             // lblEsp
             // 
             lblEsp.AutoSize = true;
-            lblEsp.Location = new System.Drawing.Point(186, 133);
+            lblEsp.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblEsp.Location = new System.Drawing.Point(205, 127);
             lblEsp.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblEsp.Name = "lblEsp";
-            lblEsp.Size = new System.Drawing.Size(59, 25);
+            lblEsp.Size = new System.Drawing.Size(72, 29);
             lblEsp.TabIndex = 53;
             lblEsp.Text = "lblEsp";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new System.Drawing.Point(50, 133);
+            label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label5.Location = new System.Drawing.Point(54, 127);
             label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(113, 25);
+            label5.Size = new System.Drawing.Size(143, 29);
             label5.TabIndex = 52;
             label5.Text = "Especialidad:";
             // 
             // lblAnio
             // 
             lblAnio.AutoSize = true;
-            lblAnio.Location = new System.Drawing.Point(187, 348);
+            lblAnio.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblAnio.Location = new System.Drawing.Point(204, 285);
             lblAnio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblAnio.Name = "lblAnio";
-            lblAnio.Size = new System.Drawing.Size(67, 25);
+            lblAnio.Size = new System.Drawing.Size(84, 29);
             lblAnio.TabIndex = 50;
             lblAnio.Text = "lnlAnio";
             // 
             // lblCurso
             // 
             lblCurso.AutoSize = true;
-            lblCurso.Location = new System.Drawing.Point(183, 72);
+            lblCurso.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblCurso.Location = new System.Drawing.Point(205, 89);
             lblCurso.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblCurso.Name = "lblCurso";
-            lblCurso.Size = new System.Drawing.Size(77, 25);
+            lblCurso.Size = new System.Drawing.Size(94, 29);
             lblCurso.TabIndex = 49;
             lblCurso.Text = "lblCurso";
             // 
             // lblLegajo
             // 
             lblLegajo.AutoSize = true;
-            lblLegajo.Location = new System.Drawing.Point(183, 22);
+            lblLegajo.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblLegajo.Location = new System.Drawing.Point(205, 51);
             lblLegajo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblLegajo.Name = "lblLegajo";
-            lblLegajo.Size = new System.Drawing.Size(83, 25);
+            lblLegajo.Size = new System.Drawing.Size(102, 29);
             lblLegajo.TabIndex = 48;
             lblLegajo.Text = "lblLegajo";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(107, 347);
+            label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label3.Location = new System.Drawing.Point(137, 285);
             label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(49, 25);
+            label3.Size = new System.Drawing.Size(59, 29);
             label3.TabIndex = 46;
             label3.Text = "Año:";
             // 
             // lblMateria1
             // 
             lblMateria1.AutoSize = true;
-            lblMateria1.Location = new System.Drawing.Point(96, 70);
+            lblMateria1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblMateria1.Location = new System.Drawing.Point(122, 89);
             lblMateria1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblMateria1.Name = "lblMateria1";
-            lblMateria1.Size = new System.Drawing.Size(62, 25);
+            lblMateria1.Size = new System.Drawing.Size(75, 29);
             lblMateria1.TabIndex = 45;
             lblMateria1.Text = "Curso:";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new System.Drawing.Point(91, 22);
+            label6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label6.Location = new System.Drawing.Point(114, 51);
             label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(68, 25);
+            label6.Size = new System.Drawing.Size(83, 29);
             label6.TabIndex = 44;
             label6.Text = "Legajo:";
             // 
             // formModificarProfesorCurso
             // 
+            AcceptButton = btnModificar;
             AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(386, 557);
+            CancelButton = btnCancelar;
+            ClientSize = new System.Drawing.Size(545, 531);
             Controls.Add(lblPlan);
             Controls.Add(label2);
             Controls.Add(lblCom);
@@ -255,7 +275,7 @@ namespace Escritorio.ProfesorCurso
             Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             Name = "formModificarProfesorCurso";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            Text = "formModificarProfesorCurso";
+            Text = "Modificar Profesor-Curso";
             Load += formModificarProfesorCurso_Load;
             ResumeLayout(false);
             PerformLayout();

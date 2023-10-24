@@ -30,8 +30,8 @@ namespace Escritorio.Especialidad
                 if (await TPI.Negocio.Especialidad.ModificarEspecialidad(Especialidad))
                 {
                     MessageBox.Show("Especialidad modificada correctamenete");
-                    Dispose();                    
-                    
+                    Dispose();
+
                     var f = new formModificarEspecialidad();
                     f.Show();
 

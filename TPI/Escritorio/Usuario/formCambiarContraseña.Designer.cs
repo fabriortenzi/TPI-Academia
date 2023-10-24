@@ -40,59 +40,66 @@
             // lblContraseña
             // 
             lblContraseña.AutoSize = true;
-            lblContraseña.Location = new System.Drawing.Point(113, 60);
+            lblContraseña.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblContraseña.Location = new System.Drawing.Point(123, 65);
             lblContraseña.Name = "lblContraseña";
-            lblContraseña.Size = new System.Drawing.Size(101, 25);
+            lblContraseña.Size = new System.Drawing.Size(126, 29);
             lblContraseña.TabIndex = 0;
             lblContraseña.Text = "Contraseña";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(58, 109);
+            label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label2.Location = new System.Drawing.Point(54, 113);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(156, 25);
+            label2.Size = new System.Drawing.Size(195, 29);
             label2.TabIndex = 1;
             label2.Text = "Nueva Contraseña";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(29, 161);
+            label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label3.Location = new System.Drawing.Point(22, 161);
             label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(185, 25);
+            label3.Size = new System.Drawing.Size(230, 29);
             label3.TabIndex = 2;
             label3.Text = "Confirmar Contraseña";
             // 
             // txtCnt
             // 
-            txtCnt.Location = new System.Drawing.Point(220, 57);
+            txtCnt.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            txtCnt.Location = new System.Drawing.Point(255, 62);
             txtCnt.Name = "txtCnt";
             txtCnt.PasswordChar = '●';
-            txtCnt.Size = new System.Drawing.Size(234, 31);
+            txtCnt.Size = new System.Drawing.Size(294, 37);
             txtCnt.TabIndex = 3;
             // 
             // txtNuevCont
             // 
-            txtNuevCont.Location = new System.Drawing.Point(220, 106);
+            txtNuevCont.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            txtNuevCont.Location = new System.Drawing.Point(255, 110);
             txtNuevCont.Name = "txtNuevCont";
             txtNuevCont.PasswordChar = '●';
-            txtNuevCont.Size = new System.Drawing.Size(234, 31);
+            txtNuevCont.Size = new System.Drawing.Size(294, 37);
             txtNuevCont.TabIndex = 4;
             // 
             // txtConf
             // 
-            txtConf.Location = new System.Drawing.Point(220, 158);
+            txtConf.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            txtConf.Location = new System.Drawing.Point(255, 158);
             txtConf.Name = "txtConf";
             txtConf.PasswordChar = '●';
-            txtConf.Size = new System.Drawing.Size(234, 31);
+            txtConf.Size = new System.Drawing.Size(294, 37);
             txtConf.TabIndex = 5;
             // 
             // btnCambiar
             // 
-            btnCambiar.Location = new System.Drawing.Point(150, 239);
+            btnCambiar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnCambiar.Location = new System.Drawing.Point(176, 257);
             btnCambiar.Name = "btnCambiar";
-            btnCambiar.Size = new System.Drawing.Size(210, 47);
+            btnCambiar.Size = new System.Drawing.Size(246, 59);
             btnCambiar.TabIndex = 6;
             btnCambiar.Text = "Cambiar";
             btnCambiar.UseVisualStyleBackColor = true;
@@ -100,9 +107,10 @@
             // 
             // formCambiarContraseña
             // 
+            AcceptButton = btnCambiar;
             AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(518, 328);
+            ClientSize = new System.Drawing.Size(603, 352);
             Controls.Add(btnCambiar);
             Controls.Add(txtConf);
             Controls.Add(txtNuevCont);

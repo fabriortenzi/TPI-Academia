@@ -48,15 +48,17 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(351, 21);
+            label1.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label1.Location = new System.Drawing.Point(304, 23);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(279, 25);
+            label1.Size = new System.Drawing.Size(402, 35);
             label1.TabIndex = 0;
             label1.Text = "Inscripciones que puedes eliminar";
             // 
             // btnCerrar
             // 
-            btnCerrar.Location = new System.Drawing.Point(351, 566);
+            btnCerrar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnCerrar.Location = new System.Drawing.Point(348, 592);
             btnCerrar.Name = "btnCerrar";
             btnCerrar.Size = new System.Drawing.Size(308, 65);
             btnCerrar.TabIndex = 2;
@@ -72,7 +74,7 @@
             // 
             dgvInscripciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvInscripciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { Curso, FechaHoraInscripcion, Eliminar, Id, usuarioe, NotaFinal });
-            dgvInscripciones.Location = new System.Drawing.Point(60, 79);
+            dgvInscripciones.Location = new System.Drawing.Point(59, 100);
             dgvInscripciones.Name = "dgvInscripciones";
             dgvInscripciones.RowHeadersWidth = 62;
             dgvInscripciones.RowTemplate.Height = 33;
@@ -145,7 +147,7 @@
             AcceptButton = btnCerrar;
             AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(1004, 666);
+            ClientSize = new System.Drawing.Size(1004, 696);
             Controls.Add(dgvInscripciones);
             Controls.Add(btnCerrar);
             Controls.Add(label1);

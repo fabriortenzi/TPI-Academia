@@ -46,8 +46,10 @@
             // 
             // dgvCursados
             // 
+            dgvCursados.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
             dgvCursados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvCursados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { Id, Usuario, FechaHoraInscripcion, Curso, NotaFinal });
+            dgvCursados.GridColor = System.Drawing.SystemColors.ActiveBorder;
             dgvCursados.Location = new System.Drawing.Point(81, 211);
             dgvCursados.Name = "dgvCursados";
             dgvCursados.RowHeadersWidth = 62;
@@ -106,9 +108,10 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(90, 122);
+            label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label1.Location = new System.Drawing.Point(74, 122);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(167, 25);
+            label1.Size = new System.Drawing.Size(207, 29);
             label1.TabIndex = 1;
             label1.Text = "Seleccione un curso";
             // 
@@ -116,18 +119,20 @@
             // 
             cbxCursos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cbxCursos.Enabled = false;
+            cbxCursos.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             cbxCursos.FormattingEnabled = true;
-            cbxCursos.Location = new System.Drawing.Point(263, 119);
+            cbxCursos.Location = new System.Drawing.Point(287, 119);
             cbxCursos.Name = "cbxCursos";
-            cbxCursos.Size = new System.Drawing.Size(312, 33);
+            cbxCursos.Size = new System.Drawing.Size(312, 37);
             cbxCursos.TabIndex = 2;
             cbxCursos.SelectedIndexChanged += cbxCursos_SelectedIndexChanged;
             // 
             // btnGuardar
             // 
-            btnGuardar.Location = new System.Drawing.Point(399, 795);
+            btnGuardar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnGuardar.Location = new System.Drawing.Point(379, 800);
             btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new System.Drawing.Size(196, 49);
+            btnGuardar.Size = new System.Drawing.Size(216, 60);
             btnGuardar.TabIndex = 3;
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = true;
@@ -135,9 +140,10 @@
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new System.Drawing.Point(81, 795);
+            btnCancelar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnCancelar.Location = new System.Drawing.Point(81, 800);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new System.Drawing.Size(177, 49);
+            btnCancelar.Size = new System.Drawing.Size(211, 60);
             btnCancelar.TabIndex = 4;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
@@ -145,24 +151,27 @@
             // 
             // txtCicloLectivo
             // 
-            txtCicloLectivo.Location = new System.Drawing.Point(313, 43);
+            txtCicloLectivo.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            txtCicloLectivo.Location = new System.Drawing.Point(330, 47);
             txtCicloLectivo.Name = "txtCicloLectivo";
             txtCicloLectivo.PlaceholderText = "AAAA";
-            txtCicloLectivo.Size = new System.Drawing.Size(77, 31);
+            txtCicloLectivo.Size = new System.Drawing.Size(77, 37);
             txtCicloLectivo.TabIndex = 5;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(116, 49);
+            label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label2.Location = new System.Drawing.Point(74, 50);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(191, 25);
+            label2.Size = new System.Drawing.Size(234, 29);
             label2.TabIndex = 6;
             label2.Text = "Ingrese el Ciclo Lectivo";
             // 
             // btnBuscar
             // 
-            btnBuscar.Location = new System.Drawing.Point(429, 37);
+            btnBuscar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnBuscar.Location = new System.Drawing.Point(483, 43);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new System.Drawing.Size(112, 42);
             btnBuscar.TabIndex = 7;

@@ -39,7 +39,8 @@ namespace Escritorio
             // btnAceptar
             // 
             btnAceptar.Enabled = false;
-            btnAceptar.Location = new System.Drawing.Point(207, 218);
+            btnAceptar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnAceptar.Location = new System.Drawing.Point(255, 216);
             btnAceptar.Margin = new System.Windows.Forms.Padding(4);
             btnAceptar.Name = "btnAceptar";
             btnAceptar.Size = new System.Drawing.Size(197, 58);
@@ -51,31 +52,34 @@ namespace Escritorio
             // comboBoxEspecialidades
             // 
             comboBoxEspecialidades.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            comboBoxEspecialidades.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             comboBoxEspecialidades.FormattingEnabled = true;
-            comboBoxEspecialidades.Location = new System.Drawing.Point(279, 56);
+            comboBoxEspecialidades.Location = new System.Drawing.Point(350, 66);
             comboBoxEspecialidades.Margin = new System.Windows.Forms.Padding(4);
             comboBoxEspecialidades.Name = "comboBoxEspecialidades";
-            comboBoxEspecialidades.Size = new System.Drawing.Size(296, 33);
+            comboBoxEspecialidades.Size = new System.Drawing.Size(296, 37);
             comboBoxEspecialidades.TabIndex = 1;
             comboBoxEspecialidades.SelectedIndexChanged += comboBoxEspecialidades_SelectedIndexChanged;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(24, 60);
+            label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label1.Location = new System.Drawing.Point(54, 69);
             label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(230, 25);
+            label1.Size = new System.Drawing.Size(290, 29);
             label1.TabIndex = 2;
             label1.Text = "Seleccione una Especialidad";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(24, 138);
+            label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label2.Location = new System.Drawing.Point(147, 131);
             label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(157, 25);
+            label2.Size = new System.Drawing.Size(197, 29);
             label2.TabIndex = 3;
             label2.Text = "Seleccione un Plan";
             // 
@@ -83,11 +87,12 @@ namespace Escritorio
             // 
             cbxPlanes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cbxPlanes.Enabled = false;
+            cbxPlanes.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             cbxPlanes.FormattingEnabled = true;
-            cbxPlanes.Location = new System.Drawing.Point(279, 138);
+            cbxPlanes.Location = new System.Drawing.Point(350, 128);
             cbxPlanes.Margin = new System.Windows.Forms.Padding(4);
             cbxPlanes.Name = "cbxPlanes";
-            cbxPlanes.Size = new System.Drawing.Size(296, 33);
+            cbxPlanes.Size = new System.Drawing.Size(183, 37);
             cbxPlanes.TabIndex = 4;
             cbxPlanes.SelectedIndexChanged += cbxPlanes_SelectedIndexChanged;
             // 
@@ -95,7 +100,7 @@ namespace Escritorio
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(621, 300);
+            ClientSize = new System.Drawing.Size(714, 300);
             Controls.Add(cbxPlanes);
             Controls.Add(label2);
             Controls.Add(label1);

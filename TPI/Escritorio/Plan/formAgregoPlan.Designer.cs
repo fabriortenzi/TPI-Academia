@@ -40,30 +40,33 @@ namespace Escritorio
             // 
             // textBoxAño
             // 
-            textBoxAño.Location = new System.Drawing.Point(302, 190);
+            textBoxAño.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            textBoxAño.Location = new System.Drawing.Point(276, 204);
             textBoxAño.Margin = new System.Windows.Forms.Padding(4);
             textBoxAño.Name = "textBoxAño";
             textBoxAño.PlaceholderText = "AAAA";
-            textBoxAño.Size = new System.Drawing.Size(155, 31);
+            textBoxAño.Size = new System.Drawing.Size(155, 37);
             textBoxAño.TabIndex = 0;
             textBoxAño.TextChanged += textBoxAño_TextChanged;
             // 
             // lblAño
             // 
             lblAño.AutoSize = true;
-            lblAño.Location = new System.Drawing.Point(249, 193);
+            lblAño.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblAño.Location = new System.Drawing.Point(215, 207);
             lblAño.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblAño.Name = "lblAño";
-            lblAño.Size = new System.Drawing.Size(45, 25);
+            lblAño.Size = new System.Drawing.Size(53, 29);
             lblAño.TabIndex = 2;
             lblAño.Text = "Año";
             // 
             // btnAceptar
             // 
-            btnAceptar.Location = new System.Drawing.Point(382, 292);
+            btnAceptar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnAceptar.Location = new System.Drawing.Point(382, 312);
             btnAceptar.Margin = new System.Windows.Forms.Padding(4);
             btnAceptar.Name = "btnAceptar";
-            btnAceptar.Size = new System.Drawing.Size(262, 71);
+            btnAceptar.Size = new System.Drawing.Size(240, 51);
             btnAceptar.TabIndex = 4;
             btnAceptar.Text = "Aceptar";
             btnAceptar.UseVisualStyleBackColor = true;
@@ -72,21 +75,23 @@ namespace Escritorio
             // comboBoxEsp
             // 
             comboBoxEsp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            comboBoxEsp.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             comboBoxEsp.FormattingEnabled = true;
-            comboBoxEsp.Location = new System.Drawing.Point(249, 118);
+            comboBoxEsp.Location = new System.Drawing.Point(276, 140);
             comboBoxEsp.Margin = new System.Windows.Forms.Padding(4);
             comboBoxEsp.Name = "comboBoxEsp";
-            comboBoxEsp.Size = new System.Drawing.Size(299, 33);
+            comboBoxEsp.Size = new System.Drawing.Size(299, 37);
             comboBoxEsp.TabIndex = 5;
             comboBoxEsp.SelectedIndexChanged += comboBoxEsp_SelectedIndexChanged;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(132, 121);
+            label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label1.Location = new System.Drawing.Point(131, 143);
             label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(109, 25);
+            label1.Size = new System.Drawing.Size(137, 29);
             label1.TabIndex = 6;
             label1.Text = "Especialidad";
             label1.Click += label1_Click;
@@ -94,19 +99,21 @@ namespace Escritorio
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(225, 35);
+            label2.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label2.Location = new System.Drawing.Point(196, 36);
             label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(251, 25);
+            label2.Size = new System.Drawing.Size(352, 35);
             label2.TabIndex = 7;
             label2.Text = "Complete los siguientes datos";
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new System.Drawing.Point(97, 292);
+            btnCancelar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnCancelar.Location = new System.Drawing.Point(97, 312);
             btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new System.Drawing.Size(262, 71);
+            btnCancelar.Size = new System.Drawing.Size(240, 51);
             btnCancelar.TabIndex = 8;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;

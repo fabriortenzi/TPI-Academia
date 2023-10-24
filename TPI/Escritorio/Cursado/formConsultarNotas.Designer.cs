@@ -42,11 +42,12 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(412, 29);
+            label1.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label1.Location = new System.Drawing.Point(383, 22);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(169, 25);
+            label1.Size = new System.Drawing.Size(240, 35);
             label1.TabIndex = 0;
-            label1.Text = "Notas de tus cursos";
+            label1.Text = "Notas de tus Cursos";
             // 
             // dgvCursados
             // 
@@ -109,9 +110,10 @@
             // 
             // btnCerrar
             // 
-            btnCerrar.Location = new System.Drawing.Point(383, 728);
+            btnCerrar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnCerrar.Location = new System.Drawing.Point(359, 722);
             btnCerrar.Name = "btnCerrar";
-            btnCerrar.Size = new System.Drawing.Size(207, 54);
+            btnCerrar.Size = new System.Drawing.Size(264, 63);
             btnCerrar.TabIndex = 2;
             btnCerrar.Text = "Cerrar";
             btnCerrar.UseVisualStyleBackColor = true;

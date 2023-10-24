@@ -46,20 +46,22 @@
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new System.Drawing.Point(17, 532);
+            btnCancelar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnCancelar.Location = new System.Drawing.Point(48, 492);
             btnCancelar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new System.Drawing.Size(107, 38);
+            btnCancelar.Size = new System.Drawing.Size(236, 55);
             btnCancelar.TabIndex = 15;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
             // 
             // btnAgregar
             // 
-            btnAgregar.Location = new System.Drawing.Point(243, 532);
+            btnAgregar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnAgregar.Location = new System.Drawing.Point(343, 492);
             btnAgregar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new System.Drawing.Size(107, 38);
+            btnAgregar.Size = new System.Drawing.Size(236, 55);
             btnAgregar.TabIndex = 14;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = true;
@@ -68,39 +70,43 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(37, 53);
+            label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label1.Location = new System.Drawing.Point(86, 59);
             label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(83, 25);
+            label1.Size = new System.Drawing.Size(100, 29);
             label1.TabIndex = 9;
             label1.Text = "Profesor:";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new System.Drawing.Point(29, 432);
+            label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label4.Location = new System.Drawing.Point(110, 393);
             label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(64, 25);
+            label4.Size = new System.Drawing.Size(76, 29);
             label4.TabIndex = 18;
             label4.Text = "Cargo:";
             // 
             // txtCargo
             // 
-            txtCargo.Location = new System.Drawing.Point(109, 423);
+            txtCargo.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            txtCargo.Location = new System.Drawing.Point(194, 385);
             txtCargo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             txtCargo.Name = "txtCargo";
-            txtCargo.Size = new System.Drawing.Size(223, 31);
+            txtCargo.Size = new System.Drawing.Size(223, 37);
             txtCargo.TabIndex = 19;
             // 
             // cbxLegajo
             // 
             cbxLegajo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cbxLegajo.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             cbxLegajo.FormattingEnabled = true;
-            cbxLegajo.Location = new System.Drawing.Point(121, 48);
+            cbxLegajo.Location = new System.Drawing.Point(194, 56);
             cbxLegajo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             cbxLegajo.Name = "cbxLegajo";
-            cbxLegajo.Size = new System.Drawing.Size(210, 33);
+            cbxLegajo.Size = new System.Drawing.Size(335, 37);
             cbxLegajo.TabIndex = 21;
             cbxLegajo.SelectedIndexChanged += cbxLegajo_SelectedIndexChanged;
             // 
@@ -108,20 +114,22 @@
             // 
             cbxComision.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cbxComision.Enabled = false;
+            cbxComision.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             cbxComision.FormattingEnabled = true;
-            cbxComision.Location = new System.Drawing.Point(121, 340);
+            cbxComision.Location = new System.Drawing.Point(194, 325);
             cbxComision.Name = "cbxComision";
-            cbxComision.Size = new System.Drawing.Size(210, 33);
+            cbxComision.Size = new System.Drawing.Size(210, 37);
             cbxComision.TabIndex = 43;
             cbxComision.SelectedIndexChanged += cbxComision_SelectedIndexChanged;
             // 
             // lblComision
             // 
             lblComision.AutoSize = true;
-            lblComision.Location = new System.Drawing.Point(27, 350);
+            lblComision.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblComision.Location = new System.Drawing.Point(75, 328);
             lblComision.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblComision.Name = "lblComision";
-            lblComision.Size = new System.Drawing.Size(91, 25);
+            lblComision.Size = new System.Drawing.Size(111, 29);
             lblComision.TabIndex = 42;
             lblComision.Text = "Comision:";
             // 
@@ -129,10 +137,11 @@
             // 
             cbxMaterias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cbxMaterias.Enabled = false;
+            cbxMaterias.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             cbxMaterias.FormattingEnabled = true;
-            cbxMaterias.Location = new System.Drawing.Point(121, 263);
+            cbxMaterias.Location = new System.Drawing.Point(194, 257);
             cbxMaterias.Name = "cbxMaterias";
-            cbxMaterias.Size = new System.Drawing.Size(210, 33);
+            cbxMaterias.Size = new System.Drawing.Size(335, 37);
             cbxMaterias.TabIndex = 41;
             cbxMaterias.SelectedIndexChanged += cbxMaterias_SelectedIndexChanged;
             // 
@@ -140,55 +149,62 @@
             // 
             cbxPlanes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cbxPlanes.Enabled = false;
+            cbxPlanes.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             cbxPlanes.FormattingEnabled = true;
-            cbxPlanes.Location = new System.Drawing.Point(121, 202);
+            cbxPlanes.Location = new System.Drawing.Point(194, 188);
             cbxPlanes.Name = "cbxPlanes";
-            cbxPlanes.Size = new System.Drawing.Size(210, 33);
+            cbxPlanes.Size = new System.Drawing.Size(210, 37);
             cbxPlanes.TabIndex = 40;
             cbxPlanes.SelectedIndexChanged += cbxPlanes_SelectedIndexChanged;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(44, 277);
+            label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label3.Location = new System.Drawing.Point(90, 260);
             label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(75, 25);
+            label3.Size = new System.Drawing.Size(98, 29);
             label3.TabIndex = 39;
             label3.Text = "Materia:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(69, 202);
+            label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label2.Location = new System.Drawing.Point(129, 191);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(49, 25);
+            label2.Size = new System.Drawing.Size(62, 29);
             label2.TabIndex = 38;
             label2.Text = "Plan:";
             // 
             // cbxEspecialidades
             // 
             cbxEspecialidades.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cbxEspecialidades.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             cbxEspecialidades.FormattingEnabled = true;
-            cbxEspecialidades.Location = new System.Drawing.Point(121, 130);
+            cbxEspecialidades.Location = new System.Drawing.Point(194, 119);
             cbxEspecialidades.Name = "cbxEspecialidades";
-            cbxEspecialidades.Size = new System.Drawing.Size(210, 33);
+            cbxEspecialidades.Size = new System.Drawing.Size(335, 37);
             cbxEspecialidades.TabIndex = 37;
             cbxEspecialidades.SelectedIndexChanged += cbxEspecialidades_SelectedIndexChanged;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new System.Drawing.Point(9, 135);
+            label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label5.Location = new System.Drawing.Point(48, 122);
             label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(113, 25);
+            label5.Size = new System.Drawing.Size(143, 29);
             label5.TabIndex = 36;
             label5.Text = "Especialidad:";
             // 
             // formAgregarProfesorCurso
             // 
+            AcceptButton = btnAgregar;
             AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(381, 583);
+            CancelButton = btnCancelar;
+            ClientSize = new System.Drawing.Size(641, 583);
             Controls.Add(cbxComision);
             Controls.Add(lblComision);
             Controls.Add(cbxMaterias);

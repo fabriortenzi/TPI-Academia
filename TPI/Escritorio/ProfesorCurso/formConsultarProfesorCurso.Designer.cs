@@ -45,10 +45,11 @@ namespace Escritorio.ProfesorCurso
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new System.Drawing.Point(44, 383);
+            btnCancelar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnCancelar.Location = new System.Drawing.Point(41, 424);
             btnCancelar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new System.Drawing.Size(107, 38);
+            btnCancelar.Size = new System.Drawing.Size(222, 53);
             btnCancelar.TabIndex = 25;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
@@ -56,10 +57,11 @@ namespace Escritorio.ProfesorCurso
             // 
             // btnConsultar
             // 
-            btnConsultar.Location = new System.Drawing.Point(223, 383);
+            btnConsultar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnConsultar.Location = new System.Drawing.Point(321, 424);
             btnConsultar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             btnConsultar.Name = "btnConsultar";
-            btnConsultar.Size = new System.Drawing.Size(107, 38);
+            btnConsultar.Size = new System.Drawing.Size(222, 53);
             btnConsultar.TabIndex = 24;
             btnConsultar.Text = "Consultar";
             btnConsultar.UseVisualStyleBackColor = true;
@@ -69,20 +71,22 @@ namespace Escritorio.ProfesorCurso
             // 
             cbxComision.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cbxComision.Enabled = false;
+            cbxComision.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             cbxComision.FormattingEnabled = true;
-            cbxComision.Location = new System.Drawing.Point(119, 313);
+            cbxComision.Location = new System.Drawing.Point(197, 330);
             cbxComision.Name = "cbxComision";
-            cbxComision.Size = new System.Drawing.Size(210, 33);
+            cbxComision.Size = new System.Drawing.Size(210, 37);
             cbxComision.TabIndex = 63;
             cbxComision.SelectedIndexChanged += cbxComision_SelectedIndexChanged;
             // 
             // lblComision
             // 
             lblComision.AutoSize = true;
-            lblComision.Location = new System.Drawing.Point(24, 323);
+            lblComision.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblComision.Location = new System.Drawing.Point(79, 333);
             lblComision.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblComision.Name = "lblComision";
-            lblComision.Size = new System.Drawing.Size(91, 25);
+            lblComision.Size = new System.Drawing.Size(111, 29);
             lblComision.TabIndex = 62;
             lblComision.Text = "Comision:";
             // 
@@ -90,10 +94,11 @@ namespace Escritorio.ProfesorCurso
             // 
             cbxMaterias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cbxMaterias.Enabled = false;
+            cbxMaterias.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             cbxMaterias.FormattingEnabled = true;
-            cbxMaterias.Location = new System.Drawing.Point(119, 237);
+            cbxMaterias.Location = new System.Drawing.Point(197, 257);
             cbxMaterias.Name = "cbxMaterias";
-            cbxMaterias.Size = new System.Drawing.Size(210, 33);
+            cbxMaterias.Size = new System.Drawing.Size(312, 37);
             cbxMaterias.TabIndex = 61;
             cbxMaterias.SelectedIndexChanged += cbxMaterias_SelectedIndexChanged;
             // 
@@ -101,76 +106,85 @@ namespace Escritorio.ProfesorCurso
             // 
             cbxPlanes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cbxPlanes.Enabled = false;
+            cbxPlanes.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             cbxPlanes.FormattingEnabled = true;
-            cbxPlanes.Location = new System.Drawing.Point(119, 175);
+            cbxPlanes.Location = new System.Drawing.Point(197, 187);
             cbxPlanes.Name = "cbxPlanes";
-            cbxPlanes.Size = new System.Drawing.Size(210, 33);
+            cbxPlanes.Size = new System.Drawing.Size(161, 37);
             cbxPlanes.TabIndex = 60;
             cbxPlanes.SelectedIndexChanged += cbxPlanes_SelectedIndexChanged;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(41, 250);
+            label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label3.Location = new System.Drawing.Point(92, 260);
             label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(75, 25);
+            label3.Size = new System.Drawing.Size(98, 29);
             label3.TabIndex = 59;
             label3.Text = "Materia:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(66, 175);
+            label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label2.Location = new System.Drawing.Point(129, 190);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(49, 25);
+            label2.Size = new System.Drawing.Size(62, 29);
             label2.TabIndex = 58;
             label2.Text = "Plan:";
             // 
             // cbxEspecialidades
             // 
             cbxEspecialidades.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cbxEspecialidades.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             cbxEspecialidades.FormattingEnabled = true;
-            cbxEspecialidades.Location = new System.Drawing.Point(119, 103);
+            cbxEspecialidades.Location = new System.Drawing.Point(197, 123);
             cbxEspecialidades.Name = "cbxEspecialidades";
-            cbxEspecialidades.Size = new System.Drawing.Size(210, 33);
+            cbxEspecialidades.Size = new System.Drawing.Size(312, 37);
             cbxEspecialidades.TabIndex = 57;
             cbxEspecialidades.SelectedIndexChanged += cbxEspecialidades_SelectedIndexChanged;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new System.Drawing.Point(6, 108);
+            label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label5.Location = new System.Drawing.Point(47, 126);
             label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(113, 25);
+            label5.Size = new System.Drawing.Size(143, 29);
             label5.TabIndex = 56;
             label5.Text = "Especialidad:";
             // 
             // cbxLegajo
             // 
             cbxLegajo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cbxLegajo.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             cbxLegajo.FormattingEnabled = true;
-            cbxLegajo.Location = new System.Drawing.Point(119, 22);
+            cbxLegajo.Location = new System.Drawing.Point(197, 51);
             cbxLegajo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             cbxLegajo.Name = "cbxLegajo";
-            cbxLegajo.Size = new System.Drawing.Size(210, 33);
+            cbxLegajo.Size = new System.Drawing.Size(312, 37);
             cbxLegajo.TabIndex = 55;
             cbxLegajo.SelectedIndexChanged += cbxLegajo_SelectedIndexChanged;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(34, 27);
+            label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label1.Location = new System.Drawing.Point(89, 54);
             label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(83, 25);
+            label1.Size = new System.Drawing.Size(100, 29);
             label1.TabIndex = 54;
             label1.Text = "Profesor:";
             // 
             // formConsultarProfesorCurso
             // 
+            AcceptButton = btnConsultar;
             AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(374, 472);
+            CancelButton = btnCancelar;
+            ClientSize = new System.Drawing.Size(602, 516);
             Controls.Add(cbxComision);
             Controls.Add(lblComision);
             Controls.Add(cbxMaterias);

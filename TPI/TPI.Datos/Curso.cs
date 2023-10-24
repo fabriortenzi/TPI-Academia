@@ -70,14 +70,12 @@ namespace TPI.Datos
             using (ApplicationContext context = ApplicationContext.CreateContext())
             {
                 return context.cursos
-                       .Include(x => x.Materia)
-                      .ThenInclude(x => x.Plan)
-                       .Include(x => x.Comision)
-                       .ThenInclude(x => x.Especialidad)
-                       .FirstOrDefault(x => x.Id == id);
-
+                        .Include(x => x.Materia)
+                        .ThenInclude(x => x.Plan)
+                        .Include(x => x.Comision)
+                        .ThenInclude(x => x.Especialidad)
+                        .FirstOrDefault(x => x.Id == id);
             }
-
         }
 
         public static void Cambiar(Entidades.Curso curso) 
@@ -88,8 +86,6 @@ namespace TPI.Datos
                 context.Entry(curso).State = EntityState.Modified;
                 context.SaveChanges();
             }
-
-
         }
 
         public static void Eliminar(Entidades.Curso curso)
@@ -100,6 +96,5 @@ namespace TPI.Datos
                 context.SaveChanges();
             }
         }
-
     }
 }

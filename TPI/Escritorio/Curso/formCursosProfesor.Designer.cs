@@ -41,9 +41,10 @@
             // lblTitulo
             // 
             lblTitulo.AutoSize = true;
-            lblTitulo.Location = new System.Drawing.Point(140, 35);
+            lblTitulo.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblTitulo.Location = new System.Drawing.Point(58, 31);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new System.Drawing.Size(411, 25);
+            lblTitulo.Size = new System.Drawing.Size(579, 35);
             lblTitulo.TabIndex = 0;
             lblTitulo.Text = "Cursos a los que estas asignado en el Ciclo Lectivo";
             // 
@@ -51,7 +52,7 @@
             // 
             dgvProfCursos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvProfCursos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { Id, usuarioo, Curso, Cargo });
-            dgvProfCursos.Location = new System.Drawing.Point(70, 103);
+            dgvProfCursos.Location = new System.Drawing.Point(107, 126);
             dgvProfCursos.Name = "dgvProfCursos";
             dgvProfCursos.RowHeadersWidth = 62;
             dgvProfCursos.RowTemplate.Height = 33;
@@ -94,7 +95,8 @@
             // 
             // btnCerrar
             // 
-            btnCerrar.Location = new System.Drawing.Point(259, 679);
+            btnCerrar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnCerrar.Location = new System.Drawing.Point(305, 717);
             btnCerrar.Name = "btnCerrar";
             btnCerrar.Size = new System.Drawing.Size(232, 53);
             btnCerrar.TabIndex = 2;
@@ -104,9 +106,10 @@
             // 
             // formCursosProfesor
             // 
+            AcceptButton = btnCerrar;
             AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(754, 766);
+            ClientSize = new System.Drawing.Size(836, 810);
             Controls.Add(btnCerrar);
             Controls.Add(dgvProfCursos);
             Controls.Add(lblTitulo);

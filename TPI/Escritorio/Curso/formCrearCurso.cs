@@ -111,45 +111,46 @@ namespace Escritorio
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
-            
-            
-            
-            
+
+
+
+
+
             int año = 0, cupo = 0;
             string dia;
             TimeSpan hora_ini, hora_fin;
             try
             {
-                   
+
                 año = Convert.ToInt32(txtAño.Text);
                 cupo = Convert.ToInt32(txtCupo.Text);
                 dia = DiaSemana;
                 hora_ini = dtpHoraIni.Value.TimeOfDay;
                 hora_fin = dtpHoraFin.Value.TimeOfDay;
 
-                if (año <= 0 || cupo <= 0){ MessageBox.Show("Año o cupo invalido"); }
-                
-                
-                
-                
+                if (año <= 0 || cupo <= 0) { MessageBox.Show("Año o cupo invalido"); }
 
-                if(Materia == null || comision == null) { MessageBox.Show("No puede existir curso sin comision y materia"); }
-                              
-                if (año > 0 && cupo > 0 && Materia!=null && comision!=null)
+
+
+
+
+                if (Materia == null || comision == null) { MessageBox.Show("No puede existir curso sin comision y materia"); }
+
+                if (año > 0 && cupo > 0 && Materia != null && comision != null)
                 {
                     var cur = TPI.Negocio.Curso.BuscarCursoPorMateriaComision(Materia, comision);
                     if (cur != null) { MessageBox.Show("El curso ya existe"); }
-                    else { 
-                    var curso = TPI.Negocio.Curso.Crear(Materia, año, comision, cupo, dia, hora_ini, hora_fin);
-                    TPI.Negocio.Curso.Agregar(curso);
-                    MessageBox.Show("Curso creado exitosamente!");
-                    Dispose();
+                    else
+                    {
+                        var curso = TPI.Negocio.Curso.Crear(Materia, año, comision, cupo, dia, hora_ini, hora_fin);
+                        TPI.Negocio.Curso.Agregar(curso);
+                        MessageBox.Show("Curso creado exitosamente!");
+                        Dispose();
                     }
                 }
-                
 
-           
+
+
             }
             catch
             {
@@ -165,17 +166,49 @@ namespace Escritorio
 
         private void cbxComision_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbxComision.SelectedItem != null) { 
-            var nro_com = Convert.ToInt32(cbxComision.SelectedItem.ToString());
-            if (Especialidad !=null){ 
-            comision = TPI.Negocio.Comision.BuscarComisionPorNroEspecialidad(nro_com, Especialidad);
-            }
+            if (cbxComision.SelectedItem != null)
+            {
+                var nro_com = Convert.ToInt32(cbxComision.SelectedItem.ToString());
+                if (Especialidad != null)
+                {
+                    comision = TPI.Negocio.Comision.BuscarComisionPorNroEspecialidad(nro_com, Especialidad);
+                }
             }
         }
 
         private void cbxDiaSemana_SelectedIndexChanged(object sender, EventArgs e)
         {
             DiaSemana = cbxDiaSemana.SelectedItem.ToString();
+        }
+
+        private void lblComision_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void dtpHoraFin_ValueChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void dtpHoraIni_ValueChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Dispose();
         }
     }
 }

@@ -40,9 +40,10 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(175, 35);
+            label1.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label1.Location = new System.Drawing.Point(113, 28);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(308, 25);
+            label1.Size = new System.Drawing.Size(440, 35);
             label1.TabIndex = 0;
             label1.Text = "Seleccione la Especialidad a modificar";
             // 
@@ -50,7 +51,7 @@
             // 
             dgvEspec.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvEspec.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { Descripcion, Id });
-            dgvEspec.Location = new System.Drawing.Point(42, 91);
+            dgvEspec.Location = new System.Drawing.Point(42, 101);
             dgvEspec.Name = "dgvEspec";
             dgvEspec.ReadOnly = true;
             dgvEspec.RowHeadersWidth = 62;
@@ -82,9 +83,10 @@
             // 
             // btnModificar
             // 
-            btnModificar.Location = new System.Drawing.Point(356, 455);
+            btnModificar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnModificar.Location = new System.Drawing.Point(356, 476);
             btnModificar.Name = "btnModificar";
-            btnModificar.Size = new System.Drawing.Size(251, 78);
+            btnModificar.Size = new System.Drawing.Size(251, 57);
             btnModificar.TabIndex = 2;
             btnModificar.Text = "Mofificar";
             btnModificar.UseVisualStyleBackColor = true;
@@ -92,9 +94,10 @@
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new System.Drawing.Point(42, 455);
+            btnCancelar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnCancelar.Location = new System.Drawing.Point(42, 476);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new System.Drawing.Size(256, 78);
+            btnCancelar.Size = new System.Drawing.Size(256, 57);
             btnCancelar.TabIndex = 3;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
