@@ -6,6 +6,7 @@ using System.Net;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using TPI.Entidades;
 
 namespace TPI.Datos
 {
@@ -69,32 +70,22 @@ namespace TPI.Datos
             using (ApplicationContext context = ApplicationContext.CreateContext())
             {
                 return context.cursos
-                       .Include(x => x.Materia)
-                      .ThenInclude(x => x.Plan)
-                       .Include(x => x.Comision)
-                       .ThenInclude(x => x.Especialidad)
-                       .FirstOrDefault(x => x.Id == id);
-
+                        .Include(x => x.Materia)
+                        .ThenInclude(x => x.Plan)
+                        .Include(x => x.Comision)
+                        .ThenInclude(x => x.Especialidad)
+                        .FirstOrDefault(x => x.Id == id);
             }
-
         }
 
-        public static void Cambiar(Entidades.Curso curso, int ciclo, Entidades.Materia materia, Entidades.Comision comision, int cupo, string dia, TimeSpan hora_ini, TimeSpan hora_fin) 
+        public static void Cambiar(Entidades.Curso curso) 
         {
             using (ApplicationContext context = ApplicationContext.CreateContext())
             {
-                Entidades.Curso cursoAcambiar = GetOne(curso.Id);
-                cursoAcambiar.CicloLectivo = ciclo;
-                cursoAcambiar.Materia = materia;
-                cursoAcambiar.Comision = comision;
-                cursoAcambiar.Cupo = cupo;
-                cursoAcambiar.Dia = dia;
-                cursoAcambiar.HoraInicio = hora_ini;
-                cursoAcambiar.HoraFin = hora_fin;
+                context.cursos.Attach(curso);
+                context.Entry(curso).State = EntityState.Modified;
                 context.SaveChanges();
             }
-
-
         }
 
         public static void Eliminar(Entidades.Curso curso)
@@ -105,6 +96,5 @@ namespace TPI.Datos
                 context.SaveChanges();
             }
         }
-
     }
 }

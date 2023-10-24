@@ -38,33 +38,37 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(194, 35);
+            label1.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label1.Location = new System.Drawing.Point(165, 32);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(232, 25);
+            label1.Size = new System.Drawing.Size(326, 35);
             label1.TabIndex = 0;
             label1.Text = "Ingrese los siguientes datos";
             // 
             // label2
             // 
             label2.AutoSize = true;
+            label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             label2.Location = new System.Drawing.Point(103, 137);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(104, 25);
+            label2.Size = new System.Drawing.Size(128, 29);
             label2.TabIndex = 1;
             label2.Text = "Descripcion";
             // 
             // txtDescripcion
             // 
-            txtDescripcion.Location = new System.Drawing.Point(213, 134);
+            txtDescripcion.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            txtDescripcion.Location = new System.Drawing.Point(241, 134);
             txtDescripcion.Name = "txtDescripcion";
-            txtDescripcion.Size = new System.Drawing.Size(290, 31);
+            txtDescripcion.Size = new System.Drawing.Size(290, 37);
             txtDescripcion.TabIndex = 2;
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new System.Drawing.Point(115, 239);
+            btnCancelar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnCancelar.Location = new System.Drawing.Point(77, 242);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new System.Drawing.Size(195, 59);
+            btnCancelar.Size = new System.Drawing.Size(234, 56);
             btnCancelar.TabIndex = 3;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
@@ -72,9 +76,10 @@
             // 
             // btnAceptar
             // 
-            btnAceptar.Location = new System.Drawing.Point(336, 239);
+            btnAceptar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnAceptar.Location = new System.Drawing.Point(336, 242);
             btnAceptar.Name = "btnAceptar";
-            btnAceptar.Size = new System.Drawing.Size(195, 59);
+            btnAceptar.Size = new System.Drawing.Size(234, 56);
             btnAceptar.TabIndex = 4;
             btnAceptar.Text = "Aceptar";
             btnAceptar.UseVisualStyleBackColor = true;

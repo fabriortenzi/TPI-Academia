@@ -39,16 +39,17 @@ namespace Escritorio.Comision
                 return;
             }
 
-            
+
             if (nroCom == 0) { MessageBox.Show("El id de comision invalido"); }
 
             var com = TPI.Negocio.Comision.BuscarComisionPorNroEspecialidad(nroCom, Especialidad);
 
-                    
-            if(nroCom !=0 && com == null) { 
-             var comision = TPI.Negocio.Comision.Crear(nroCom, Especialidad);
+
+            if (nroCom != 0 && com == null)
+            {
+                var comision = TPI.Negocio.Comision.Crear(nroCom, Especialidad);
                 try
-                {   
+                {
                     TPI.Negocio.Comision.Agregar(comision);
                     MessageBox.Show("Comision creada con exito!");
                     Dispose();

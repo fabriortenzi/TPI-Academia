@@ -21,9 +21,17 @@ namespace Escritorio.Inscripcion
 
         private void formEliminarInscripcion_Load(object sender, EventArgs e)
         {
-            
-            if (TPI.Negocio.Cursado.BuscarCursadosPorUsuarioAño(Usuario, DateTime.Now.Year) == null) { MessageBox.Show("No hay inscripciones para eliminar"); }
-            dgvInscripciones.DataSource = TPI.Negocio.Cursado.BuscarCursadosPorUsuarioAño(Usuario, DateTime.Now.Year);
+            var cursados = TPI.Negocio.Cursado.BuscarCursadosPorUsuarioAño(Usuario, DateTime.Now.Year)
+                            .Where(c => c.NotaFinal == null).ToList();
+            if (cursados == null)
+            {
+                MessageBox.Show("No hay inscripciones para eliminar");
+                Dispose();
+            }
+            else
+            {
+                dgvInscripciones.DataSource = cursados;
+            }
         }
 
         private void dgvInscripciones_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -32,7 +40,6 @@ namespace Escritorio.Inscripcion
 
             if (cell.Value.ToString() == "Eliminar")
             {
-
                 try
                 {
                     var idInscripcion = int.Parse(dgvInscripciones.Rows[e.RowIndex].Cells[1].Value.ToString());

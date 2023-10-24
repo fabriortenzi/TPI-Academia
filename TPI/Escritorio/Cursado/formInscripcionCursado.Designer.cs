@@ -36,13 +36,15 @@
             cbxComisiones = new System.Windows.Forms.ComboBox();
             label1 = new System.Windows.Forms.Label();
             cbxCursosMateria = new System.Windows.Forms.ComboBox();
+            label4 = new System.Windows.Forms.Label();
             SuspendLayout();
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new System.Drawing.Point(198, 294);
+            btnCancelar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnCancelar.Location = new System.Drawing.Point(130, 346);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new System.Drawing.Size(193, 64);
+            btnCancelar.Size = new System.Drawing.Size(248, 59);
             btnCancelar.TabIndex = 15;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
@@ -50,9 +52,10 @@
             // 
             // btnConfirmar
             // 
-            btnConfirmar.Location = new System.Drawing.Point(435, 294);
+            btnConfirmar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnConfirmar.Location = new System.Drawing.Point(422, 346);
             btnConfirmar.Name = "btnConfirmar";
-            btnConfirmar.Size = new System.Drawing.Size(194, 64);
+            btnConfirmar.Size = new System.Drawing.Size(249, 59);
             btnConfirmar.TabIndex = 14;
             btnConfirmar.Text = "Confirmar";
             btnConfirmar.UseVisualStyleBackColor = true;
@@ -61,9 +64,10 @@
             // lblHorarioCurso
             // 
             lblHorarioCurso.AutoSize = true;
-            lblHorarioCurso.Location = new System.Drawing.Point(357, 207);
+            lblHorarioCurso.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblHorarioCurso.Location = new System.Drawing.Point(393, 248);
             lblHorarioCurso.Name = "lblHorarioCurso";
-            lblHorarioCurso.Size = new System.Drawing.Size(118, 25);
+            lblHorarioCurso.Size = new System.Drawing.Size(144, 29);
             lblHorarioCurso.TabIndex = 13;
             lblHorarioCurso.Text = "HorarioCurso";
             lblHorarioCurso.Visible = false;
@@ -71,18 +75,20 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(275, 207);
+            label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label3.Location = new System.Drawing.Point(293, 248);
             label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(76, 25);
+            label3.Size = new System.Drawing.Size(94, 29);
             label3.TabIndex = 12;
             label3.Text = "Horario:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(143, 155);
+            label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label2.Location = new System.Drawing.Point(129, 196);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(208, 25);
+            label2.Size = new System.Drawing.Size(258, 29);
             label2.TabIndex = 11;
             label2.Text = "Seleccione una Comision";
             // 
@@ -90,31 +96,44 @@
             // 
             cbxComisiones.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cbxComisiones.Enabled = false;
+            cbxComisiones.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             cbxComisiones.FormattingEnabled = true;
-            cbxComisiones.Location = new System.Drawing.Point(357, 152);
+            cbxComisiones.Location = new System.Drawing.Point(393, 193);
             cbxComisiones.Name = "cbxComisiones";
-            cbxComisiones.Size = new System.Drawing.Size(199, 33);
+            cbxComisiones.Size = new System.Drawing.Size(199, 37);
             cbxComisiones.TabIndex = 10;
             cbxComisiones.SelectedIndexChanged += cbxComisiones_SelectedIndexChanged;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(159, 95);
+            label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label1.Location = new System.Drawing.Point(142, 136);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(192, 25);
+            label1.Size = new System.Drawing.Size(245, 29);
             label1.TabIndex = 9;
             label1.Text = "Seleccione una Materia";
             // 
             // cbxCursosMateria
             // 
             cbxCursosMateria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cbxCursosMateria.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             cbxCursosMateria.FormattingEnabled = true;
-            cbxCursosMateria.Location = new System.Drawing.Point(357, 92);
+            cbxCursosMateria.Location = new System.Drawing.Point(393, 133);
             cbxCursosMateria.Name = "cbxCursosMateria";
-            cbxCursosMateria.Size = new System.Drawing.Size(300, 33);
+            cbxCursosMateria.Size = new System.Drawing.Size(300, 37);
             cbxCursosMateria.TabIndex = 8;
             cbxCursosMateria.SelectedIndexChanged += cbxCursosMateria_SelectedIndexChanged;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label4.Location = new System.Drawing.Point(228, 31);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(352, 35);
+            label4.TabIndex = 16;
+            label4.Text = "Complete los siguientes datos";
             // 
             // formInscripcionCursado
             // 
@@ -123,6 +142,7 @@
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             CancelButton = btnCancelar;
             ClientSize = new System.Drawing.Size(800, 450);
+            Controls.Add(label4);
             Controls.Add(btnCancelar);
             Controls.Add(btnConfirmar);
             Controls.Add(lblHorarioCurso);
@@ -149,5 +169,6 @@
         private System.Windows.Forms.ComboBox cbxComisiones;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbxCursosMateria;
+        private System.Windows.Forms.Label label4;
     }
 }

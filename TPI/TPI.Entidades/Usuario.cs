@@ -32,5 +32,10 @@ namespace TPI.Entidades
             Persona = persona;
             TipoDeUsuario = tipoDeUsuario;
         }
+
+        public override string ToString()
+        {
+            return $"Legajo: {Legajo} - {Persona.Apellido}, {Persona.Nombre}";
+        }
     }
 }

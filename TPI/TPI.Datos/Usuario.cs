@@ -54,6 +54,7 @@ namespace TPI.Datos
                 return context.usuarios
                     .Include(x => x.TipoDeUsuario)
                     .Include(x => x.Persona)
+                    .Include(x => x.Plan)
                     .ToList();
             }
         }

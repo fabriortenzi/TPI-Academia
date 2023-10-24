@@ -8,10 +8,23 @@ namespace TPI.Negocio
 {
     public class Curso
     {
-        public static List<Entidades.Curso> BuscarCursosPorPlanCicloLectivo(Entidades.Plan plan, int ciclo) 
+        public static List<Entidades.Curso> BuscarCursosPorPlanCicloLectivo(Entidades.Usuario usuario, int ciclo) 
         {
-            return TPI.Datos.Curso.GetAll().Where(x => x.Materia.Plan.Id == plan.Id && x.CicloLectivo == ciclo).ToList();
+            // Obtengo todos los Cursos del Plan
+            var cursos = Datos.Curso.GetAll()
+                .Where(x => x.Materia.Plan.Id == usuario.Plan.Id && x.CicloLectivo == ciclo)
+                .ToList();
+
+            // Obtengo los Cursos a los que se inscribio el Alumno este Ciclo Lectivo
+            var cursosInsc = Cursado.BuscarCursadosPorUsuarioAño(usuario, ciclo).Select(c => c.Curso).ToList();
+
+            /* Saco de la lista de cursos para inscribirse
+               los que tienen materias que el Alumno ya se inscribio
+               en este Ciclo Lectivo */
+            cursos.RemoveAll(curso => cursosInsc.Any(cursoInsc => cursoInsc.Materia.Descripcion == curso.Materia.Descripcion));
+            return cursos;
         }
+
         public static Entidades.Curso BuscarCursoPorMateriaComision(Entidades.Materia materia, Entidades.Comision comision) 
         {
             return TPI.Datos.Curso.GetAll().FirstOrDefault(x => x.Materia.Id == materia.Id && x.Comision.Id == comision.Id);
@@ -27,8 +40,8 @@ namespace TPI.Negocio
         public static void Eliminar(Entidades.Curso curso)
         => Datos.Curso.Eliminar(curso);
 
-        public static void Cambiar(Entidades.Curso curso, int ciclo, Entidades.Materia materia, Entidades.Comision comision, int cupo, string dia, TimeSpan hora_ini, TimeSpan hora_fin)
-       => Datos.Curso.Cambiar(curso, ciclo, materia, comision, cupo, dia, hora_ini, hora_fin);
+        public static void Cambiar(Entidades.Curso curso)
+       => Datos.Curso.Cambiar(curso);
 
         public static List<Entidades.Curso> GetAll()
         {

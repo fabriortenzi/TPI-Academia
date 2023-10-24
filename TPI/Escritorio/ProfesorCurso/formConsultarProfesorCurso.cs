@@ -50,7 +50,7 @@ namespace Escritorio.ProfesorCurso
             else { MessageBox.Show("Seleccione una materia y una comision"); }
 
 
-           
+
 
         }
 

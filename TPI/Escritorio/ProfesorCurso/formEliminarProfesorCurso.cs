@@ -67,7 +67,7 @@ namespace Escritorio.ProfesorCurso
 
         }
 
-      
+
 
         private void btnEliminar_Click_1(object sender, EventArgs e)
         {
@@ -93,8 +93,8 @@ namespace Escritorio.ProfesorCurso
                 else { MessageBox.Show("Seleccione una materia y una comision"); }
 
             }
-                
-         
+
+
             else { this.Close(); }
         }
 

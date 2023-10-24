@@ -94,7 +94,7 @@ namespace Escritorio
 
             var nuevamateria = TPI.Negocio.Materia.CrearMateria(descMateria, horas_sem, horas_tot, Plan);
 
-            if(await TPI.Negocio.Materia.AgregaMateria(nuevamateria))
+            if (await TPI.Negocio.Materia.AgregaMateria(nuevamateria))
             {
                 MessageBox.Show("Materia creada con exito!");
             }

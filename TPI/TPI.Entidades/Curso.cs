@@ -26,9 +26,7 @@ namespace TPI.Entidades
 
         public TimeSpan HoraInicio { get; set; }
 
-        public TimeSpan HoraFin { get; set; }
-
-        
+        public TimeSpan HoraFin { get; set; }        
 
         public Curso() { }
 

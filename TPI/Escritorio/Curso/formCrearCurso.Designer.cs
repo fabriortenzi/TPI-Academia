@@ -48,46 +48,47 @@
             label8 = new System.Windows.Forms.Label();
             cbxComision = new System.Windows.Forms.ComboBox();
             cbxDiaSemana = new System.Windows.Forms.ComboBox();
+            btnCancelar = new System.Windows.Forms.Button();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(72, 56);
-            label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label1.Location = new System.Drawing.Point(67, 139);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(75, 15);
+            label1.Size = new System.Drawing.Size(143, 29);
             label1.TabIndex = 0;
             label1.Text = "Especialidad:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(114, 97);
-            label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label2.Location = new System.Drawing.Point(148, 200);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(33, 15);
+            label2.Size = new System.Drawing.Size(62, 29);
             label2.TabIndex = 1;
             label2.Text = "Plan:";
             // 
             // cbxEspecialidades
             // 
             cbxEspecialidades.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cbxEspecialidades.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             cbxEspecialidades.FormattingEnabled = true;
-            cbxEspecialidades.Location = new System.Drawing.Point(151, 53);
-            cbxEspecialidades.Margin = new System.Windows.Forms.Padding(2);
+            cbxEspecialidades.Location = new System.Drawing.Point(216, 136);
             cbxEspecialidades.Name = "cbxEspecialidades";
-            cbxEspecialidades.Size = new System.Drawing.Size(148, 23);
+            cbxEspecialidades.Size = new System.Drawing.Size(318, 37);
             cbxEspecialidades.TabIndex = 2;
             cbxEspecialidades.SelectedIndexChanged += cbxEspecialidades_SelectedIndexChanged;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(97, 142);
-            label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label3.Location = new System.Drawing.Point(112, 263);
             label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(50, 15);
+            label3.Size = new System.Drawing.Size(98, 29);
             label3.TabIndex = 3;
             label3.Text = "Materia:";
             // 
@@ -95,11 +96,11 @@
             // 
             cbxPlanes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cbxPlanes.Enabled = false;
+            cbxPlanes.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             cbxPlanes.FormattingEnabled = true;
-            cbxPlanes.Location = new System.Drawing.Point(151, 97);
-            cbxPlanes.Margin = new System.Windows.Forms.Padding(2);
+            cbxPlanes.Location = new System.Drawing.Point(216, 197);
             cbxPlanes.Name = "cbxPlanes";
-            cbxPlanes.Size = new System.Drawing.Size(148, 23);
+            cbxPlanes.Size = new System.Drawing.Size(210, 37);
             cbxPlanes.TabIndex = 4;
             cbxPlanes.SelectedIndexChanged += cbxPlanes_SelectedIndexChanged;
             // 
@@ -107,67 +108,67 @@
             // 
             cbxMaterias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cbxMaterias.Enabled = false;
+            cbxMaterias.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             cbxMaterias.FormattingEnabled = true;
-            cbxMaterias.Location = new System.Drawing.Point(151, 134);
-            cbxMaterias.Margin = new System.Windows.Forms.Padding(2);
+            cbxMaterias.Location = new System.Drawing.Point(216, 258);
             cbxMaterias.Name = "cbxMaterias";
-            cbxMaterias.Size = new System.Drawing.Size(148, 23);
+            cbxMaterias.Size = new System.Drawing.Size(318, 37);
             cbxMaterias.TabIndex = 5;
             cbxMaterias.SelectedIndexChanged += cbxMaterias_SelectedIndexChanged;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new System.Drawing.Point(204, 22);
-            label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label4.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label4.Location = new System.Drawing.Point(336, 34);
             label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(165, 15);
+            label4.Size = new System.Drawing.Size(352, 35);
             label4.TabIndex = 6;
             label4.Text = "Complete los siguientes datos";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new System.Drawing.Point(110, 178);
-            label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label5.Location = new System.Drawing.Point(143, 321);
             label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(37, 15);
+            label5.Size = new System.Drawing.Size(67, 29);
             label5.TabIndex = 7;
             label5.Text = "Ciclo:";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new System.Drawing.Point(108, 211);
-            label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label6.Location = new System.Drawing.Point(139, 376);
             label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(39, 15);
+            label6.Size = new System.Drawing.Size(71, 29);
             label6.TabIndex = 8;
             label6.Text = "Cupo:";
             // 
             // txtAño
             // 
-            txtAño.Location = new System.Drawing.Point(151, 170);
-            txtAño.Margin = new System.Windows.Forms.Padding(2);
+            txtAño.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            txtAño.Location = new System.Drawing.Point(216, 318);
             txtAño.Name = "txtAño";
             txtAño.PlaceholderText = "AAAA";
-            txtAño.Size = new System.Drawing.Size(101, 23);
+            txtAño.Size = new System.Drawing.Size(143, 37);
             txtAño.TabIndex = 9;
             // 
             // txtCupo
             // 
-            txtCupo.Location = new System.Drawing.Point(151, 203);
-            txtCupo.Margin = new System.Windows.Forms.Padding(2);
+            txtCupo.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            txtCupo.Location = new System.Drawing.Point(216, 373);
             txtCupo.Name = "txtCupo";
-            txtCupo.Size = new System.Drawing.Size(101, 23);
+            txtCupo.Size = new System.Drawing.Size(143, 37);
             txtCupo.TabIndex = 10;
             // 
             // btnCrear
             // 
-            btnCrear.Location = new System.Drawing.Point(217, 257);
-            btnCrear.Margin = new System.Windows.Forms.Padding(2);
+            btnCrear.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnCrear.Location = new System.Drawing.Point(547, 479);
             btnCrear.Name = "btnCrear";
-            btnCrear.Size = new System.Drawing.Size(180, 34);
+            btnCrear.Size = new System.Drawing.Size(257, 57);
             btnCrear.TabIndex = 11;
             btnCrear.Text = "Crear";
             btnCrear.UseVisualStyleBackColor = true;
@@ -176,68 +177,86 @@
             // lblComision
             // 
             lblComision.AutoSize = true;
-            lblComision.Location = new System.Drawing.Point(336, 59);
+            lblComision.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblComision.Location = new System.Drawing.Point(619, 136);
+            lblComision.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblComision.Name = "lblComision";
-            lblComision.Size = new System.Drawing.Size(61, 15);
+            lblComision.Size = new System.Drawing.Size(111, 29);
             lblComision.TabIndex = 12;
             lblComision.Text = "Comision:";
+            lblComision.Click += lblComision_Click;
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new System.Drawing.Point(370, 94);
+            label7.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label7.Location = new System.Drawing.Point(676, 203);
+            label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label7.Name = "label7";
-            label7.Size = new System.Drawing.Size(27, 15);
+            label7.Size = new System.Drawing.Size(52, 29);
             label7.TabIndex = 15;
             label7.Text = "Dia:";
+            label7.Click += label7_Click;
             // 
             // dtpHoraIni
             // 
+            dtpHoraIni.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dtpHoraIni.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            dtpHoraIni.Location = new System.Drawing.Point(405, 129);
+            dtpHoraIni.Location = new System.Drawing.Point(735, 258);
+            dtpHoraIni.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             dtpHoraIni.Name = "dtpHoraIni";
             dtpHoraIni.ShowUpDown = true;
-            dtpHoraIni.Size = new System.Drawing.Size(111, 23);
+            dtpHoraIni.Size = new System.Drawing.Size(210, 37);
             dtpHoraIni.TabIndex = 16;
             dtpHoraIni.Value = new System.DateTime(2023, 10, 5, 0, 0, 0, 0);
+            dtpHoraIni.ValueChanged += dtpHoraIni_ValueChanged;
             // 
             // dtpHoraFin
             // 
+            dtpHoraFin.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dtpHoraFin.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            dtpHoraFin.Location = new System.Drawing.Point(403, 171);
+            dtpHoraFin.Location = new System.Drawing.Point(735, 318);
+            dtpHoraFin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             dtpHoraFin.Name = "dtpHoraFin";
             dtpHoraFin.ShowUpDown = true;
-            dtpHoraFin.Size = new System.Drawing.Size(113, 23);
+            dtpHoraFin.Size = new System.Drawing.Size(210, 37);
             dtpHoraFin.TabIndex = 17;
             dtpHoraFin.Value = new System.DateTime(2023, 10, 1, 12, 0, 0, 0);
+            dtpHoraFin.ValueChanged += dtpHoraFin_ValueChanged;
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new System.Drawing.Point(313, 137);
+            label9.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label9.Location = new System.Drawing.Point(574, 261);
+            label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label9.Name = "label9";
-            label9.Size = new System.Drawing.Size(84, 15);
+            label9.Size = new System.Drawing.Size(156, 29);
             label9.TabIndex = 19;
             label9.Text = "Hora de inicio:";
+            label9.Click += label9_Click;
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new System.Drawing.Point(328, 176);
+            label8.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label8.Location = new System.Drawing.Point(599, 324);
+            label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label8.Name = "label8";
-            label8.Size = new System.Drawing.Size(69, 15);
+            label8.Size = new System.Drawing.Size(128, 29);
             label8.TabIndex = 20;
             label8.Text = "Hora de fin:";
+            label8.Click += label8_Click;
             // 
             // cbxComision
             // 
             cbxComision.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cbxComision.Enabled = false;
+            cbxComision.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             cbxComision.FormattingEnabled = true;
-            cbxComision.Location = new System.Drawing.Point(402, 53);
-            cbxComision.Margin = new System.Windows.Forms.Padding(2);
+            cbxComision.Location = new System.Drawing.Point(735, 134);
             cbxComision.Name = "cbxComision";
-            cbxComision.Size = new System.Drawing.Size(148, 23);
+            cbxComision.Size = new System.Drawing.Size(210, 37);
             cbxComision.TabIndex = 21;
             cbxComision.SelectedIndexChanged += cbxComision_SelectedIndexChanged;
             cbxComision.SelectionChangeCommitted += cbxComision_SelectionChangeCommitted;
@@ -245,19 +264,34 @@
             // cbxDiaSemana
             // 
             cbxDiaSemana.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cbxDiaSemana.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             cbxDiaSemana.FormattingEnabled = true;
-            cbxDiaSemana.Location = new System.Drawing.Point(405, 89);
+            cbxDiaSemana.Location = new System.Drawing.Point(735, 200);
+            cbxDiaSemana.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             cbxDiaSemana.Name = "cbxDiaSemana";
-            cbxDiaSemana.Size = new System.Drawing.Size(145, 23);
+            cbxDiaSemana.Size = new System.Drawing.Size(210, 37);
             cbxDiaSemana.TabIndex = 22;
             cbxDiaSemana.SelectedIndexChanged += cbxDiaSemana_SelectedIndexChanged;
+            // 
+            // btnCancelar
+            // 
+            btnCancelar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnCancelar.Location = new System.Drawing.Point(216, 479);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new System.Drawing.Size(257, 57);
+            btnCancelar.TabIndex = 23;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // formCrearCurso
             // 
             AcceptButton = btnCrear;
-            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(601, 310);
+            CancelButton = btnCancelar;
+            ClientSize = new System.Drawing.Size(1013, 583);
+            Controls.Add(btnCancelar);
             Controls.Add(cbxDiaSemana);
             Controls.Add(cbxComision);
             Controls.Add(label8);
@@ -278,7 +312,6 @@
             Controls.Add(cbxEspecialidades);
             Controls.Add(label2);
             Controls.Add(label1);
-            Margin = new System.Windows.Forms.Padding(2);
             Name = "formCrearCurso";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "Crear Curso";
@@ -309,5 +342,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cbxComision;
         private System.Windows.Forms.ComboBox cbxDiaSemana;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

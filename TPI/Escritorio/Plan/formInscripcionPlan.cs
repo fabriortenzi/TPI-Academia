@@ -50,8 +50,19 @@ namespace Escritorio
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            /* Verifico que la Persona que se quiera agregar el Usuario
+               no se de de alta con un plan que ya este registrado para esa Persona */
+            var usuarioConEsePlan = TPI.Negocio.Usuario.GetAllUsuarios()
+                .Where(u => u.Plan != null)
+                .FirstOrDefault(u => u.Plan.Id == Plan.Id && u.Persona.Dni == Usuario.Persona.Dni);
+            if (usuarioConEsePlan != null)
+            {
+                MessageBox.Show("Ya existe un Usuario Alumno con ese plan");
+                return;
+            }
+
             TPI.Negocio.Usuario.AsignarPlanAUsuario(Plan, Usuario);
-            MessageBox.Show($"Alumno legajo numero {Usuario.Legajo} creado con exito!");
+            MessageBox.Show($"Alumno Legajo Numero {Usuario.Legajo} creado con exito!");
             Dispose();
         }
 
@@ -75,10 +86,13 @@ namespace Escritorio
 
         private async void cbxPlanes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var añoPlan = Convert.ToInt32(cbxPlanes.SelectedItem.ToString());
-            Plan = await TPI.Negocio.Plan.GetPlanPorEspecialidadAnio(Especialidad, añoPlan);
+            if (cbxPlanes.SelectedIndex != -1)
+            {
+                var añoPlan = Convert.ToInt32(cbxPlanes.SelectedItem.ToString());
+                Plan = await TPI.Negocio.Plan.GetPlanPorEspecialidadAnio(Especialidad, añoPlan);
 
-            btnAceptar.Enabled = true;
+                btnAceptar.Enabled = true;
+            }
         }
 
         private void formInscripcionPlan_FormClosing(object sender, FormClosingEventArgs e)

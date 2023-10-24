@@ -40,43 +40,48 @@
             // lblTitNomApe
             // 
             lblTitNomApe.AutoSize = true;
-            lblTitNomApe.Location = new System.Drawing.Point(155, 32);
+            lblTitNomApe.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblTitNomApe.Location = new System.Drawing.Point(112, 32);
             lblTitNomApe.Name = "lblTitNomApe";
-            lblTitNomApe.Size = new System.Drawing.Size(199, 25);
+            lblTitNomApe.Size = new System.Drawing.Size(242, 29);
             lblTitNomApe.TabIndex = 0;
             lblTitNomApe.Text = "Datos modificables de: ";
             // 
             // lblNomApe
             // 
             lblNomApe.AutoSize = true;
+            lblNomApe.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             lblNomApe.Location = new System.Drawing.Point(360, 32);
             lblNomApe.Name = "lblNomApe";
-            lblNomApe.Size = new System.Drawing.Size(141, 25);
+            lblNomApe.Size = new System.Drawing.Size(174, 29);
             lblNomApe.TabIndex = 1;
             lblNomApe.Text = "nombreApellido";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(131, 132);
+            label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label3.Location = new System.Drawing.Point(71, 148);
             label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(85, 25);
+            label3.Size = new System.Drawing.Size(106, 29);
             label3.TabIndex = 2;
             label3.Text = "Direccion";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new System.Drawing.Point(137, 193);
+            label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label4.Location = new System.Drawing.Point(79, 209);
             label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(79, 25);
+            label4.Size = new System.Drawing.Size(98, 29);
             label4.TabIndex = 3;
             label4.Text = "Telefono";
             // 
             // btnEditar
             // 
             btnEditar.Enabled = false;
-            btnEditar.Location = new System.Drawing.Point(254, 299);
+            btnEditar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnEditar.Location = new System.Drawing.Point(249, 305);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new System.Drawing.Size(166, 54);
             btnEditar.TabIndex = 4;
@@ -86,22 +91,25 @@
             // 
             // txtDireccion
             // 
-            txtDireccion.Location = new System.Drawing.Point(222, 129);
+            txtDireccion.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            txtDireccion.Location = new System.Drawing.Point(183, 145);
             txtDireccion.Name = "txtDireccion";
-            txtDireccion.Size = new System.Drawing.Size(239, 31);
+            txtDireccion.Size = new System.Drawing.Size(351, 37);
             txtDireccion.TabIndex = 5;
             txtDireccion.TextChanged += txtDireccion_TextChanged;
             // 
             // txtTelefono
             // 
-            txtTelefono.Location = new System.Drawing.Point(222, 190);
+            txtTelefono.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            txtTelefono.Location = new System.Drawing.Point(183, 206);
             txtTelefono.Name = "txtTelefono";
-            txtTelefono.Size = new System.Drawing.Size(239, 31);
+            txtTelefono.Size = new System.Drawing.Size(351, 37);
             txtTelefono.TabIndex = 6;
             txtTelefono.TextChanged += txtTelefono_TextChanged;
             // 
             // formEditarPersona
             // 
+            AcceptButton = btnEditar;
             AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(664, 407);

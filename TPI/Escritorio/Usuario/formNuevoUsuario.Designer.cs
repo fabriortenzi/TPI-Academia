@@ -48,19 +48,21 @@
             // 
             cbxTiposDeUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cbxTiposDeUsuario.Enabled = false;
+            cbxTiposDeUsuario.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             cbxTiposDeUsuario.FormattingEnabled = true;
-            cbxTiposDeUsuario.Location = new System.Drawing.Point(387, 222);
+            cbxTiposDeUsuario.Location = new System.Drawing.Point(387, 252);
             cbxTiposDeUsuario.Name = "cbxTiposDeUsuario";
-            cbxTiposDeUsuario.Size = new System.Drawing.Size(246, 33);
+            cbxTiposDeUsuario.Size = new System.Drawing.Size(324, 37);
             cbxTiposDeUsuario.TabIndex = 0;
             // 
             // lblCont
             // 
             lblCont.AutoSize = true;
             lblCont.Enabled = false;
-            lblCont.Location = new System.Drawing.Point(258, 287);
+            lblCont.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblCont.Location = new System.Drawing.Point(255, 312);
             lblCont.Name = "lblCont";
-            lblCont.Size = new System.Drawing.Size(101, 25);
+            lblCont.Size = new System.Drawing.Size(126, 29);
             lblCont.TabIndex = 1;
             lblCont.Text = "Contraseña";
             // 
@@ -68,55 +70,61 @@
             // 
             lblConfCont.AutoSize = true;
             lblConfCont.Enabled = false;
-            lblConfCont.Location = new System.Drawing.Point(174, 340);
+            lblConfCont.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblConfCont.Location = new System.Drawing.Point(151, 370);
             lblConfCont.Name = "lblConfCont";
-            lblConfCont.Size = new System.Drawing.Size(185, 25);
+            lblConfCont.Size = new System.Drawing.Size(230, 29);
             lblConfCont.TabIndex = 2;
             lblConfCont.Text = "Confirmar Contraseña";
             // 
             // txtContraseña
             // 
             txtContraseña.Enabled = false;
-            txtContraseña.Location = new System.Drawing.Point(387, 284);
+            txtContraseña.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            txtContraseña.Location = new System.Drawing.Point(387, 309);
             txtContraseña.Name = "txtContraseña";
             txtContraseña.PasswordChar = '●';
-            txtContraseña.Size = new System.Drawing.Size(246, 31);
+            txtContraseña.Size = new System.Drawing.Size(324, 37);
             txtContraseña.TabIndex = 3;
             // 
             // txtConfContraseña
             // 
             txtConfContraseña.Enabled = false;
-            txtConfContraseña.Location = new System.Drawing.Point(387, 337);
+            txtConfContraseña.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            txtConfContraseña.Location = new System.Drawing.Point(387, 367);
             txtConfContraseña.Name = "txtConfContraseña";
             txtConfContraseña.PasswordChar = '●';
-            txtConfContraseña.Size = new System.Drawing.Size(246, 31);
+            txtConfContraseña.Size = new System.Drawing.Size(324, 37);
             txtConfContraseña.TabIndex = 4;
             // 
             // lblTipUsu
             // 
             lblTipUsu.AutoSize = true;
             lblTipUsu.Enabled = false;
-            lblTipUsu.Location = new System.Drawing.Point(110, 225);
+            lblTipUsu.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblTipUsu.Location = new System.Drawing.Point(70, 255);
             lblTipUsu.Name = "lblTipUsu";
-            lblTipUsu.Size = new System.Drawing.Size(249, 25);
+            lblTipUsu.Size = new System.Drawing.Size(309, 29);
             lblTipUsu.TabIndex = 5;
             lblTipUsu.Text = "Seleccione un Tipo de Usuario";
             // 
             // label4
             // 
             label4.AutoSize = true;
+            label4.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             label4.Location = new System.Drawing.Point(297, 23);
             label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(251, 25);
+            label4.Size = new System.Drawing.Size(352, 35);
             label4.TabIndex = 6;
             label4.Text = "Complete los siguientes datos";
             // 
             // btnCrear
             // 
             btnCrear.Enabled = false;
-            btnCrear.Location = new System.Drawing.Point(441, 418);
+            btnCrear.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnCrear.Location = new System.Drawing.Point(562, 478);
             btnCrear.Name = "btnCrear";
-            btnCrear.Size = new System.Drawing.Size(217, 77);
+            btnCrear.Size = new System.Drawing.Size(263, 70);
             btnCrear.TabIndex = 7;
             btnCrear.Text = "Crear";
             btnCrear.UseVisualStyleBackColor = true;
@@ -125,22 +133,25 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new System.Drawing.Point(65, 102);
+            label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label5.Location = new System.Drawing.Point(93, 102);
             label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(234, 25);
+            label5.Size = new System.Drawing.Size(286, 29);
             label5.TabIndex = 8;
             label5.Text = "Ingrese el DNI de la Persona";
             // 
             // txtDni
             // 
-            txtDni.Location = new System.Drawing.Point(327, 99);
+            txtDni.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            txtDni.Location = new System.Drawing.Point(385, 99);
             txtDni.Name = "txtDni";
-            txtDni.Size = new System.Drawing.Size(246, 31);
+            txtDni.Size = new System.Drawing.Size(326, 37);
             txtDni.TabIndex = 9;
             // 
             // btnBuscar
             // 
-            btnBuscar.Location = new System.Drawing.Point(595, 92);
+            btnBuscar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnBuscar.Location = new System.Drawing.Point(732, 94);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new System.Drawing.Size(149, 45);
             btnBuscar.TabIndex = 10;
@@ -152,9 +163,10 @@
             // 
             lblTitApeNom.AutoSize = true;
             lblTitApeNom.Enabled = false;
-            lblTitApeNom.Location = new System.Drawing.Point(192, 174);
+            lblTitApeNom.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblTitApeNom.Location = new System.Drawing.Point(175, 204);
             lblTitApeNom.Name = "lblTitApeNom";
-            lblTitApeNom.Size = new System.Drawing.Size(167, 25);
+            lblTitApeNom.Size = new System.Drawing.Size(204, 29);
             lblTitApeNom.TabIndex = 11;
             lblTitApeNom.Text = "Apellido y Nombre:";
             // 
@@ -162,18 +174,20 @@
             // 
             lblApellidoNombre.AutoSize = true;
             lblApellidoNombre.Enabled = false;
-            lblApellidoNombre.Location = new System.Drawing.Point(385, 174);
+            lblApellidoNombre.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblApellidoNombre.Location = new System.Drawing.Point(387, 204);
             lblApellidoNombre.Name = "lblApellidoNombre";
-            lblApellidoNombre.Size = new System.Drawing.Size(59, 25);
+            lblApellidoNombre.Size = new System.Drawing.Size(74, 29);
             lblApellidoNombre.TabIndex = 12;
             lblApellidoNombre.Text = "label7";
             lblApellidoNombre.Visible = false;
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new System.Drawing.Point(156, 418);
+            btnCancelar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnCancelar.Location = new System.Drawing.Point(170, 478);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new System.Drawing.Size(217, 77);
+            btnCancelar.Size = new System.Drawing.Size(257, 70);
             btnCancelar.TabIndex = 13;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
@@ -185,7 +199,7 @@
             AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             CancelButton = btnCancelar;
-            ClientSize = new System.Drawing.Size(818, 523);
+            ClientSize = new System.Drawing.Size(997, 596);
             Controls.Add(btnCancelar);
             Controls.Add(lblApellidoNombre);
             Controls.Add(lblTitApeNom);

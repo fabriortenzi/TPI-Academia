@@ -50,15 +50,12 @@ namespace TPI.Datos
             }
         }
 
-        public static void Cambiar(Entidades.Cursado cursado, Entidades.Usuario usuario, Entidades.Curso curso, DateTime fechahorains, int notafinal)
+        public static void Cambiar(Entidades.Cursado cursado)
         {
             using (var context = ApplicationContext.CreateContext())
             {
-                Entidades.Cursado cursadoACambiar = context.cursados.FirstOrDefault(x => x == cursado);
-                cursadoACambiar.Usuario = usuario;
-                cursadoACambiar.Curso = curso;
-                cursadoACambiar.FechaHoraInscripcion = fechahorains;
-                cursadoACambiar.NotaFinal = notafinal;
+                context.cursados.Attach(cursado);
+                context.Entry(cursado).State = EntityState.Modified;
                 context.SaveChanges();
             }
         }
@@ -67,7 +64,7 @@ namespace TPI.Datos
             using (var context = ApplicationContext.CreateContext())
             {
                 return context.cursados
-                    .Include(x=>x.Usuario)
+                    .Include(x=>x.Usuario)                    
                     .Include(x => x.Curso)
                     .FirstOrDefault(x=>x.Id == id);                
             }
@@ -79,6 +76,7 @@ namespace TPI.Datos
             {
                 return context.cursados
                      .Include(x => x.Usuario)
+                     .ThenInclude(x => x.Persona)
                      .Include(x => x.Curso)
                      .ThenInclude(x => x.Materia)
                      .ToList();

@@ -63,7 +63,7 @@ namespace Escritorio.Cursado
                     if (Cursado != null && Usuario != null && Curso != null)
                     {
 
-                        TPI.Negocio.Cursado.Cambiar(Cursado, Usuario, Curso, dtpFecha.Value, nota);
+                        TPI.Negocio.Cursado.Cambiar(Cursado);
                     }
                 }
                 if (validar_curso == false)

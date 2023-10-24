@@ -12,7 +12,7 @@ namespace Escritorio.ProfesorCurso
 {
     public partial class formModificarProfesorCurso : Form
     {
-        
+
         private TPI.Entidades.ProfesorCurso profesorCurso;
         private TPI.Entidades.Curso Curso;
         public formModificarProfesorCurso(TPI.Entidades.ProfesorCurso profesor_curso)
@@ -22,7 +22,7 @@ namespace Escritorio.ProfesorCurso
 
             profesorCurso = profesor_curso;
             InitializeComponent();
-       
+
 
 
         }
