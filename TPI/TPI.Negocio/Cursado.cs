@@ -8,6 +8,23 @@ namespace TPI.Negocio
 {
     public class Cursado
     {
+        
+        public static decimal DesAprobado(Entidades.Curso curso)
+        {
+            return Datos.Cursado.DesAprobado(curso);
+        }
+
+        public static decimal PorceAprobado(Entidades.Curso curso)
+        {
+            return Datos.Cursado.PorceAprobado(curso);
+        }
+
+        
+        public static int BuscarCantAlumnosInsc(Entidades.Curso curso) 
+        {
+            return Datos.Cursado.BuscarCantAlumnosInsc(curso);
+        }
+
         public static bool ValidarNota(int nota)
         {
             if (nota >= 0 && nota <= 10) { return true; }
