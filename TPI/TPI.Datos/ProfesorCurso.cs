@@ -1,15 +1,38 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using TPI.Entidades;
+using System.Data;
 
 namespace TPI.Datos
 {
+   
     public class ProfesorCurso
     {
+        private static SqlConnection conn = new SqlConnection(@"Data Source=LOCALHOST\SQLEXPRESS;Initial Catalog=tpi2023tm01;Integrated Security=true;");
+        public static int BuscarCantProfesoresInsc(Entidades.Curso curso)
+        {
+            int cantProfes = 0;
+            SqlCommand mycommand = new SqlCommand();
+            mycommand.Connection = conn;
+            mycommand.Parameters.Add("@Id", SqlDbType.Int).Value = curso.Id;
+            mycommand.CommandText = "SELECT Count(p.Id) FROM profesores_cursos AS p WHERE p.CursoId = @Id";
+
+            try { 
+            conn.Open();
+            cantProfes = Convert.ToInt32(mycommand.ExecuteScalar());
+            }
+            catch{ }
+            finally 
+            {
+                conn.Close();
+            }
+            return cantProfes;
+        }
         public static void Agregar(Entidades.ProfesorCurso profesor_curso)
         {
            using (var context = ApplicationContext.CreateContext())
