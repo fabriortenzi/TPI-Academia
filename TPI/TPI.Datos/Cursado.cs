@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,68 @@ namespace TPI.Datos
     public class Cursado
     {
         private static SqlConnection conn = new SqlConnection(@"Data Source=LOCALHOST\SQLEXPRESS;Initial Catalog=tpi2023tm01;Integrated Security=true;");
+
+        public static decimal DesAprobado(Entidades.Curso curso)
+        {
+            int aux = 0;
+            var cursos = BuscarCursadosPorCurso(curso);
+            foreach (var c in cursos)
+            {
+                if (c.NotaFinal < 6)
+                {
+                    aux = aux + 1;
+                }
+            }
+            return Convert.ToDecimal(aux / cursos.Count());
+        }
+        public static decimal PorceAprobado(Entidades.Curso curso)
+        {
+            int aux = 0;
+            var cursos = BuscarCursadosPorCurso(curso);
+            foreach (var c in cursos) 
+            {
+                if (c.NotaFinal<=6) 
+                {
+                    aux = aux + 1;
+                }
+            }
+            return Convert.ToDecimal(aux / cursos.Count());
+        }
+        public static List<Entidades.Cursado> BuscarCursadosPorCurso(Entidades.Curso curso) 
+        {
+            using (var context = ApplicationContext.CreateContext())
+            {
+                return context.cursados.Where(x=>x.Curso.Id == curso.Id)
+                     .Include(x => x.Usuario)
+                     .ThenInclude(x => x.Persona)
+                     .Include(x => x.Curso)
+                     .ThenInclude(x => x.Materia)
+                     .ToList();
+            }
+        }
+        
+
+        public static int BuscarCantAlumnosInsc(Entidades.Curso curso) 
+        {
+
+            int cantAlu = 0;
+            SqlCommand mycommand = new SqlCommand();
+            mycommand.Connection = conn;
+            mycommand.Parameters.Add("@Id", SqlDbType.Int).Value = curso.Id;
+            mycommand.CommandText = "SELECT Count(c.Id) FROM cursados AS c WHERE c.CursoId = @Id";
+
+            try
+            {
+                conn.Open();
+                cantAlu = Convert.ToInt32(mycommand.ExecuteScalar());
+            }
+            catch { }
+            finally
+            {
+                conn.Close();
+            }
+            return cantAlu;
+        }
 
         public static void Agregar(Entidades.Cursado cursado) 
         {            

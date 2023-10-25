@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Data.SqlClient;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,11 @@ namespace TPI.Negocio
 {
     public class ProfesorCurso
     {
+
+        public static int BuscarCantProfesoresInsc(Entidades.Curso curso)
+        {
+            return Datos.ProfesorCurso.BuscarCantProfesoresInsc(curso);
+        }
         public static List<Entidades.ProfesorCurso> BuscarPorUsuario(Entidades.Usuario us) 
         {
             return Datos.ProfesorCurso.GetAll().Where(x=>x.Usuario.Legajo == us.Legajo).ToList();
