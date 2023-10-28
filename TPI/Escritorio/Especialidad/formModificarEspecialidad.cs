@@ -26,7 +26,7 @@ namespace Escritorio.Especialidad
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            Dispose();
+           this.Close();
         }
 
         private void formModificarEspecialidad_Load(object sender, EventArgs e)
@@ -54,7 +54,7 @@ namespace Escritorio.Especialidad
         {
             var f = new formCrearEspecialidad(Especialidad);
             f.Show();
-            Dispose();
+           this.Close();
         }
     }
 }

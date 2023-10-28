@@ -22,7 +22,7 @@ namespace Escritorio.Curso
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            Dispose();
+            this.Close();
         }
 
         private void formCursosProfesor_Load(object sender, EventArgs e)

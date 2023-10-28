@@ -38,7 +38,7 @@ namespace Escritorio
             {
                 TPI.Negocio.Usuario.CambiarContraseña(Usuario, nuevCont);
                 MessageBox.Show("Contraseña modificada exitosamente!");
-                Dispose();
+                Close();
             }
             else
             {

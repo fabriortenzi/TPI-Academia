@@ -30,7 +30,7 @@ namespace Escritorio.Especialidad
                 if (await TPI.Negocio.Especialidad.ModificarEspecialidad(Especialidad))
                 {
                     MessageBox.Show("Especialidad modificada correctamenete");
-                    Dispose();
+                    this.Close();
 
                     var f = new formModificarEspecialidad();
                     f.Show();
@@ -50,7 +50,7 @@ namespace Escritorio.Especialidad
             if (await TPI.Negocio.Especialidad.CrearEspecialidad(descripcion))
             {
                 MessageBox.Show("Especialidad agregada exitosamente");
-                Dispose();
+                this.Close();
             }
             else
             {
@@ -61,7 +61,7 @@ namespace Escritorio.Especialidad
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            Dispose();
+            this.Close();
         }
 
         private void formCrearEspecialidad_Load(object sender, EventArgs e)

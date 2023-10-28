@@ -24,7 +24,7 @@ namespace Escritorio.Curso
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            Dispose();
+           this.Close();
         }
 
         private void formConsultarCurso_Load(object sender, EventArgs e)

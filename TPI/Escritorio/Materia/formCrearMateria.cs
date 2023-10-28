@@ -104,12 +104,12 @@ namespace Escritorio
                 return;
             }
 
-            Dispose();
+            this.Close();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            Dispose();
+            this.Close();
         }
     }
 }

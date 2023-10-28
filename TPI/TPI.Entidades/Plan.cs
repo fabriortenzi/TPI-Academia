@@ -25,5 +25,10 @@ namespace TPI.Entidades
             Anio = anioP;
             Especialidad = especialidad;
         }
+        public override string ToString()
+        {
+            if (Anio != null) { return $"{Anio}";}
+            else { return "No posee"; }
+        }
     }
 }

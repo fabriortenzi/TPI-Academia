@@ -40,5 +40,10 @@ namespace TPI.Entidades
             FechaHoraInscripcion = fechaHoraInscripcion;
             NotaFinal = notaFinal;
         }
+        public override string ToString()
+        {
+            return $"{Id}"; 
+            
+        }
     }
 }

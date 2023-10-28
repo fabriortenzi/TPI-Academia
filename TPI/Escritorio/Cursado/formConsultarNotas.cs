@@ -28,7 +28,7 @@ namespace Escritorio.Cursado
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            Dispose();
+           this.Close();
         }
     }
 }

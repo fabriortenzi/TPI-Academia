@@ -35,11 +35,22 @@ namespace TPI.Datos
         }
         public static void Agregar(Entidades.ProfesorCurso profesor_curso)
         {
-           using (var context = ApplicationContext.CreateContext())
+            SqlCommand mycommand = new SqlCommand();
+            mycommand.Connection = conn;
+            mycommand.Parameters.Add("@Legajo", SqlDbType.Int).Value = profesor_curso.Usuario.Legajo;
+            mycommand.Parameters.Add("@IdCurso", SqlDbType.Int).Value = profesor_curso.Curso.Id;
+            mycommand.Parameters.Add("@Cargo", SqlDbType.Text).Value = profesor_curso.Cargo;
+            mycommand.CommandText = "INSERT INTO profesores_cursos (UsuarioLegajo, CursoId, Cargo)VALUES(@Legajo,@IdCurso, @Cargo)";
+
+            try
             {
-                context.profesores_cursos.Attach(profesor_curso);
-                context.Entry(profesor_curso).State = EntityState.Added;
-                context.SaveChanges();
+                conn.Open();
+                mycommand.ExecuteNonQuery();
+            }
+            catch { }
+            finally
+            {
+                conn.Close();
             }
         }
 
@@ -86,10 +97,20 @@ namespace TPI.Datos
 
         public static void Eliminar(Entidades.ProfesorCurso profesor_curso)
         {
-            using (var context = ApplicationContext.CreateContext())
+            SqlCommand mycommand = new SqlCommand();
+            mycommand.Connection = conn;
+            mycommand.Parameters.Add("@Id", SqlDbType.Int).Value = profesor_curso.Id;
+            mycommand.CommandText = "DELETE FROM profesores_cursos WHERE profesores_cursos.Id = @Id";
+
+            try
             {
-                context.profesores_cursos.Remove(profesor_curso);
-                context.SaveChanges();             
+                conn.Open();
+                mycommand.ExecuteNonQuery();
+            }
+            catch { }
+            finally
+            {
+                conn.Close();
             }
         }
 

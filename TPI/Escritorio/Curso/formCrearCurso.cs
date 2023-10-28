@@ -145,7 +145,7 @@ namespace Escritorio
                         var curso = TPI.Negocio.Curso.Crear(Materia, año, comision, cupo, dia, hora_ini, hora_fin);
                         TPI.Negocio.Curso.Agregar(curso);
                         MessageBox.Show("Curso creado exitosamente!");
-                        Dispose();
+                        this.Close();
                     }
                 }
 
@@ -208,7 +208,7 @@ namespace Escritorio
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            Dispose();
+            this.Close();
         }
     }
 }

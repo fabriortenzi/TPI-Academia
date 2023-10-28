@@ -12,6 +12,8 @@ namespace Escritorio
 {
     public partial class formNuevaPersona : Form
     {
+        
+
         public formNuevaPersona()
         {
             InitializeComponent();
@@ -48,7 +50,7 @@ namespace Escritorio
 
                 MessageBox.Show("Persona creada con exito!");
 
-                Dispose();
+               this.Close();
             }
             else
             {
