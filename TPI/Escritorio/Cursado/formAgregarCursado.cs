@@ -8,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Escritorio.Inscripcion
+namespace Escritorio.Cursado
 {
-    public partial class formInscripcionCursado : Form
+    public partial class formAgregarCursado : Form
     {
         private TPI.Entidades.Usuario Usuario;
+
+        private TPI.Entidades.Plan? Plan;
 
         private TPI.Entidades.Comision Comision;
 
@@ -21,25 +23,36 @@ namespace Escritorio.Inscripcion
         private TPI.Entidades.Curso Curso;
 
         private List<TPI.Entidades.Curso> CursosMateria;
-
-        public formInscripcionCursado(TPI.Entidades.Usuario usuario)
+        public formAgregarCursado()
         {
-            Usuario = usuario;
             InitializeComponent();
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
+        private void formAgregarCursado_Load(object sender, EventArgs e)
         {
-            this.Close();
+
+            foreach (var alu in TPI.Negocio.Usuario.GetAllAlumnos())
+            {
+                cbxAlumno.Items.Add($"{alu.Persona.Nombre} {alu.Persona.Apellido}");
+            }
+            lblHorarioCurso.Text = "";
+
         }
 
-        private void formInscripcionCursado_Load(object sender, EventArgs e)
+        private void cbxAlumno_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (Usuario.Plan != null)
+            var usu = TPI.Negocio.Usuario.GetUsuarioPorNomyApe(cbxAlumno.SelectedItem.ToString());
+            Usuario = TPI.Negocio.Usuario.GetOne(usu.Legajo);
+            Plan = Usuario.Plan;
+            cbxCursosMateria.SelectedIndex = -1;
+            cbxCursosMateria.Items.Clear();
+            cbxCursosMateria.Enabled = true;
+
+            if (Plan != null)
             {
                 CursosMateria = TPI.Negocio.Curso.BuscarCursosPorPlanCicloLectivo(Usuario, DateTime.Now.Year);
             }
-            if (Usuario.Plan == null)
+            if (Plan == null)
             {
                 MessageBox.Show("El usuario no posee un plan");
                 this.Close();
@@ -69,7 +82,6 @@ namespace Escritorio.Inscripcion
             }
         }
 
-
         private void cbxCursosMateria_SelectedIndexChanged(object sender, EventArgs e)
         {
             lblHorarioCurso.Text = "";
@@ -81,7 +93,7 @@ namespace Escritorio.Inscripcion
             {
                 var materiaSeleccionada = cbxCursosMateria.SelectedItem.ToString();
                 Materia = TPI.Negocio.Materia.GetMateriaPorDesc(materiaSeleccionada);
-                
+
                 if (Materia != null)
                 {
                     var Cursos = CursosMateria.Where(x => x.Materia.Id == Materia.Id).ToList();
@@ -99,7 +111,7 @@ namespace Escritorio.Inscripcion
             if (cbxComisiones.SelectedItem != null)
             {
                 var nro_com = Convert.ToInt32(cbxComisiones.SelectedItem.ToString());
-                Comision = TPI.Negocio.Comision.BuscarComisionPorNroEspecialidad(nro_com, Usuario.Plan.Especialidad);
+                Comision = TPI.Negocio.Comision.BuscarComisionPorNroEspecialidad(nro_com, Plan.Especialidad);
 
                 if (Materia != null && Comision != null)
                 {
@@ -160,6 +172,11 @@ namespace Escritorio.Inscripcion
             {
                 MessageBox.Show("Error al solicitar inscribirse, intentelo de nuevo");
             }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

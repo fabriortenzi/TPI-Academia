@@ -35,7 +35,7 @@ namespace TPI.Entidades
 
         public override string ToString()
         {
-            return $"Legajo: {Legajo} - {Persona.Apellido}, {Persona.Nombre}";
+            return $"{Legajo}";
         }
     }
 }

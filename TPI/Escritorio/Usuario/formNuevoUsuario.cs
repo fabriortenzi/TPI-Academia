@@ -112,7 +112,7 @@ namespace Escritorio
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            Dispose();
+           this.Close();
         }
     }
 }

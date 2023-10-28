@@ -32,5 +32,9 @@ namespace TPI.Entidades
             FechaNacimiento = fechaNacimiento;
             Telefono = telefono;
         }
+        public override string ToString()
+        {
+            return $"{Nombre} {Apellido}";
+        }
     }
 }

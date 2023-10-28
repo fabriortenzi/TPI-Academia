@@ -63,7 +63,7 @@ namespace Escritorio
 
             TPI.Negocio.Usuario.AsignarPlanAUsuario(Plan, Usuario);
             MessageBox.Show($"Alumno Legajo Numero {Usuario.Legajo} creado con exito!");
-            Dispose();
+            this.Close();
         }
 
         private void txtAlumno_TextChanged(object sender, EventArgs e)

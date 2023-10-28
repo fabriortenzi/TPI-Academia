@@ -14,15 +14,13 @@ namespace Escritorio.ProfesorCurso
     {
         private TPI.Entidades.ProfesorCurso profesorCurso;
         private TPI.Entidades.Curso Curso;
+        private TPI.Entidades.Usuario profesor;
         public formMostrarProfesorCurso(TPI.Entidades.ProfesorCurso profesor_curso)
         {
+            InitializeComponent();
             profesorCurso = TPI.Negocio.ProfesorCurso.GetOne(profesor_curso.Id);
             Curso = TPI.Negocio.Curso.GetOne(profesor_curso.Curso.Id);
-
-
-            InitializeComponent();
-
-
+            profesor = TPI.Negocio.Usuario.GetOne(profesor_curso.Usuario.Legajo);
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -43,6 +41,7 @@ namespace Escritorio.ProfesorCurso
 
         private void formMostrarProfesorCurso_Load(object sender, EventArgs e)
         {
+
             lblCurso.Text = profesorCurso.Curso.Id.ToString();
             lblLegajo.Text = profesorCurso.Usuario.Legajo.ToString();
             lblAnio.Text = Curso.CicloLectivo.ToString();
@@ -51,6 +50,7 @@ namespace Escritorio.ProfesorCurso
             lblPlan.Text = Curso.Materia.Plan.Anio.ToString();
             lblMateria.Text = Curso.Materia.Descripcion;
             lblCom.Text = Curso.Comision.NroComision.ToString();
+            lblProfesor.Text = $"{profesor.Persona.Nombre} {profesor.Persona.Apellido}";
         }
     }
 }

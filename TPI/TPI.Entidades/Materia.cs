@@ -30,5 +30,10 @@ namespace TPI.Entidades
             HorasTotales = hora_tot;
             Plan = plan;
         }
+        public override string ToString()
+        {
+            return $"{Descripcion}";
+
+        }
     }
 }

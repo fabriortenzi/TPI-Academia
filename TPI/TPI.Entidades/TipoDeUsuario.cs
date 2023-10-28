@@ -20,5 +20,9 @@ namespace TPI.Entidades
         {
             Descripcion = descripcion;
         }
+        public override string ToString()
+        {
+            return $"{Descripcion}";
+        }
     }
 }

@@ -57,7 +57,7 @@ namespace Escritorio
             if (await TPI.Negocio.Plan.AgregoPlan(Plan))
             {
                 MessageBox.Show("Plan creado con exito!");
-                this.Dispose();
+                this.Close();
             }
             else
             {
@@ -78,7 +78,7 @@ namespace Escritorio
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            Dispose();
+            Close();
         }
     }
 }

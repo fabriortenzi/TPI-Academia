@@ -57,7 +57,7 @@ namespace Escritorio
         {
             TPI.Negocio.Persona.EditarDatosPersona(Persona, direccionCambiada, telefonoCambiado);
             MessageBox.Show("Datos modificados exitosamente!");
-            Dispose();
+            this.Close();
         }
     }
 }

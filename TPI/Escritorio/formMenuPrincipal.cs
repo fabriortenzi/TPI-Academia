@@ -161,8 +161,8 @@ namespace Escritorio
 
         private void listarToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            //formListar frmListar = new formListar(typeof(TPI.Entidades.InscripcionCursado));
-            //frmListar.Show();
+            formListar frmListar = new formListar(typeof(TPI.Entidades.Cursado));
+            frmListar.Show();
         }
 
         private void listarToolStripMenuItem3_Click(object sender, EventArgs e)
@@ -291,6 +291,12 @@ namespace Escritorio
         {
             formReportePlanes formReportePlanes = new();
             formReportePlanes.Show();
+        }
+
+        private void listarToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            formListar frmListar = new formListar(typeof(TPI.Entidades.Especialidad));
+            frmListar.Show();
         }
     }
 }

@@ -29,5 +29,10 @@ namespace TPI.Entidades
             Curso = curso;
             Cargo = cargo;
         }
+        public override string ToString()
+        {
+            return $"{Id}";
+
+        }
     }
 }

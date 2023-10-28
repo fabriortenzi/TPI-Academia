@@ -25,5 +25,10 @@ namespace TPI.Entidades
             NroComision = nroComision;
             Especialidad = especialidad;
         }
+        public override string ToString()
+        {
+            return $"{NroComision}";
+            
+        }
     }
 }

@@ -25,7 +25,7 @@ namespace Escritorio.Inscripcion
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            Dispose();
+           this.Close();
         }
 
         private void btnModificar_Click(object sender, EventArgs e)

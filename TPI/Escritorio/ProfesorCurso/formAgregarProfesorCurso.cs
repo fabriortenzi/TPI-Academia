@@ -90,12 +90,13 @@ namespace Escritorio.ProfesorCurso
                     {
                         TPI.Negocio.ProfesorCurso.Agregar(profesor_curso);
                         MessageBox.Show("Cargo asignado con exito!");
-                        Dispose();
+                        this.Close();
                     }
                     else { MessageBox.Show("Un profesor curso debe tener un usuario y un curso"); }
                 }
             }
             else { MessageBox.Show("Seleccione una materia y una comision"); }
+            
         }
 
         private void formAgregarProfesorCurso_Load(object sender, EventArgs e)

@@ -52,7 +52,7 @@ namespace Escritorio.Comision
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            Dispose();
+           this.Close();
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -75,7 +75,7 @@ namespace Escritorio.Comision
                 {
                     TPI.Negocio.Comision.Cambiar(comision, nroCom, Especialidad);
                     MessageBox.Show("Modificada con exito!");
-                    Dispose();
+                   this.Close();
                 }
                 catch (DbUpdateException)
                 {

@@ -26,7 +26,7 @@ namespace Escritorio.Inscripcion
             if (cursados == null)
             {
                 MessageBox.Show("No hay inscripciones para eliminar");
-                Dispose();
+                this.Close();
             }
             else
             {
@@ -57,7 +57,7 @@ namespace Escritorio.Inscripcion
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            Dispose();
+            this.Close();
         }
     }
 }
