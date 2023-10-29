@@ -326,8 +326,7 @@ namespace Escritorio.Generalizado
                 }
                 else if (tipoDato == typeof(TPI.Entidades.Persona))
                 {
-                    List<TPI.Entidades.Persona> lpc = (List<TPI.Entidades.Persona>)ListaGeneral[0];
-                    TPI.Negocio.Persona.EliminarPersona(lpc[filaSeleccionada]);
+                    MessageBox.Show("No implementado");
 
 
                 }
