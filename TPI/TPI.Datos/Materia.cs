@@ -74,7 +74,9 @@ namespace TPI.Datos
             List<Entidades.Materia> materias = new();
             using (var context = ApplicationContext.CreateContext()) 
             {
-                materias = context.materias.ToList();
+                materias = context.materias
+                    .Include(x=>x.Plan)
+                    .ToList();
             }
             return materias;
         }

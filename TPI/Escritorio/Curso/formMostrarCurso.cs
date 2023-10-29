@@ -22,8 +22,8 @@ namespace Escritorio.Curso
         private void formMostrarCurso_Load(object sender, EventArgs e)
         {
 
-            if (curso != null && curso.CicloLectivo> 0 && curso.Materia != null && curso.Comision != null && curso.Cupo > 0)
-            lblEspecialidad.Text = curso.Comision.Especialidad.Descripcion;
+            if (curso != null && curso.CicloLectivo > 0 && curso.Materia != null && curso.Comision != null && curso.Cupo > 0)
+                lblEspecialidad.Text = curso.Comision.Especialidad.Descripcion;
             lblPlan.Text = curso.Materia.Plan.Anio.ToString();
             lblCiclo.Text = curso.CicloLectivo.ToString();
             lblCupo.Text = curso.Cupo.ToString();
@@ -40,7 +40,8 @@ namespace Escritorio.Curso
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            formModificarCurso formModificarCurso = new formModificarCurso(curso);
+            formModificarCurso.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)

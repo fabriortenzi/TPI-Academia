@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             label6 = new System.Windows.Forms.Label();
-            btnCrear = new System.Windows.Forms.Button();
+            btnModificar = new System.Windows.Forms.Button();
             label5 = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
@@ -52,16 +52,16 @@
             label6.TabIndex = 24;
             label6.Text = "Complete los siguientes datos";
             // 
-            // btnCrear
+            // btnModificar
             // 
-            btnCrear.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnCrear.Location = new System.Drawing.Point(198, 338);
-            btnCrear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            btnCrear.Name = "btnCrear";
-            btnCrear.Size = new System.Drawing.Size(172, 36);
-            btnCrear.TabIndex = 23;
-            btnCrear.Text = "Crear";
-            btnCrear.UseVisualStyleBackColor = true;
+            btnModificar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnModificar.Location = new System.Drawing.Point(198, 338);
+            btnModificar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            btnModificar.Name = "btnModificar";
+            btnModificar.Size = new System.Drawing.Size(172, 36);
+            btnModificar.TabIndex = 23;
+            btnModificar.Text = "Modificar";
+            btnModificar.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -169,7 +169,7 @@
             Controls.Add(lblPlan);
             Controls.Add(lblEspecialidad);
             Controls.Add(label6);
-            Controls.Add(btnCrear);
+            Controls.Add(btnModificar);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -185,7 +185,7 @@
 
         #endregion
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button btnCrear;
+        private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;

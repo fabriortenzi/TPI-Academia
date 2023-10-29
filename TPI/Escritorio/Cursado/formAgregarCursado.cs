@@ -170,7 +170,7 @@ namespace Escritorio.Cursado
             }
             catch
             {
-                MessageBox.Show("Error al solicitar inscribirse, intentelo de nuevo");
+                MessageBox.Show("Error al solicitar inscribirse");
             }
         }
 
