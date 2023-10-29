@@ -10,6 +10,17 @@ namespace TPI.Datos
 {
     public class Plan
     {
+        public static Entidades.Plan? GetOne(int Id) 
+        {
+            using (var context = ApplicationContext.CreateContext())
+            {
+                return context.planes
+                    .Include(x => x.Especialidad)
+                    .FirstOrDefault(x => x.Id == Id);
+            }
+
+        }
+
         public async static Task<bool> AgregarPlanes(Entidades.Plan plan)
         {
             try

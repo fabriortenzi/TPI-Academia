@@ -14,6 +14,8 @@ using Escritorio.Comision;
 using Escritorio.Especialidad;
 using Escritorio.Curso;
 using Escritorio.Cursado;
+using Escritorio.Persona;
+using Escritorio.Materia;
 
 namespace Escritorio.Generalizado
 {
@@ -87,7 +89,11 @@ namespace Escritorio.Generalizado
             }
             else if (tipoDato == typeof(TPI.Entidades.TipoDeUsuario))
             {
-                nom_clase = "TipoDeUsuario";
+                nom_clase = "TiposDeUsuarios";
+            }
+            else if (tipoDato == typeof(TPI.Entidades.Especialidad))
+            {
+                nom_clase = "Especialidades";
             }
 
             this.Text = $"Listar-{nom_clase}";
@@ -168,12 +174,12 @@ namespace Escritorio.Generalizado
             else if (tipoDato == typeof(TPI.Entidades.ProfesorCurso))
             {
                 List<TPI.Entidades.ProfesorCurso> profesor_curso = TPI.Negocio.ProfesorCurso.GetAll();
-                ListaGeneral.Add(profesor_curso.Where(x => x.Id.ToString().Contains(consulta)||x.Cargo.Contains(consulta)).ToList());
+                ListaGeneral.Add(profesor_curso.Where(x => x.Id.ToString().Contains(consulta) || x.Cargo.Contains(consulta)).ToList());
             }
             else if (tipoDato == typeof(TPI.Entidades.Curso))
             {
                 List<TPI.Entidades.Curso> cursos = TPI.Negocio.Curso.GetAll();
-                ListaGeneral.Add(cursos.Where(x => x.Id.ToString().Contains(consulta)||x.CicloLectivo.ToString().Contains(consulta)||x.Materia.ToString().Contains(consulta)||x.Comision.ToString().Contains(consulta)||x.Cupo.ToString().Contains(consulta)||x.Dia.Contains(consulta)).ToList());
+                ListaGeneral.Add(cursos.Where(x => x.Id.ToString().Contains(consulta) || x.CicloLectivo.ToString().Contains(consulta) || x.Materia.ToString().Contains(consulta) || x.Comision.ToString().Contains(consulta) || x.Cupo.ToString().Contains(consulta) || x.Dia.Contains(consulta)).ToList());
             }
             else if (tipoDato == typeof(TPI.Entidades.Materia))
             {
@@ -259,7 +265,7 @@ namespace Escritorio.Generalizado
             }
             else if (tipoDato == typeof(TPI.Entidades.Plan))
             {
-                //No implementado
+                MessageBox.Show("No implementado");
 
             }
             else if (tipoDato == typeof(TPI.Entidades.Usuario))
@@ -461,11 +467,17 @@ namespace Escritorio.Generalizado
             }
             else if (tipoDato == typeof(TPI.Entidades.Materia))
             {
-                MessageBox.Show("NO IMPLEMENTADO");
+                List<TPI.Entidades.Materia> lpc = (List<TPI.Entidades.Materia>)ListaGeneral[0];
+                formMostrarMateria formMostrarMateria = new formMostrarMateria(lpc[filaSeleccionada]);
+                formMostrarMateria.Show();
+                formMostrarMateria.FormClosed += (s, args) => btnListar_Click(sender, e);
             }
             else if (tipoDato == typeof(TPI.Entidades.Persona))
             {
-                MessageBox.Show("NO IMPLEMENTADO");
+                List<TPI.Entidades.Persona> lpc = (List<TPI.Entidades.Persona>)ListaGeneral[0];
+                formMostrarPersona formMostrarPersona = new formMostrarPersona(lpc[filaSeleccionada]);
+                formMostrarPersona.Show();
+                formMostrarPersona.FormClosed += (s, args) => btnListar_Click(sender, e);
             }
             else if (tipoDato == typeof(TPI.Entidades.Plan))
             {
@@ -487,7 +499,10 @@ namespace Escritorio.Generalizado
             }
             else if (tipoDato == typeof(TPI.Entidades.Especialidad))
             {
-                MessageBox.Show("NO IMPLEMENTADO");
+                List<TPI.Entidades.Especialidad> lpc = (List<TPI.Entidades.Especialidad>)ListaGeneral[0];
+                formMostrarEspecialidad formMostrarEspecialidad = new formMostrarEspecialidad(lpc[filaSeleccionada]);
+                formMostrarEspecialidad.Show();
+                formMostrarEspecialidad.FormClosed += (s, args) => btnListar_Click(sender, e);
             }
             else if (tipoDato == typeof(TPI.Entidades.TipoDeUsuario))
             {

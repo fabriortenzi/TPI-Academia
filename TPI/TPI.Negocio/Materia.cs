@@ -8,6 +8,9 @@ namespace TPI.Negocio
 {
     public class Materia
     {
+        public static Entidades.Materia? GetOne(int id)
+            => Datos.Materia.GetOne(id);
+
         public static Entidades.Materia CrearMateria(string descMat, int hor_sem, int hor_tot, Entidades.Plan plan)
         {
             Entidades.Materia materia = new(descMat, hor_sem, hor_tot, plan);

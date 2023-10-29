@@ -9,6 +9,16 @@ namespace TPI.Datos
 {
     public class Materia
     {
+        public static Entidades.Materia GetOne(int id)
+        {
+            using (var context = ApplicationContext.CreateContext())
+            {
+                return context.materias
+                    .Include(x => x.Plan)
+                    .FirstOrDefault(x=>x.Id == id);
+            }
+        }
+
         public async static Task<bool> AgregarMateria (TPI.Entidades.Materia materia)
         {
             try
