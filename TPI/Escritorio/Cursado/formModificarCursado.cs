@@ -18,11 +18,19 @@ namespace Escritorio.Cursado
         public formModificarCursado(TPI.Entidades.Cursado cursado)
         {
             Cursado = cursado;
+            Curso = TPI.Negocio.Curso.GetOne(cursado.Curso.Id);
+            Usuario = TPI.Negocio.Usuario.GetOne(cursado.Usuario.Legajo);
             InitializeComponent();
         }
 
         private void formModificarCursado_Load(object sender, EventArgs e)
         {
+            cbxUsuario.SelectedItem = Cursado.Usuario.NombreCompleto;
+            
+            cbxCurso.SelectedItem = Curso.Id.ToString();
+            lblMateria.Text = Curso.Materia.Descripcion;
+
+
             foreach (TPI.Entidades.Usuario us in TPI.Negocio.Usuario.GetAllAlumnos())
             {
                 cbxUsuario.Items.Add(us.Persona.Nombre + " " + us.Persona.Apellido);
