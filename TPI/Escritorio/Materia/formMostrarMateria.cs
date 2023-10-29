@@ -18,9 +18,9 @@ namespace Escritorio.Materia
         public formMostrarMateria(TPI.Entidades.Materia materia)
         {
             Materia = TPI.Negocio.Materia.GetOne(materia.Id);
-           
-            Plan = TPI.Negocio.Plan.GetOne(materia.Plan.Id);
-            
+
+            Plan = TPI.Negocio.Plan.GetOne(Materia.Plan.Id);
+
             InitializeComponent();
         }
 
