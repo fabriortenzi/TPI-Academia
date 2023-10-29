@@ -67,6 +67,7 @@ namespace Escritorio.Generalizado
             // 
             // toolStrip1
             // 
+            toolStrip1.BackColor = System.Drawing.SystemColors.ControlLight;
             toolStrip1.Dock = System.Windows.Forms.DockStyle.Fill;
             toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { lblClase, toolStripSeparator1, txtConsulta, btnBuscar });
             toolStrip1.Location = new System.Drawing.Point(0, 0);
@@ -95,7 +96,9 @@ namespace Escritorio.Generalizado
             // 
             // btnBuscar
             // 
+            btnBuscar.BackColor = System.Drawing.SystemColors.ControlLight;
             btnBuscar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            btnBuscar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             btnBuscar.Image = (System.Drawing.Image)resources.GetObject("btnBuscar.Image");
             btnBuscar.ImageTransparentColor = System.Drawing.Color.Magenta;
             btnBuscar.Name = "btnBuscar";
@@ -197,6 +200,7 @@ namespace Escritorio.Generalizado
             // 
             // flowLayoutPanel1
             // 
+            flowLayoutPanel1.BackColor = System.Drawing.SystemColors.ControlLight;
             flowLayoutPanel1.Controls.Add(btnListar);
             flowLayoutPanel1.Controls.Add(btnAgregar);
             flowLayoutPanel1.Controls.Add(btnEliminar);

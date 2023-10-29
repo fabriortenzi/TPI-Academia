@@ -8,6 +8,9 @@ namespace TPI.Negocio
 {
     public class Plan
     {
+        public static Entidades.Plan? GetOne(int id)
+        => Datos.Plan.GetOne(id);
+
         public static Entidades.Plan CrearPlan(int año, Entidades.Especialidad especialidad)
         {
             Entidades.Plan plan = new(año, especialidad);
