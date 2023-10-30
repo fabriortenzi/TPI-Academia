@@ -54,6 +54,11 @@ namespace Escritorio
                 return;
             }
 
+            if (comboBoxEsp.SelectedIndex == -1)
+            {
+                MessageBox.Show("Seleccione una Especialidad", "Agrego Plan", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                return;
+            }
 
             string esp = this.comboBoxEsp.SelectedItem.ToString();
 

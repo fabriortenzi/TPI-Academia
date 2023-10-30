@@ -85,6 +85,7 @@ namespace Escritorio.ProfesorCurso
                         {
                             TPI.Negocio.ProfesorCurso.Eliminar(profesor_curso);
                             MessageBox.Show("Cargo eliminado con exito");
+                            Dispose();
                         }
                         else { MessageBox.Show("Erro al ingresar datos por favor intenete nuevamente"); }
                     }
@@ -138,19 +139,22 @@ namespace Escritorio.ProfesorCurso
 
         private async void cbxPlanes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cbxMaterias.Items.Clear();
-            foreach (TPI.Entidades.Materia mat in TPI.Negocio.Materia.GetMateriasPorPlan(plan))
+            if (cbxEspecialidades.SelectedIndex != -1)
             {
-                cbxMaterias.Items.Add(mat.Descripcion);
-            }
-            cbxMaterias.Enabled = true;
-            if (cbxPlanes.SelectedItem != null)
-            {
-                var anio = Convert.ToInt32((cbxPlanes.SelectedItem.ToString()));
-                if (especialidad != null)
+                if (cbxPlanes.SelectedItem != null)
                 {
-                    plan = await TPI.Negocio.Plan.GetPlanPorEspecialidadAnio(especialidad, anio);
+                    var anio = Convert.ToInt32((cbxPlanes.SelectedItem.ToString()));
+                    if (especialidad != null)
+                    {
+                        plan = await TPI.Negocio.Plan.GetPlanPorEspecialidadAnio(especialidad, anio);
+                    }
                 }
+                cbxMaterias.Items.Clear();
+                foreach (TPI.Entidades.Materia mat in TPI.Negocio.Materia.GetMateriasPorPlan(plan))
+                {
+                    cbxMaterias.Items.Add(mat.Descripcion);
+                }
+                cbxMaterias.Enabled = true;
             }
         }
 
@@ -161,7 +165,6 @@ namespace Escritorio.ProfesorCurso
             {
                 materia = TPI.Negocio.Materia.GetMateriaPorDescripcionYPlan(desc_materia, plan);
             }
-
         }
 
         private void cbxComision_SelectedIndexChanged(object sender, EventArgs e)
@@ -171,6 +174,11 @@ namespace Escritorio.ProfesorCurso
             {
                 comision = TPI.Negocio.Comision.BuscarComisionPorNroEspecialidad(nro_com, especialidad);
             }
+        }
+
+        private void btnCancelar_Click_1(object sender, EventArgs e)
+        {
+            Dispose();
         }
     }
 }

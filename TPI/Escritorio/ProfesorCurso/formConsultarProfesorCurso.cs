@@ -42,33 +42,22 @@ namespace Escritorio.ProfesorCurso
                     {
                         formMostrarProfesorCurso frmMostrarProfesorCurso = new formMostrarProfesorCurso(profesor_curso);
                         frmMostrarProfesorCurso.Show();
+                        Dispose();
                     }
                     else { MessageBox.Show("Erro al ingresar datos por favor intenete nuevamente"); }
                 }
                 else { MessageBox.Show("Un profesor curso debe tener un usuario y un curso"); }
             }
             else { MessageBox.Show("Seleccione una materia y una comision"); }
-
-
-
-
         }
-
-
-
-
 
         private void formConsultarProfesorCurso_Load(object sender, EventArgs e)
         {
             cargar_cbx();
-
-
         }
 
         private void cargar_cbx()
         {
-
-
             cbxLegajo.DisplayMember = "NombreCompleto";
             cbxLegajo.ValueMember = "Legajo";
 
@@ -85,9 +74,6 @@ namespace Escritorio.ProfesorCurso
 
             cbxEspecialidades.SelectedIndex = -1;
             cbxLegajo.SelectedIndex = -1;
-
-
-
         }
 
         private void cbxLegajo_SelectedIndexChanged(object sender, EventArgs e)
@@ -129,18 +115,21 @@ namespace Escritorio.ProfesorCurso
 
         private async void cbxPlanes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cbxMaterias.Items.Clear();
-            foreach (TPI.Entidades.Materia mat in TPI.Negocio.Materia.GetMateriasPorPlan(plan))
+            if (cbxEspecialidades.SelectedIndex != -1)
             {
-                cbxMaterias.Items.Add(mat.Descripcion);
-            }
-            cbxMaterias.Enabled = true;
-            if (cbxPlanes.SelectedItem != null)
-            {
-                var anio = Convert.ToInt32((cbxPlanes.SelectedItem.ToString()));
-                if (especialidad != null)
+                cbxMaterias.Items.Clear();
+                foreach (TPI.Entidades.Materia mat in TPI.Negocio.Materia.GetMateriasPorPlan(plan))
                 {
-                    plan = await TPI.Negocio.Plan.GetPlanPorEspecialidadAnio(especialidad, anio);
+                    cbxMaterias.Items.Add(mat.Descripcion);
+                }
+                cbxMaterias.Enabled = true;
+                if (cbxPlanes.SelectedItem != null)
+                {
+                    var anio = Convert.ToInt32((cbxPlanes.SelectedItem.ToString()));
+                    if (especialidad != null)
+                    {
+                        plan = await TPI.Negocio.Plan.GetPlanPorEspecialidadAnio(especialidad, anio);
+                    }
                 }
             }
         }

@@ -31,7 +31,10 @@ namespace Escritorio.ProfesorCurso
             cbxLegajo.DisplayMember = "NombreCompleto";
             cbxLegajo.ValueMember = "Legajo";
 
-            List<TPI.Entidades.Usuario> usuarios = TPI.Negocio.Usuario.GetAllProfesores();
+            List<TPI.Entidades.Usuario> usuarios = TPI.Negocio.Usuario.GetAllProfesores()
+                .OrderBy(p => p.Persona.Apellido)
+                .ThenBy(p => p.Persona.Nombre)
+                .ToList();
 
 
             foreach (TPI.Entidades.Especialidad esp in TPI.Negocio.Especialidad.GetAllEspecialidades())
@@ -74,6 +77,7 @@ namespace Escritorio.ProfesorCurso
                     if (TPI.Negocio.ProfesorCurso.BuscarPorUsuarioCurso(Usuario, curso) != null)
                     {
                         MessageBox.Show("Ese Profesor ya fue asignado a ese Curso", "Agregar Profesor Curso", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        return;
                     }
 
                     TPI.Entidades.ProfesorCurso profesor_curso = new TPI.Entidades.ProfesorCurso();
@@ -159,7 +163,6 @@ namespace Escritorio.ProfesorCurso
             {
                 materia = TPI.Negocio.Materia.GetMateriaPorDescripcionYPlan(desc_materia, plan);
             }
-
         }
 
         private void cbxComision_SelectedIndexChanged(object sender, EventArgs e)

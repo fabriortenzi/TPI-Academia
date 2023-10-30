@@ -77,18 +77,25 @@ namespace Escritorio
         private async void btnCrear_Click(object sender, EventArgs e)
         {
             string descMateria;
+            descMateria = txtDescMateria.Text;
+
+            if (descMateria.Length > 50)
+            {
+                MessageBox.Show("La Materia no puede contener mas de 50 caracteres", "Crear Materia", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                return;
+            }
+            
             int horas_sem;
             int horas_tot;
             try
             {
-                descMateria = txtDescMateria.Text;
                 horas_sem = Convert.ToInt32(txtHorasSem.Text);
                 horas_tot = Convert.ToInt32(txtHorasTot.Text);
             }
             catch
             {
                 MessageBox.Show("Asegurese de no haber ingresado letras a la hora de" +
-                                "cargar las horas y de no haber dejado un campo en blanco");
+                                "cargar las horas", "Crear Materia", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 return;
             }
 

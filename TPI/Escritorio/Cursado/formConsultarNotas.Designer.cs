@@ -43,7 +43,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label1.Location = new System.Drawing.Point(383, 22);
+            label1.Location = new System.Drawing.Point(460, 23);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(240, 35);
             label1.TabIndex = 0;
@@ -58,7 +58,7 @@
             dgvCursados.RowHeadersWidth = 62;
             dgvCursados.RowTemplate.Height = 33;
             dgvCursados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            dgvCursados.Size = new System.Drawing.Size(884, 582);
+            dgvCursados.Size = new System.Drawing.Size(1085, 582);
             dgvCursados.TabIndex = 1;
             // 
             // Materia
@@ -68,7 +68,7 @@
             Materia.MinimumWidth = 8;
             Materia.Name = "Materia";
             Materia.ReadOnly = true;
-            Materia.Width = 400;
+            Materia.Width = 600;
             // 
             // Id
             // 
@@ -111,7 +111,7 @@
             // btnCerrar
             // 
             btnCerrar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnCerrar.Location = new System.Drawing.Point(359, 722);
+            btnCerrar.Location = new System.Drawing.Point(460, 720);
             btnCerrar.Name = "btnCerrar";
             btnCerrar.Size = new System.Drawing.Size(264, 63);
             btnCerrar.TabIndex = 2;
@@ -125,7 +125,7 @@
             AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             CancelButton = btnCerrar;
-            ClientSize = new System.Drawing.Size(992, 830);
+            ClientSize = new System.Drawing.Size(1185, 830);
             Controls.Add(btnCerrar);
             Controls.Add(dgvCursados);
             Controls.Add(label1);

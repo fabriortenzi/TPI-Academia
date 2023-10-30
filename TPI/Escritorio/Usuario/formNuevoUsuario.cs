@@ -43,23 +43,35 @@ namespace Escritorio
                 return;
             }
 
-            if (descripcionTipo == "" || contraseña == "" || confContraseña == "")
+            if (contraseña == "" || confContraseña == "")
             {
                 MessageBox.Show("Algunos campos quedaron en blanco", "Nuevo Usuario", MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
             else if (contraseña == confContraseña)
             {
-                var usuario = TPI.Negocio.Usuario.CrearUsuario(contraseña, persona, tipoDeUsuario);
-                TPI.Negocio.Usuario.AgregarUsuario(usuario);
-
                 // Si el usuario nuevo es un Alumno se abre el form para asignar plan de estudio
                 if (descripcionTipo == "Alumno")
                 {
+                    var usuario = TPI.Negocio.Usuario.CrearUsuario(contraseña, persona, tipoDeUsuario);
+                    TPI.Negocio.Usuario.AgregarUsuario(usuario);
                     formInscripcionPlan formInscripcionPlan = new(usuario);
                     formInscripcionPlan.Show();
                 }
                 else
                 {
+                    // Valido que no se repita el mismo Usuario Admin o Profesor para la misma Persona
+                    var usuarioRepetido = TPI.Negocio.Usuario.GetAllUsuarios()
+                        .FirstOrDefault(u => u.Persona.Dni == persona.Dni &&
+                        u.TipoDeUsuario.Descripcion == tipoDeUsuario.Descripcion);
+                    if (usuarioRepetido != null)
+                    {
+                        MessageBox.Show($"Ya existe un Usuario {tipoDeUsuario.Descripcion} para esa Persona", "Nuevo Usuario", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        return;
+                    }
+
+                    // Ahora si creo el Usuario
+                    var usuario = TPI.Negocio.Usuario.CrearUsuario(contraseña, persona, tipoDeUsuario);
+                    TPI.Negocio.Usuario.AgregarUsuario(usuario);
                     MessageBox.Show($"Usuario legajo numero {usuario.Legajo} creado con exito!", "Nuevo Usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 

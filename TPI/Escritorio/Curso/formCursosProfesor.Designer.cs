@@ -30,11 +30,11 @@
         {
             lblTitulo = new System.Windows.Forms.Label();
             dgvProfCursos = new System.Windows.Forms.DataGridView();
+            btnCerrar = new System.Windows.Forms.Button();
             Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             usuarioo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             Curso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             Cargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            btnCerrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)dgvProfCursos).BeginInit();
             SuspendLayout();
             // 
@@ -42,7 +42,7 @@
             // 
             lblTitulo.AutoSize = true;
             lblTitulo.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            lblTitulo.Location = new System.Drawing.Point(58, 31);
+            lblTitulo.Location = new System.Drawing.Point(181, 51);
             lblTitulo.Name = "lblTitulo";
             lblTitulo.Size = new System.Drawing.Size(579, 35);
             lblTitulo.TabIndex = 0;
@@ -56,8 +56,19 @@
             dgvProfCursos.Name = "dgvProfCursos";
             dgvProfCursos.RowHeadersWidth = 62;
             dgvProfCursos.RowTemplate.Height = 33;
-            dgvProfCursos.Size = new System.Drawing.Size(614, 547);
+            dgvProfCursos.Size = new System.Drawing.Size(816, 547);
             dgvProfCursos.TabIndex = 1;
+            // 
+            // btnCerrar
+            // 
+            btnCerrar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnCerrar.Location = new System.Drawing.Point(392, 727);
+            btnCerrar.Name = "btnCerrar";
+            btnCerrar.Size = new System.Drawing.Size(232, 53);
+            btnCerrar.TabIndex = 2;
+            btnCerrar.Text = "Cerrar";
+            btnCerrar.UseVisualStyleBackColor = true;
+            btnCerrar.Click += btnCerrar_Click;
             // 
             // Id
             // 
@@ -83,7 +94,7 @@
             Curso.HeaderText = "Materia";
             Curso.MinimumWidth = 8;
             Curso.Name = "Curso";
-            Curso.Width = 400;
+            Curso.Width = 600;
             // 
             // Cargo
             // 
@@ -93,23 +104,12 @@
             Cargo.Name = "Cargo";
             Cargo.Width = 150;
             // 
-            // btnCerrar
-            // 
-            btnCerrar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnCerrar.Location = new System.Drawing.Point(305, 717);
-            btnCerrar.Name = "btnCerrar";
-            btnCerrar.Size = new System.Drawing.Size(232, 53);
-            btnCerrar.TabIndex = 2;
-            btnCerrar.Text = "Cerrar";
-            btnCerrar.UseVisualStyleBackColor = true;
-            btnCerrar.Click += btnCerrar_Click;
-            // 
             // formCursosProfesor
             // 
             AcceptButton = btnCerrar;
             AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(836, 810);
+            ClientSize = new System.Drawing.Size(1022, 810);
             Controls.Add(btnCerrar);
             Controls.Add(dgvProfCursos);
             Controls.Add(lblTitulo);

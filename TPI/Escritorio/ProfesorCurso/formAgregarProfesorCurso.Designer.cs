@@ -107,7 +107,7 @@
             cbxLegajo.Location = new System.Drawing.Point(194, 56);
             cbxLegajo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             cbxLegajo.Name = "cbxLegajo";
-            cbxLegajo.Size = new System.Drawing.Size(335, 37);
+            cbxLegajo.Size = new System.Drawing.Size(500, 37);
             cbxLegajo.TabIndex = 21;
             cbxLegajo.SelectedIndexChanged += cbxLegajo_SelectedIndexChanged;
             // 

@@ -150,8 +150,10 @@ namespace Escritorio.Generalizado
             dgvGrilla.Location = new System.Drawing.Point(0, 57);
             dgvGrilla.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             dgvGrilla.Name = "dgvGrilla";
+            dgvGrilla.ReadOnly = true;
             dgvGrilla.RowHeadersWidth = 62;
             dgvGrilla.RowTemplate.Height = 25;
+            dgvGrilla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             dgvGrilla.Size = new System.Drawing.Size(1540, 616);
             dgvGrilla.TabIndex = 1;
             // 

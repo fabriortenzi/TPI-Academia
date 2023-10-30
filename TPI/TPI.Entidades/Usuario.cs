@@ -22,7 +22,7 @@ namespace TPI.Entidades
         public Plan? Plan { get; set; }
 
         [NotMapped]
-        public string NombreCompleto => $"{Persona.Nombre} {Persona.Apellido}";
+        public string NombreCompleto => $"{Persona.Apellido} {Persona.Nombre}";
 
         public Usuario() { }
 

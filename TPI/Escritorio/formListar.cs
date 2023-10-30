@@ -24,16 +24,11 @@ namespace Escritorio.Generalizado
         private Type? tipoDato;
         private List<Object> ListaGeneral = new List<Object>();
 
-
         public formListar(Type tipo_dato)
         {
             InitializeComponent();
             tipoDato = tipo_dato;
-
         }
-
-
-
 
         private void formListar_Load(object sender, EventArgs e)
         {
@@ -47,16 +42,13 @@ namespace Escritorio.Generalizado
             dgvGrilla.DataSource = null;
             dgvGrilla.Refresh();
             dgvGrilla.DataSource = ListaGeneral[0];
-
         }
-
 
         private void CargarNombreDeVentana()
         {
             string nom_clase = "";
             if (tipoDato == typeof(TPI.Entidades.ProfesorCurso))
             {
-
                 nom_clase = "Profesores Cursos";
             }
             else if (tipoDato == typeof(TPI.Entidades.Curso))
@@ -105,7 +97,11 @@ namespace Escritorio.Generalizado
 
             if (tipoDato == typeof(TPI.Entidades.ProfesorCurso))
             {
-                ListaGeneral.Add(TPI.Negocio.ProfesorCurso.GetAll());
+                ListaGeneral.Add(TPI.Negocio.ProfesorCurso.GetAll().ToList());
+                btnAgregar.Visible = false;
+                btnModificar.Visible = false;
+                btnAgregar.Visible = false;
+                btnConsultar.Visible = false;
             }
             else if (tipoDato == typeof(TPI.Entidades.Comision))
             {
@@ -122,10 +118,23 @@ namespace Escritorio.Generalizado
             else if (tipoDato == typeof(TPI.Entidades.Cursado))
             {
                 ListaGeneral.Add(TPI.Negocio.Cursado.GetAll());
+                btnAgregar.Visible = false;
+                btnEliminar.Visible = false;
+                btnModificar.Visible = false;
+                btnAgregar.Visible = false;
+                btnConsultar.Visible = false;
             }
             else if (tipoDato == typeof(TPI.Entidades.Materia))
             {
-                ListaGeneral.Add(TPI.Negocio.Materia.GetAll());
+                ListaGeneral.Add(TPI.Negocio.Materia.GetAll()
+                    .Select(m => new
+                    {
+                        m.Descripcion,
+                        m.Plan.Especialidad,
+                        m.Plan,
+                        m.HorasSemanales,
+                        m.HorasTotales
+                    }).ToList());
             }
             else if (tipoDato == typeof(TPI.Entidades.Persona))
             {
@@ -141,8 +150,9 @@ namespace Escritorio.Generalizado
             else if (tipoDato == typeof(TPI.Entidades.Plan))
             {
                 ListaGeneral.Add(TPI.Negocio.Plan.GetAll()
-                    .Select(p => new 
-                        { p.Especialidad,
+                    .Select(p => new
+                    {
+                        p.Especialidad,
                         p.Anio
                     })
                     .OrderBy(p => p.Especialidad.Descripcion)
@@ -166,16 +176,18 @@ namespace Escritorio.Generalizado
                         x.Plan?.Especialidad,
                         x.Plan
                     }).ToList());
+
+                btnAgregar.Visible = false;
+                btnEliminar.Visible = false;
+                btnModificar.Visible = false;
+                btnAgregar.Visible = false;
+                btnConsultar.Visible = false;
             }
             else if (tipoDato == typeof(TPI.Entidades.TipoDeUsuario))
             {
                 ListaGeneral.Add(TPI.Negocio.TipoDeUsuario.GetAllTiposDeUsuario());
             }
         }
-
-
-
-
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
@@ -202,7 +214,11 @@ namespace Escritorio.Generalizado
             else if (tipoDato == typeof(TPI.Entidades.ProfesorCurso))
             {
                 List<TPI.Entidades.ProfesorCurso> profesor_curso = TPI.Negocio.ProfesorCurso.GetAll();
-                ListaGeneral.Add(profesor_curso.Where(x => x.Id.ToString().Contains(consulta) || x.Cargo.Contains(consulta)).ToList());
+                ListaGeneral.Add(profesor_curso.Where(x => x.Id.ToString().Contains(consulta)
+                || x.Cargo.ToUpper().Contains(consulta.ToUpper())
+                || x.Usuario.NombreCompleto.ToUpper().Contains(consulta.ToUpper())
+                || x.Curso.ToString().ToUpper().Contains(consulta.ToUpper()))
+                .ToList());
             }
             else if (tipoDato == typeof(TPI.Entidades.Curso))
             {
@@ -212,7 +228,18 @@ namespace Escritorio.Generalizado
             else if (tipoDato == typeof(TPI.Entidades.Materia))
             {
                 List<TPI.Entidades.Materia> materias = TPI.Negocio.Materia.GetAll();
-                ListaGeneral.Add(materias.Where(x => x.Id.ToString().Contains(consulta) || x.Descripcion.Contains(consulta)).ToList());
+                ListaGeneral.Add(materias
+                    .Where(x => x.Id.ToString().StartsWith(consulta) 
+                    || x.Descripcion.ToUpper().Contains(consulta.ToUpper()))
+                    .Select(m => new
+                        {
+                            m.Descripcion,
+                            m.Plan.Especialidad,
+                            m.Plan,
+                            m.HorasSemanales,
+                            m.HorasTotales
+                        })
+                    .ToList());
             }
             else if (tipoDato == typeof(TPI.Entidades.Persona))
             {
@@ -241,7 +268,9 @@ namespace Escritorio.Generalizado
             else if (tipoDato == typeof(TPI.Entidades.Usuario))
             {
                 List<TPI.Entidades.Usuario> usuarios = TPI.Negocio.Usuario.GetAllUsuarios();
-                ListaGeneral.Add(usuarios.Where(x => x.Legajo.ToString().Contains(consulta))
+                ListaGeneral.Add(usuarios
+                    .Where(x => x.Legajo.ToString().StartsWith(consulta)
+                    || x.NombreCompleto.ToUpper().Contains(consulta.ToUpper()))
                     .Select(x => new
                     {
                         x.Legajo,

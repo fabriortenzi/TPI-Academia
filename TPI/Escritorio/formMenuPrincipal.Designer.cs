@@ -46,6 +46,7 @@
             planDeEstudioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             crearNuevoPlanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             listarPlanToolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
+            eliminarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             materiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             crearNuevaMateriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             listarMateriasToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,11 +65,8 @@
             consultarNotasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             profesorCursoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             agregarPCToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            eliminarPCToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            consultarPCToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             listarPCToolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
             reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            eliminarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -195,6 +193,12 @@
             listarPlanToolStripMenuItem6.Text = "Listar";
             listarPlanToolStripMenuItem6.Click += listarToolStripMenuItem6_Click;
             // 
+            // eliminarToolStripMenuItem1
+            // 
+            eliminarToolStripMenuItem1.Name = "eliminarToolStripMenuItem1";
+            eliminarToolStripMenuItem1.Size = new System.Drawing.Size(287, 38);
+            eliminarToolStripMenuItem1.Text = "Eliminar";
+            // 
             // materiaToolStripMenuItem
             // 
             materiaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { crearNuevaMateriaToolStripMenuItem, listarMateriasToolStripMenuItem3 });
@@ -309,7 +313,7 @@
             // 
             // profesorCursoToolStripMenuItem
             // 
-            profesorCursoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { agregarPCToolStripMenuItem2, eliminarPCToolStripMenuItem2, consultarPCToolStripMenuItem2, listarPCToolStripMenuItem10 });
+            profesorCursoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { agregarPCToolStripMenuItem2, listarPCToolStripMenuItem10 });
             profesorCursoToolStripMenuItem.Name = "profesorCursoToolStripMenuItem";
             profesorCursoToolStripMenuItem.Size = new System.Drawing.Size(270, 38);
             profesorCursoToolStripMenuItem.Text = "Profesor - Curso";
@@ -317,28 +321,14 @@
             // agregarPCToolStripMenuItem2
             // 
             agregarPCToolStripMenuItem2.Name = "agregarPCToolStripMenuItem2";
-            agregarPCToolStripMenuItem2.Size = new System.Drawing.Size(211, 38);
+            agregarPCToolStripMenuItem2.Size = new System.Drawing.Size(270, 38);
             agregarPCToolStripMenuItem2.Text = "Agregar";
             agregarPCToolStripMenuItem2.Click += agregarToolStripMenuItem2_Click;
-            // 
-            // eliminarPCToolStripMenuItem2
-            // 
-            eliminarPCToolStripMenuItem2.Name = "eliminarPCToolStripMenuItem2";
-            eliminarPCToolStripMenuItem2.Size = new System.Drawing.Size(211, 38);
-            eliminarPCToolStripMenuItem2.Text = "Eliminar";
-            eliminarPCToolStripMenuItem2.Click += eliminarToolStripMenuItem2_Click;
-            // 
-            // consultarPCToolStripMenuItem2
-            // 
-            consultarPCToolStripMenuItem2.Name = "consultarPCToolStripMenuItem2";
-            consultarPCToolStripMenuItem2.Size = new System.Drawing.Size(211, 38);
-            consultarPCToolStripMenuItem2.Text = "Consultar";
-            consultarPCToolStripMenuItem2.Click += consultarToolStripMenuItem2_Click;
             // 
             // listarPCToolStripMenuItem10
             // 
             listarPCToolStripMenuItem10.Name = "listarPCToolStripMenuItem10";
-            listarPCToolStripMenuItem10.Size = new System.Drawing.Size(211, 38);
+            listarPCToolStripMenuItem10.Size = new System.Drawing.Size(270, 38);
             listarPCToolStripMenuItem10.Text = "Listar";
             listarPCToolStripMenuItem10.Click += listarToolStripMenuItem10_Click;
             // 
@@ -348,12 +338,6 @@
             reportesToolStripMenuItem.Size = new System.Drawing.Size(270, 38);
             reportesToolStripMenuItem.Text = "Reportes";
             reportesToolStripMenuItem.Click += reportesToolStripMenuItem_Click;
-            // 
-            // eliminarToolStripMenuItem1
-            // 
-            eliminarToolStripMenuItem1.Name = "eliminarToolStripMenuItem1";
-            eliminarToolStripMenuItem1.Size = new System.Drawing.Size(287, 38);
-            eliminarToolStripMenuItem1.Text = "Eliminar";
             // 
             // formMenuPrincipal
             // 
@@ -399,8 +383,6 @@
         private System.Windows.Forms.ToolStripMenuItem crearCursoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem profesorCursoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem agregarPCToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem eliminarPCToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem consultarPCToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem nuevaComisionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listarPerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listarUsuToolStripMenuItem1;
