@@ -12,8 +12,6 @@ namespace Escritorio
 {
     public partial class formNuevaPersona : Form
     {
-        
-
         public formNuevaPersona()
         {
             InitializeComponent();
@@ -21,41 +19,40 @@ namespace Escritorio
 
         private void btnCrear_Click(object sender, EventArgs e)
         {
-            int dni = 0, dia = 0, mes = 0, año = 0;
+            string dni = txtDni.Text;
+            string nombre = txtNombre.Text;
+            string apellido = txtApellido.Text;
+            string direccion = txtDireccion.Text;
+            string telefono = txtTelefono.Text;
+            string dia = txtDia.Text;
+            string mes = txtMes.Text;
+            string anio = txtAño.Text;
 
             try
             {
-                dni = Convert.ToInt32(this.txtDni.Text);
-                dia = Convert.ToInt32(this.txtDia.Text);
-                mes = Convert.ToInt32(this.txtMes.Text);
-                año = Convert.ToInt32(this.txtAño.Text);
+                TPI.Negocio.Persona.ValidarDatos(dni, nombre, apellido, direccion, telefono, dia, mes, anio);
             }
-            catch
+            catch (Exception exc)
             {
-                MessageBox.Show("Algunos campos son incorrectos o quedaron en blanco");
+                MessageBox.Show(exc.Message, "Nueva Persona", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 return;
             }
 
-            string nombre = this.txtNombre.Text;
-            string apellido = this.txtApellido.Text;
-            string direccion = this.txtDireccion.Text;
-            string telefono = this.txtTelefono.Text;
+            var persona = TPI.Negocio.Persona.CrearPersona(
+                Convert.ToInt32(dni), nombre, apellido, direccion,
+                new DateTime(Convert.ToInt32(anio), Convert.ToInt32(mes), Convert.ToInt32(dia))
+                , telefono);
 
-            // Valida que ningun campo haya quedado en blanco
-            if (dni != 0 && dia != 0 && mes != 0 && año != 0 && nombre != "" && apellido != "" & direccion != "" & telefono != "")
-            {
-                var persona = TPI.Negocio.Persona.CrearPersona(dni, nombre, apellido, direccion, new DateTime(año, mes, dia), telefono);
+            TPI.Negocio.Persona.AgregarPersona(persona);
 
-                TPI.Negocio.Persona.AgregarPersona(persona);
+            MessageBox.Show("Persona creada con exito!", "Nueva Persona", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                MessageBox.Show("Persona creada con exito!");
+            Close();
+        }
 
-               this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Algunos campos quedaron en blanco");
-            }
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Dispose();
         }
     }
 }

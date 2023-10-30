@@ -32,9 +32,20 @@ namespace Escritorio
 
             var tipoDeUsuario = TPI.Negocio.TipoDeUsuario.GetTipoUsuarioPorDecsripcion(descripcionTipo);
 
+            if (contraseña.Length < 5 || contraseña.Length > 20)
+            {
+                MessageBox.Show("La Contraseña debe ser mayor que 5 caracteres y menor que 20", "Nuevo Usuario", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                return;
+            }
+            if (!(contraseña.All(char.IsLetterOrDigit)))
+            {
+                MessageBox.Show("La Contraseña solo puede tener letras o digitos", "Nuevo Usuario", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                return;
+            }
+
             if (descripcionTipo == "" || contraseña == "" || confContraseña == "")
             {
-                MessageBox.Show("Algunos campos quedaron en blanco");
+                MessageBox.Show("Algunos campos quedaron en blanco", "Nuevo Usuario", MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
             else if (contraseña == confContraseña)
             {
@@ -49,14 +60,14 @@ namespace Escritorio
                 }
                 else
                 {
-                    MessageBox.Show($"Usuario legajo numero {usuario.Legajo} creado con exito!");
+                    MessageBox.Show($"Usuario legajo numero {usuario.Legajo} creado con exito!", "Nuevo Usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
                 this.Dispose();
             }
             else
             {
-                MessageBox.Show("Las contraseñas no coinciden");
+                MessageBox.Show("Las contraseñas no coinciden", "Nuevo Usuario", MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
 
@@ -70,7 +81,7 @@ namespace Escritorio
             }
             catch
             {
-                MessageBox.Show("El DNI no puede contener letras");
+                MessageBox.Show("El DNI no puede contener letras", "Nuevo Usuario", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 return;
             }
 
@@ -106,7 +117,7 @@ namespace Escritorio
                 txtConfContraseña.Enabled = false;
                 btnCrear.Enabled = false;
 
-                MessageBox.Show("No se encontro la persona, intente nuevamente");
+                MessageBox.Show("No se encontro la persona, intente nuevamente", "Nuevo Usuario", MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
 

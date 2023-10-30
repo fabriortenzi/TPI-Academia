@@ -29,19 +29,20 @@ namespace TPI.Negocio
         {
             return TPI.Datos.Curso.GetAll().FirstOrDefault(x => x.Materia.Id == materia.Id && x.Comision.Id == comision.Id);
         }
+
         public static Entidades.Curso Crear(Entidades.Materia materia, int ciclo, Entidades.Comision comision, int cupo,  string dia, TimeSpan hora_ini, TimeSpan hora_fin) 
         {
             return new Entidades.Curso(materia, ciclo, comision, cupo, dia, hora_ini, hora_fin);
         }
 
         public static void Agregar(Entidades.Curso curso)
-        => Datos.Curso.Agregar(curso);
+            => Datos.Curso.Agregar(curso);
 
         public static void Eliminar(Entidades.Curso curso)
-        => Datos.Curso.Eliminar(curso);
+            => Datos.Curso.Eliminar(curso);
 
         public static void Cambiar(Entidades.Curso curso)
-       => Datos.Curso.Cambiar(curso);
+            => Datos.Curso.Cambiar(curso);
 
         public static List<Entidades.Curso> GetAll()
         {
@@ -50,6 +51,14 @@ namespace TPI.Negocio
         public static Entidades.Curso GetOne(int id)
         {
             return Datos.Curso.GetOne(id);
+        }
+
+        public static Entidades.Curso BuscarCursoPorMateriaComisionCiclLectivo(Entidades.Materia materia, Entidades.Comision comision, int cicloLectivo)
+        {
+            return TPI.Datos.Curso.GetAll()
+                .FirstOrDefault(x => x.Materia.Id == materia.Id 
+                && x.Comision.Id == comision.Id
+                && x.CicloLectivo == cicloLectivo);
         }
     }
 }

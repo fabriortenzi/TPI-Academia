@@ -225,6 +225,7 @@ namespace Escritorio
             {
                 crearPersonaToolStripMenuItem.Visible = false;
                 crearUsuarioToolStripMenuItem.Visible = false;
+                listarPerToolStripMenuItem.Visible = false;
                 especialidadToolStripMenuItem.Visible = false;
                 listarPerToolStripMenuItem.Visible = false;
                 listarUsuToolStripMenuItem1.Visible = false;
@@ -289,8 +290,8 @@ namespace Escritorio
 
         private void reportesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            formReportePlanes formReportePlanes = new();
-            formReportePlanes.Show();
+            formReporteCurso formReporteCurso = new();
+            formReporteCurso.Show();
         }
 
         private void listarToolStripMenuItem_Click_1(object sender, EventArgs e)

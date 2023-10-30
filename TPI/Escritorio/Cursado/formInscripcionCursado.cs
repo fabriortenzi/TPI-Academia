@@ -81,7 +81,7 @@ namespace Escritorio.Inscripcion
             {
                 var materiaSeleccionada = cbxCursosMateria.SelectedItem.ToString();
                 Materia = TPI.Negocio.Materia.GetMateriaPorDesc(materiaSeleccionada);
-                
+
                 if (Materia != null)
                 {
                     var Cursos = CursosMateria.Where(x => x.Materia.Id == Materia.Id).ToList();

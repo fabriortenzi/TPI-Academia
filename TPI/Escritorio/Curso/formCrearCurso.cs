@@ -44,8 +44,6 @@ namespace Escritorio
             cbxDiaSemana.Items.Add("Jueves");
             cbxDiaSemana.Items.Add("Viernes");
             cbxDiaSemana.Items.Add("Sábado");
-            cbxDiaSemana.Items.Add("Domingo");
-
         }
 
         private void cbxEspecialidades_TextUpdate(object sender, EventArgs e)
@@ -92,8 +90,6 @@ namespace Escritorio
                 Plan = planSeleccionado;
                 var materiasPlan = TPI.Negocio.Materia.GetMateriasPorPlan(planSeleccionado);
 
-
-
                 foreach (var materia in materiasPlan)
                 {
                     cbxMaterias.Items.Add(materia.Descripcion);
@@ -111,17 +107,11 @@ namespace Escritorio
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-
-
-
-
             int año = 0, cupo = 0;
             string dia;
             TimeSpan hora_ini, hora_fin;
             try
             {
-
                 año = Convert.ToInt32(txtAño.Text);
                 cupo = Convert.ToInt32(txtCupo.Text);
                 dia = DiaSemana;
@@ -130,15 +120,11 @@ namespace Escritorio
 
                 if (año <= 0 || cupo <= 0) { MessageBox.Show("Año o cupo invalido"); }
 
-
-
-
-
                 if (Materia == null || comision == null) { MessageBox.Show("No puede existir curso sin comision y materia"); }
 
                 if (año > 0 && cupo > 0 && Materia != null && comision != null)
                 {
-                    var cur = TPI.Negocio.Curso.BuscarCursoPorMateriaComision(Materia, comision);
+                    var cur = TPI.Negocio.Curso.BuscarCursoPorMateriaComisionCiclLectivo(Materia, comision, año);
                     if (cur != null) { MessageBox.Show("El curso ya existe"); }
                     else
                     {
@@ -148,16 +134,12 @@ namespace Escritorio
                         this.Close();
                     }
                 }
-
-
-
             }
             catch
             {
                 MessageBox.Show("Error en los datos del formulario de curso");
                 return;
             }
-
         }
 
         private void cbxComision_SelectionChangeCommitted(object sender, EventArgs e)

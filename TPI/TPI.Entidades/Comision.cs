@@ -27,8 +27,7 @@ namespace TPI.Entidades
         }
         public override string ToString()
         {
-            return $"{NroComision}";
-            
+            return $"{NroComision}";            
         }
     }
 }

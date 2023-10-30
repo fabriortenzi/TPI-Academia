@@ -42,7 +42,7 @@
             // btnCancelar
             // 
             btnCancelar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnCancelar.Location = new System.Drawing.Point(130, 346);
+            btnCancelar.Location = new System.Drawing.Point(257, 355);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new System.Drawing.Size(248, 59);
             btnCancelar.TabIndex = 15;
@@ -53,7 +53,7 @@
             // btnConfirmar
             // 
             btnConfirmar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnConfirmar.Location = new System.Drawing.Point(422, 346);
+            btnConfirmar.Location = new System.Drawing.Point(549, 355);
             btnConfirmar.Name = "btnConfirmar";
             btnConfirmar.Size = new System.Drawing.Size(249, 59);
             btnConfirmar.TabIndex = 14;
@@ -121,7 +121,7 @@
             cbxCursosMateria.FormattingEnabled = true;
             cbxCursosMateria.Location = new System.Drawing.Point(393, 133);
             cbxCursosMateria.Name = "cbxCursosMateria";
-            cbxCursosMateria.Size = new System.Drawing.Size(300, 37);
+            cbxCursosMateria.Size = new System.Drawing.Size(500, 37);
             cbxCursosMateria.TabIndex = 8;
             cbxCursosMateria.SelectedIndexChanged += cbxCursosMateria_SelectedIndexChanged;
             // 
@@ -129,7 +129,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label4.Location = new System.Drawing.Point(228, 31);
+            label4.Location = new System.Drawing.Point(338, 38);
             label4.Name = "label4";
             label4.Size = new System.Drawing.Size(352, 35);
             label4.TabIndex = 16;
@@ -141,7 +141,7 @@
             AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             CancelButton = btnCancelar;
-            ClientSize = new System.Drawing.Size(800, 450);
+            ClientSize = new System.Drawing.Size(1010, 450);
             Controls.Add(label4);
             Controls.Add(btnCancelar);
             Controls.Add(btnConfirmar);

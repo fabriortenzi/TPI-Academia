@@ -39,7 +39,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label1.Location = new System.Drawing.Point(165, 32);
+            label1.Location = new System.Drawing.Point(277, 36);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(326, 35);
             label1.TabIndex = 0;
@@ -60,13 +60,13 @@
             txtDescripcion.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             txtDescripcion.Location = new System.Drawing.Point(241, 134);
             txtDescripcion.Name = "txtDescripcion";
-            txtDescripcion.Size = new System.Drawing.Size(290, 37);
+            txtDescripcion.Size = new System.Drawing.Size(500, 37);
             txtDescripcion.TabIndex = 2;
             // 
             // btnCancelar
             // 
             btnCancelar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnCancelar.Location = new System.Drawing.Point(77, 242);
+            btnCancelar.Location = new System.Drawing.Point(175, 240);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new System.Drawing.Size(234, 56);
             btnCancelar.TabIndex = 3;
@@ -77,7 +77,7 @@
             // btnAceptar
             // 
             btnAceptar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnAceptar.Location = new System.Drawing.Point(336, 242);
+            btnAceptar.Location = new System.Drawing.Point(459, 240);
             btnAceptar.Name = "btnAceptar";
             btnAceptar.Size = new System.Drawing.Size(234, 56);
             btnAceptar.TabIndex = 4;
@@ -91,7 +91,7 @@
             AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             CancelButton = btnCancelar;
-            ClientSize = new System.Drawing.Size(647, 332);
+            ClientSize = new System.Drawing.Size(841, 332);
             Controls.Add(btnAceptar);
             Controls.Add(btnCancelar);
             Controls.Add(txtDescripcion);

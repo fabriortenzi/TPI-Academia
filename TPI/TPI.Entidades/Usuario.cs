@@ -35,7 +35,7 @@ namespace TPI.Entidades
 
         public override string ToString()
         {
-            return $"{Legajo}";
+            return $"Legajo: {Legajo} - {NombreCompleto}";
         }
     }
 }

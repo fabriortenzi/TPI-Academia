@@ -129,15 +129,43 @@ namespace Escritorio.Generalizado
             }
             else if (tipoDato == typeof(TPI.Entidades.Persona))
             {
-                ListaGeneral.Add(TPI.Negocio.Persona.GetAll());
+                ListaGeneral.Add(TPI.Negocio.Persona.GetAll()
+                    .OrderBy(x => x.Apellido)
+                    .ThenBy(x => x.Nombre).ToList());
+                btnAgregar.Visible = false;
+                btnEliminar.Visible = false;
+                btnModificar.Visible = false;
+                btnAgregar.Visible = false;
+                btnConsultar.Visible = false;
             }
             else if (tipoDato == typeof(TPI.Entidades.Plan))
             {
-                ListaGeneral.Add(TPI.Negocio.Plan.GetAll());
+                ListaGeneral.Add(TPI.Negocio.Plan.GetAll()
+                    .Select(p => new 
+                        { p.Especialidad,
+                        p.Anio
+                    })
+                    .OrderBy(p => p.Especialidad.Descripcion)
+                    .ThenBy(p => p.Anio)
+                    .ToList());
+
+                btnAgregar.Visible = false;
+                btnEliminar.Visible = false;
+                btnModificar.Visible = false;
+                btnAgregar.Visible = false;
+                btnConsultar.Visible = false;
             }
             else if (tipoDato == typeof(TPI.Entidades.Usuario))
             {
-                ListaGeneral.Add(TPI.Negocio.Usuario.GetAllUsuarios());
+                ListaGeneral.Add(TPI.Negocio.Usuario.GetAllUsuarios()
+                    .Select(x => new
+                    {
+                        x.Legajo,
+                        x.Persona,
+                        x.TipoDeUsuario,
+                        x.Plan?.Especialidad,
+                        x.Plan
+                    }).ToList());
             }
             else if (tipoDato == typeof(TPI.Entidades.TipoDeUsuario))
             {
@@ -189,17 +217,39 @@ namespace Escritorio.Generalizado
             else if (tipoDato == typeof(TPI.Entidades.Persona))
             {
                 List<TPI.Entidades.Persona> personas = TPI.Negocio.Persona.GetAll();
-                ListaGeneral.Add(personas.Where(x => x.Dni.ToString().Contains(consulta) || x.Nombre.Contains(consulta) || x.Apellido.Contains(consulta)).ToList());
+                ListaGeneral.Add(personas.Where(x => x.Dni.ToString().Contains(consulta)
+                    || x.Nombre.ToUpper().Contains(consulta.ToUpper())
+                    || x.Apellido.ToUpper().Contains(consulta.ToUpper())
+                    || $"{x.Nombre} {x.Apellido}".ToUpper().Contains(consulta.ToUpper()))
+                    .OrderBy(x => x.Apellido)
+                    .ThenBy(x => x.Nombre).ToList());
             }
             else if (tipoDato == typeof(TPI.Entidades.Plan))
             {
                 List<TPI.Entidades.Plan> planes = TPI.Negocio.Plan.GetAll();
-                ListaGeneral.Add(planes.Where(x => x.Anio.ToString().Contains(consulta) || x.Id.ToString().Contains(consulta)).ToList());
+                ListaGeneral.Add(planes.Where(x => x.Anio.ToString().Contains(consulta)
+                || x.Especialidad.ToString().ToUpper().Contains(consulta.ToUpper()))
+                    .Select(p => new
+                    {
+                        p.Especialidad,
+                        p.Anio
+                    })
+                    .OrderBy(p => p.Especialidad.Descripcion)
+                    .ThenBy(p => p.Anio)
+                    .ToList());
             }
             else if (tipoDato == typeof(TPI.Entidades.Usuario))
             {
                 List<TPI.Entidades.Usuario> usuarios = TPI.Negocio.Usuario.GetAllUsuarios();
-                ListaGeneral.Add(usuarios.Where(x => x.Legajo.ToString().Contains(consulta)).ToList());
+                ListaGeneral.Add(usuarios.Where(x => x.Legajo.ToString().Contains(consulta))
+                    .Select(x => new
+                    {
+                        x.Legajo,
+                        x.Persona,
+                        x.TipoDeUsuario,
+                        x.Plan?.Especialidad,
+                        x.Plan
+                    }).ToList());
             }
             else if (tipoDato == typeof(TPI.Entidades.Especialidad))
             {

@@ -156,11 +156,6 @@ namespace Escritorio.Cursado
                             MessageBox.Show("Inscripcion relizada con Exito!");
                             this.Close();
                         }
-
-                        if (cur != null)
-                        {
-                            MessageBox.Show("Incripcion duplicada");
-                        }
                     }
                     else
                     {

@@ -49,10 +49,10 @@ namespace Escritorio
             cbxEspecialidades.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cbxEspecialidades.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             cbxEspecialidades.FormattingEnabled = true;
-            cbxEspecialidades.Location = new System.Drawing.Point(378, 136);
+            cbxEspecialidades.Location = new System.Drawing.Point(272, 135);
             cbxEspecialidades.Margin = new System.Windows.Forms.Padding(4);
             cbxEspecialidades.Name = "cbxEspecialidades";
-            cbxEspecialidades.Size = new System.Drawing.Size(287, 37);
+            cbxEspecialidades.Size = new System.Drawing.Size(500, 37);
             cbxEspecialidades.TabIndex = 0;
             cbxEspecialidades.SelectedIndexChanged += cbxEspecialidades_SelectedIndexChanged;
             // 
@@ -62,7 +62,7 @@ namespace Escritorio
             cbxPlanes.Enabled = false;
             cbxPlanes.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             cbxPlanes.FormattingEnabled = true;
-            cbxPlanes.Location = new System.Drawing.Point(378, 204);
+            cbxPlanes.Location = new System.Drawing.Point(272, 205);
             cbxPlanes.Margin = new System.Windows.Forms.Padding(4);
             cbxPlanes.Name = "cbxPlanes";
             cbxPlanes.Size = new System.Drawing.Size(287, 37);
@@ -73,7 +73,7 @@ namespace Escritorio
             // 
             label1.AutoSize = true;
             label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label1.Location = new System.Drawing.Point(233, 139);
+            label1.Location = new System.Drawing.Point(127, 138);
             label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(137, 29);
@@ -84,7 +84,7 @@ namespace Escritorio
             // 
             label2.AutoSize = true;
             label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label2.Location = new System.Drawing.Point(314, 207);
+            label2.Location = new System.Drawing.Point(208, 208);
             label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label2.Name = "label2";
             label2.Size = new System.Drawing.Size(56, 29);
@@ -94,17 +94,17 @@ namespace Escritorio
             // txtDescMateria
             // 
             txtDescMateria.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            txtDescMateria.Location = new System.Drawing.Point(378, 279);
+            txtDescMateria.Location = new System.Drawing.Point(272, 278);
             txtDescMateria.Margin = new System.Windows.Forms.Padding(4);
             txtDescMateria.Name = "txtDescMateria";
-            txtDescMateria.Size = new System.Drawing.Size(287, 37);
+            txtDescMateria.Size = new System.Drawing.Size(500, 37);
             txtDescMateria.TabIndex = 4;
             txtDescMateria.TextChanged += txtDescMateria_TextChanged;
             // 
             // txtHorasSem
             // 
             txtHorasSem.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            txtHorasSem.Location = new System.Drawing.Point(378, 354);
+            txtHorasSem.Location = new System.Drawing.Point(272, 355);
             txtHorasSem.Margin = new System.Windows.Forms.Padding(4);
             txtHorasSem.Name = "txtHorasSem";
             txtHorasSem.Size = new System.Drawing.Size(188, 37);
@@ -114,7 +114,7 @@ namespace Escritorio
             // txtHorasTot
             // 
             txtHorasTot.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            txtHorasTot.Location = new System.Drawing.Point(378, 421);
+            txtHorasTot.Location = new System.Drawing.Point(272, 422);
             txtHorasTot.Margin = new System.Windows.Forms.Padding(4);
             txtHorasTot.Name = "txtHorasTot";
             txtHorasTot.Size = new System.Drawing.Size(188, 37);
@@ -125,7 +125,7 @@ namespace Escritorio
             // 
             label3.AutoSize = true;
             label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label3.Location = new System.Drawing.Point(141, 282);
+            label3.Location = new System.Drawing.Point(35, 281);
             label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label3.Name = "label3";
             label3.Size = new System.Drawing.Size(229, 29);
@@ -136,7 +136,7 @@ namespace Escritorio
             // 
             label4.AutoSize = true;
             label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label4.Location = new System.Drawing.Point(191, 357);
+            label4.Location = new System.Drawing.Point(85, 358);
             label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label4.Name = "label4";
             label4.Size = new System.Drawing.Size(179, 29);
@@ -147,7 +147,7 @@ namespace Escritorio
             // 
             label5.AutoSize = true;
             label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label5.Location = new System.Drawing.Point(225, 424);
+            label5.Location = new System.Drawing.Point(119, 425);
             label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label5.Name = "label5";
             label5.Size = new System.Drawing.Size(145, 29);

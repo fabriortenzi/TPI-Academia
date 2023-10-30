@@ -92,6 +92,22 @@ namespace Escritorio
                 return;
             }
 
+            if (descMateria.Length > 50)
+            {
+                MessageBox.Show("El nombre de la Materia no puede tener mas de 50 caracteres");
+                return;
+            }
+            if (horas_sem > 10)
+            {
+                MessageBox.Show("La Materia no puede tener mas de 10 horas semanales");
+                return;
+            }
+            if (horas_tot > 500)
+            {
+                MessageBox.Show("La Materia no puede tener mas de 500 horas totales");
+                return;
+            }
+
             var nuevamateria = TPI.Negocio.Materia.CrearMateria(descMateria, horas_sem, horas_tot, Plan);
 
             if (await TPI.Negocio.Materia.AgregaMateria(nuevamateria))

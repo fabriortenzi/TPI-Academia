@@ -47,18 +47,19 @@
             // btnCancelar
             // 
             btnCancelar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnCancelar.Location = new System.Drawing.Point(48, 492);
+            btnCancelar.Location = new System.Drawing.Point(140, 489);
             btnCancelar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new System.Drawing.Size(236, 55);
             btnCancelar.TabIndex = 15;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click_1;
             // 
             // btnAgregar
             // 
             btnAgregar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnAgregar.Location = new System.Drawing.Point(343, 492);
+            btnAgregar.Location = new System.Drawing.Point(435, 489);
             btnAgregar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new System.Drawing.Size(236, 55);
@@ -95,7 +96,7 @@
             txtCargo.Location = new System.Drawing.Point(194, 385);
             txtCargo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             txtCargo.Name = "txtCargo";
-            txtCargo.Size = new System.Drawing.Size(223, 37);
+            txtCargo.Size = new System.Drawing.Size(261, 37);
             txtCargo.TabIndex = 19;
             // 
             // cbxLegajo
@@ -141,7 +142,7 @@
             cbxMaterias.FormattingEnabled = true;
             cbxMaterias.Location = new System.Drawing.Point(194, 257);
             cbxMaterias.Name = "cbxMaterias";
-            cbxMaterias.Size = new System.Drawing.Size(335, 37);
+            cbxMaterias.Size = new System.Drawing.Size(500, 37);
             cbxMaterias.TabIndex = 41;
             cbxMaterias.SelectedIndexChanged += cbxMaterias_SelectedIndexChanged;
             // 
@@ -184,7 +185,7 @@
             cbxEspecialidades.FormattingEnabled = true;
             cbxEspecialidades.Location = new System.Drawing.Point(194, 119);
             cbxEspecialidades.Name = "cbxEspecialidades";
-            cbxEspecialidades.Size = new System.Drawing.Size(335, 37);
+            cbxEspecialidades.Size = new System.Drawing.Size(500, 37);
             cbxEspecialidades.TabIndex = 37;
             cbxEspecialidades.SelectedIndexChanged += cbxEspecialidades_SelectedIndexChanged;
             // 
@@ -204,7 +205,7 @@
             AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             CancelButton = btnCancelar;
-            ClientSize = new System.Drawing.Size(641, 583);
+            ClientSize = new System.Drawing.Size(777, 583);
             Controls.Add(cbxComision);
             Controls.Add(lblComision);
             Controls.Add(cbxMaterias);

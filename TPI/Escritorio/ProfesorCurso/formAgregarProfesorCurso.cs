@@ -44,9 +44,6 @@ namespace Escritorio.ProfesorCurso
 
             cbxEspecialidades.SelectedIndex = -1;
             cbxLegajo.SelectedIndex = -1;
-
-
-
         }
 
 
@@ -60,18 +57,10 @@ namespace Escritorio.ProfesorCurso
             this.Close();
         }
 
-
-
-
-
-
         private void cbxLegajo_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-
             int leg = Convert.ToInt32(cbxLegajo.SelectedValue);
             Usuario = TPI.Negocio.Usuario.GetOne(leg);
-
         }
 
         private void btnAgregar_Click_1(object sender, EventArgs e)
@@ -81,6 +70,12 @@ namespace Escritorio.ProfesorCurso
                 curso = TPI.Negocio.Curso.BuscarCursoPorMateriaComision(materia, comision);
                 if (curso != null && Usuario != null)
                 {
+                    // Valido que no se haya asignado todavia ese Profesor a ese Curso
+                    if (TPI.Negocio.ProfesorCurso.BuscarPorUsuarioCurso(Usuario, curso) != null)
+                    {
+                        MessageBox.Show("Ese Profesor ya fue asignado a ese Curso", "Agregar Profesor Curso", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    }
+
                     TPI.Entidades.ProfesorCurso profesor_curso = new TPI.Entidades.ProfesorCurso();
 
                     profesor_curso.Curso = curso;
@@ -89,14 +84,14 @@ namespace Escritorio.ProfesorCurso
                     if (profesor_curso != null)
                     {
                         TPI.Negocio.ProfesorCurso.Agregar(profesor_curso);
-                        MessageBox.Show("Cargo asignado con exito!");
+                        MessageBox.Show("Cargo asignado con exito!", "Agregar Profesor Curso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
                     }
-                    else { MessageBox.Show("Un profesor curso debe tener un usuario y un curso"); }
+                    else { MessageBox.Show("Un profesor curso debe tener un usuario y un curso", "Agregar Profesor Curso", MessageBoxButtons.OK, MessageBoxIcon.Stop); }
                 }
             }
-            else { MessageBox.Show("Seleccione una materia y una comision"); }
-            
+            else { MessageBox.Show("Seleccione una materia y una comision", "Agregar Profesor Curso", MessageBoxButtons.OK, MessageBoxIcon.Stop); }
+
         }
 
         private void formAgregarProfesorCurso_Load(object sender, EventArgs e)
@@ -138,18 +133,21 @@ namespace Escritorio.ProfesorCurso
 
         private async void cbxPlanes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cbxMaterias.Items.Clear();
-            foreach (TPI.Entidades.Materia mat in TPI.Negocio.Materia.GetMateriasPorPlan(plan))
+            if (cbxEspecialidades.SelectedIndex != -1)
             {
-                cbxMaterias.Items.Add(mat.Descripcion);
-            }
-            cbxMaterias.Enabled = true;
-            if (cbxPlanes.SelectedItem != null)
-            {
-                var anio = Convert.ToInt32((cbxPlanes.SelectedItem.ToString()));
-                if (especialidad != null)
+                if (cbxPlanes.SelectedItem != null)
                 {
-                    plan = await TPI.Negocio.Plan.GetPlanPorEspecialidadAnio(especialidad, anio);
+                    cbxMaterias.Items.Clear();
+                    cbxMaterias.Enabled = true;
+                    var anio = Convert.ToInt32((cbxPlanes.SelectedItem.ToString()));
+                    if (especialidad != null)
+                    {
+                        plan = await TPI.Negocio.Plan.GetPlanPorEspecialidadAnio(especialidad, anio);
+                    }
+                    foreach (TPI.Entidades.Materia mat in TPI.Negocio.Materia.GetMateriasPorPlan(plan))
+                    {
+                        cbxMaterias.Items.Add(mat.Descripcion);
+                    }
                 }
             }
         }
@@ -171,6 +169,11 @@ namespace Escritorio.ProfesorCurso
             {
                 comision = TPI.Negocio.Comision.BuscarComisionPorNroEspecialidad(nro_com, especialidad);
             }
+        }
+
+        private void btnCancelar_Click_1(object sender, EventArgs e)
+        {
+            Dispose();
         }
     }
 }

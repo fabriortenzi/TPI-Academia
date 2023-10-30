@@ -3,6 +3,7 @@ using Escritorio.Curso;
 using Escritorio.Generalizado;
 using Escritorio.Inscripcion;
 using Escritorio.ProfesorCurso;
+using Escritorio.Reportes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,9 +25,8 @@ namespace Escritorio
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-
+            //Application.Run(new formLogin());
             Application.Run(new formLogin());
-          //  Application.Run(new formListar(typeof(TPI.Entidades.Usuario)));
         }
     }
 }
