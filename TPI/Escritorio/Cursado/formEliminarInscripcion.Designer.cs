@@ -33,13 +33,13 @@
             btnCerrar = new System.Windows.Forms.Button();
             cursadoBindingSource = new System.Windows.Forms.BindingSource(components);
             dgvInscripciones = new System.Windows.Forms.DataGridView();
+            cursadoBindingSource1 = new System.Windows.Forms.BindingSource(components);
             Curso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             FechaHoraInscripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             Eliminar = new System.Windows.Forms.DataGridViewLinkColumn();
             Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             usuarioe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             NotaFinal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            cursadoBindingSource1 = new System.Windows.Forms.BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)cursadoBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvInscripciones).BeginInit();
             ((System.ComponentModel.ISupportInitialize)cursadoBindingSource1).BeginInit();
@@ -49,7 +49,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label1.Location = new System.Drawing.Point(304, 23);
+            label1.Location = new System.Drawing.Point(391, 30);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(402, 35);
             label1.TabIndex = 0;
@@ -58,7 +58,7 @@
             // btnCerrar
             // 
             btnCerrar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnCerrar.Location = new System.Drawing.Point(348, 592);
+            btnCerrar.Location = new System.Drawing.Point(445, 602);
             btnCerrar.Name = "btnCerrar";
             btnCerrar.Size = new System.Drawing.Size(308, 65);
             btnCerrar.TabIndex = 2;
@@ -79,9 +79,13 @@
             dgvInscripciones.RowHeadersWidth = 62;
             dgvInscripciones.RowTemplate.Height = 33;
             dgvInscripciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            dgvInscripciones.Size = new System.Drawing.Size(884, 440);
+            dgvInscripciones.Size = new System.Drawing.Size(1085, 440);
             dgvInscripciones.TabIndex = 3;
             dgvInscripciones.CellContentClick += dgvInscripciones_CellContentClick;
+            // 
+            // cursadoBindingSource1
+            // 
+            cursadoBindingSource1.DataSource = typeof(TPI.Entidades.Cursado);
             // 
             // Curso
             // 
@@ -89,7 +93,7 @@
             Curso.HeaderText = "Materia";
             Curso.MinimumWidth = 8;
             Curso.Name = "Curso";
-            Curso.Width = 400;
+            Curso.Width = 600;
             // 
             // FechaHoraInscripcion
             // 
@@ -138,16 +142,12 @@
             NotaFinal.Visible = false;
             NotaFinal.Width = 150;
             // 
-            // cursadoBindingSource1
-            // 
-            cursadoBindingSource1.DataSource = typeof(TPI.Entidades.Cursado);
-            // 
             // formEliminarInscripcion
             // 
             AcceptButton = btnCerrar;
             AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(1004, 696);
+            ClientSize = new System.Drawing.Size(1201, 696);
             Controls.Add(dgvInscripciones);
             Controls.Add(btnCerrar);
             Controls.Add(label1);

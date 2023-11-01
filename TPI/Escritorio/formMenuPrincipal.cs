@@ -221,6 +221,8 @@ namespace Escritorio
 
         private void formMenuPrincipal_Load(object sender, EventArgs e)
         {
+            // Deshabilito los menus segun el tipo de Usuario que ingreso
+
             if (Usuario.TipoDeUsuario.Descripcion != "Admin")
             {
                 crearPersonaToolStripMenuItem.Visible = false;
@@ -236,6 +238,7 @@ namespace Escritorio
                 planDeEstudioToolStripMenuItem.Visible = false;
                 materiaToolStripMenuItem.Visible = false;
                 profesorCursoToolStripMenuItem.Visible = false;
+                reportesToolStripMenuItem.Visible = false;
             }
 
             if (Usuario.TipoDeUsuario.Descripcion != "Alumno")

@@ -27,7 +27,8 @@ namespace Escritorio
         private void formCrearCurso_Load(object sender, EventArgs e)
         {
             CargarDiaSemana();
-            var especialidades = TPI.Negocio.Especialidad.GetAllEspecialidades();
+            var especialidades = TPI.Negocio.Especialidad.GetAllEspecialidades()
+                .OrderBy(e => e.Descripcion).ToList();
 
             foreach (var esp in especialidades)
             {
@@ -62,7 +63,7 @@ namespace Escritorio
 
             cbxComision.SelectedIndex = -1;
             cbxComision.Items.Clear();
-            foreach (var com in TPI.Negocio.Comision.BuscarComisionesPorEspecialidad(especialidad))
+            foreach (var com in TPI.Negocio.Comision.BuscarComisionesPorEspecialidad(especialidad).OrderBy(c => c.NroComision).ToList())
             {
                 cbxComision.Items.Add(com.NroComision);
             }
@@ -88,7 +89,8 @@ namespace Escritorio
                 Año = añoPlanSeleccionado;
                 var planSeleccionado = await TPI.Negocio.Plan.GetPlanPorEspecialidadAnio(Especialidad, Año);
                 Plan = planSeleccionado;
-                var materiasPlan = TPI.Negocio.Materia.GetMateriasPorPlan(planSeleccionado);
+                var materiasPlan = TPI.Negocio.Materia.GetMateriasPorPlan(planSeleccionado)
+                    .OrderBy(m => m.Descripcion).ToList();
 
                 foreach (var materia in materiasPlan)
                 {
@@ -118,26 +120,26 @@ namespace Escritorio
                 hora_ini = dtpHoraIni.Value.TimeOfDay;
                 hora_fin = dtpHoraFin.Value.TimeOfDay;
 
-                if (año <= 0 || cupo <= 0) { MessageBox.Show("Año o cupo invalido"); }
+                if (año <= 0 || cupo <= 0) { MessageBox.Show("Año o cupo invalido", "Crear Curso", MessageBoxButtons.OK, MessageBoxIcon.Stop); }
 
-                if (Materia == null || comision == null) { MessageBox.Show("No puede existir curso sin comision y materia"); }
+                if (Materia == null || comision == null) { MessageBox.Show("No puede existir curso sin comision y materia", "Crear Curso", MessageBoxButtons.OK, MessageBoxIcon.Stop); }
 
                 if (año > 0 && cupo > 0 && Materia != null && comision != null)
                 {
                     var cur = TPI.Negocio.Curso.BuscarCursoPorMateriaComisionCiclLectivo(Materia, comision, año);
-                    if (cur != null) { MessageBox.Show("El curso ya existe"); }
+                    if (cur != null) { MessageBox.Show("El curso ya existe", "Crear Curso", MessageBoxButtons.OK, MessageBoxIcon.Stop); }
                     else
                     {
                         var curso = TPI.Negocio.Curso.Crear(Materia, año, comision, cupo, dia, hora_ini, hora_fin);
                         TPI.Negocio.Curso.Agregar(curso);
-                        MessageBox.Show("Curso creado exitosamente!");
+                        MessageBox.Show("Curso creado exitosamente!", "Crear Curso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
                     }
                 }
             }
             catch
             {
-                MessageBox.Show("Error en los datos del formulario de curso");
+                MessageBox.Show("Error en los datos del formulario de curso", "Crear Curso", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 return;
             }
         }

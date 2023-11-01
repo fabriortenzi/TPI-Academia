@@ -46,7 +46,6 @@
             planDeEstudioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             crearNuevoPlanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             listarPlanToolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
-            eliminarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             materiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             crearNuevaMateriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             listarMateriasToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
@@ -174,7 +173,7 @@
             // 
             // planDeEstudioToolStripMenuItem
             // 
-            planDeEstudioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { crearNuevoPlanToolStripMenuItem, listarPlanToolStripMenuItem6, eliminarToolStripMenuItem1 });
+            planDeEstudioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { crearNuevoPlanToolStripMenuItem, listarPlanToolStripMenuItem6 });
             planDeEstudioToolStripMenuItem.Name = "planDeEstudioToolStripMenuItem";
             planDeEstudioToolStripMenuItem.Size = new System.Drawing.Size(270, 38);
             planDeEstudioToolStripMenuItem.Text = "Plan de Estudio";
@@ -192,12 +191,6 @@
             listarPlanToolStripMenuItem6.Size = new System.Drawing.Size(287, 38);
             listarPlanToolStripMenuItem6.Text = "Listar";
             listarPlanToolStripMenuItem6.Click += listarToolStripMenuItem6_Click;
-            // 
-            // eliminarToolStripMenuItem1
-            // 
-            eliminarToolStripMenuItem1.Name = "eliminarToolStripMenuItem1";
-            eliminarToolStripMenuItem1.Size = new System.Drawing.Size(287, 38);
-            eliminarToolStripMenuItem1.Text = "Eliminar";
             // 
             // materiaToolStripMenuItem
             // 
@@ -321,14 +314,14 @@
             // agregarPCToolStripMenuItem2
             // 
             agregarPCToolStripMenuItem2.Name = "agregarPCToolStripMenuItem2";
-            agregarPCToolStripMenuItem2.Size = new System.Drawing.Size(270, 38);
+            agregarPCToolStripMenuItem2.Size = new System.Drawing.Size(192, 38);
             agregarPCToolStripMenuItem2.Text = "Agregar";
             agregarPCToolStripMenuItem2.Click += agregarToolStripMenuItem2_Click;
             // 
             // listarPCToolStripMenuItem10
             // 
             listarPCToolStripMenuItem10.Name = "listarPCToolStripMenuItem10";
-            listarPCToolStripMenuItem10.Size = new System.Drawing.Size(270, 38);
+            listarPCToolStripMenuItem10.Size = new System.Drawing.Size(192, 38);
             listarPCToolStripMenuItem10.Text = "Listar";
             listarPCToolStripMenuItem10.Click += listarToolStripMenuItem10_Click;
             // 
@@ -399,6 +392,5 @@
         private System.Windows.Forms.ToolStripMenuItem consultarNotasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem misCursosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem1;
     }
 }

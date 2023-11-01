@@ -101,17 +101,17 @@ namespace Escritorio
 
             if (descMateria.Length > 50)
             {
-                MessageBox.Show("El nombre de la Materia no puede tener mas de 50 caracteres");
+                MessageBox.Show("El nombre de la Materia no puede tener mas de 50 caracteres", "Crear Materia", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 return;
             }
-            if (horas_sem > 10)
+            if (horas_sem > 15)
             {
-                MessageBox.Show("La Materia no puede tener mas de 10 horas semanales");
+                MessageBox.Show("La Materia no puede tener mas de 15 horas semanales", "Crear Materia", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 return;
             }
             if (horas_tot > 500)
             {
-                MessageBox.Show("La Materia no puede tener mas de 500 horas totales");
+                MessageBox.Show("La Materia no puede tener mas de 500 horas totales", "Crear Materia", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 return;
             }
 
@@ -119,11 +119,11 @@ namespace Escritorio
 
             if (await TPI.Negocio.Materia.AgregaMateria(nuevamateria))
             {
-                MessageBox.Show("Materia creada con exito!");
+                MessageBox.Show("Materia creada con exito!", "Crear Materia", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Error al crear la Materia, intente con otro nombre");
+                MessageBox.Show("Error al crear la Materia, intente con otro nombre", "Crear Materia", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 return;
             }
 

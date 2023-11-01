@@ -31,7 +31,7 @@ namespace Escritorio.Cursado
             }
             catch
             {
-                MessageBox.Show("El Ciclo Lectivo debe ser un Año. Ej: 2023");
+                MessageBox.Show("El Ciclo Lectivo debe ser un Año. Ej: 2023", "Cargar Notas", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 return;
             }
 
@@ -54,7 +54,10 @@ namespace Escritorio.Cursado
         private void cbxCursos_SelectedIndexChanged(object sender, EventArgs e)
         {
             int IdCurso = Convert.ToInt32(cbxCursos.SelectedValue);
-            var cursados = TPI.Negocio.Cursado.BuscarCursadosPorCurso(IdCurso);
+            var cursados = TPI.Negocio.Cursado.BuscarCursadosPorCurso(IdCurso)
+                .OrderBy(c => c.Usuario.Persona.Apellido)
+                .ThenBy(c => c.Usuario.Persona.Nombre)
+                .ToList();
             dgvCursados.DataSource = cursados;
         }
 
@@ -73,7 +76,7 @@ namespace Escritorio.Cursado
                     if (validar_nota == false)
                     {
                         MessageBox.Show($"La nota de {cursados.Cells["Usuario"].Value}" +
-                                         "debe ser un numero entero entre 1 y 10");
+                                         "debe ser un numero entero entre 1 y 10", "Cargar Notas", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 
                         return;
                     }
@@ -81,7 +84,7 @@ namespace Escritorio.Cursado
                 catch
                 {
                     MessageBox.Show($"La nota de {cursados.Cells["Usuario"].Value}" +
-                                     "debe ser un numero entero entre 1 y 10");
+                                     "debe ser un numero entero entre 1 y 10", "Cargar Notas", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 
                     return;
                 }
@@ -90,7 +93,7 @@ namespace Escritorio.Cursado
                 TPI.Negocio.Cursado.Cambiar(cursado);
             }
 
-            MessageBox.Show("Notas agregadas exitosamente!");
+            MessageBox.Show("Notas agregadas exitosamente!", "Cargar Notas", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }
 
