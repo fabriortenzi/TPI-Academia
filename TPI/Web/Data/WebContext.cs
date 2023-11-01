@@ -5,15 +5,15 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using TPI.Entidades;
 
-namespace AcademiaWeb.Data
+namespace Web.Data
 {
-    public class AcademiaWebContext : DbContext
+    public class WebContext : DbContext
     {
-        public AcademiaWebContext (DbContextOptions<AcademiaWebContext> options)
+        public WebContext (DbContextOptions<WebContext> options)
             : base(options)
         {
         }
 
-        public DbSet<TPI.Entidades.Persona> Persona { get; set; }
+        public DbSet<TPI.Entidades.Persona> personas { get; set; }
     }
 }

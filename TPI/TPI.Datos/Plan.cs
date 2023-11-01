@@ -69,9 +69,10 @@ namespace TPI.Datos
         {
             using (var context = ApplicationContext.CreateContext())
             {
-                return context.planes.ToList();
+                return context.planes
+                    .Include(p => p.Especialidad)
+                    .ToList();
             }
-
         }
     }
 }

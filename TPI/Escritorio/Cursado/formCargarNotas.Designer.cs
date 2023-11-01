@@ -50,7 +50,7 @@
             dgvCursados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvCursados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { Id, Usuario, FechaHoraInscripcion, Curso, NotaFinal });
             dgvCursados.GridColor = System.Drawing.SystemColors.ActiveBorder;
-            dgvCursados.Location = new System.Drawing.Point(81, 211);
+            dgvCursados.Location = new System.Drawing.Point(287, 217);
             dgvCursados.Name = "dgvCursados";
             dgvCursados.RowHeadersWidth = 62;
             dgvCursados.RowTemplate.Height = 33;
@@ -123,14 +123,14 @@
             cbxCursos.FormattingEnabled = true;
             cbxCursos.Location = new System.Drawing.Point(287, 119);
             cbxCursos.Name = "cbxCursos";
-            cbxCursos.Size = new System.Drawing.Size(312, 37);
+            cbxCursos.Size = new System.Drawing.Size(700, 37);
             cbxCursos.TabIndex = 2;
             cbxCursos.SelectedIndexChanged += cbxCursos_SelectedIndexChanged;
             // 
             // btnGuardar
             // 
             btnGuardar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnGuardar.Location = new System.Drawing.Point(379, 800);
+            btnGuardar.Location = new System.Drawing.Point(585, 800);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new System.Drawing.Size(216, 60);
             btnGuardar.TabIndex = 3;
@@ -141,7 +141,7 @@
             // btnCancelar
             // 
             btnCancelar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnCancelar.Location = new System.Drawing.Point(81, 800);
+            btnCancelar.Location = new System.Drawing.Point(287, 800);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new System.Drawing.Size(211, 60);
             btnCancelar.TabIndex = 4;
@@ -185,7 +185,7 @@
             AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             CancelButton = btnCancelar;
-            ClientSize = new System.Drawing.Size(693, 898);
+            ClientSize = new System.Drawing.Size(1076, 898);
             Controls.Add(btnBuscar);
             Controls.Add(label2);
             Controls.Add(txtCicloLectivo);

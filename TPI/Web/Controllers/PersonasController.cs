@@ -2,19 +2,21 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+//using AspNetCore;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using AcademiaWeb.Data;
 using TPI.Entidades;
+using Web.Data;
+using Web.Models;
 
-namespace AcademiaWeb.Controllers
+namespace Web.Controllers
 {
     public class PersonasController : Controller
     {
-        private readonly AcademiaWebContext _context;
+        private readonly WebContext _context;
 
-        public PersonasController(AcademiaWebContext context)
+        public PersonasController(WebContext context)
         {
             _context = context;
         }
@@ -22,7 +24,7 @@ namespace AcademiaWeb.Controllers
         // GET: Personas
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Persona.ToListAsync());
+            return View(await _context.personas.ToListAsync());
         }
 
         // GET: Personas/Details/5
@@ -33,7 +35,7 @@ namespace AcademiaWeb.Controllers
                 return NotFound();
             }
 
-            var persona = await _context.Persona
+            var persona = await _context.personas
                 .FirstOrDefaultAsync(m => m.Dni == id);
             if (persona == null)
             {
@@ -58,9 +60,16 @@ namespace AcademiaWeb.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(persona);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                try
+                {
+                    _context.Add(persona);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
+                }
+                catch (DbUpdateException)
+                {
+                    return View("ErrorCustom", "Ya existe una Persona registrada con ese DNI en el Sistema");
+                }
             }
             return View(persona);
         }
@@ -73,7 +82,7 @@ namespace AcademiaWeb.Controllers
                 return NotFound();
             }
 
-            var persona = await _context.Persona.FindAsync(id);
+            var persona = await _context.personas.FindAsync(id);
             if (persona == null)
             {
                 return NotFound();
@@ -86,34 +95,34 @@ namespace AcademiaWeb.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Dni,Nombre,Apellido,Direccion,FechaNacimiento,Telefono")] Persona persona)
+        public async Task<IActionResult> Edit(int id, [Bind("Dni,Direccion,Telefono")] Persona persona)
         {
             if (id != persona.Dni)
             {
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            try
             {
-                try
-                {
-                    _context.Update(persona);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!PersonaExists(persona.Dni))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
+                var personaEnc = await _context.personas.FindAsync(persona.Dni);
+                personaEnc.Direccion = persona.Direccion;
+                personaEnc.Telefono = persona.Telefono;
+                _context.personas.Update(personaEnc);
+                await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(persona);
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!PersonaExists(persona.Dni))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    return View(persona);
+                    throw;
+                }
+            }
         }
 
         // GET: Personas/Delete/5
@@ -124,7 +133,7 @@ namespace AcademiaWeb.Controllers
                 return NotFound();
             }
 
-            var persona = await _context.Persona
+            var persona = await _context.personas
                 .FirstOrDefaultAsync(m => m.Dni == id);
             if (persona == null)
             {
@@ -139,15 +148,15 @@ namespace AcademiaWeb.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var persona = await _context.Persona.FindAsync(id);
-            _context.Persona.Remove(persona);
+            var persona = await _context.personas.FindAsync(id);
+            _context.personas.Remove(persona);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool PersonaExists(int id)
         {
-            return _context.Persona.Any(e => e.Dni == id);
+            return _context.personas.Any(e => e.Dni == id);
         }
     }
 }

@@ -55,6 +55,7 @@ namespace TPI.Datos
                     .Include(x => x.TipoDeUsuario)
                     .Include(x => x.Persona)
                     .Include(x => x.Plan)
+                    .ThenInclude(x => x.Especialidad)
                     .ToList();
             }
         }
@@ -90,11 +91,9 @@ namespace TPI.Datos
                     .FirstOrDefault(x => (x.Persona.Nombre + " " + x.Persona.Apellido) == nom_apellido);
 
                 return usuario;
-
-
             }
-
         }
+
         public static List<Entidades.Usuario> GetAllProfesores()
         {
             using (ApplicationContext context = ApplicationContext.CreateContext())
@@ -115,7 +114,8 @@ namespace TPI.Datos
                 var alumnos = context.usuarios
                     .Include(u => u.Persona)
                     .Include(u => u.TipoDeUsuario)
-                    .Where(x => x.TipoDeUsuario.Descripcion == "Alumno").ToList();
+                    .Where(x => x.TipoDeUsuario.Descripcion == "Alumno")
+                    .ToList();
 
                 return alumnos;
             }

@@ -35,15 +35,13 @@ namespace Escritorio.Comision
             }
             catch
             {
-                MessageBox.Show("El nro de Comision debe ser entero");
+                MessageBox.Show("El nro de Comision debe ser entero", "Crear Comision", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 return;
             }
 
-
-            if (nroCom == 0) { MessageBox.Show("El id de comision invalido"); }
+            if (nroCom == 0) { MessageBox.Show("El id de comision invalido", "Crear Comision", MessageBoxButtons.OK, MessageBoxIcon.Stop); }
 
             var com = TPI.Negocio.Comision.BuscarComisionPorNroEspecialidad(nroCom, Especialidad);
-
 
             if (nroCom != 0 && com == null)
             {
@@ -51,16 +49,16 @@ namespace Escritorio.Comision
                 try
                 {
                     TPI.Negocio.Comision.Agregar(comision);
-                    MessageBox.Show("Comision creada con exito!");
+                    MessageBox.Show("Comision creada con exito!", "Crear Comision", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
                 catch (DbUpdateException)
                 {
-                    MessageBox.Show("La comision ya existe");
+                    MessageBox.Show("La comision ya existe", "Crear Comision", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     return;
                 }
             }
-            else { MessageBox.Show("La comision ya existe"); }
+            else { MessageBox.Show("La comision ya existe", "Crear Comision", MessageBoxButtons.OK, MessageBoxIcon.Stop); }
         }
 
         private void formCrearComision_Load(object sender, EventArgs e)

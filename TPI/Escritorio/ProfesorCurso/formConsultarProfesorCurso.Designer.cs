@@ -46,7 +46,7 @@ namespace Escritorio.ProfesorCurso
             // btnCancelar
             // 
             btnCancelar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnCancelar.Location = new System.Drawing.Point(41, 424);
+            btnCancelar.Location = new System.Drawing.Point(148, 432);
             btnCancelar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new System.Drawing.Size(222, 53);
@@ -58,7 +58,7 @@ namespace Escritorio.ProfesorCurso
             // btnConsultar
             // 
             btnConsultar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnConsultar.Location = new System.Drawing.Point(321, 424);
+            btnConsultar.Location = new System.Drawing.Point(428, 432);
             btnConsultar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             btnConsultar.Name = "btnConsultar";
             btnConsultar.Size = new System.Drawing.Size(222, 53);
@@ -98,7 +98,7 @@ namespace Escritorio.ProfesorCurso
             cbxMaterias.FormattingEnabled = true;
             cbxMaterias.Location = new System.Drawing.Point(197, 257);
             cbxMaterias.Name = "cbxMaterias";
-            cbxMaterias.Size = new System.Drawing.Size(312, 37);
+            cbxMaterias.Size = new System.Drawing.Size(500, 37);
             cbxMaterias.TabIndex = 61;
             cbxMaterias.SelectedIndexChanged += cbxMaterias_SelectedIndexChanged;
             // 
@@ -141,7 +141,7 @@ namespace Escritorio.ProfesorCurso
             cbxEspecialidades.FormattingEnabled = true;
             cbxEspecialidades.Location = new System.Drawing.Point(197, 123);
             cbxEspecialidades.Name = "cbxEspecialidades";
-            cbxEspecialidades.Size = new System.Drawing.Size(312, 37);
+            cbxEspecialidades.Size = new System.Drawing.Size(500, 37);
             cbxEspecialidades.TabIndex = 57;
             cbxEspecialidades.SelectedIndexChanged += cbxEspecialidades_SelectedIndexChanged;
             // 
@@ -163,7 +163,7 @@ namespace Escritorio.ProfesorCurso
             cbxLegajo.Location = new System.Drawing.Point(197, 51);
             cbxLegajo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             cbxLegajo.Name = "cbxLegajo";
-            cbxLegajo.Size = new System.Drawing.Size(312, 37);
+            cbxLegajo.Size = new System.Drawing.Size(500, 37);
             cbxLegajo.TabIndex = 55;
             cbxLegajo.SelectedIndexChanged += cbxLegajo_SelectedIndexChanged;
             // 
@@ -184,7 +184,7 @@ namespace Escritorio.ProfesorCurso
             AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             CancelButton = btnCancelar;
-            ClientSize = new System.Drawing.Size(602, 516);
+            ClientSize = new System.Drawing.Size(798, 516);
             Controls.Add(cbxComision);
             Controls.Add(lblComision);
             Controls.Add(cbxMaterias);
@@ -200,7 +200,7 @@ namespace Escritorio.ProfesorCurso
             Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             Name = "formConsultarProfesorCurso";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            Text = "formConsultarProfesorCurso";
+            Text = "Consultar Profesor-Curso";
             Load += formConsultarProfesorCurso_Load;
             ResumeLayout(false);
             PerformLayout();

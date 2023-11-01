@@ -48,7 +48,6 @@ namespace TPI.Negocio
         public static List<Entidades.Usuario> GetAllProfesores() 
         {
             return Datos.Usuario.GetAllProfesores();
-
         }
 
         public static List<Entidades.Usuario> GetAllAlumnos()

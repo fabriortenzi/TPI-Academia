@@ -57,13 +57,13 @@ namespace Escritorio
                 .FirstOrDefault(u => u.Plan.Id == Plan.Id && u.Persona.Dni == Usuario.Persona.Dni);
             if (usuarioConEsePlan != null)
             {
-                MessageBox.Show("Ya existe un Usuario Alumno con ese plan");
+                MessageBox.Show("Ya existe un Usuario Alumno con ese plan", "Inscripcion Plan", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 return;
             }
 
             TPI.Negocio.Usuario.AsignarPlanAUsuario(Plan, Usuario);
-            MessageBox.Show($"Alumno Legajo Numero {Usuario.Legajo} creado con exito!");
-            this.Close();
+            MessageBox.Show($"Alumno Legajo Numero {Usuario.Legajo} creado con exito!", "Inscripcion Plan", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.Dispose();
         }
 
         private void txtAlumno_TextChanged(object sender, EventArgs e)
@@ -97,7 +97,7 @@ namespace Escritorio
 
         private void formInscripcionPlan_FormClosing(object sender, FormClosingEventArgs e)
         {
-            MessageBox.Show("El Alumno debe tener un plan registrado", "Asignar Plan", MessageBoxButtons.OK);
+            MessageBox.Show("El Alumno debe tener un plan registrado", "Asignar Plan", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             e.Cancel = true;
             return;
         }

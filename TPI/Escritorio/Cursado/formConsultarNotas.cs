@@ -22,13 +22,16 @@ namespace Escritorio.Cursado
 
         private void formConsultarNotas_Load(object sender, EventArgs e)
         {
+            // Las que no tienen nota final son las que se pueden eliminar
             dgvCursados.DataSource = TPI.Negocio.Cursado.BuscarCursadosPorAlumno(Alumno.Legajo)
-                                        .Where(c => c.NotaFinal != null).ToList();
+                                        .Where(c => c.NotaFinal != null)
+                                        .OrderBy(c => c.FechaHoraInscripcion)
+                                        .ToList();
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-           this.Close();
+            this.Close();
         }
     }
 }

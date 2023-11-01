@@ -13,7 +13,7 @@ namespace TPI.Datos.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Descripcion = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Descripcion = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -25,11 +25,11 @@ namespace TPI.Datos.Migrations
                 columns: table => new
                 {
                     Dni = table.Column<int>(type: "int", nullable: false),
-                    Nombre = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Apellido = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Direccion = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Nombre = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Apellido = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Direccion = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     FechaNacimiento = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Telefono = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Telefono = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -42,7 +42,7 @@ namespace TPI.Datos.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Descripcion = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Descripcion = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -56,7 +56,7 @@ namespace TPI.Datos.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     NroComision = table.Column<int>(type: "int", nullable: false),
-                    EspecialidadId = table.Column<int>(type: "int", nullable: true)
+                    EspecialidadId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -76,7 +76,7 @@ namespace TPI.Datos.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Anio = table.Column<int>(type: "int", nullable: false),
-                    EspecialidadId = table.Column<int>(type: "int", nullable: true)
+                    EspecialidadId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -95,7 +95,7 @@ namespace TPI.Datos.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    PlanId = table.Column<int>(type: "int", nullable: true),
+                    PlanId = table.Column<int>(type: "int", nullable: false),
                     HorasSemanales = table.Column<int>(type: "int", nullable: false),
                     HorasTotales = table.Column<int>(type: "int", nullable: false)
                 },
@@ -116,9 +116,9 @@ namespace TPI.Datos.Migrations
                 {
                     Legajo = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Contraseña = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    PersonaDni = table.Column<int>(type: "int", nullable: true),
-                    TipoDeUsuarioId = table.Column<int>(type: "int", nullable: true),
+                    Contraseña = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    PersonaDni = table.Column<int>(type: "int", nullable: false),
+                    TipoDeUsuarioId = table.Column<int>(type: "int", nullable: false),
                     PlanId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
@@ -151,10 +151,10 @@ namespace TPI.Datos.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CicloLectivo = table.Column<int>(type: "int", nullable: false),
-                    MateriaId = table.Column<int>(type: "int", nullable: true),
-                    ComisionId = table.Column<int>(type: "int", nullable: true),
+                    MateriaId = table.Column<int>(type: "int", nullable: false),
+                    ComisionId = table.Column<int>(type: "int", nullable: false),
                     Cupo = table.Column<int>(type: "int", nullable: false),
-                    Dia = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Dia = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     HoraInicio = table.Column<TimeSpan>(type: "time", nullable: false),
                     HoraFin = table.Column<TimeSpan>(type: "time", nullable: false)
                 },
@@ -181,10 +181,10 @@ namespace TPI.Datos.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    UsuarioLegajo = table.Column<int>(type: "int", nullable: true),
-                    CursoId = table.Column<int>(type: "int", nullable: true),
+                    UsuarioLegajo = table.Column<int>(type: "int", nullable: false),
+                    CursoId = table.Column<int>(type: "int", nullable: false),
                     FechaHoraInscripcion = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    NotaFinal = table.Column<int>(type: "int", nullable: false)
+                    NotaFinal = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -209,9 +209,9 @@ namespace TPI.Datos.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    UsuarioLegajo = table.Column<int>(type: "int", nullable: true),
-                    CursoId = table.Column<int>(type: "int", nullable: true),
-                    Cargo = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    UsuarioLegajo = table.Column<int>(type: "int", nullable: false),
+                    CursoId = table.Column<int>(type: "int", nullable: false),
+                    Cargo = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {

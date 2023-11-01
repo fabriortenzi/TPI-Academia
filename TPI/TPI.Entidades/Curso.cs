@@ -43,7 +43,7 @@ namespace TPI.Entidades
 
         public override string ToString()
         {
-            return Materia.Descripcion;
+            return $"{Materia.Descripcion} - Comision {Comision.NroComision}";
         }
     }
 }

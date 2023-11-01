@@ -32,31 +32,54 @@ namespace Escritorio
 
             var tipoDeUsuario = TPI.Negocio.TipoDeUsuario.GetTipoUsuarioPorDecsripcion(descripcionTipo);
 
-            if (descripcionTipo == "" || contraseña == "" || confContraseña == "")
+            if (contraseña.Length < 5 || contraseña.Length > 20)
             {
-                MessageBox.Show("Algunos campos quedaron en blanco");
+                MessageBox.Show("La Contraseña debe ser mayor que 5 caracteres y menor que 20", "Nuevo Usuario", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                return;
+            }
+            if (!(contraseña.All(char.IsLetterOrDigit)))
+            {
+                MessageBox.Show("La Contraseña solo puede tener letras o digitos", "Nuevo Usuario", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                return;
+            }
+
+            if (contraseña == "" || confContraseña == "")
+            {
+                MessageBox.Show("Algunos campos quedaron en blanco", "Nuevo Usuario", MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
             else if (contraseña == confContraseña)
             {
-                var usuario = TPI.Negocio.Usuario.CrearUsuario(contraseña, persona, tipoDeUsuario);
-                TPI.Negocio.Usuario.AgregarUsuario(usuario);
-
                 // Si el usuario nuevo es un Alumno se abre el form para asignar plan de estudio
                 if (descripcionTipo == "Alumno")
                 {
+                    var usuario = TPI.Negocio.Usuario.CrearUsuario(contraseña, persona, tipoDeUsuario);
+                    TPI.Negocio.Usuario.AgregarUsuario(usuario);
                     formInscripcionPlan formInscripcionPlan = new(usuario);
                     formInscripcionPlan.Show();
                 }
                 else
                 {
-                    MessageBox.Show($"Usuario legajo numero {usuario.Legajo} creado con exito!");
+                    // Valido que no se repita el mismo Usuario Admin o Profesor para la misma Persona
+                    var usuarioRepetido = TPI.Negocio.Usuario.GetAllUsuarios()
+                        .FirstOrDefault(u => u.Persona.Dni == persona.Dni &&
+                        u.TipoDeUsuario.Descripcion == tipoDeUsuario.Descripcion);
+                    if (usuarioRepetido != null)
+                    {
+                        MessageBox.Show($"Ya existe un Usuario {tipoDeUsuario.Descripcion} para esa Persona", "Nuevo Usuario", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        return;
+                    }
+
+                    // Ahora si creo el Usuario
+                    var usuario = TPI.Negocio.Usuario.CrearUsuario(contraseña, persona, tipoDeUsuario);
+                    TPI.Negocio.Usuario.AgregarUsuario(usuario);
+                    MessageBox.Show($"Usuario legajo numero {usuario.Legajo} creado con exito!", "Nuevo Usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
                 this.Dispose();
             }
             else
             {
-                MessageBox.Show("Las contraseñas no coinciden");
+                MessageBox.Show("Las contraseñas no coinciden", "Nuevo Usuario", MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
 
@@ -70,7 +93,7 @@ namespace Escritorio
             }
             catch
             {
-                MessageBox.Show("El DNI no puede contener letras");
+                MessageBox.Show("El DNI no puede contener letras", "Nuevo Usuario", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 return;
             }
 
@@ -106,7 +129,7 @@ namespace Escritorio
                 txtConfContraseña.Enabled = false;
                 btnCrear.Enabled = false;
 
-                MessageBox.Show("No se encontro la persona, intente nuevamente");
+                MessageBox.Show("No se encontro la persona, intente nuevamente", "Nuevo Usuario", MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
 

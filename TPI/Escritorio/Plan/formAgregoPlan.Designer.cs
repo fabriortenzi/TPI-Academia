@@ -41,7 +41,7 @@ namespace Escritorio
             // textBoxAño
             // 
             textBoxAño.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            textBoxAño.Location = new System.Drawing.Point(276, 204);
+            textBoxAño.Location = new System.Drawing.Point(187, 197);
             textBoxAño.Margin = new System.Windows.Forms.Padding(4);
             textBoxAño.Name = "textBoxAño";
             textBoxAño.PlaceholderText = "AAAA";
@@ -53,7 +53,7 @@ namespace Escritorio
             // 
             lblAño.AutoSize = true;
             lblAño.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            lblAño.Location = new System.Drawing.Point(215, 207);
+            lblAño.Location = new System.Drawing.Point(126, 200);
             lblAño.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblAño.Name = "lblAño";
             lblAño.Size = new System.Drawing.Size(53, 29);
@@ -77,10 +77,10 @@ namespace Escritorio
             comboBoxEsp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             comboBoxEsp.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             comboBoxEsp.FormattingEnabled = true;
-            comboBoxEsp.Location = new System.Drawing.Point(276, 140);
+            comboBoxEsp.Location = new System.Drawing.Point(187, 129);
             comboBoxEsp.Margin = new System.Windows.Forms.Padding(4);
             comboBoxEsp.Name = "comboBoxEsp";
-            comboBoxEsp.Size = new System.Drawing.Size(299, 37);
+            comboBoxEsp.Size = new System.Drawing.Size(500, 37);
             comboBoxEsp.TabIndex = 5;
             comboBoxEsp.SelectedIndexChanged += comboBoxEsp_SelectedIndexChanged;
             // 
@@ -88,7 +88,7 @@ namespace Escritorio
             // 
             label1.AutoSize = true;
             label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label1.Location = new System.Drawing.Point(131, 143);
+            label1.Location = new System.Drawing.Point(42, 132);
             label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(137, 29);
@@ -125,7 +125,7 @@ namespace Escritorio
             AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             CancelButton = btnCancelar;
-            ClientSize = new System.Drawing.Size(725, 420);
+            ClientSize = new System.Drawing.Size(738, 420);
             Controls.Add(btnCancelar);
             Controls.Add(label2);
             Controls.Add(label1);

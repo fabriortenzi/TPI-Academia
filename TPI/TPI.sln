@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Consola", "Consola\Consola.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Escritorio", "Escritorio\Escritorio.csproj", "{A4FE3576-C403-459A-A262-E31FBC970618}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "Web\Web.csproj", "{CDDBCA7B-DA1C-418B-9430-708DCDA70FE7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,10 @@ Global
 		{A4FE3576-C403-459A-A262-E31FBC970618}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A4FE3576-C403-459A-A262-E31FBC970618}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A4FE3576-C403-459A-A262-E31FBC970618}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDDBCA7B-DA1C-418B-9430-708DCDA70FE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDDBCA7B-DA1C-418B-9430-708DCDA70FE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDDBCA7B-DA1C-418B-9430-708DCDA70FE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDDBCA7B-DA1C-418B-9430-708DCDA70FE7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,6 +54,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{29E30FA6-D4E3-405E-A72F-302762ABE0EE} = {323E55AA-4FAA-455B-BC9D-B2E4014861A2}
 		{A4FE3576-C403-459A-A262-E31FBC970618} = {323E55AA-4FAA-455B-BC9D-B2E4014861A2}
+		{CDDBCA7B-DA1C-418B-9430-708DCDA70FE7} = {323E55AA-4FAA-455B-BC9D-B2E4014861A2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {08688D8D-26D9-4B7E-A83A-3B5C58203448}

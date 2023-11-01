@@ -18,27 +18,45 @@ namespace TPI.Datos
         {
             int aux = 0;
             var cursos = BuscarCursadosPorCurso(curso);
-            foreach (var c in cursos)
+            var cant = cursos.Count();
+
+            if (cant == 0)
             {
-                if (c.NotaFinal < 6)
-                {
-                    aux = aux + 1;
-                }
+                return 0;
             }
-            return Convert.ToDecimal(aux / cursos.Count());
+            else
+            {
+                foreach (var c in cursos)
+                {
+                    if (c.NotaFinal < 6)
+                    {
+                        aux = aux + 1;
+                    }
+                }
+                return Convert.ToDecimal(aux / cursos.Count());
+            }
         }
         public static decimal PorceAprobado(Entidades.Curso curso)
         {
             int aux = 0;
             var cursos = BuscarCursadosPorCurso(curso);
-            foreach (var c in cursos) 
+            var cant = cursos.Count();
+
+            if (cant == 0)
             {
-                if (c.NotaFinal<=6) 
-                {
-                    aux = aux + 1;
-                }
+                return 0;
             }
-            return Convert.ToDecimal(aux / cursos.Count());
+            else
+            {
+                foreach (var c in cursos) 
+                {
+                    if (c.NotaFinal<=6) 
+                    {
+                        aux = aux + 1;
+                    }
+                }
+                return Convert.ToDecimal(aux / cant);
+            }
         }
         public static List<Entidades.Cursado> BuscarCursadosPorCurso(Entidades.Curso curso) 
         {
@@ -142,6 +160,7 @@ namespace TPI.Datos
                      .ThenInclude(x => x.Persona)
                      .Include(x => x.Curso)
                      .ThenInclude(x => x.Materia)
+                     .Include(x => x.Curso.Comision)
                      .ToList();
             }
         }

@@ -37,14 +37,26 @@ namespace Escritorio
 
         private async void button1_Click(object sender, EventArgs e)
         {
-            int año;
+            string año;
+            año = this.textBoxAño.Text;
+            if (año.Length > 4)
+            {
+                MessageBox.Show("El Plan debe ser un Año valido de 4 digitos", "Agrego Plan", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                return;
+            }
             try
             {
-                año = Convert.ToInt32(this.textBoxAño.Text);
+                Convert.ToInt32(año);
             }
             catch
             {
-                MessageBox.Show("Ingrese el Año correctamente");
+                MessageBox.Show("Ingrese el Año correctamente", "Agrego Plan", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                return;
+            }
+
+            if (comboBoxEsp.SelectedIndex == -1)
+            {
+                MessageBox.Show("Seleccione una Especialidad", "Agrego Plan", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 return;
             }
 
@@ -52,16 +64,16 @@ namespace Escritorio
 
             TPI.Entidades.Especialidad especialidad = TPI.Negocio.Especialidad.Getespecialidadpordesc(esp);
 
-            var Plan = TPI.Negocio.Plan.CrearPlan(año, especialidad);
+            var Plan = TPI.Negocio.Plan.CrearPlan(Convert.ToInt32(año), especialidad);
 
             if (await TPI.Negocio.Plan.AgregoPlan(Plan))
             {
-                MessageBox.Show("Plan creado con exito!");
+                MessageBox.Show("Plan creado con exito!", "Agrego Plan", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
             else
             {
-                MessageBox.Show("Error al crear el Plan, intente con otro Año");
+                MessageBox.Show("Error al crear el Plan, intente con otro Año", "Agrego Plan", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 return;
             }
         }

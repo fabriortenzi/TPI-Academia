@@ -23,9 +23,10 @@ namespace Escritorio.Inscripcion
         {
             var cursados = TPI.Negocio.Cursado.BuscarCursadosPorUsuarioAño(Usuario, DateTime.Now.Year)
                             .Where(c => c.NotaFinal == null).ToList();
-            if (cursados == null)
+
+            if (cursados.Count == 0)
             {
-                MessageBox.Show("No hay inscripciones para eliminar");
+                MessageBox.Show("No tienes inscripciones para eliminar", "Eliminar Inscripcion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 this.Close();
             }
             else
@@ -44,13 +45,14 @@ namespace Escritorio.Inscripcion
                 {
                     var idInscripcion = int.Parse(dgvInscripciones.Rows[e.RowIndex].Cells[1].Value.ToString());
                     TPI.Negocio.Cursado.Eliminar(TPI.Negocio.Cursado.GetOne(idInscripcion));
-                    MessageBox.Show("Inscripcion elimnada");
-                    dgvInscripciones.DataSource = TPI.Negocio.Cursado.BuscarCursadosPorUsuarioAño(Usuario, DateTime.Now.Year);
+                    MessageBox.Show("Inscripcion elimnada", "Eliminar Inscripcion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dgvInscripciones.DataSource = TPI.Negocio.Cursado.BuscarCursadosPorUsuarioAño(Usuario, DateTime.Now.Year)
+                                                    .Where(c => c.NotaFinal == null).ToList();
                 }
 
                 catch
                 {
-                    MessageBox.Show("Error al eliminar Inscripcion");
+                    MessageBox.Show("Error al eliminar Inscripcion", "Eliminar Inscripcion", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 }
             }
         }

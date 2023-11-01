@@ -17,5 +17,15 @@ namespace AcademiaWeb.Models
         public DateTime FechaNacimiento { get; set; }
 
         public string Telefono { get; set; }
+
+        public Persona(int dni, string nombre, string apellido, string direccion, DateTime fechaNacimiento, string telefono)
+        {
+            Dni = dni;
+            Nombre = nombre;
+            Apellido = apellido;
+            Direccion = direccion;
+            FechaNacimiento = fechaNacimiento;
+            Telefono = telefono;
+        }
     }
 }

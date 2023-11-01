@@ -40,7 +40,7 @@ namespace Escritorio
             // 
             btnAceptar.Enabled = false;
             btnAceptar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnAceptar.Location = new System.Drawing.Point(255, 216);
+            btnAceptar.Location = new System.Drawing.Point(350, 215);
             btnAceptar.Margin = new System.Windows.Forms.Padding(4);
             btnAceptar.Name = "btnAceptar";
             btnAceptar.Size = new System.Drawing.Size(197, 58);
@@ -57,7 +57,7 @@ namespace Escritorio
             comboBoxEspecialidades.Location = new System.Drawing.Point(350, 66);
             comboBoxEspecialidades.Margin = new System.Windows.Forms.Padding(4);
             comboBoxEspecialidades.Name = "comboBoxEspecialidades";
-            comboBoxEspecialidades.Size = new System.Drawing.Size(296, 37);
+            comboBoxEspecialidades.Size = new System.Drawing.Size(500, 37);
             comboBoxEspecialidades.TabIndex = 1;
             comboBoxEspecialidades.SelectedIndexChanged += comboBoxEspecialidades_SelectedIndexChanged;
             // 
@@ -100,7 +100,7 @@ namespace Escritorio
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(714, 300);
+            ClientSize = new System.Drawing.Size(907, 300);
             Controls.Add(cbxPlanes);
             Controls.Add(label2);
             Controls.Add(label1);

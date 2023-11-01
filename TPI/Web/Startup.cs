@@ -9,9 +9,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using AcademiaWeb.Data;
+using Web.Data;
 
-namespace AcademiaWeb
+namespace Web
 {
     public class Startup
     {
@@ -27,8 +27,8 @@ namespace AcademiaWeb
         {
             services.AddControllersWithViews();
 
-            services.AddDbContext<AcademiaWebContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("AcademiaWebContext")));
+            services.AddDbContext<WebContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("WebContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

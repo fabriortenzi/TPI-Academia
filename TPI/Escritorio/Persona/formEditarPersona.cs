@@ -55,8 +55,18 @@ namespace Escritorio
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                TPI.Negocio.Persona.ValidarDatos(direccionCambiada, telefonoCambiado);
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message, "Editar Persona", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                return;
+            }
+
             TPI.Negocio.Persona.EditarDatosPersona(Persona, direccionCambiada, telefonoCambiado);
-            MessageBox.Show("Datos modificados exitosamente!");
+            MessageBox.Show("Datos modificados exitosamente!", "Editar Persona", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }
     }

@@ -221,10 +221,13 @@ namespace Escritorio
 
         private void formMenuPrincipal_Load(object sender, EventArgs e)
         {
+            // Deshabilito los menus segun el tipo de Usuario que ingreso
+
             if (Usuario.TipoDeUsuario.Descripcion != "Admin")
             {
                 crearPersonaToolStripMenuItem.Visible = false;
                 crearUsuarioToolStripMenuItem.Visible = false;
+                listarPerToolStripMenuItem.Visible = false;
                 especialidadToolStripMenuItem.Visible = false;
                 listarPerToolStripMenuItem.Visible = false;
                 listarUsuToolStripMenuItem1.Visible = false;
@@ -235,6 +238,7 @@ namespace Escritorio
                 planDeEstudioToolStripMenuItem.Visible = false;
                 materiaToolStripMenuItem.Visible = false;
                 profesorCursoToolStripMenuItem.Visible = false;
+                reportesToolStripMenuItem.Visible = false;
             }
 
             if (Usuario.TipoDeUsuario.Descripcion != "Alumno")
@@ -289,8 +293,8 @@ namespace Escritorio
 
         private void reportesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            formReportePlanes formReportePlanes = new();
-            formReportePlanes.Show();
+            formReporteCurso formReporteCurso = new();
+            formReporteCurso.Show();
         }
 
         private void listarToolStripMenuItem_Click_1(object sender, EventArgs e)

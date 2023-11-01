@@ -78,7 +78,7 @@
             cbxEspecialidades.FormattingEnabled = true;
             cbxEspecialidades.Location = new System.Drawing.Point(216, 136);
             cbxEspecialidades.Name = "cbxEspecialidades";
-            cbxEspecialidades.Size = new System.Drawing.Size(318, 37);
+            cbxEspecialidades.Size = new System.Drawing.Size(500, 37);
             cbxEspecialidades.TabIndex = 2;
             cbxEspecialidades.SelectedIndexChanged += cbxEspecialidades_SelectedIndexChanged;
             // 
@@ -112,7 +112,7 @@
             cbxMaterias.FormattingEnabled = true;
             cbxMaterias.Location = new System.Drawing.Point(216, 258);
             cbxMaterias.Name = "cbxMaterias";
-            cbxMaterias.Size = new System.Drawing.Size(318, 37);
+            cbxMaterias.Size = new System.Drawing.Size(500, 37);
             cbxMaterias.TabIndex = 5;
             cbxMaterias.SelectedIndexChanged += cbxMaterias_SelectedIndexChanged;
             // 
@@ -120,7 +120,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label4.Location = new System.Drawing.Point(336, 34);
+            label4.Location = new System.Drawing.Point(466, 30);
             label4.Name = "label4";
             label4.Size = new System.Drawing.Size(352, 35);
             label4.TabIndex = 6;
@@ -166,7 +166,7 @@
             // btnCrear
             // 
             btnCrear.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnCrear.Location = new System.Drawing.Point(547, 479);
+            btnCrear.Location = new System.Drawing.Point(803, 486);
             btnCrear.Name = "btnCrear";
             btnCrear.Size = new System.Drawing.Size(257, 57);
             btnCrear.TabIndex = 11;
@@ -178,7 +178,7 @@
             // 
             lblComision.AutoSize = true;
             lblComision.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            lblComision.Location = new System.Drawing.Point(619, 136);
+            lblComision.Location = new System.Drawing.Point(848, 133);
             lblComision.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblComision.Name = "lblComision";
             lblComision.Size = new System.Drawing.Size(111, 29);
@@ -190,7 +190,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label7.Location = new System.Drawing.Point(676, 203);
+            label7.Location = new System.Drawing.Point(905, 200);
             label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label7.Name = "label7";
             label7.Size = new System.Drawing.Size(52, 29);
@@ -202,7 +202,7 @@
             // 
             dtpHoraIni.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dtpHoraIni.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            dtpHoraIni.Location = new System.Drawing.Point(735, 258);
+            dtpHoraIni.Location = new System.Drawing.Point(964, 255);
             dtpHoraIni.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             dtpHoraIni.Name = "dtpHoraIni";
             dtpHoraIni.ShowUpDown = true;
@@ -215,7 +215,7 @@
             // 
             dtpHoraFin.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dtpHoraFin.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            dtpHoraFin.Location = new System.Drawing.Point(735, 318);
+            dtpHoraFin.Location = new System.Drawing.Point(964, 315);
             dtpHoraFin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             dtpHoraFin.Name = "dtpHoraFin";
             dtpHoraFin.ShowUpDown = true;
@@ -228,7 +228,7 @@
             // 
             label9.AutoSize = true;
             label9.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label9.Location = new System.Drawing.Point(574, 261);
+            label9.Location = new System.Drawing.Point(803, 258);
             label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label9.Name = "label9";
             label9.Size = new System.Drawing.Size(156, 29);
@@ -240,7 +240,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label8.Location = new System.Drawing.Point(599, 324);
+            label8.Location = new System.Drawing.Point(828, 321);
             label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label8.Name = "label8";
             label8.Size = new System.Drawing.Size(128, 29);
@@ -254,7 +254,7 @@
             cbxComision.Enabled = false;
             cbxComision.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             cbxComision.FormattingEnabled = true;
-            cbxComision.Location = new System.Drawing.Point(735, 134);
+            cbxComision.Location = new System.Drawing.Point(964, 131);
             cbxComision.Name = "cbxComision";
             cbxComision.Size = new System.Drawing.Size(210, 37);
             cbxComision.TabIndex = 21;
@@ -266,7 +266,7 @@
             cbxDiaSemana.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cbxDiaSemana.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             cbxDiaSemana.FormattingEnabled = true;
-            cbxDiaSemana.Location = new System.Drawing.Point(735, 200);
+            cbxDiaSemana.Location = new System.Drawing.Point(964, 197);
             cbxDiaSemana.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             cbxDiaSemana.Name = "cbxDiaSemana";
             cbxDiaSemana.Size = new System.Drawing.Size(210, 37);
@@ -276,7 +276,7 @@
             // btnCancelar
             // 
             btnCancelar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnCancelar.Location = new System.Drawing.Point(216, 479);
+            btnCancelar.Location = new System.Drawing.Point(216, 486);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new System.Drawing.Size(257, 57);
             btnCancelar.TabIndex = 23;
@@ -290,7 +290,7 @@
             AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             CancelButton = btnCancelar;
-            ClientSize = new System.Drawing.Size(1013, 583);
+            ClientSize = new System.Drawing.Size(1261, 583);
             Controls.Add(btnCancelar);
             Controls.Add(cbxDiaSemana);
             Controls.Add(cbxComision);

@@ -13,6 +13,9 @@ namespace Escritorio.Reportes
 {
     public partial class formReporteCurso : Form
     {
+        private dsCursoReporte dsCurso;
+
+ 
         public formReporteCurso()
         {
             InitializeComponent();
@@ -20,10 +23,11 @@ namespace Escritorio.Reportes
 
         private void CargarDS() 
         {
-            var dsCurso = new dsCursoReporte();
-            try { 
-            foreach (var curso in TPI.Negocio.Curso.GetAll()) 
+            dsCurso = new dsCursoReporte();
+            try
             {
+                foreach (var curso in TPI.Negocio.Curso.GetAll())
+                {
                     dsCursoReporte.CursosRow row = dsCurso.Cursos.NewCursosRow();
                     row.Id = curso.Id;
                     row.Cupo = curso.Cupo;
@@ -34,16 +38,24 @@ namespace Escritorio.Reportes
                     row.Materia = curso.Materia.Descripcion;
                     row.Comision = curso.Comision.NroComision.ToString();
                     row.CantAlumnosInsc = TPI.Negocio.Cursado.BuscarCantAlumnosInsc(curso);
-                    row.CantProfesoresInsc= TPI.Negocio.ProfesorCurso.BuscarCantProfesoresInsc(curso);
+                    row.CantProfesoresInsc = TPI.Negocio.ProfesorCurso.BuscarCantProfesoresInsc(curso);
                     row.PorceAprobado = TPI.Negocio.Cursado.PorceAprobado(curso);
                     row.PorceDesAprobado = TPI.Negocio.Cursado.DesAprobado(curso);
                     dsCurso.Cursos.AddCursosRow(row);
                 }
+
+                //var binding = new BindingSource();
+                //binding.DataSource = dsCurso;
+                //rvwReporte.Reset();
+
+                rvwReporte.LocalReport.ReportPath = "C:\\Users\\Fabrizio\\Documents\\Dev\\.NET\\TPI-Academia\\TPI\\Escritorio\\Reportes\\reporteCursos.rdlc";
+
                 rvwReporte.LocalReport.DataSources.Clear();
-                rvwReporte.LocalReport.DataSources.Add(new ReportDataSource("dsCursoReporte", dsCurso.Tables["Cursos"]));
+                rvwReporte.LocalReport.DataSources.Add(new ReportDataSource("dsCurso", dsCurso.Tables["Cursos"]));
+
                 rvwReporte.RefreshReport();
             }
-            catch 
+            catch
             {
                 MessageBox.Show("Error al encontrar cursos");
             }
