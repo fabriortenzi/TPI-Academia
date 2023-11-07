@@ -25,7 +25,7 @@ El Profesor puede ver a qué Cursos está asignado en el presente Ciclo Lectivo.
 
 ## Diagrama de Clases
 
-![DiagramaClases](assets\DiagramaClases.png)
+![DiagramaClases](assets/DiagramaClases.png)
 
 ## Cómo instalar
 
